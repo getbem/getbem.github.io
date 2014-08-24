@@ -1,0 +1,34 @@
+{
+  "name": "gulp-bem-stub",
+  "version": "0.0.0",
+  "description": "gulp BEM project stub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:matmuchrapna/gulp-bem-stub.git"
+  },
+  "keywords": [
+    "gulp",
+    "bem"
+  ],
+  "author": "Vladimir Starkov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matmuchrapna/gulp-bem-stub/issues"
+  },
+  "homepage": "https://github.com/matmuchrapna/gulp-bem-stub",
+  "dependencies": {
+    "bower": "^1.3.9",
+    "del": "^0.1.2",
+    "gulp": "^3.8.6",
+    "gulp-concat": "^2.3.4",
+    "yargs": "^1.3.1",
+    "gulp-bem-debug": "^0.2.0",
+    "gulp-bem": "^0.5.0",
+    "gulp-bh": "^0.1.0",
+    "buildbranch": "^0.0.1"
+  }
+}
