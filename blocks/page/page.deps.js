@@ -6,4 +6,5 @@ module.exports.expect = [
     { block: 'css' },
     { block: 'link' },
     { block: 'image' },
+    { block: 'ga' }
 ];

@@ -26,6 +26,10 @@ module.exports = {
                 {
                     block: 'image',
                     url: 'http://s.likes-media.com/img/434dd676201bb7248f9817c1e761719e.600x.jpg'
+                },
+                {
+                    block: 'ga',
+                    ua: 'UA-15345174-10'
                 }
             ]
         }

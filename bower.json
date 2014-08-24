@@ -9,6 +9,7 @@
     "libs"
   ],
   "dependencies": {
-    "base": "matmuchrapna/bem-base"
+    "base": "matmuchrapna/bem-base",
+    "google-analytics": "floatdrop/google-analytics-block"
   }
 }

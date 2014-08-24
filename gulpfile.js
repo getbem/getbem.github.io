@@ -10,6 +10,7 @@ var buildBranch = require('buildbranch');
 var deps;
 var levels = [
     'libs/base',
+    'libs/google-analytics',    
     'blocks',
     'pages/index'
 ];
