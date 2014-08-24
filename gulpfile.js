@@ -38,7 +38,11 @@ gulp.task('html', ['deps', 'clean'], function () {
         .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('build', ['clean', 'html', 'css']);
+gulp.task('cname', function () {
+    return gulp.src('CNAME').pipe(gulp.dest('dist'));
+});
+
+gulp.task('build', ['clean', 'html', 'css', 'cname']);
 
 gulp.task('clean', function (cb) {
     del(['./dist'], cb);
