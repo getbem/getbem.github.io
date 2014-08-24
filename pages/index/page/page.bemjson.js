@@ -24,28 +24,8 @@ module.exports = {
             elem: 'body',
             content: [
                 {
-                    block: 'logo',
-                    content: [
-                        {
-                            block: 'image',
-                            mix: [{ block: 'logo', elem: 'bem' }],
-                            url: '//bem.info/m/_/20zuV2gLiyoaqrHv9LoBRTmB0Ow.svg'
-                        },
-                        {
-                            block: 'image',
-                            mix: [{ block: 'logo', elem: 'gulp' }],
-                            url: '//raw2.github.com/gulpjs/artwork/master/gulp-2x.png'
-                        }
-                    ]
-                },
-                {
-                    block: 'tagline',
-                    content: 'What happens when two powerfull technology meet each other? Awesomness!'
-                },
-                {
-                    block: 'link',
-                    url: 'https://github.com/floatdrop/gulp-bem/',
-                    content: 'Stay tuned'
+                    block: 'image',
+                    url: 'http://s.likes-media.com/img/434dd676201bb7248f9817c1e761719e.600x.jpg'
                 }
             ]
         }
