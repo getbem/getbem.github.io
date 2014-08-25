@@ -1,7 +1,6 @@
 .header {
-    background-image: url('img/header-background.jpg');
-    background-size: cover;
     height: 350px;
     padding-top: 150px;
-    background-color: #000;
+    background-color: #FAFAFA;
+    color: #262c32;
 }
