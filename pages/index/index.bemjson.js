@@ -46,14 +46,14 @@ module.exports = {
 
                     third: { block: 'part',
                         name: 'generator-b_',
-                        description: 'Scaffolding tool for BEM',
+                        description: 'scaffolding tool for BEM',
                         image: 'img/yeoman.png',
                         mix: { block: 'opaque' } },
 
                     four: { block: 'part',
                         name: '&nbsp;',
-                        description: 'JavaScript library for BEM',
-                        image: 'img/javascript.png',
+                        description: 'DOM navigation and manipulation',
+                        image: 'img/JavaScript.png',
                         mix: { block: 'opaque' } }
                 },
                 // {
