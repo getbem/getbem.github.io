@@ -1,7 +1,7 @@
 {
-  "name": "gulp-bem-stub",
+  "name": "getbem.com",
   "version": "0.0.0",
-  "description": "gulp BEM project stub",
+  "description": "getbem.com site project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,12 +14,12 @@
     "gulp",
     "bem"
   ],
-  "author": "Vladimir Starkov",
+  "author": "Vsevolod Strukchinsky",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/matmuchrapna/gulp-bem-stub/issues"
+    "url": "https://github.com/floatdrop/getbem.com/issues"
   },
-  "homepage": "https://github.com/matmuchrapna/gulp-bem-stub",
+  "homepage": "https://github.com/floatdrop/getbem.com",
   "dependencies": {
     "bower": "^1.3.9",
     "del": "^0.1.2",

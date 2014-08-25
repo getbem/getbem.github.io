@@ -3,47 +3,33 @@ var bem = require('gulp-bem');
 var bh = require('gulp-bh');
 var concat = require('gulp-concat');
 var del = require('del');
-var debug = require('gulp-bem-debug');
-var argv = require('yargs').alias('d', 'debug').boolean('d').argv;
 var buildBranch = require('buildbranch');
 
-var deps;
 var levels = [
     'libs/base',
     'libs/google-analytics',
     'blocks',
-    'pages/index'
+    'pages'
 ];
 
-gulp.task('deps', function (done) {
-    var tree = bem.objects(levels)
-        .pipe(bem.deps())
-        .pipe(bem.tree());
-
-    deps = tree.deps('pages/index/page');
-
-    if (argv.debug) { deps.pipe(debug()); }
-
-    done();
-});
-
-gulp.task('css', ['deps', 'clean'], function () {
-    return deps.src('{bem}.css')
+gulp.task('css', ['clean'], function () {
+    return bem.objects(levels).pipe(bem.src('{bem}.css'))
         .pipe(concat('index.css'))
         .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('html', ['deps', 'clean'], function () {
-    return deps.src('{bem}.bh.js')
-        .pipe(bh(require('./pages/index/page/page.bemjson.js'), 'index.html'))
+gulp.task('html', ['clean'], function () {
+    delete require.cache[require.resolve('./pages/index/index.bemjson.js')];
+    return bem.objects(levels).pipe(bem.src('{bem}.bh.js'))
+        .pipe(bh(require('./pages/index/index.bemjson.js'), 'index.html'))
         .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('cname', function () {
+gulp.task('cname', ['clean'], function () {
     return gulp.src('CNAME').pipe(gulp.dest('dist'));
 });
 
-gulp.task('assets', function () {
+gulp.task('assets', ['clean'], function () {
     return gulp.src('assets/**').pipe(gulp.dest('dist'));
 });
 
@@ -54,7 +40,7 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('watch', ['build'], function() {
-    return gulp.watch(['**/*.css', '**/*.bemjson.js'], ['build']);
+    return gulp.watch(['**/*.css', '**/*.bh.js', '**/*.bemjson.js'], ['build']);
 });
 
 gulp.task('gh', ['build'], function(done) {
