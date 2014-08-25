@@ -26,35 +26,55 @@ module.exports = {
                 {
                     block: 'header',
                     content: [
-                        { elem: 'title', content: 'BEM!' },
-                        { elem: 'description', content: 'Block Element Modificator &mdash; code sharing, a live style guide, scalability, faster development.' }
+                        { elem: 'title', content: 'BEM' },
+                        { elem: 'description', content: 'Block Element Modificator &mdash; code sharing, scalability, faster development' }
                     ]
                 },
                 {
                     block: 'four-row',
-                    first: { block: 'part', elem: 'gulp-bem' },
-                    second: { block: 'part', elem: 'bem-bootstrap', mix: { block: 'opaque' } },
-                    third: { block: 'part', elem: 'unknown', mix: { block: 'opaque' } },
-                    four: { block: 'part', elem: 'unknown', mix: { block: 'opaque' } }
+
+                    first: { block: 'part',
+                        name: 'gulp-bem',
+                        description: 'building tool',
+                        image: 'img/gulp.png' },
+
+                    second: { block: 'part',
+                        name: 'bem-bootstrap',
+                        description: 'layer with bem blocks',
+                        image: 'img/bootstrap.png',
+                        mix: { block: 'opaque' } },
+
+                    third: { block: 'part',
+                        name: 'generator-b_',
+                        description: 'Scaffolding tool for BEM',
+                        image: 'img/yeoman.png',
+                        mix: { block: 'opaque' } },
+
+                    four: { block: 'part',
+                        name: '&nbsp;',
+                        description: 'JavaScript library for BEM',
+                        image: 'img/javascript.png',
+                        mix: { block: 'opaque' } }
                 },
-                {
-                    block: 'get-started'
-                },
-                {
-                    block: 'gulp-bem'
-                },
-                {
-                    block: 'authors',
-                    content: [
-                        { elem: 'person',
-                            name: 'Vsevolod Strukchinsky',
-                            avatar: 'https://avatars2.githubusercontent.com/u/365089?v=2&s=460',
-                            email: 'floatdrop@gmail.com' },
-                        { elem: 'person',
-                            name: 'Vladimir Starkov',
-                            avatar: 'https://avatars0.githubusercontent.com/u/559321?v=2&s=460' },
-                    ]
-                }
+                // {
+                //     block: 'get-started',
+                //     mix: { block: 'centered', mods: {'textalign': true} }
+                // },
+                // {
+                //     block: 'gulp-bem'
+                // },
+                // {
+                //     block: 'authors',
+                //     content: [
+                //         { elem: 'person',
+                //             name: 'Vsevolod Strukchinsky',
+                //             avatar: 'https://avatars2.githubusercontent.com/u/365089?v=2&s=460',
+                //             email: 'floatdrop@gmail.com' },
+                //         { elem: 'person',
+                //             name: 'Vladimir Starkov',
+                //             avatar: 'https://avatars0.githubusercontent.com/u/559321?v=2&s=460' },
+                //     ]
+                // }
             ]
         }
     ]

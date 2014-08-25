@@ -1,0 +1,8 @@
+.header__description {
+    max-width: 1024px;
+    margin: auto;
+    color: white;
+    font-size: 18pt;
+    line-height: 72pt;
+    padding-left: 11px;
+}

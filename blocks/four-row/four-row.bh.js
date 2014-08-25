@@ -4,7 +4,8 @@ module.exports = function (bh) {
             { elem: 'col', content: json.first },
             { elem: 'col', content: json.second },
             { elem: 'col', content: json.third },
-            { elem: 'col', content: json.four }
+            { elem: 'col', content: json.four },
+            { block: 'clearfix' }
         ]);
     });
 };
