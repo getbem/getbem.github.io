@@ -2,14 +2,17 @@
     color: white;
     border: 1px solid #FFF;
     border-radius: 6px;
+    background-color: rgba(33,33,33, 0.7);
     display: inline-block;
-    padding: 10px 15px;
+    padding: 15px 30px;
+    font-size: 20px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    text-decoration: none;
 }
 
 .button:hover {

@@ -27,7 +27,8 @@ module.exports = {
                     block: 'header',
                     content: [
                         { elem: 'title', content: 'BEM' },
-                        { elem: 'description', content: 'Block Element Modificator &mdash; code sharing, scalability, faster development' }
+                        { elem: 'description', content: 'Block Element Modificator &mdash; code sharing, scalability, faster development' },
+                        { block: 'get-started', mix: { block: 'centered', mods: {'textalign': true} } },
                     ]
                 },
                 {
@@ -56,10 +57,6 @@ module.exports = {
                         description: 'DOM navigation and manipulation',
                         image: 'img/JavaScript.png',
                         mix: { block: 'opaque' } }
-                },
-                {
-                    block: 'get-started',
-                    mix: { block: 'centered', mods: {'textalign': true} }
                 },
                 // {
                 //     block: 'gulp-bem',
