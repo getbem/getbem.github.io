@@ -8,13 +8,13 @@ module.exports = {
                 { block: 'meta', attrs: { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }},
                 {
                     elem: 'title',
-                    content: 'Gulp BEM is awesome!',
+                    content: 'Get BEM',
                 },
-                { block: 'meta', attrs: { name: 'keywords', content: '' }},
+                { block: 'meta', attrs: { name: 'keywords', content: 'BEM, gulp, yeoman, bootstrap' }},
                 { block: 'meta', attrs: { name: 'description', content: '' }},
 
-                { block: 'metalink', url: '/favicon.ico', attrs: { rel: 'icon', type: 'image/x-icon' }},
-                { block: 'metalink', url: '/favicon.ico', attrs: { rel: 'shortcut icon', type: 'image/x-icon' }},
+                { block: 'metalink', url: '/favicon.png', attrs: { rel: 'icon', type: 'image/x-icon' }},
+                { block: 'metalink', url: '/favicon.png', attrs: { rel: 'shortcut icon', type: 'image/x-icon' }},
 
                 { block: 'meta', attrs: { name: 'viewport', content: 'width=device-width, initial-scale=1' }},
                 { block: 'css', url: 'index.css' }

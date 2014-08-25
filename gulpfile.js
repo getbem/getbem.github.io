@@ -10,7 +10,7 @@ var buildBranch = require('buildbranch');
 var deps;
 var levels = [
     'libs/base',
-    'libs/google-analytics',    
+    'libs/google-analytics',
     'blocks',
     'pages/index'
 ];
@@ -43,7 +43,11 @@ gulp.task('cname', function () {
     return gulp.src('CNAME').pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['clean', 'html', 'css', 'cname']);
+gulp.task('assets', function () {
+    return gulp.src('assets/**').pipe(gulp.dest('dist'));
+});
+
+gulp.task('build', ['clean', 'html', 'css', 'assets', 'cname']);
 
 gulp.task('clean', function (cb) {
     del(['./dist'], cb);
