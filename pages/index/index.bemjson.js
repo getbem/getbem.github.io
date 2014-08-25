@@ -36,6 +36,7 @@ module.exports = {
                     first: { block: 'part',
                         name: 'gulp-bem',
                         description: 'building tool',
+                        href: 'https://github.com/floatdrop/gulp-bem',
                         image: 'img/gulp.png' },
 
                     second: { block: 'part',

@@ -2,4 +2,34 @@
     height: 200px;
     text-align: center;
     padding-top: 30px;
+    color: white;
+}
+
+.part img:hover {
+    -webkit-transform:scale(1.5); /* Safari and Chrome */
+    -moz-transform:scale(1.5); /* Firefox */
+    -ms-transform:scale(1.5); /* IE 9 */
+    -o-transform:scale(1.5); /* Opera */
+    transform:scale(1.5);
+}
+
+.part img {
+    text-decoration: none;
+    -webkit-transition: all 0.2s ease; /* Safari and Chrome */
+    -moz-transition: all 0.2s ease; /* Firefox */
+    -ms-transition: all 0.2s ease; /* IE 9 */
+    -o-transition: all 0.2s ease; /* Opera */
+    transition: all 0.2s ease;
+}
+
+.part a {
+    text-decoration: none;
+}
+
+.part a:hover {
+    color: #CCC;
+}
+
+.part a:visited {
+    color: #fff;
 }
