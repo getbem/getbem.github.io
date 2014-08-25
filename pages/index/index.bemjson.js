@@ -57,12 +57,15 @@ module.exports = {
                         image: 'img/JavaScript.png',
                         mix: { block: 'opaque' } }
                 },
+                {
+                    block: 'get-started',
+                    mix: { block: 'centered', mods: {'textalign': true} }
+                },
                 // {
-                //     block: 'get-started',
-                //     mix: { block: 'centered', mods: {'textalign': true} }
-                // },
-                // {
-                //     block: 'gulp-bem'
+                //     block: 'gulp-bem',
+                //     content: [
+                //         { block: 'paragraph', content: 'This project aimed to help you get on BEM methodology and provide build tools.' }
+                //     ]
                 // },
                 // {
                 //     block: 'authors',

@@ -3,6 +3,7 @@ module.exports = function (bh) {
         ctx.content({
             block: 'button',
             content: 'Get started',
+            href: 'https://github.com/matmuchrapna/gulp-bem-stub'
         });
     });
 };
