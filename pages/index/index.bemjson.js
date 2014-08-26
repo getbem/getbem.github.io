@@ -8,7 +8,7 @@ module.exports = {
                 { block: 'meta', attrs: { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }},
                 {
                     elem: 'title',
-                    content: 'Get BEM',
+                    content: 'BEM &mdash; Block Element Modificator',
                 },
                 { block: 'meta', attrs: { name: 'keywords', content: 'BEM, gulp, yeoman, bootstrap' }},
                 { block: 'meta', attrs: { name: 'description', content: '' }},
