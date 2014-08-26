@@ -47,7 +47,8 @@ module.exports = {
                         description: 'layer with bem blocks',
                         image: 'img/bootstrap.png',
                         href: 'https://github.com/matmuchrapna/bem-bootstrap',
-                        mix: { block: 'in-progress' } }
+                        inProgress: true
+                    }
                 },
                 // {
                 //     block: 'gulp-bem',
