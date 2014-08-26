@@ -34,29 +34,20 @@ module.exports = {
                 {
                     block: 'four-row',
 
-                    first: { block: 'part',
+                    first: { content: '&nbsp;' },
+
+                    second: { block: 'part',
                         name: 'gulp-bem',
                         description: 'building tool',
                         href: 'https://github.com/floatdrop/gulp-bem',
                         image: 'img/gulp.png' },
 
-                    second: { block: 'part',
+                    third: { block: 'part',
                         name: 'bem-bootstrap',
                         description: 'layer with bem blocks',
                         image: 'img/bootstrap.png',
-                        mix: { block: 'opaque' } },
-
-                    third: { block: 'part',
-                        name: 'generator-b_',
-                        description: 'scaffolding tool for BEM',
-                        image: 'img/yeoman.png',
-                        mix: { block: 'opaque' } },
-
-                    four: { block: 'part',
-                        name: '&nbsp;',
-                        description: 'DOM navigation and manipulation',
-                        image: 'img/JavaScript.png',
-                        mix: { block: 'opaque' } }
+                        href: 'https://github.com/matmuchrapna/bem-bootstrap',
+                        mix: { block: 'in-progress' } }
                 },
                 // {
                 //     block: 'gulp-bem',

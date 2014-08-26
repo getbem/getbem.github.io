@@ -1,0 +1,16 @@
+.in-progress:before {
+    position: absolute;
+    content: '';
+    background: rgba(0,0,0, 0.5); /*partially transparent image*/
+    width: 250px;
+    height: 250px;
+    opacity: 0.8;
+    pointer-events: none;
+    border-radius: 50%;
+    background-color: transparent;
+    margin-left: -75px;
+    margin-top: -75px;
+    background-image:
+        linear-gradient(-45deg, #262c32 50%, transparent 50%),
+        linear-gradient(90deg, #262c32 50%, transparent 50%);
+}
