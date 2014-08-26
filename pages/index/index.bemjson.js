@@ -26,7 +26,7 @@ module.exports = {
                 {
                     block: 'header',
                     content: [
-                        { elem: 'title', content: 'BEM' },
+                        { elem: 'title', content: { block: 'image', url: 'img/b.svg', attrs: { width: 250 }} },
                         { elem: 'description', content: 'Block Element Modificator &mdash; code sharing, scalability, faster development' },
                         { block: 'get-started', mix: { block: 'centered', mods: {'textalign': true} } },
                     ]
