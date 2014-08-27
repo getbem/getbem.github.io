@@ -68,6 +68,7 @@ module.exports = {
                 //             avatar: 'https://avatars0.githubusercontent.com/u/559321?v=2&s=460' },
                 //     ]
                 // }
+                { block: 'ga', ua: 'UA-15345174-10' }
             ]
         }
     ]
