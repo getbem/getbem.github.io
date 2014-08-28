@@ -23,51 +23,13 @@ module.exports = {
         {
             elem: 'body',
             content: [
+                require('./header.bemjson.js'),
                 {
-                    block: 'header',
+                    block: 'container',
                     content: [
-                        { elem: 'title', content: { block: 'image', url: 'img/b.svg', attrs: { width: 250 }} },
-                        { elem: 'description', content: 'Block Element Modificator &mdash; scalability, faster development, code sharing for the front-end' },
-                        { block: 'get-started', mix: { block: 'centered', mods: {'textalign': true} } },
+                        require('./tools.bemjson.js')
                     ]
                 },
-                {
-                    block: 'four-row',
-
-                    first: { content: '&nbsp;' },
-
-                    second: { block: 'part',
-                        name: 'gulp-bem',
-                        description: 'building tool',
-                        href: 'https://github.com/floatdrop/gulp-bem',
-                        image: 'img/gulp.png' },
-
-                    third: { block: 'part',
-                        name: 'bem-bootstrap',
-                        description: 'layer with bem blocks',
-                        image: 'img/bootstrap.png',
-                        href: 'https://github.com/matmuchrapna/bem-bootstrap',
-                        inProgress: true
-                    }
-                },
-                // {
-                //     block: 'gulp-bem',
-                //     content: [
-                //         { block: 'paragraph', content: 'This project aimed to help you get on BEM methodology and provide build tools.' }
-                //     ]
-                // },
-                // {
-                //     block: 'authors',
-                //     content: [
-                //         { elem: 'person',
-                //             name: 'Vsevolod Strukchinsky',
-                //             avatar: 'https://avatars2.githubusercontent.com/u/365089?v=2&s=460',
-                //             email: 'floatdrop@gmail.com' },
-                //         { elem: 'person',
-                //             name: 'Vladimir Starkov',
-                //             avatar: 'https://avatars0.githubusercontent.com/u/559321?v=2&s=460' },
-                //     ]
-                // }
                 { block: 'ga', ua: 'UA-15345174-10' }
             ]
         }

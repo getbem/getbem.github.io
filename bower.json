@@ -10,6 +10,8 @@
   ],
   "dependencies": {
     "base": "matmuchrapna/bem-base",
-    "google-analytics": "floatdrop/google-analytics-block"
+    "google-analytics": "floatdrop/google-analytics-block",
+    "pure-base": "floatdrop/pure-base",
+    "pure-grids": "floatdrop/pure-grids"
   }
 }
