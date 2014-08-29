@@ -13,7 +13,7 @@ module.exports = {
             content: 'Block Element Modificator is methodology, that helps you achieve reusable components and code sharing in the front-end' },
         { block: 'button',
             attrs: {
-                style: 'margin-top: 30px',
+                style: 'margin-top: 50px',
                 href: '#get-started'
             },
             content: 'Get started'

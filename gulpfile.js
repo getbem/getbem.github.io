@@ -4,6 +4,7 @@ var bh = require('gulp-bh');
 var concat = require('gulp-concat');
 var del = require('del');
 var buildBranch = require('buildbranch');
+var requireUncached = require('require-uncached');
 
 var levels = [
     'libs/base',
@@ -22,11 +23,8 @@ gulp.task('css', ['clean'], function () {
 });
 
 gulp.task('html', ['clean'], function () {
-    delete require.cache[require.resolve('./pages/index/index.bemjson.js')];
-    delete require.cache[require.resolve('./pages/index/header.bemjson.js')];
-    delete require.cache[require.resolve('./pages/index/tools.bemjson.js')];
     return bem.objects(levels).pipe(bem.src('{bem}.bh.js'))
-        .pipe(bh(require('./pages/index/index.bemjson.js'), 'index.html'))
+        .pipe(bh(requireUncached('./pages/index/index.bemjson.js'), 'index.html'))
         .pipe(gulp.dest('./dist'));
 });
 

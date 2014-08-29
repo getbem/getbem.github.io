@@ -1,4 +1,4 @@
 module.exports = {
     block: 'menu',
-    content: '&nbsp;'
+    content: 'Get BEM'
 };
