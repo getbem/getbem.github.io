@@ -3,7 +3,6 @@ var bem = require('gulp-bem');
 var bh = require('gulp-bh');
 var concat = require('gulp-concat');
 var del = require('del');
-var buildBranch = require('buildbranch');
 var requireUncached = require('require-uncached');
 
 var levels = [
@@ -36,23 +35,11 @@ gulp.task('assets', ['clean'], function () {
     return gulp.src('assets/**').pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['clean', 'html', 'css', 'assets', 'cname']);
-
 gulp.task('clean', function (cb) {
     del(['./dist'], cb);
 });
 
-gulp.task('watch', ['build'], function() {
-    return gulp.watch([
-        '{blocks,pages}/**/*.deps.js',
-        '{blocks,pages}/**/*.css',
-        '{blocks,pages}/**/*.bh.js',
-        '{blocks,pages}/**/*.bemjson.js'
-    ], ['build']);
-});
+gulp.task('build', ['clean', 'html', 'css', 'assets', 'cname']);
 
-gulp.task('gh', ['build'], function(done) {
-    buildBranch({ folder: 'dist' }, done);
-});
-
-gulp.task('default', ['watch']);
+/* Some external tasks */
+require('./gulpfile.ext.js');
