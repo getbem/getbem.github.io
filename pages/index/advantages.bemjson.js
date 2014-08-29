@@ -9,7 +9,7 @@ module.exports = {
             content: [
                 { block: 'advantage', content: [
                     { elem: 'head', content: 'Easy' },
-                    { elem: 'description', content: 'To use BEM you literally do not need nothing besides BEM&nbsp;naming (but&nbsp;we have&nbsp;some&nbsp;toys).' },
+                    { elem: 'description', content: 'To use BEM you literally do not need nothing besides BEM&nbsp;naming.' },
                 ] }
             ]
         },
@@ -18,7 +18,7 @@ module.exports = {
             content: [
                 { block: 'advantage', content: [
                     { elem: 'head', content: 'Modular' },
-                    { elem: 'description', content: 'Independent block and css selectors plus layers system makes your code reusable and modular.' },
+                    { elem: 'description', content: 'Independent blocks and css selectors plus layer system makes your code reusable and modular.' },
                 ] }
             ]
         },
@@ -27,7 +27,7 @@ module.exports = {
             content: [
                 { block: 'advantage', content: [
                     { elem: 'head', content: 'Flexible' },
-                    { elem: 'description', content: 'We provide methodology and tools, that can be recomposed and configured in the way you like BEM.' },
+                    { elem: 'description', content: 'Methodology and tools, that can be recomposed and configured in the way you like BEM.' },
                 ] }
             ]
         }
