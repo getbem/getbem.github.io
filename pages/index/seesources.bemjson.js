@@ -1,6 +1,6 @@
 module.exports = {
     attrs: {
-        style: 'padding: 1em; text-align: center; background-color: #333;'
+        style: 'padding: 1em; text-align: center; background-color: #30701d;'
     },
     content: {
         block: 'button',
