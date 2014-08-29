@@ -3,4 +3,11 @@
     line-height: 1.7em;
     color: #333;
     margin: 1em 2em;
+    font-size: 12px;
+}
+
+@media screen and (min-width: 48em) {
+    .advantage__description {
+        font-size: 16px;
+    }
 }

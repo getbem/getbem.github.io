@@ -1,4 +1,10 @@
 .menu {
-    height: 50px;
     background-color: white;
+    text-align: center;
+}
+
+@media screen and (min-width: 35.5em) {
+    .menu {
+        text-align: left;
+    }
 }

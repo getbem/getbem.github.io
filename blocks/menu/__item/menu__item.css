@@ -1,0 +1,22 @@
+.menu__item {
+    padding: 5px 20px;
+
+    vertical-align: middle;
+    color: #666;
+    display: inline-block;
+    font-size: 12px;
+    clear: both;
+    line-height: 1.5em;
+}
+
+.menu__item:hover {
+    background-color: #EEE;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 35.5em) {
+    .menu__item {
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+}
