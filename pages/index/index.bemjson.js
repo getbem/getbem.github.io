@@ -37,7 +37,8 @@ module.exports = {
                         require('./getstarted.bemjson.js'),
                     ]
                 },
-                require('./seesources.bemjson.js'),
+                { block: 'separator' },
+                //require('./seesources.bemjson.js'),
                 { block: 'ga', ua: 'UA-15345174-10' }
             ]
         }

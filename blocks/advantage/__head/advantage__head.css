@@ -1,11 +1,11 @@
 .advantage__head {
     color: #888;
-    font-size: 16px;
+    font-size: 20px;
     margin: 1em 0;
 }
 
 @media screen and (min-width: 48em) {
     .advantage__head {
-        font-size: 20px;
+        font-size: 24px;
     }
 }
