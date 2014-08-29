@@ -8,7 +8,7 @@ module.exports = {
             elem: 'col', mods: { '1-3': 'sm', '1': true },
             content: [
                 { block: 'advantage', content: [
-                    { elem: 'head', content: 'Get Started Quickly' },
+                    { elem: 'head', content: 'Easy' },
                     { elem: 'description', content: 'To use BEM you literally do not need nothing besides BEM&nbsp;naming (but&nbsp;we have&nbsp;some&nbsp;toys).' },
                 ] }
             ]
