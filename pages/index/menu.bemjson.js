@@ -2,7 +2,9 @@ module.exports = {
     block: 'menu',
     content: [
         { elem: 'heading', content: 'Get BEM' },
-        { elem: 'item', content: 'Awesome BEM', url: 'https://github.com/floatdrop/awesome-bem' },
-        { elem: 'item', content: 'BEM.info', url: 'https://bem.info/' }
+        { elem: 'item', content: 'Name', url: '#naming' },
+        { elem: 'item', content: 'Structure', url: '#file-structure' },
+        { elem: 'item', content: 'Build', url: '#build' },
+        { elem: 'item', content: 'Awesome!', url: 'https://github.com/floatdrop/awesome-bem' }
     ]
 };

@@ -1,8 +1,8 @@
 .menu__item {
-    padding: 5px 20px;
-
+    padding: 5px 21px;
     vertical-align: middle;
     color: #666;
+    text-decoration: none;
     display: inline-block;
     font-size: 12px;
     clear: both;
@@ -10,13 +10,14 @@
 }
 
 .menu__item:hover {
-    background-color: #EEE;
+    color: #111;
+    background-color: #FFF;
     cursor: pointer;
 }
 
 @media screen and (min-width: 35.5em) {
     .menu__item {
-        padding: 10px 30px;
+        padding: 10px 20px;
         font-size: 16px;
     }
 }
