@@ -10,7 +10,7 @@ module.exports = {
             }
         },
         { elem: 'description',
-            content: 'Block Element Modificator is methodology, that helps you achieve reusable components and code sharing in the front-end' },
+            content: 'Block&nbsp;Element&nbsp;Modificator is methodology, that helps you achieve reusable components and code sharing in the front-end' },
         { block: 'button',
             attrs: {
                 style: 'margin-top: 50px'
