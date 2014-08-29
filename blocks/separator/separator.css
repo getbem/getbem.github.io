@@ -1,4 +1,5 @@
-.separator
-{
-
+.separator {
+    border-bottom: 1px solid #E5E5E5;
+    padding-top: 25px;
+    margin-bottom: 25px;
 }

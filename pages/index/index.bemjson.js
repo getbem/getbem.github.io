@@ -23,11 +23,18 @@ module.exports = {
         {
             elem: 'body',
             content: [
+                require('./menu.bemjson.js'),
                 require('./header.bemjson.js'),
-                {
-                    block: 'container',
+                { block: 'container',
                     content: [
-                        require('./tools.bemjson.js')
+                        require('./advantages.bemjson.js'),
+                    ]
+                },
+                { block: 'separator' },
+                { block: 'container',
+                    content: [
+                        { block: 'link', attrs: { id: 'get-started' } },
+                        require('./getstarted.bemjson.js'),
                     ]
                 },
                 { block: 'ga', ua: 'UA-15345174-10' }

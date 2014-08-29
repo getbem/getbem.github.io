@@ -1,7 +1,9 @@
 .header {
-    height: 420px;
-    padding-top: 80px;
+    height: 470px;
+    padding-top: 100px;
+    margin-bottom: 25px;
     color: white;
     background-image: url('img/header-background.jpg');
     background-size: cover;
+    text-align: center;
 }

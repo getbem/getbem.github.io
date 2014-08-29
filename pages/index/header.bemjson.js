@@ -1,17 +1,22 @@
 module.exports = {
     block: 'header',
     content: [
-        { elem: 'title',
-            content: {
-                block: 'image',
-                url: 'img/b.svg',
-                attrs: { width: 250 },
-                mix: { block: 'centered', mods: {'margin': true} }
+        {
+            block: 'image',
+            url: 'img/b.svg',
+            attrs: {
+                width: 250,
+                style: 'display: inline-block;'
             }
         },
         { elem: 'description',
-            content: 'Block Element Modificator &mdash; scalability, faster development, code sharing for the front-end' },
-        { block: 'get-started',
-            mix: { block: 'centered', mods: {'textalign': true} } },
+            content: 'Block Element Modificator is methodology, that helps you achieve reusable components and code sharing in the front-end' },
+        { block: 'button',
+            attrs: {
+                style: 'margin-top: 30px',
+                href: '#get-started'
+            },
+            content: 'Get started'
+        }
     ]
 };

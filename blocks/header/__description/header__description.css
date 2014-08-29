@@ -1,8 +1,33 @@
 .header__description {
     max-width: 1024px;
     margin: auto;
-    padding-top: 20px;
-    font-size: 16pt;
+    padding: 20px 50px 0px 50px;
+    font-size: 20px;
     text-align: center;
-    text-shadow: 0px 2px 0px #333;
+    text-shadow: 0px 2px 1px #000;
+    font-family: "omnes-pro",sans-serif;
+}
+
+@media screen and (min-width: 35.5em) {
+    .header__description {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 48em) {
+    .header__description {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .header__description {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 80em) {
+    .header__description {
+        font-size: 30px;
+    }
 }
