@@ -28,6 +28,7 @@
     "gulp": "^3.8.6",
     "gulp-bem": "^0.5.0",
     "gulp-bem-debug": "^0.2.0",
+    "gulp-bem-pack": "^0.1.1",
     "gulp-concat": "^2.3.4",
     "gulp-jade": "^0.7.0",
     "gulp-plumber": "^0.6.5",

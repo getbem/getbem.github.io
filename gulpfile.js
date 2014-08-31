@@ -4,14 +4,21 @@ var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 var del = require('del');
 var jade = require('gulp-jade');
+var pack = require('gulp-bem-pack');
 
 var levels = [
     'libs/pure-base',
     'libs/pure-grids',
-    'libs/google-analytics',
     'blocks',
     'pages'
 ];
+
+gulp.task('js', ['clean'], function () {
+    return bem.objects(levels)
+        .pipe(bem.src('{bem}.js'))
+        .pipe(pack('index.js'))
+        .pipe(gulp.dest('./dist'));
+});
 
 gulp.task('css', ['clean'], function () {
     return bem.objects(levels)
@@ -41,7 +48,7 @@ gulp.task('clean', function (cb) {
     del(['./dist'], cb);
 });
 
-gulp.task('build', ['clean', 'html', 'css', 'assets', 'cname']);
+gulp.task('build', ['clean', 'html', 'css', 'js', 'assets', 'cname']);
 
 /* Some external tasks */
 require('./gulpfile.ext.js');
