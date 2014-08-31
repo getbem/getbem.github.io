@@ -23,6 +23,7 @@ gulp.task('css', ['clean'], function () {
 gulp.task('html', ['clean'], function () {
     return bem.objects(levels)
         .pipe(bem.src('{bem}.jade'))
+        .pipe(concat('index.jade'))
         .pipe(plumber())
         .pipe(jade({pretty: true}))
         .pipe(gulp.dest('./dist'));
