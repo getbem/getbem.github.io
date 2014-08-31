@@ -1,4 +1,4 @@
-.advantage__description {
+.advantage__desc {
     font-weight: 300;
     line-height: 1.7em;
     color: #333;
@@ -7,7 +7,7 @@
 }
 
 @media screen and (min-width: 48em) {
-    .advantage__description {
+    .advantage__desc {
         font-size: 16px;
     }
 }
