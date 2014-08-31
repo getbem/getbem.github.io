@@ -1,4 +1,4 @@
-.header__description {
+.header__desc {
     max-width: 1024px;
     margin: auto;
     padding: 20px 50px 0px 50px;
@@ -9,25 +9,25 @@
 }
 
 @media screen and (min-width: 35.5em) {
-    .header__description {
+    .header__desc {
         font-size: 20px;
     }
 }
 
 @media screen and (min-width: 48em) {
-    .header__description {
+    .header__desc {
         font-size: 20px;
     }
 }
 
 @media screen and (min-width: 64em) {
-    .header__description {
+    .header__desc {
         font-size: 24px;
     }
 }
 
 @media screen and (min-width: 80em) {
-    .header__description {
+    .header__desc {
         font-size: 30px;
     }
 }

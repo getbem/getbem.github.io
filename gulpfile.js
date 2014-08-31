@@ -1,12 +1,11 @@
 var gulp = require('gulp');
 var bem = require('gulp-bem');
-var bh = require('gulp-bh');
+var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 var del = require('del');
 var jade = require('gulp-jade');
 
 var levels = [
-    'libs/base',
     'libs/pure-base',
     'libs/pure-grids',
     'libs/google-analytics',
@@ -24,6 +23,7 @@ gulp.task('css', ['clean'], function () {
 gulp.task('html', ['clean'], function () {
     return bem.objects(levels)
         .pipe(bem.src('{bem}.jade'))
+        .pipe(plumber())
         .pipe(jade({pretty: true}))
         .pipe(gulp.dest('./dist'));
 });
