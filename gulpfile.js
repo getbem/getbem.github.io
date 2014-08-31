@@ -3,7 +3,7 @@ var bem = require('gulp-bem');
 var bh = require('gulp-bh');
 var concat = require('gulp-concat');
 var del = require('del');
-var requireUncached = require('require-uncached');
+var jade = require('gulp-jade');
 
 var levels = [
     'libs/base',
@@ -22,8 +22,9 @@ gulp.task('css', ['clean'], function () {
 });
 
 gulp.task('html', ['clean'], function () {
-    return bem.objects(levels).pipe(bem.src('{bem}.bh.js'))
-        .pipe(bh(requireUncached('./pages/index/index.bemjson.js'), 'index.html'))
+    return bem.objects(levels)
+        .pipe(bem.src('{bem}.jade'))
+        .pipe(jade({pretty: true}))
         .pipe(gulp.dest('./dist'));
 });
 

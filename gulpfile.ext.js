@@ -5,8 +5,7 @@ gulp.task('watch', ['build'], function() {
     return gulp.watch([
         '{blocks,pages}/**/*.deps.js',
         '{blocks,pages}/**/*.css',
-        '{blocks,pages}/**/*.bh.js',
-        '{blocks,pages}/**/*.bemjson.js'
+        '{blocks,pages}/**/*.jade'
     ], ['build']);
 });
 
