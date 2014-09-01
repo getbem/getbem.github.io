@@ -4,3 +4,7 @@
     color: #333;
     margin: 1em 0em;
 }
+
+.step__desc a img {
+    vertical-align: middle;
+}
