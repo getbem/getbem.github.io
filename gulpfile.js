@@ -5,8 +5,8 @@ var concat = require('gulp-concat');
 var del = require('del');
 var jade = require('gulp-jade');
 var pack = require('gulp-bem-pack');
-var through = require('through2');
-var array = require('stream-array');
+var save = require('save-stream');
+var multistream = require('multistream');
 var basename = require('path').basename;
 
 var levels = [
@@ -29,30 +29,24 @@ gulp.task('css', ['clean'], function () {
         .pipe(gulp.dest('./dist'));
 });
 
-var mixins;
-
-gulp.task('mixins', function (cb) {
-    bem.objects(levels)
+gulp.task('html', ['clean'], function () {
+    var mixins = bem.objects(levels)
         .pipe(bem.src('{bem}.jade'))
         .pipe(concat('mixins.jade'))
-        .on('data', function (obj) {
-            mixins = obj;
-            cb();
-        });
-});
+        .pipe(save());
 
-gulp.task('html', ['clean', 'mixins'], function () {
     return bem.objects('pages')
-        .pipe(bem.src('{bem}.jade'))
-        .pipe(through.obj(function (page, enc, cb) {
-            array([mixins, page])
-                .pipe(concat(basename(page.path)))
+        .src('{bem}.jade')
+        .each(function (page) {
+            return multistream([mixins, [page]])
+                .pipe(concat({
+                    cwd: page.cwd,
+                    path: page.path
+                }))
                 .pipe(plumber())
-                .pipe(jade({pretty: true, filename: page.path}))
-                .pipe(gulp.dest('./dist'))
-                .on('error', cb)
-                .on('end', cb);
-        }));
+                .pipe(jade({pretty: true}))
+                .pipe(gulp.dest('./dist'));
+        });
 });
 
 gulp.task('cname', ['clean'], function () {
