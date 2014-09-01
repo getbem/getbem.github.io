@@ -5,12 +5,14 @@ var concat = require('gulp-concat');
 var del = require('del');
 var jade = require('gulp-jade');
 var pack = require('gulp-bem-pack');
+var through = require('through2');
+var array = require('stream-array');
+var basename = require('path').basename;
 
 var levels = [
     'libs/pure-base',
     'libs/pure-grids',
-    'blocks',
-    'pages'
+    'blocks'
 ];
 
 gulp.task('js', ['clean'], function () {
@@ -27,13 +29,30 @@ gulp.task('css', ['clean'], function () {
         .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('html', ['clean'], function () {
-    return bem.objects(levels)
+var mixins;
+
+gulp.task('mixins', function (cb) {
+    bem.objects(levels)
         .pipe(bem.src('{bem}.jade'))
-        .pipe(concat('index.jade'))
-        .pipe(plumber())
-        .pipe(jade({pretty: true}))
-        .pipe(gulp.dest('./dist'));
+        .pipe(concat('mixins.jade'))
+        .on('data', function (obj) {
+            mixins = obj;
+            cb();
+        });
+});
+
+gulp.task('html', ['clean', 'mixins'], function () {
+    return bem.objects('pages')
+        .pipe(bem.src('{bem}.jade'))
+        .pipe(through.obj(function (page, enc, cb) {
+            array([mixins, page])
+                .pipe(concat(basename(page.path)))
+                .pipe(plumber())
+                .pipe(jade({pretty: true, filename: page.path}))
+                .pipe(gulp.dest('./dist'))
+                .on('error', cb)
+                .on('end', cb);
+        }));
 });
 
 gulp.task('cname', ['clean'], function () {
