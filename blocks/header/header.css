@@ -1,5 +1,5 @@
 .header {
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 50px;
     margin-bottom: 25px;
     color: white;
@@ -8,4 +8,14 @@
     background-color: #262c32;
     background-size: cover;
     text-align: center;
+}
+
+.header img {
+    width: 128px;
+}
+
+@media screen and (min-width: 48em) {
+    .header img {
+        width: 192px;
+    }
 }
