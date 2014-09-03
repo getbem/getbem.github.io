@@ -49,7 +49,7 @@ index.css
 
 As you can see, all element files for block are placed into directory, that begins with `__` and same rules applies for modificators, but prefix is shorter — `_`.
 
-Now you probably want to include all CSS files with `<style>` tags in `index.html` file. This is one way to do it, but we recommend you to use build system like [gulpjs](https://github.com/gulpjs/gulp). We even wrote a section [Building](/building.html) about it.
+Now you probably want to include all CSS files with `<style>` tags in `index.html` file. This is one way to do it, but we recommend you to use build system like [gulpjs][gulp]. We even wrote a section [Building](/building.html) about it.
 
 ## Levels
 
@@ -76,7 +76,7 @@ index.css
 
 Yay! You have your own `Level` of declaration in your project!
 
-Now we get some responsive grids in our project. We will use [pure-grids](https://github.com/floatdrop/pure-grids) from [purecss.io](http://purecss.io/grids/), but ported version of them on BEM methodology.
+Now we get some responsive grids in our project. We will use [pure-grids][pure-grids] from [purecss.io][purecss-grids], but ported version of them on BEM methodology.
 
 For easy installation you will need [bower.io](https://bower.io) package manager. Follow the [instructions](http://bower.io/#install-bower) to install bower.
 
@@ -90,3 +90,8 @@ This will install `pure-grids` layer into `vendor` folder. All blocks for grids 
 
 Now you are ready to build your project with multiple levels.
 Follow to the [building](/building.html) section to read about it.
+
+
+[gulp]: https://github.com/gulpjs/gulp
+[pure-grids]: https://github.com/floatdrop/pure-grids
+[purecss-grids]: http://purecss.io/grids/
