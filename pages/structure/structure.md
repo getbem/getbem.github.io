@@ -74,7 +74,7 @@ blocks/
 index.css
 ```
 
-Yay! You have your own `Level` of declaration!
+Yay! You have your own `Level` of declaration in your project!
 
 Now we get some responsive grids in our project. We will use [pure-grids](https://github.com/floatdrop/pure-grids) from [purecss.io](http://purecss.io/grids/), but ported version of them on BEM methodology.
 
@@ -86,7 +86,7 @@ Installation of layer is easy and fast:
 bower install floatdrop/pure-grids
 ```
 
-This will install `pure-grids` into `vendor` folder. All blocks for grids (actually one block) is in `vendor/pure-grids` directory.
+This will install `pure-grids` layer into `vendor` folder. All blocks for grids (actually one block) is in `vendor/pure-grids` directory.
 
 Now you are ready to build your project with multiple levels.
 Follow to the [building](/building.html) section to read about it.
