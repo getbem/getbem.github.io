@@ -51,7 +51,7 @@ As you can see, all element files for block are placed into directory, that begi
 
 Now you probably want to include all CSS files with `<style>` tags in `index.html` file. This is one way to do it, but we recommend you to use build system like [gulpjs](https://github.com/gulpjs/gulp). We even wrote a section [Building](/building.html) about it.
 
-## Advanced structuring
+## Levels
 
 This section is all about `Levels`. Idea is simple — we want a way to extend CSS/JavaScript/Templates of Block from already builded libraries of Blocks.
 
@@ -73,3 +73,20 @@ blocks/
         page.css
 index.css
 ```
+
+Yay! You have your own `Level` of declaration!
+
+Now we get some responsive grids in our project. We will use [pure-grids](https://github.com/floatdrop/pure-grids) from [purecss.io](http://purecss.io/grids/), but ported version of them on BEM methodology.
+
+For easy installation you will need [bower.io](https://bower.io) package manager. Follow the [instructions](http://bower.io/#install-bower) to install bower.
+
+Installation of layer is easy and fast:
+
+```bash
+bower install floatdrop/pure-grids
+```
+
+This will install `pure-grids` into `vendor` folder. All blocks for grids (actually one block) is in `vendor/pure-grids` directory.
+
+Now you are ready to build your project with multiple levels.
+Follow to the [building](/building.html) section to read about it.
