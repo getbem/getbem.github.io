@@ -7,7 +7,8 @@ var jade = require('gulp-jade');
 var pack = require('gulp-bem-pack');
 var save = require('save-stream');
 var multistream = require('multistream');
-var basename = require('path').basename;
+var array = require('stream-array');
+var through = require('through2');
 
 var levels = [
     'libs/pure-base',
@@ -36,17 +37,22 @@ gulp.task('html', ['clean'], function () {
         .pipe(save());
 
     return bem.objects('pages')
-        .src('{bem}.jade')
-        .each(function (page) {
-            return multistream([mixins, [page]])
-                .pipe(concat({
-                    cwd: page.cwd,
-                    path: page.path
+        .pipe(bem.src('{bem}.jade'))
+        .pipe(through.obj(function (page, enc, cb) {
+            return multistream.obj([mixins.load(), array([page])])
+                .pipe(concat('result.js'))
+                .pipe(through.obj(function (file, enc, cb) {
+                    file.cwd = page.cwd;
+                    file.base = page.base;
+                    file.path = page.path;
+                    cb(null, file);
                 }))
                 .pipe(plumber())
                 .pipe(jade({pretty: true}))
-                .pipe(gulp.dest('./dist'));
-        });
+                .pipe(gulp.dest('./dist'))
+                .on('error', cb)
+                .on('end', cb);
+        }));
 });
 
 gulp.task('cname', ['clean'], function () {
