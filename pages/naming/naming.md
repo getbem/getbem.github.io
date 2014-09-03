@@ -31,4 +31,4 @@ In block selector `.form {}` you declare base styles for form. In mods selectors
 
 ## Next step
 
-If you want to try the whole power of BEM you should teach about [BEM folder structure][/structure], [levels of redefinitions][/levels].
+If you want to try the whole power of BEM you should teach about [BEM folder structure](/structure), [levels of redefinitions](/levels).
