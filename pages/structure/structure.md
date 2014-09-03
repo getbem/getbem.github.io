@@ -91,7 +91,6 @@ This will install `pure-grids` layer into `vendor` folder. All blocks for grids 
 Now you are ready to build your project with multiple levels.
 Follow to the [building](/building.html) section to read about it.
 
-
 [gulp]: https://github.com/gulpjs/gulp
 [pure-grids]: https://github.com/floatdrop/pure-grids
 [purecss-grids]: http://purecss.io/grids/
