@@ -17,7 +17,7 @@ var levels = [
 ];
 
 gulp.task('js', ['clean'], function () {
-    return bem.objects(levels)
+    return multistream.obj([bem.objects(levels), bem.objects('pages')])
         .pipe(bem.src('{bem}.js'))
         .pipe(pack('index.js'))
         .pipe(gulp.dest('./dist'));
