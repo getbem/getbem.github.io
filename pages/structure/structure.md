@@ -74,7 +74,7 @@ blocks/
 index.css
 ```
 
-Yay! You have your own `Level` of declaration!
+Yay! You have your own `Level` of declaration in your project!
 
 Now we get some responsive grids in our project. We will use [pure-grids](https://github.com/floatdrop/pure-grids) from [purecss.io](http://purecss.io/grids/), but ported version of them on BEM methodology.
 
