@@ -58,29 +58,6 @@ npm i gulp gulp-concat
 
 Now if you will type `gulp` in command line, you will build `index.css` file in `dist` directory.
 
-This is quite nice and small build config but with one small issue — `gulp.src` does not guaranteeing you order, in which files are coming to `concat`. Also we concatenate all CSS files, that not belong to current BEM directory (like `old_form.css` in `form` directory).
-
-To fix this problem we wrote [gulp-bem][gulp-bem] — it has some sweet helpers to work with levels and files in Blocks, Elements and Modificators folders.
-
-```
-npm i gulp-bem
-```
-
-It takes 2 lines to change to fix ordering issue and filter non-relevant CSS files:
-
-```js
-var gulp = require('gulp');
-var bem = require('gulp-bem');
-var concat = require('gulp-concat');
-
-gulp.task('default', function () {
-    return bem.objects(['vendor/pure-grids', 'blocks'])
-        .pipe(bem.src('{bem}.src'))
-        .pipe(concat('index.css'))
-        .pipe(gulp.dest('dist'));
-});
-```
-
 Your CSS is ready!
 
 [gulp]: https://github.com/gulpjs/gulp
