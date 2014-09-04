@@ -6,8 +6,7 @@ var del = require('del');
 var jade = require('gulp-jade');
 var pack = require('gulp-bem-pack');
 var save = require('save-stream');
-var multistream = require('multistream');
-var array = require('stream-array');
+var glue = require('glue-streams');
 var through = require('through2');
 
 var levels = [
@@ -17,7 +16,7 @@ var levels = [
 ];
 
 gulp.task('js', ['clean'], function () {
-    return multistream.obj([bem.objects(levels), bem.objects('pages')])
+    return glue.obj(bem.objects(levels), bem.objects('pages'))
         .pipe(bem.src('{bem}.js'))
         .pipe(pack('index.js'))
         .pipe(gulp.dest('./dist'));
@@ -33,13 +32,12 @@ gulp.task('css', ['clean'], function () {
 gulp.task('html', ['clean'], function () {
     var mixins = bem.objects(levels)
         .pipe(bem.src('{bem}.jade'))
-        .pipe(concat('mixins.jade'))
         .pipe(save());
 
     return bem.objects('pages')
         .pipe(bem.src('{bem}.jade'))
         .pipe(through.obj(function (page, enc, cb) {
-            return multistream.obj([mixins.load(), array([page])])
+            return glue.obj(mixins.load(), page)
                 .pipe(concat('result.js'))
                 .pipe(through.obj(function (file, enc, cb) {
                     file.cwd = page.cwd;
