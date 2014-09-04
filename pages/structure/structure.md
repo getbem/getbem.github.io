@@ -1,3 +1,5 @@
+# Structure
+
 While structuring your site in BEM way is good for performance and development, storing all CSS in one file is not a good idea for growing project.
 
 If you followed [Naming](/naming.html) section, you should have next file structure:

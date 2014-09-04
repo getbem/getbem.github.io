@@ -1,3 +1,5 @@
+# Building
+
 Now you have structured project with BEM in mind:
 
 ```
@@ -48,7 +50,7 @@ gulp.task('default', function () {
 });
 ```
 
-Gulp file is ready. Time to install dependencies: 
+Gulp file is ready. Time to install dependencies:
 
 ```bash
 npm i gulp gulp-concat
@@ -84,4 +86,4 @@ Your CSS is ready!
 [gulp]: https://github.com/gulpjs/gulp
 [gulp-plugins]: http://gulpjs.com/plugins/
 [gulp-concat]: https://github.com/wearefractal/gulp-concat
-[gulp-bem]: https://github.com/floatdrop/gulp-bem 
+[gulp-bem]: https://github.com/floatdrop/gulp-bem

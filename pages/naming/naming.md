@@ -1,4 +1,4 @@
-**BEM is all about naming!**
+# Naming
 
 Firstly, you should start properly name your classes, like `block` for block entities, `block__elem` for block's elements, `block_mod_value` and `block__elem_mod_value` for block's mods and elem's mods, respectively.
 
