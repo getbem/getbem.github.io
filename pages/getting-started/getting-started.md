@@ -1,9 +1,3 @@
 # Getting started
 
-## BEM 101
-## BEM history introduction
-## BEM advantages
-
-
-
-
+Be first, who write this article or start reading about [naming](naming.html).
