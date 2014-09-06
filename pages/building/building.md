@@ -37,7 +37,11 @@ All build configurations for gulp is stored in `gulpfile.js` in the root of the 
 var gulp = require('gulp');
 ```
 
-As you can see, we will write our build configuration in JavaScript. gulp has nice API, that allows you to get files quick and easy. For our needs we will get all CSS files and concatenate them with [gulp-concat][gulp-concat] plugin (there are more than [600 plugins][gulp-plugins] for now):
+As you can see, we will write our build configuration in JavaScript. gulp has nice API, that allows you to get files quick and easy.
+
+## Building CSS
+
+Since BEM is methodology of non-dependent blocks without CSS cascading problems we can take CSS files and concatenate them with [gulp-concat][gulp-concat] plugin (there are more than [600 plugins][gulp-plugins] for now):
 
 ```js
 var gulp = require('gulp');
