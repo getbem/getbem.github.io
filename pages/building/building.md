@@ -53,7 +53,7 @@ gulp.task('default', function () {
 Gulp file is ready. Time to install dependencies:
 
 ```bash
-npm i gulp gulp-concat
+npm i --save gulp gulp-concat
 ```
 
 Now if you will type `gulp` in command line, you will build `index.css` file in `dist` directory.
