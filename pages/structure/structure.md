@@ -34,7 +34,7 @@ page/
 index.html
 ```
 
-While creating blocks is pretty straight forwad, there are some rules how create elements and modificators folders inside block folder:
+While creating blocks is pretty straight forwad, there are some rules how create elements and modifiers folders inside block folder:
 
 ```
 form/
@@ -49,7 +49,7 @@ page/
 index.css
 ```
 
-As you can see, all element files for block are placed into directory, that begins with `__` and same rules applies for modificators, but prefix is shorter — `_`.
+As you can see, all element files for block are placed into directory, that begins with `__` and same rules applies for modifiers, but prefix is shorter — `_`.
 
 Now you probably want to include all CSS files with `<style>` tags in `index.html` file. This is one way to do it, but we recommend you to use build system like [gulpjs][gulp]. We even wrote a section [Building](/building.html) about it.
 
