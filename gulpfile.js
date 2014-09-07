@@ -38,13 +38,7 @@ gulp.task('html', ['clean'], function () {
         .pipe(bem.src('{bem}.jade'))
         .pipe(through.obj(function (page, enc, cb) {
             return glue.obj(mixins.load(), page)
-                .pipe(concat('result.js'))
-                .pipe(through.obj(function (file, enc, cb) {
-                    file.cwd = page.cwd;
-                    file.base = page.base;
-                    file.path = page.path;
-                    cb(null, file);
-                }))
+                .pipe(concat(page))
                 .pipe(plumber())
                 .pipe(jade({pretty: true}))
                 .pipe(gulp.dest('./dist'))
