@@ -58,9 +58,7 @@ Gulp file is ready. Time to install dependencies:
 npm i --save gulp gulp-concat
 ```
 
-Now if you will type `gulp` in command line, you will build `index.css` file in `dist` directory.
-
-Your CSS is ready!
+Now if you will type `gulp` in command line, you will build `index.css` file in `dist` directory. Your CSS is ready!
 
 ## Building JavaScript
 
@@ -114,9 +112,7 @@ gulp.task('default', function () {
 });
 ```
 
-You can build your JavaScript with bare browserify plugin, but you will have to handle path resolving, which is handled by [bem-pack](https://github.com/floatdrop/gulp-bem-pack) in this example.
-
-JavaScript is ready to go!
+You can build your JavaScript with bare browserify plugin, but you will have to handle path resolving, which is handled by [bem-pack](https://github.com/floatdrop/gulp-bem-pack) in this example. JavaScript is ready to go!
 
 ## Building Templates
 
@@ -158,7 +154,7 @@ gulp.task('default', function () {
 });
 ```
 
-Jade is not well suited for mixin extension, but for small projects it is a very good start. If you need more template tools, you can look at [BH](https://github.com/enb-make/bh).
+Jade is not well suited for mixin extension, but for small projects it is a very good start.
 
 [gulp]: https://github.com/gulpjs/gulp
 [gulp-plugins]: http://gulpjs.com/plugins/
