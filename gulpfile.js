@@ -26,10 +26,19 @@ gulp.task('js', ['clean'], function () {
 });
 
 gulp.task('css', ['clean'], function () {
-    return bem.objects(levels)
+    var levelsCss = bem.objects(levels)
         .pipe(bem.src('{bem}.css'))
-        .pipe(concat('index.css'))
-        .pipe(gulp.dest('./dist'));
+        .pipe(save());
+
+    return bem.objects('pages')
+        .pipe(bem.src('{bem}.css'))
+        .pipe(through.obj(function (page, enc, cb) {
+            return glue.obj(levelsCss.load(), page)
+                .pipe(concat(page))
+                .pipe(gulp.dest('./dist'))
+                .on('error', cb)
+                .on('end', cb);
+        }));
 });
 
 gulp.task('html', ['clean'], function () {
