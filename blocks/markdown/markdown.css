@@ -12,18 +12,21 @@
     font-size: 200%;
     padding-top: 1em;
     margin: 0em 0em;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .markdown > h2 {
     font-size: 175%;
     padding-top: 1em;
     margin: 0em 0em;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .markdown > h3 {
     font-size: 150%;
     padding-top: 1em;
     margin: 0em 0em;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .markdown > p {

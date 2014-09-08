@@ -23,9 +23,7 @@ blocks/
 index.css
 ```
 
-It is quite a lot of CSS files, if you compare to one `index.css`. Lets build them together!
-
-For building we will use [gulpjs][gulp] - it is simple streaming build system.
+It is quite a lot of CSS files, if you compare to one `index.css`. Lets build them together! For building we will use [gulpjs][gulp] - it is simple streaming build system.
 
 ```bash
 npm install gulp -g
@@ -122,9 +120,7 @@ JavaScript is ready to go!
 
 ## Building Templates
 
-This is most complex part, because you can't just concatinate HTML files and template engine often will not support you in this task.
-
-We will demonstrate how to build Jade templates with help of Jade mixins to get something like custom blocks.
+This is most complex part, because you can't just concatinate HTML files and template engine often will not support you in this task. We will demonstrate how to build Jade templates with help of Jade mixins to get something like custom blocks.
 
 First we create `index.jade` file with next content:
 
