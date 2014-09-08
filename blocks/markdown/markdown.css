@@ -1,0 +1,53 @@
+.markdown * {
+    font-weight: 300;
+    line-height: 1.7em;
+    font-size: 16px;
+}
+
+.markdown > ol {
+    color: #333;
+}
+
+.markdown > h1 {
+    font-size: 200%;
+    padding-top: 1em;
+    margin: 0em 0em;
+}
+
+.markdown > h2 {
+    font-size: 175%;
+    padding-top: 1em;
+    margin: 0em 0em;
+}
+
+.markdown > h3 {
+    font-size: 150%;
+    padding-top: 1em;
+    margin: 0em 0em;
+}
+
+.markdown > p {
+    color: #333;
+    margin: 1em 0em;
+}
+
+
+.markdown pre code, .markdown pre code * {
+    font-size: 12px;
+}
+
+.markdown ol code, .markdown p code {
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    padding: 0;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(0,0,0,0.04);
+    border-radius: 3px;
+}
+
+.markdown ol code:before, .markdown ol code:after, .markdown p code:before, .markdown p code:after {
+    letter-spacing: -0.2em;
+    content: "\00a0";
+}

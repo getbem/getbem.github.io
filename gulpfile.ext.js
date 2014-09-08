@@ -8,8 +8,8 @@ gulp.task('watch', ['build'], function() {
         '{blocks,pages}/**/*.css',
         '{blocks,pages}/**/*.jade',
         '{blocks,pages}/**/*.md'
-    ], function (files, cb) {
-        gulp.start('build', cb);
+    ], function (files) {
+        gulp.start('build');
     });
 });
 

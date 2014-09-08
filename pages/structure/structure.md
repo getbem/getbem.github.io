@@ -11,9 +11,8 @@ index.html
 
 We proposing next way to structure you files, that will help you to adapt BEM methodology not only for CSS, but for JavaScript and even for templating!
 
-First, you group all CSS selectors from previous examples for `form` block in it own file: `form.css`. This is first step in structuring your CSS.
-
-Second, create a directory with block name, which files you want to group in it: `/form/` and move this file there.
+ 1. Group all CSS selectors from previous examples for `form` block in it own file: `form.css`. This is first step in structuring your CSS.
+ 1. Create a directory with block name, which files you want to group in it: `/form/` and move this file there.
 
 Success! You should have this file initial file structure:
 
@@ -76,11 +75,7 @@ blocks/
 index.css
 ```
 
-Yay! You have your own `Level` of declaration in your project!
-
-Now we get some responsive grids in our project. We will use [pure-grids][pure-grids] from [purecss.io][purecss-grids], but ported version of them on BEM methodology.
-
-For easy installation you will need [bower.io](https://bower.io) package manager. Follow the [instructions](http://bower.io/#install-bower) to install bower.
+Yay! You have your own `Level` of declaration in your project! Now we get some responsive grids in our project. We will use [pure-grids][pure-grids] from [purecss.io][purecss-grids], but ported version of them on BEM methodology. For easy installation you will need [bower.io](https://bower.io) package manager. Follow the [instructions](http://bower.io/#install-bower) to install bower.
 
 Installation of layer is easy and fast:
 
