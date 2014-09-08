@@ -1,29 +1,23 @@
-.markdown * {
-    font-weight: 300;
-    line-height: 1.7em;
-    font-size: 16px;
-}
-
 .markdown > ol {
     color: #333;
 }
 
 .markdown > h1 {
-    font-size: 200%;
+    font-weight: 300;
     padding-top: 1em;
     margin: 0em 0em;
     border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .markdown > h2 {
-    font-size: 175%;
+    font-weight: 300;
     padding-top: 1em;
     margin: 0em 0em;
     border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .markdown > h3 {
-    font-size: 150%;
+    font-weight: 300;
     padding-top: 1em;
     margin: 0em 0em;
     border-bottom: 1px solid rgba(0,0,0,0.08);
