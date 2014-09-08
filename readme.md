@@ -4,8 +4,6 @@ We are gathering information about BEM methodology in separation with building t
 
 If you interested in writing articles or helping with site — feel free to make pull-requests or [creating issues](https://github.com/floatdrop/getbem.com/issues) with discussions.
 
-For now our prior target is provide [bem-bootstrap](https://github.com/matmuchrapna/bem-bootstrap) layer and moving site on it.
-
 ## How to build
 
 ```bash
