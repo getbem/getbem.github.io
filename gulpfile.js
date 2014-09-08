@@ -8,6 +8,11 @@ var pack = require('gulp-bem-pack');
 var save = require('save-stream');
 var glue = require('glue-streams');
 var through = require('through2');
+var join = require('path').join;
+
+function getCssFiles(bemObject) {
+    return gulp.src(join(bemObject.path, bemObject.id + '.css'));
+}
 
 var levels = [
     'libs/bootstrap/normalize',
@@ -31,10 +36,9 @@ gulp.task('css', ['clean'], function () {
         .pipe(save());
 
     return bem.objects('pages')
-        .pipe(bem.src('{bem}.css'))
-        .pipe(through.obj(function (page, enc, cb) {
-            return glue.obj(levelsCss.load(), page)
-                .pipe(concat(page))
+        .pipe(through.obj(function (obj, enc, cb) {
+            return glue.obj(levelsCss.load(), getCssFiles(obj))
+                .pipe(concat(obj.id + '.css'))
                 .pipe(gulp.dest('./dist'))
                 .on('error', cb)
                 .on('end', cb);
