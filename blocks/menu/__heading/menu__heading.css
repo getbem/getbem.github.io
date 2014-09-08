@@ -9,6 +9,10 @@
     padding: 5px 20px;
 }
 
+.menu__heading:hover {
+    text-decoration: none;
+}
+
 @media screen and (min-width: 35.5em) {
     .menu__heading {
         display: inline-block;
