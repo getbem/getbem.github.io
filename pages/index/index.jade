@@ -13,44 +13,48 @@ block content
   include ../includes/menu.jade
   +header
     | Block Element Modifier is methodology, that helps you achieve reusable components and code sharing in the front-end
-  .container
-    .grid
-      .grid__col_1-3_sm.grid__col_1
+  .grid.grid_fixed_true
+    .grid__row
+      .grid__cell-sm.grid__cell-sm_size_4
         +advantage('Easy')
           | To use BEM you literally do not need nothing besides BEM naming.
-      .grid__col_1-3_sm.grid__col_1
+      .grid__cell-sm.grid__cell-sm_size_4
         +advantage('Modular')
           | Independent blocks and css selectors plus layer system makes your code reusable and modular.
-      .grid__col_1-3_sm.grid__col_1
+      .grid__cell-sm.grid__cell-sm_size_4
         +advantage('Flexible')
           | Methodology and tools, that can be recomposed and configured in the way you like BEM.
   .separator
-  .container
-    +step('Why you should use BEM')
-      :markdown
-        There are plenty of [methodologies](https://github.com/ikkou/awesome-css#architecture) out there which aimed on reducing CSS codebase and organizing programmers cooperation and maintaining of CSS code. This is obvious in large projects like Twitter, Facebook and [Github](http://markdotto.com/2014/07/23/githubs-css/#two-bundles), but other projects often grows into same "Huge CSS file" state pretty quickly.
+  .grid
+    .grid__row
+      .grid__cell-xs_size_12
+        +step('Why you should use BEM')
+        :markdown
+          There are plenty of [methodologies](https://github.com/ikkou/awesome-css#architecture) out there which aimed on reducing CSS codebase and organizing programmers cooperation and maintaining of CSS code. This is obvious in large projects like Twitter, Facebook and [Github](http://markdotto.com/2014/07/23/githubs-css/#two-bundles), but other projects often grows into same "Huge CSS file" state pretty quickly.
 
-        Here are [some reasons](http://www.youtube.com/watch?v=GhX8iPcDSsI#t=2729), that can convince you to use BEM or other methodology in your front-end:
+          Here are [some reasons](http://www.youtube.com/watch?v=GhX8iPcDSsI#t=2729), that can convince you to use BEM or other methodology in your front-end:
 
-         * __Performance__ — smaller number of CSS selectors (because of reusing Blocks) causing better performance and experience of site.
-         * __Productivity__ — clear and structured CSS is easier to maintain and develop.
+           * __Performance__ — smaller number of CSS selectors (because of reusing Blocks) causing better performance and experience of site.
+           * __Productivity__ — clear and structured CSS is easier to maintain and develop.
 
-        Feel free to contact us at [![Gitter chat](http://img.shields.io/badge/gitter-bem--talk-brightgreen.svg?style=flat)](https://gitter.im/bem/talk) if you have more questions about BEM methodology.
+          Feel free to contact us at [![Gitter chat](http://img.shields.io/badge/gitter-bem--talk-brightgreen.svg?style=flat)](https://gitter.im/bem/talk) if you have more questions about BEM methodology.
   .separator
-  .container
-    +step('Getting started')
-      :markdown
-        We working on step-by-step guide, that will help you understand:
+  .grid
+    .grid__row
+      .grid__cell-xs_size_12
+        +step('Getting started')
+        :markdown
+          We working on step-by-step guide, that will help you understand:
 
-         * [BEM naming](/naming.html)
-         * [Folder structure](/structure.html)
-         * [Build process](/building.html)
+           * [BEM naming](/naming.html)
+           * [Folder structure](/structure.html)
+           * [Build process](/building.html)
 
-        After reading those — you can read articles, that listed in [awesome-bem](https://github.com/floatdrop/awesome-bem) repository.
+          After reading those — you can read articles, that listed in [awesome-bem](https://github.com/floatdrop/awesome-bem) repository.
 
-        We will be very happy to hear you suggestion about this introduction. Also we accepting requests at [gihub repository](http://github.com/floatdrop/getbem.com) of this site.
+          We will be very happy to hear you suggestion about this introduction. Also we accepting requests at [gihub repository](http://github.com/floatdrop/getbem.com) of this site.
 
-        Also we [writing list of projects](https://github.com/floatdrop/getbem.com/issues/1), who uses BEM methodology
+          Also we [writing list of projects](https://github.com/floatdrop/getbem.com/issues/1), who uses BEM methodology
   .separator
   a#companies
   .companies

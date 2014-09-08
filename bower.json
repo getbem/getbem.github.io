@@ -9,7 +9,6 @@
     "libs"
   ],
   "dependencies": {
-    "pure-base": "floatdrop/pure-base",
-    "pure-grids": "floatdrop/pure-grids"
+    "bootstrap": "matmuchrapna/bem-bootstrap"
   }
 }

@@ -10,8 +10,11 @@ var glue = require('glue-streams');
 var through = require('through2');
 
 var levels = [
-    'libs/pure-base',
-    'libs/pure-grids',
+    'libs/bootstrap/normalize',
+    'libs/bootstrap/print',
+    'libs/bootstrap/glyphicons',
+    'libs/bootstrap/core-css',
+    'libs/bootstrap/utils',
     'blocks'
 ];
 

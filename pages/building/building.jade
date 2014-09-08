@@ -11,6 +11,8 @@ block scripts
 
 block content
   include ../includes/menu.jade
-  .container
-    include:md ./building.md
+  .grid
+    .grid__row
+      .grid__cell-xs_size_12
+        include:md ./building.md
   +edit('https://github.com/floatdrop/getbem.com/edit/master/pages/building/building.md')

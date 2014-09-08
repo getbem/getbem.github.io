@@ -11,6 +11,8 @@ block scripts
 
 block content
   include ../includes/menu.jade
-  .container
-    include:md ./naming.md
+  .grid
+    .grid__row
+      .grid__cell-xs_size_12
+        include:md ./naming.md
   +edit('https://github.com/floatdrop/getbem.com/edit/master/pages/naming/naming.md')
