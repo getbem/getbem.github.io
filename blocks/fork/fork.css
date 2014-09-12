@@ -1,14 +1,20 @@
-.fork
-{
+.fork {
     position: absolute;
     top: 0;
     right: 0;
+
+    display: none;
 
     width: 149px;
     height: 149px;
 }
 
-.fork__image
-{
+.fork__image {
     border: 0;
+}
+
+@media (min-width: 768px) {
+    .fork {
+        display: block;
+    }
 }
