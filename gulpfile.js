@@ -15,11 +15,11 @@ function getCssFiles(bemObject) {
 }
 
 var levels = [
-    'libs/bootstrap/normalize',
-    'libs/bootstrap/print',
-    'libs/bootstrap/glyphicons',
-    'libs/bootstrap/core-css',
-    'libs/bootstrap/utils',
+    'libs/bootstrap/levels/normalize',
+    'libs/bootstrap/levels/print',
+    'libs/bootstrap/levels/glyphicons',
+    'libs/bootstrap/levels/scaffolding',
+    'libs/bootstrap/levels/core-css',
     'blocks'
 ];
 
