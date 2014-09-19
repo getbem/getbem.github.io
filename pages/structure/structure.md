@@ -1,6 +1,6 @@
 # Structure
 
-While structuring your site in BEM way is good for performance and development, storing all CSS in one file is not a good idea for growing project. If you followed [Naming](/naming.html) section, you should have next file structure:
+While structuring your site in BEM way is good for performance and development, storing all CSS in one file is not a good idea for growing project. If you followed [Naming](naming.html) section, you should have next file structure:
 
 ```
 index.css
@@ -48,7 +48,7 @@ index.css
 
 As you can see, all element files for block are placed into directory, that begins with `__` and same rules applies for modifiers, but prefix is shorter — `_`.
 
-Now you probably want to include all CSS files with `<style>` tags in `index.html` file. This is one way to do it, but we recommend you to use build system like [gulpjs][gulp]. We even wrote a section [Building](/building.html) about it.
+Now you probably want to include all CSS files with `<style>` tags in `index.html` file. This is one way to do it, but we recommend you to use build system like [gulpjs][gulp]. We even wrote a section [Building](building.html) about it.
 
 ## Levels
 
@@ -79,7 +79,7 @@ Installation of layer is easy and fast:
 bower install floatdrop/pure-grids
 ```
 
-This will install `pure-grids` layer into `vendor` folder. All blocks for grids (actually one block) is in `vendor/pure-grids` directory. Now you are ready to build your project with multiple levels. Follow to the [building](/building.html) section to read about it.
+This will install `pure-grids` layer into `vendor` folder. All blocks for grids (actually one block) is in `vendor/pure-grids` directory. Now you are ready to build your project with multiple levels. Follow to the [building](building.html) section to read about it.
 
 [gulp]: https://github.com/gulpjs/gulp
 [pure-grids]: https://github.com/floatdrop/pure-grids
