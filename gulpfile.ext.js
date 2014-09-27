@@ -14,7 +14,7 @@ gulp.task('watch', ['build'], function() {
 });
 
 gulp.task('gh', ['build'], function(done) {
-    buildBranch({ folder: 'dist' }, done);
+    buildBranch({ folder: 'dist', ignore: ['libs'] }, done);
 });
 
 gulp.task('default', ['watch']);
