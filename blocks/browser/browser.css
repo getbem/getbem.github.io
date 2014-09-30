@@ -1,0 +1,19 @@
+.browser__head {
+    border-style: solid;
+    border-width: 80px 50px 0px 290px;
+    -moz-border-image: url(img/browser-chrome-shadow.png) 80 50 0 290 repeat;
+    -webkit-border-image: url(img/browser-chrome-shadow.png) 80 50 0 290 repeat;
+    -o-border-image: url(img/browser-chrome-shadow.png) 80 50 0 290 repeat;
+    border-image: url(img/browser-chrome-shadow.png) 80 50 0 290 fill repeat;
+    margin: 0px;
+}
+
+.browser__body {
+    overflow: hidden;
+    border-style: solid;
+    border-width: 0px 50px 20px 15px;
+    -moz-border-image: url(img/browser-chrome-shadow.png) 0 50 20 15 repeat;
+    -webkit-border-image: url(img/browser-chrome-shadow.png) 0 50 20 15 repeat;
+    -o-border-image: url(img/browser-chrome-shadow.png) 0 50 20 15 repeat;
+    border-image: url(img/browser-chrome-shadow.png) 0 50 20 15 fill repeat;
+}
