@@ -27,10 +27,7 @@
 
     border-width: 80px 50px 0 290px;
     border-style: solid;
-    -webkit-border-image: url(img/browser-chrome-shadow.png) 80 50 0 290 repeat;
-       -moz-border-image: url(img/browser-chrome-shadow.png) 80 50 0 290 repeat;
-         -o-border-image: url(img/browser-chrome-shadow.png) 80 50 0 290 repeat;
-            border-image: url(img/browser-chrome-shadow.png) 80 50 0 290 fill repeat;
+    border-image: url(img/browser-chrome-shadow.png) 80 50 0 290 fill repeat;
 }
 
 
@@ -41,8 +38,5 @@
 
     border-width: 0 50px 20px 15px;
     border-style: solid;
-    -webkit-border-image: url(img/browser-chrome-shadow.png) 0 50 20 15 repeat;
-       -moz-border-image: url(img/browser-chrome-shadow.png) 0 50 20 15 repeat;
-         -o-border-image: url(img/browser-chrome-shadow.png) 0 50 20 15 repeat;
-            border-image: url(img/browser-chrome-shadow.png) 0 50 20 15 fill repeat;
+    border-image: url(img/browser-chrome-shadow.png) 0 50 20 15 fill repeat;
 }

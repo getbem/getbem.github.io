@@ -26,6 +26,7 @@
     "del": "^0.1.2",
     "glue-streams": "^0.1.0",
     "gulp": "^3.8.6",
+    "gulp-autoprefixer": "^1.0.1",
     "gulp-bem": "^0.5.0",
     "gulp-bem-debug": "^0.2.0",
     "gulp-bem-pack": "^0.1.1",

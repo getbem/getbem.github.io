@@ -9,6 +9,7 @@ var save = require('save-stream');
 var glue = require('glue-streams');
 var through = require('through2');
 var join = require('path').join;
+var autoprefixer = require('gulp-autoprefixer');
 
 function getCssFiles(bemObject) {
     return gulp.src(join(bemObject.path, bemObject.id + '.css'));
@@ -39,6 +40,10 @@ gulp.task('css', ['clean'], function () {
         .pipe(through.obj(function (obj, enc, cb) {
             return glue.obj(levelsCss.load(), getCssFiles(obj))
                 .pipe(concat(obj.id + '.css'))
+                .pipe(autoprefixer({
+                    browsers: ['last 2 versions'],
+                    cascade: false
+                }))
                 .pipe(gulp.dest('./dist'))
                 .on('error', cb)
                 .on('end', cb);
