@@ -1,31 +1,114 @@
 # Naming
 
-Firstly, you should start properly name your classes, like `block` for block entities, `block__elem` for block's elements, `block_mod_value` and `block__elem_mod_value` for block's mods and elem's mods, respectively.
+In [Getting Started](getting-started.html) you already read about three main
 
-So if you have block: `form` with mods `theme: xmas` and `simple: true` and with elems `input` and `submit`, and elem `submit` have it's own mod `disabled: true` for not submitting form while it's not filled. So your html will look, like this:
+## Block
+
+Block encapsulates a standalone entity that is meaningful on its own. While blocks can be nested and interact with each other, semantically they remain equal; there is no precedence or hierarchy. Holistic entities without DOM representation (such as controllers or models) can be blocks as well.
+
+## Naming
+Block name may consist of Latin letters, digits, and dashes.
+
+To form a CSS class, add short prefix for namespacing: **.block**
+
+> **Note**: You can use **b-** as a class name prefix; you can choose your own, or go without any prefixes at all.
+
+### HTML
+Any DOM node can be a block if it accepts a class name.
 
 ```html
-<form class="form form_theme_xmas form_simple_true">
-    <input class="form__input" type="text" />
-    <input class="form__submit form__submit_disabled_true" type="submit" />
-</form>
+<div class="block">...</div>
 ```
 
-After you have some html, you have to style it with CSS. In BEM you can do it with these selectors list:
+### CSS for blocks
+  * Use class name selector only
+  * No tag names or id's
+  * No dependency on other blocks/elements on a page
 
 ```css
-.form {}
-.form_theme_xmas {}
-.form_simple_true {}
-.form__input {}
-.form__submit {}
-.form__submit_disabled_true {}
+.block { color: #042 }
 ```
 
-In block selector `.form {}` you declare base styles for form. In mods selectors `.form_theme_xmas`, `.form_simple_true` you can extend or override base styles from block selector. Elem's selectors `.form__input`, `.form__submit` you can write styles for each elem. Case with mods for elem is the same as case with mods for block: in `.form__submit_disabled_true` you can extend or override `submit` styles.
+## Element
 
-**Congratulations!** You are using BEM naming now!
+Elements are parts of a block and have no standalone meaning.
+Any element is semantically tied to its block.
 
-## Next step
+### HTML
+Any DOM node within a block can be an element.
+Within a given block, all elements are semantically equal.
 
-If you want to try the whole power of BEM you should teach about [BEM folder structure](structure.html).
+### Naming
+Element name may consist of Latin letters, digits, and dashes.
+
+CSS class is formed as block name + two undercores + element name:
+**.block__elem**
+
+```html
+<div class="block">
+  ...
+  <span class="block__elem"></span>
+</div>
+```
+
+### CSS for elements
+  * Use class name selector only
+  * No tag name or id's
+  * No dependency on other blocks/elements on a page
+
+```css
+  /* BAD */ .block .block__elem { border: solid 1px #000 }
+  /* BAD */        div.block__elem { border: solid 1px #000 }
+
+  /* GOOD  */         .block__elem { border: solid 1px #000 }
+```
+
+## Modifier
+
+Modifiers are flags on blocks or elements.
+Use them to change appearance or behavior.
+
+### HTML
+Modifier is an extra class name which you add to a block/element DOM node.
+
+### Naming
+Modifiers (both keys and values) may consist of Latin letters, digits, and dashes.
+
+Modifier can be a boolean flag or a key/value pair.
+Naming conventions:
+
+  * Boolean modifiers:<br>
+    Original block/element name + single underscore + mod name<br>
+    **.block_mod** or **.block__elem_mod**
+  * Key/value modifiers:<br>
+    Original block/element name + single underscore + mod key name + single underscore + mod value<br>
+    **.block_key_value** or **.block__elem_key_value**
+
+Add modifier classes only to blocks/elements they modify, and keep the original class:
+
+```html
+  GOOD <div class="block block_mod">...</div>
+  GOOD <div class="block block_size_big block_shadow_yes">...</div>
+
+  BAD  <div class="block_mod">...</div>
+```
+Modifiers don't have formal hierarchy, but when they co-exist on a single node, CSS rules will be resolved according to CSS specificity.
+
+### CSS for modifiers
+Use modifier class name as selector:
+
+```css
+.block_hidden { display: none }
+```
+
+To alter elements based on a block-level modifier:
+
+```css
+.block_mod .block__elem { display: none }
+```
+
+Element modifier:
+
+```css
+.block__elem_mod { display: none }
+```

@@ -13,5 +13,128 @@ block content
   .grid
     .grid__row
       .grid__cell-xs_size_12.raw-text
-        include:md ./naming.md
+        h1 Naming
+        blockquote BEM — Block, Element, Modifier
+
+        p You should already get basic understanding, what BEM all about — in the core of methodology lies independency of entities on page. To acheve this, all entities are structured with three concepts:
+
+    .grid__row
+      .grid__cell-xs_size_12.raw-text
+        h2 Block
+        p Block encapsulates a standalone entity that is meaningful on its own. While blocks can be nested and interact with each other, semantically they remain equal; there is no precedence or hierarchy. Holistic entities without DOM representation (such as controllers or models) can be blocks as well.
+    .grid__row
+      .grid__cell-md_size_4.raw-text
+        :markdown
+          #### Naming
+
+          Block name may consist of Latin letters, digits, and dashes. To form a CSS class, add short prefix for namespacing: `.block`
+      .grid__cell-md_size_4.raw-text
+        :markdown
+          #### HTML
+          Any DOM node can be a block if it accepts a class name.
+
+          ```html
+          <div class="block">...</div>
+          ```
+      .grid__cell-md_size_4.raw-text
+        :markdown
+          #### CSS
+           * Use class name selector only
+           * No tag names or id's
+           * No dependency on other blocks/elements on a page
+
+          ```css
+          .block { color: #042 }
+          ```
+    .grid__row
+      .grid__cell-xs_size_12.raw-text
+        h2 Element
+        p Elements are parts of a block and have no standalone meaning. Any element is semantically tied to its block.
+    .grid__row
+      .grid__cell-md_size_4.raw-text
+        :markdown
+          #### Naming
+          Element name may consist of Latin letters, digits, and dashes.
+          CSS class is formed as block name plus two undercores plus element name:
+          `.block__elem`
+      .grid__cell-md_size_4.raw-text
+        :markdown
+          #### HTML
+          Any DOM node within a block can be an element. Within a given block, all elements are semantically equal.
+
+          ```html
+          <div class="block">
+            ...
+            <span class="block__elem"></span>
+          </div>
+          ```
+      .grid__cell-md_size_4.raw-text
+        :markdown
+          #### CSS
+           * Use class name selector only
+           * No tag name or id's
+           * No dependency on other blocks/elements on a page
+
+          **Good**
+          ```css
+          .block__elem { color: #042; }
+          ```
+
+          **Bad**
+          ```css
+          .block .block__elem { color: #042; }
+          div.block__elem { color: #042; }
+          ```
+    .grid__row
+      .grid__cell-xs_size_12.raw-text
+        h2 Modifier
+        p Modifiers are flags on blocks or elements. Use them to change appearance or behavior.
+    .grid__row
+      .grid__cell-md_size_4.raw-text
+        :markdown
+          #### Naming
+          Modifiers (both keys and values) may consist of Latin letters, digits, and dashes.
+
+          Modifier can be a boolean flag or a key/value pair.
+
+           * __Boolean modifiers__<br>
+              Original block/element name + single underscore + mod name `.block_mod` or `.block__elem_mod`
+           * __Key/value modifiers__<br>
+              Original block/element name + single underscore + mod key name + single underscore + mod value<br>
+              `.block_key_value` or `.block__elem_key_value`
+      .grid__cell-md_size_4.raw-text
+        :markdown
+          #### HTML
+          Modifier is an extra class name which you add to a block/element DOM node. Add modifier classes only to blocks/elements they modify, and keep the original class:
+
+          **Good**
+          ```html
+          <div class="block block_mod">...</div>
+          <div class="block block_size_big block_shadow_yes">...</div>
+          ```
+
+          **Bad**
+          ```html
+          <div class="block_mod">...</div>
+          ```
+      .grid__cell-md_size_4.raw-text
+        :markdown
+          #### CSS
+          Use modifier class name as selector:
+
+          ```css
+          .block_hidden { display: none }
+          ```
+
+          To alter elements based on a block-level modifier:
+
+          ```css
+          .block_mod .block__elem { display: none }
+          ```
+
+          Element modifier:
+
+          ```css
+          .block__elem_mod { display: none }
+          ```
   +edit('https://github.com/floatdrop/getbem.com/edit/master/pages/naming/naming.md')
