@@ -9,11 +9,76 @@ block head
 block content
   .grid
     .grid__row
-      .grid__cell-xs_size_12.raw-text
-        include:md ./getting-started.md
+      .grid__cell-sm_size_12.raw-text
+        h1 Getting started
+        p It is quite hard to see benefits of BEM methodology without concrete site, that was developed without any CSS methodology at all. You will often hear questions like «why should I use BEM in my project — we are doing greate so far». Hang tight — we will try to demonstrate on example music site, what problems are awaits you in growing project.
     .grid__row
-      .grid__cell-xs_size_12.raw-text
+
+      .grid__cell-sm_size_6.raw-text
+        h4 Albums
         .browser
           .container(style="padding: 10px 20px;")
-            h3 Soon here will be examples!
+            p First page
+      .grid__cell-sm_size_6.raw-text
+        h4 Artist
+        .browser
+          .container(style="padding: 10px 20px;")
+            p Second page
+    .grid__row
+      .grid__cell-sm_size_12.raw-text
+        h3 The Only Thing That Is Constant Is Change
+        p Every project have tendency to change with time. It could be founded bugs by users or new buisness requests from clients. If your project was not prepeared to embrace those changes — you will have pretty bad time with them.
+        p There are lots of literature out there, that can explain potential problems of developing projects with long timespans of development and how to avoid them. We will demonstrate concrete example of such chage.
+        p Suppose managers are found out, that users are frustrated without way to see all albums in artist page (pretty logical). They asked you to «just copy those albums from one page to another — it should not be hard, right?».
+
+    .grid__row
+      .grid__cell-sm_size_2
+      .grid__cell-sm_size_8.raw-text
+        h4 Artist with albums
+        .browser
+          .container(style="padding: 10px 20px;")
+            p Result of merging
+
+    .grid__row
+      .grid__cell-sm_size_12.raw-text
+        h3 What just happened?
+        p “C” of CSS stands for “Cascading” — and many developers choose to use and abuse this feature of language. This is not bad, but when it is has some limitations (we called it methodology). There is even article about
+          a(href="http://www.phase2technology.com/blog/used-and-abused-css-inheritance-and-our-misuse-of-the-cascade/") «Used and Abused – CSS Inheritance and Our Misuse of the Cascade»
+          |  — if you whant detais, you should read it.
+        p Main reason of existance of CSS methodologies — is to keep project maintainable and extendable in long term run. BEM is not the ONE and ONLY way to achive this. Here comparsion with alternatives:
+
+    .grid__row
+      .grid__cell-sm_size_4.raw-text
+        h3(style="text-align: center")
+          a(href="https://oocss.org/") OOCSS
+        ul(style="border-right: 1px solid #ddd;")
+          li First bullet
+          li Second bullet
+          li Third bullet
+          li Fourth bullet
+          li Fifth bullet
+      .grid__cell-sm_size_4.raw-text
+        h3(style="text-align: center")
+          a(href="https://smacss.com/") SMACSS
+        ul(style="border-right: 1px solid #ddd;")
+          li First bullet
+          li Second bullet
+          li Third bullet
+          li Fourth bullet
+          li Fifth bullet
+      .grid__cell-sm_size_4.raw-text
+        h3(style="text-align: center")
+          a(href="https://bem.info/") BEM
+        ul
+          li First bullet
+          li Second bullet
+          li Third bullet
+          li Fourth bullet
+          li Fifth bullet
+
+    .grid__row
+      .grid__cell-sm_size_12.raw-text
+        h3 Why BEM?
+        p BEM provides most easy to understand and maintain structure of yours CSS, that not relies on interpretation of methodology as much as others do. Yandex is using it for many years now and (despite of the toolchain and turtorials state) it proven to be maintainable and understandable by newcomers.
+
   +edit('https://github.com/floatdrop/getbem.com/edit/master/pages/getting-started/getting-started.md')

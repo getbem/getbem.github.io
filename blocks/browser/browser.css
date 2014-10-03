@@ -30,7 +30,6 @@
     border-image: url(img/browser-chrome-shadow.png) 80 50 0 290 fill repeat;
 }
 
-
 .browser::after
 {
     top: 0;
