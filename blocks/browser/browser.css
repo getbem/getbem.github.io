@@ -1,3 +1,10 @@
+.browser__title {
+    margin-top: -60px;
+    margin-left: 90px;
+    position: absolute;
+    font-size: 0.8em;
+}
+
 .browser
 {
     position: relative;
