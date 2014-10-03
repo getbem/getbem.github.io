@@ -11,8 +11,11 @@
     z-index: 1;
 
     margin-top: 80px;
-
+    margin-left: auto;
+    margin-right: auto;
     padding: 0px 15px 20px;
+
+    max-width: 500px;
 }
 
 .browser::before,
@@ -44,5 +47,5 @@
 
     border-width: 0 50px 20px 15px;
     border-style: solid;
-    border-image: url(img/browser-chrome-shadow.png) 0 50 20 15 fill repeat;
+    border-image: url(img/browser-chrome-shadow.png) 80 50 20 15 fill repeat;
 }

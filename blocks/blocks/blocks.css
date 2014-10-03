@@ -1,0 +1,33 @@
+.text-line {
+    height: 2px;
+    background-color: #999;
+    margin-bottom: 5px;
+}
+
+.title-line {
+    height: 3px;
+    background-color: #555;
+    margin-bottom: 10px;
+}
+
+.menu-block {
+    border-radius: 3px;
+    background-color: #76b24f;
+    width: 40px;
+    height: 120px;
+    margin: 0 20px 10px 0;
+    float: left;
+}
+
+.album-block {
+    border-radius: 3px;
+    background-color: #76b24f;
+    width: 32px;
+    height: 32px;
+    margin: 0 10px 10px 0;
+    float: left;
+}
+
+.clear-fix {
+    clear: both;
+}

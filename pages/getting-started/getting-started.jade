@@ -18,12 +18,12 @@ block content
         .browser
           .browser__title Albums
           .container(style="padding: 10px 20px;")
-            p First page
+            include first-page
       .grid__cell-sm_size_6.raw-text
         .browser
           .browser__title Artist
           .container(style="padding: 10px 20px;")
-            p Second page
+            include second-page
 
     .grid__row
       .grid__cell-sm_size_12.raw-text
@@ -33,12 +33,11 @@ block content
         p Suppose managers are found out, that users are frustrated without way to see all albums at artist page (pretty logical). They asked you to «just copy those albums from one page to another — it should not be hard, right?».
 
     .grid__row
-      .grid__cell-sm_size_2
-      .grid__cell-sm_size_8.raw-text
+      .grid__cell-sm_size_12.raw-text
         .browser
           .browser__title Artist with albums
           .container(style="padding: 10px 20px;")
-            p Result of merging
+            include merged-page
 
     .grid__row
       .grid__cell-sm_size_12.raw-text
