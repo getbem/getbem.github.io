@@ -137,4 +137,32 @@ block content
           ```css
           .block__elem_mod { display: none }
           ```
+    .grid__row
+      .grid__cell-xs_size_12.raw-text
+        :markdown
+          ## Example
+          Suppose you have block `form` with modifiers `theme: 'xmas'` and `simple: true` and with elements `input` and `submit`, and element `submit` have it's own modifier `disabled: true` for not submitting form while it's not filled:
+    .grid__row
+      .grid__cell-md_size_6.raw-text
+        :markdown
+          #### HTML
+          ```html
+          <form class="form form_theme_xmas form_simple">
+            <input class="form__input" type="text" />
+            <input
+              class="form__submit form__submit_disabled"
+              type="submit" />
+          </form>
+          ```
+      .grid__cell-md_size_6.raw-text
+        :markdown
+          #### CSS
+          ```css
+          .form { /* ... */ }
+          .form_theme_xmas { /* ... */ }
+          .form_simple { /* ... */ }
+          .form__input { /* ... */ }
+          .form__submit { /* ... */ }
+          .form__submit_disabled { /* ... */ }
+          ```
   +edit('https://github.com/floatdrop/getbem.com/edit/master/pages/naming/naming.md')
