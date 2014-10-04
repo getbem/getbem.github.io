@@ -1,16 +1,16 @@
 extends ../layout.jade
 
 block title
-  title BEM — Getting started
+  title BEM — Introduction
 
 block head
-  link(rel="stylesheet" href="getting-started.css")
+  link(rel="stylesheet" href="introduction.css")
 
 block content
   .grid
     .grid__row
       .grid__cell-sm_size_12.raw-text
-        h1 Getting started
+        h1 Introduction
         p It is quite hard to see benefits of BEM methodology without concrete site, that was developed without any CSS methodology at all. You will often hear questions like «why should I use BEM in my project — we are doing greate so far». Hang tight — we will try to demonstrate on example music site, what problems are awaits you in growing project.
 
     .grid__row
@@ -48,33 +48,26 @@ block content
         p Main reason of existance of CSS methodologies — is to keep project maintainable and extendable in long term run. BEM is not the ONE and ONLY way to achive this. Here is comparison with alternatives:
 
     .grid__row
-      .grid__cell-sm_size_4.raw-text
-        h3
-          a(href="https://oocss.org/") OOCSS
-        ul(style="border-right: 1px solid #ddd;")
-          li First bullet
-          li Second bullet
-          li Third bullet
-          li Fourth bullet
-          li Fifth bullet
-      .grid__cell-sm_size_4.raw-text
-        h3
-          a(href="https://smacss.com/") SMACSS
-        ul(style="border-right: 1px solid #ddd;")
-          li First bullet
-          li Second bullet
-          li Third bullet
-          li Fourth bullet
-          li Fifth bullet
-      .grid__cell-sm_size_4.raw-text
-        h3
-          a(href="http://amcss.github.io/") AMCSS
-        ul
-          li First bullet
-          li Second bullet
-          li Third bullet
-          li Fourth bullet
-          li Fifth bullet
+      .grid__cell-sm_size_4.raw-text(style="border-right: 1px solid #ddd; text-align: center;")
+        :markdown
+          ### [OOCSS](https://oocss.org/)
+          Single “object” abstraction</br>
+          Separate structure and skin</br>
+          Separate container and content
+
+      .grid__cell-sm_size_4.raw-text(style="border-right: 1px solid #ddd; text-align: center;")
+        :markdown
+          ### [SMACSS](https://smacss.com/)
+          Style-guide to write your CSS</br>
+          Provides five categories for CSS rules</br>
+          Each category has certain guidelines that apply to it
+
+      .grid__cell-sm_size_4.raw-text(style="text-align: center;")
+        :markdown
+          ### [AMCSS](http://amcss.github.io/)
+          Uses HTML attributes values for styling</br>
+          Selectors looks like `[am-Button~="primary"]`</br>
+          Nice look in resulting HTML
 
     .grid__row
       .grid__cell-sm_size_12.raw-text
