@@ -25,17 +25,17 @@ block content
            * CSS size will not grow without any bounds with duplicating classes.
 
     .grid__row
-      .grid__cell-xs_size_12.raw-text
+      .grid__cell-xs_size_12.raw-text(style="border-left: 1px solid #ddd;")
         :markdown
           ## Block
           Block encapsulates a standalone entity that is meaningful on its own. While blocks can be nested and interact with each other, semantically they remain equal; there is no precedence or hierarchy. Holistic entities without DOM representation (such as controllers or models) can be blocks as well.
     .grid__row
-      .grid__cell-md_size_4.raw-text
+      .grid__cell-md_size_4.raw-text(style="border-left: 1px solid #ddd;")
         :markdown
           #### Naming
 
           Block name may consist of Latin letters, digits, and dashes. To form a CSS class, add short prefix for namespacing: `.block`
-      .grid__cell-md_size_4.raw-text
+      .grid__cell-md_size_4.raw-text(style="border-left: 1px solid #ddd;")
         :markdown
           #### HTML
           Any DOM node can be a block if it accepts a class name.
@@ -43,7 +43,7 @@ block content
           ```html
           <div class="block">...</div>
           ```
-      .grid__cell-md_size_4.raw-text
+      .grid__cell-md_size_4.raw-text(style="border-left: 1px solid #ddd;")
         :markdown
           #### CSS
            * Use class name selector only
@@ -54,18 +54,18 @@ block content
           .block { color: #042 }
           ```
     .grid__row
-      .grid__cell-xs_size_12.raw-text
+      .grid__cell-xs_size_12.raw-text(style="border-left: 1px solid #ddd;")
         :markdown
           ## Element
           Elements are parts of a block and have no standalone meaning. Any element is semantically tied to its block.
     .grid__row
-      .grid__cell-md_size_4.raw-text
+      .grid__cell-md_size_4.raw-text(style="border-left: 1px solid #ddd;")
         :markdown
           #### Naming
           Element name may consist of Latin letters, digits, and dashes.
           CSS class is formed as block name plus two undercores plus element name:
           `.block__elem`
-      .grid__cell-md_size_4.raw-text
+      .grid__cell-md_size_4.raw-text(style="border-left: 1px solid #ddd;")
         :markdown
           #### HTML
           Any DOM node within a block can be an element. Within a given block, all elements are semantically equal.
@@ -76,7 +76,7 @@ block content
             <span class="block__elem"></span>
           </div>
           ```
-      .grid__cell-md_size_4.raw-text
+      .grid__cell-md_size_4.raw-text(style="border-left: 1px solid #ddd;")
         :markdown
           #### CSS
            * Use class name selector only
@@ -94,12 +94,12 @@ block content
           div.block__elem { color: #042; }
           ```
     .grid__row
-      .grid__cell-xs_size_12.raw-text
+      .grid__cell-xs_size_12.raw-text(style="border-left: 1px solid #ddd;")
         :markdown
           ## Modifier
           Modifiers are flags on blocks or elements. Use them to change appearance or behavior.
     .grid__row
-      .grid__cell-md_size_4.raw-text
+      .grid__cell-md_size_4.raw-text(style="border-left: 1px solid #ddd;")
         :markdown
           #### Naming
           Modifiers (both keys and values) may consist of Latin letters, digits, and dashes.
@@ -110,7 +110,7 @@ block content
               Original block/element name + single underscore + mod name: `.block_mod` or `.block__elem_mod`
            * __Key/value modifiers__<br>
               Original block/element name + single underscore + mod key name + single underscore + mod value: `.block_key_value` or `.block__elem_key_value`
-      .grid__cell-md_size_4.raw-text
+      .grid__cell-md_size_4.raw-text(style="border-left: 1px solid #ddd;")
         :markdown
           #### HTML
           Modifier is an extra class name which you add to a block/element DOM node. Add modifier classes only to blocks/elements they modify, and keep the original class:
@@ -125,7 +125,7 @@ block content
           ```html
           <div class="block_mod">...</div>
           ```
-      .grid__cell-md_size_4.raw-text
+      .grid__cell-md_size_4.raw-text(style="border-left: 1px solid #ddd;")
         :markdown
           #### CSS
           Use modifier class name as selector:
