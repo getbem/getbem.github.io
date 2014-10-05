@@ -1,0 +1,18 @@
+.author {
+    margin-top: 2em;
+    text-align: center;
+}
+
+.author__photo {
+    margin: 1rem auto;
+    display: block;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #eee, 0 0 0 7px white, 0 0 0 8px #ddd;
+}
+
+.author__name {
+    font-size: 1.5em;
+    font-weight: 100;
+}
