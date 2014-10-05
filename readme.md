@@ -7,7 +7,7 @@ If you interested in writing articles or helping with site — feel free to make
 ## How to build
 
 ```bash
-git clone https://github.com/floatdrop/getbem.com
+git clone https://github.com/getbem/getbem.com
 cd getbem.com
 npm i
 gulp build
