@@ -11,41 +11,10 @@ block content
     .grid__row
       .grid__cell-sm_size_12.raw-text
         h1 Introduction
-        p It is quite hard to see benefits of BEM methodology without concrete site, that was developed without any CSS methodology at all. You will often hear questions like «why should I use BEM in my project — we are doing greate so far». Hang tight — we will try to demonstrate on example music site, what problems are awaits you in growing project.
-
-    .grid__row
-      .grid__cell-sm_size_6.raw-text
-        .browser
-          .browser__title Albums
-          .container(style="padding: 10px 20px;")
-            include first-page
-      .grid__cell-sm_size_6.raw-text
-        .browser
-          .browser__title Artist
-          .container(style="padding: 10px 20px;")
-            include second-page
-
-    .grid__row
-      .grid__cell-sm_size_12.raw-text
-        h3 The only thing that is constant is change
+        blockquote The only thing that is constant is change
         p Every project have tendency to change with time. Users will find bugs and management will change buisness logic. If your project was not prepared to embrace those changes — you will have pretty bad time with them.
         p There are lots of literature out there, that can explain potential problems of developing projects with long timespans of development and how to avoid them. We will demonstrate concrete example of such change.
         p Suppose managers are found out, that users are frustrated without way to see all albums at artist page (pretty logical). They asked you to «just copy those albums from one page to another — it should not be hard, right?».
-
-    .grid__row
-      .grid__cell-sm_size_12.raw-text
-        .browser
-          .browser__title Artist with albums
-          .container(style="padding: 10px 20px;")
-            include merged-page
-
-    .grid__row
-      .grid__cell-sm_size_12.raw-text
-        h3 What just happened?
-        p “C” of CSS stands for “Cascading” — and many developers choose to use and abuse this feature of language. This is not bad, but when it is has some limitations (we called it methodology). There is even article about
-          a(href="http://www.phase2technology.com/blog/used-and-abused-css-inheritance-and-our-misuse-of-the-cascade/") "Used and Abused – CSS Inheritance and Our Misuse of the Cascade"
-          |  — if you want detais, you should read it.
-        p Main reason of existance of CSS methodologies — is to keep project maintainable and extendable in long term run. BEM is not the ONE and ONLY way to achive this. Here is comparison with alternatives:
 
     .grid__row
       .grid__cell-sm_size_4.raw-text(style="border-right: 1px solid #ddd; text-align: center;")
@@ -71,7 +40,7 @@ block content
 
     .grid__row
       .grid__cell-sm_size_12.raw-text
-        h3 Why BEM?
+        h3 Why we choose BEM?
         p BEM provides easiest way to understand and maintain your CSS, that not relies on interpretation of methodology as much as others do. Yandex is using it many years for now and (despite of the toolchain and turtorials state) it proven to be maintainable and understandable by newcomers.
 
     .grid__row
