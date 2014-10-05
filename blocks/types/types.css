@@ -1,0 +1,34 @@
+.types {
+    background-color: #fafafa;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    font-family: monospace;
+}
+
+.types__d_b {
+    font-weight: bold;
+    color: #76b24f;
+}
+
+.types__d_e {
+    font-weight: bold;
+    color: #4f91b2;
+}
+
+.types__d_m {
+    font-weight: bold;
+    color: #d5635d;
+}
+
+.types__f_b {
+    color: #76b24f;
+}
+
+.types__f_e {
+    color: #4f91b2;
+}
+
+.types__f_m {
+    color: #d5635d;
+}

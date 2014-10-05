@@ -26,59 +26,60 @@ block content
 
           If you are read [Naming](naming.html) article, you already know, that any separate entity on the site will be a __Block__ with __Elements__ that can fave __Modifiers__. Keeping that in mind we will split our `index.css` into multiple CSS files on file system. For each BEM entity we will create some files and place them to own folder:
     .grid__row
-      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #ddd;")
-        :markdown
-          ### Blocks
-          Each block will have it's own directory and file with styles:
-          ```
-          block/
-            block.css
-          ```
-          New blocks should have their own folders:
-          ```
-          block/
-            block.css
-          footer/
-            footer.css
-          ```
-      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #ddd;")
-        :markdown
-          ### Elements
-          Since elements can't be outside of blocks — we will place them in subfolder of block:
-          ```
-          block/
-            __element/
-              block__element.css
-            block.css
-          ```
-          or multiple elements:
-          ```
-          block/
-            __one/
-              block__one.css
-            __two/
-              block__two.css
-            block.css
-          ```
-      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #ddd;")
-        :markdown
-          ### Modifiers
-          Both blocks and elements can have modifiers. So they can be placed either into block folder:
-          ```
-          block/
-            _mod/
-              block_mod_value.css
-            block.css
-          ```
-          or element subfolder:
-          ```
-          block/
-            __element/
-              _mod/
-                block__element_mod_value.css
-              block__element.css
-            block.css
-          ```
+      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #76b24f;")
+        h3 Blocks
+        p Each block will have it's own directory and file with styles:
+
+        .types
+          .types__d_b block/
+          .types__f_b   block.css
+
+        p New blocks should have their own folders:
+
+        .types
+          .types__d_b block/
+          .types__f_b   block.css
+          .types__d_b footer/
+          .types__f_b   footer.css
+      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #4f91b2;")
+        h3 Elements
+        p Since elements can't be outside of blocks — we will place them in subfolder of block:
+
+        .types
+          .types__d_b block/
+          .types__d_e   __element/
+          .types__f_e     block__element.css
+          .types__f_b   block.css
+
+        p or multiple elements:
+
+        .types
+          .types__d_b block/
+          .types__d_e   __one/
+          .types__f_e     block__one.css
+          .types__d_e   __two/
+          .types__f_e     block__two.css
+          .types__f_b block.css
+
+      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #d5635d;")
+        h3 Modifiers
+        p Both blocks and elements can have modifiers. So they can be placed either into block folder:
+
+        .types
+          .types__d_b block/
+          .types__d_m   _mod/
+          .types__f_m     block_mod_value.css
+          .types__f_b block.css
+
+        p or element subfolder:
+
+        .types
+          .types__d_b block/
+          .types__d_e   __element/
+          .types__d_m     _mod/
+          .types__f_m       block__element_mod_value.css
+          .types__f_e     block__element.css
+          .types__f_b   block.css
     .grid__row
       .grid__cell-xs_size_12.raw-text
         :markdown
