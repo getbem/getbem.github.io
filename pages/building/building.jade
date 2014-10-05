@@ -24,31 +24,68 @@ block content
 
           We propose easy and intuitive way to structure your BEM CSS code on file system, that will solve these problems.
 
-          ## Files
-
-          If you are read [Naming](naming.html) article, you already know, that any separate entity on the site will be a __Block__. All of __Block__ parts will be __Elements__ and both __Block__ and __Element__ can have __Modifiers__. Keeping that in mind we will split our `index.css` into multiple CSS files on file system in following way. For each __Block__ we will do next steps:
-
-           * __Block__ styles will go to `{block}.css` — where `{block}` is place holder for block name.
-           * __Elements__ styles, that belongs to `{block}` will go to `{block}__{element}.css`.
-           * __Modifiers__ styles, that belongs to `{block}` will go to `{block}_{modifier}.css` (and same for Element  modifiers, but file will be `{block}__{element}_{modifier}.css`).
-
-          After this, you probably will have lots of CSS files. This is good, but navigation in such CSS folder quite annoying in any IDE.
-
-          ## Directories
-
-          To make it more friendly to IDE we will create folders. Same principle, that we used to split `index.css` to files is used to place this files into folders:
-
-           * __Block__ files will go to `{block}` folder.
-           * __Element__ files for `{block}` will go to `{block}/__{element}` subfolder.
-           * __Block Modifier__ will go to `{block}/_{modifier}` subfolder.
-           * __Element Modifier__ will go to `{block}/__{element}/_{modifier}` subsubfolder.
-
-          With this structuring you will get less merge conflicts and it is quite easy to copy some blocks from one project to another (just copy entire folder).
+          If you are read [Naming](naming.html) article, you already know, that any separate entity on the site will be a __Block__ with __Elements__ that can fave __Modifiers__. Keeping that in mind we will split our `index.css` into multiple CSS files on file system. For each BEM entity we will create some files and place them to own folder:
+    .grid__row
+      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #ddd;")
+        :markdown
+          ### Blocks
+          Each block will have it's own directory and file with styles:
+          ```
+          block/
+            block.css
+          ```
+          New blocks should have their own folders:
+          ```
+          block/
+            block.css
+          footer/
+            footer.css
+          ```
+      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #ddd;")
+        :markdown
+          ### Elements
+          Since elements can't be outside of blocks — we will place them in subfolder of block:
+          ```
+          block/
+            __element/
+              block__element.css
+            block.css
+          ```
+          or multiple elements:
+          ```
+          block/
+            __one/
+              block__one.css
+            __two/
+              block__two.css
+            block.css
+          ```
+      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #ddd;")
+        :markdown
+          ### Modifiers
+          Both blocks and elements can have modifiers. So they can be placed either into block folder:
+          ```
+          block/
+            _mod/
+              block_mod_value.css
+            block.css
+          ```
+          or element subfolder:
+          ```
+          block/
+            __element/
+              _mod/
+                block__element_mod_value.css
+              block__element.css
+            block.css
+          ```
+    .grid__row
+      .grid__cell-xs_size_12.raw-text
+        :markdown
+          <br/>
+          With this structuring you will get less merge conflicts and it is quite easy to copy some blocks from one project to another (just copy entire folder). There is another useful abstraction, that will help you to develope libraries of blocks. We call them `Levels` — folders that contains blocks. Quite intuitive thing to do, right?
 
           ## Levels
-
-          There is another useful abstraction, that will help you to develope libraries of blocks. We call them `Levels` — folders that contains blocks. Quite intuitive thing to do, right?
-
           When you have established styleguide, it is quite nice to have ready-to-go folder with blocks, that can be downloaded to new project and used as __base__ styles for development. We recommend to create multiple levels in one project. For example we will have `base` folder with our style-guided blocks and `project` folder with blocks for our project. Blocks in levels can be extended with styles, that defined in other levels:
 
           ```
@@ -69,33 +106,46 @@ block content
           After you get your CSS from single `index.css` file to hierarchy of separate CSS files you probably want to build them back together, otherwise your HTML will be bloated with `<style>` tags.
 
           We will demonstrate how to build CSS files with [gulpjs](https://gulpjs.com), but you free to choose your own build tool — because it is quite trivial to concatinate files even in `bash` script.
+    .grid__row
+      .grid__cell-sm_size_4.raw-text
+        :markdown
+          #### 1. Install modules
 
-          1. Create `gulpfile.js` with following content in the root of project:
+          ```bash
+          npm install gulp -g
+          npm install gulp gulp-concat
+          ```
+      .grid__cell-sm_size_4.raw-text
+        :markdown
+          #### 2. Create `gulpfile.js`
 
-            ```js
-            var gulp = require('gulp');
-            var concat = require('gulp-concat');
+          ```js
+          var gulp = require('gulp');
+          var concat = require('gulp-concat');
 
-            gulp.task('build', function () {
-                gulp.src(['base/**/*.css', 'project/**/*.css'])
-                    .pipe(concat('index.css'))
-                    .pipe(gulp.dest('dist'));
-            });
-            ```
+          gulp.task('build', function () {
+              gulp.src(['base/**/*.css', 'project/**/*.css'])
+                  .pipe(concat('index.css'))
+                  .pipe(gulp.dest('dist'));
+          });
+          ```
+      .grid__cell-sm_size_4.raw-text
+        :markdown
+          #### 3. Run build task
 
-          2. Install `gulp` and `gulp-concat`:
-
-            ```bash
-            npm install gulp -g
-            npm install gulp gulp-concat
-            ```
-
-          3. Run build task:
-
-            ```bash
-            gulp build
-            ```
-
+          ```bash
+          gulp build
+          ```
+    .grid__row
+      .grid__cell-xs_size_12.raw-text
+        :markdown
           Congradulations! You should get your `index.css` file in `dist` directory.
+
+          While building CSS is straight forward, JavaScript and Templates is a bit more complex subject. There are some tools, that can help you to build projects, that structured in layers and blocks:
+
+           * [gulp-bem](https://github.com/floatdrop/gulp-bem)
+           * [enb](https://github.com/enb-make/enb)
+
+          You can see, how this site is getting built. We are using Jade for templates and [gulp-bem-pack](https://github.com/floatdrop/gulp-bem-pack) for JavaScript. Dive in site repository — [https://github.com/getbem/getbem.com](https://github.com/getbem/getbem.com).
 
   +edit('https://github.com/floatdrop/getbem.com/edit/master/pages/building/building.md')
