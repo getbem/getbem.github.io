@@ -13,22 +13,22 @@ block content
   .grid
     .grid__row
       .grid__cell-xs_size_12.raw-text
-        h1 Naming
-        blockquote There are only two hard problems in Computer Science: cache invalidation and naming things —
-          i Phil Karlton
+        :markdown
+          # Naming
+          > There are only two hard problems in Computer Science: cache invalidation and naming things — _Phil Karlton_
 
-        p It is known fact, that right styleguide can significantly increase development speed, debugging and implementing new features in legacy code. Sadly, most CSS codebase is developed without (sometimes) any structure and naming conventions. This leads to unmantainable CSS codebase in long term run.
+          It is known fact, that right styleguide can significantly increase development speed, debugging and implementing new features in legacy code. Sadly, most CSS codebase is developed without (sometimes) any structure and naming conventions. This leads to unmantainable CSS codebase in long term run.
 
-        p The BEM approach ensures that everyone who participates in the development of a website works with a single codebase and speaks the same language.
+          The BEM approach ensures that everyone who participates in the development of a website works with a single codebase and speaks the same language.
 
-        ul
-          li You will be prepared for the changes in design of the website.
-          li CSS size will not grow without any bounds with duplicating classes.
+           * You will be prepared for the changes in design of the website.
+           * CSS size will not grow without any bounds with duplicating classes.
 
     .grid__row
       .grid__cell-xs_size_12.raw-text
-        h2 Block
-        p Block encapsulates a standalone entity that is meaningful on its own. While blocks can be nested and interact with each other, semantically they remain equal; there is no precedence or hierarchy. Holistic entities without DOM representation (such as controllers or models) can be blocks as well.
+        :markdown
+          ## Block
+          Block encapsulates a standalone entity that is meaningful on its own. While blocks can be nested and interact with each other, semantically they remain equal; there is no precedence or hierarchy. Holistic entities without DOM representation (such as controllers or models) can be blocks as well.
     .grid__row
       .grid__cell-md_size_4.raw-text
         :markdown
@@ -55,8 +55,9 @@ block content
           ```
     .grid__row
       .grid__cell-xs_size_12.raw-text
-        h2 Element
-        p Elements are parts of a block and have no standalone meaning. Any element is semantically tied to its block.
+        :markdown
+          ## Element
+          Elements are parts of a block and have no standalone meaning. Any element is semantically tied to its block.
     .grid__row
       .grid__cell-md_size_4.raw-text
         :markdown
@@ -94,8 +95,9 @@ block content
           ```
     .grid__row
       .grid__cell-xs_size_12.raw-text
-        h2 Modifier
-        p Modifiers are flags on blocks or elements. Use them to change appearance or behavior.
+        :markdown
+          ## Modifier
+          Modifiers are flags on blocks or elements. Use them to change appearance or behavior.
     .grid__row
       .grid__cell-md_size_4.raw-text
         :markdown
