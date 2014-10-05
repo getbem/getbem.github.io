@@ -24,7 +24,7 @@ block content
 
           We propose easy and intuitive way to structure your BEM CSS code on file system, that will solve these problems.
 
-          ## File Structure
+          ## Files
 
           If you are read [Naming](naming.html) article, you already know, that any separate entity on the site will be a __Block__. All of __Block__ parts will be __Elements__ and both __Block__ and __Element__ can have __Modifiers__. Keeping that in mind we will split our `index.css` into multiple CSS files on file system in following way. For each __Block__ we will do next steps:
 
@@ -33,6 +33,8 @@ block content
            * __Modifiers__ styles, that belongs to `{block}` will go to `{block}_{modifier}.css` (and same for Element  modifiers, but file will be `{block}__{element}_{modifier}.css`).
 
           After this, you probably will have lots of CSS files. This is good, but navigation in such CSS folder quite annoying in any IDE.
+
+          ## Directories
 
           To make it more friendly to IDE we will create folders. Same principle, that we used to split `index.css` to files is used to place this files into folders:
 
@@ -43,7 +45,7 @@ block content
 
           With this structuring you will get less merge conflicts and it is quite easy to copy some blocks from one project to another (just copy entire folder).
 
-          ### Levels
+          ## Levels
 
           There is another useful abstraction, that will help you to develope libraries of blocks. We call them `Levels` — folders that contains blocks. Quite intuitive thing to do, right?
 
