@@ -27,7 +27,7 @@ block content
           If you are read [Naming](naming.html) article, you already know, that any separate entity on the site will be a __Block__ with __Elements__ that can fave __Modifiers__. Keeping that in mind we will split our `index.css` into multiple CSS files on file system. For each BEM entity we will create some files and place them to own folder:
     .grid__row
       .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #76b24f;")
-        h3 Blocks
+        h2 Blocks
         p Each block will have it's own directory and file with styles:
 
         .types
@@ -42,7 +42,7 @@ block content
           .types__d_b footer/
           .types__f_b   footer.css
       .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #4f91b2;")
-        h3 Elements
+        h2 Elements
         p Since elements can't be outside of blocks — we will place them in subfolder of block:
 
         .types
@@ -62,7 +62,7 @@ block content
           .types__f_b block.css
 
       .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #d5635d;")
-        h3 Modifiers
+        h2 Modifiers
         p Both blocks and elements can have modifiers. So they can be placed either into block folder:
 
         .types
@@ -77,7 +77,7 @@ block content
           .types__d_b block/
           .types__d_e   __element/
           .types__d_m     _mod/
-          .types__f_m       block__element_mod_value.css
+          .types__f_m       block__element_mod.css
           .types__f_e     block__element.css
           .types__f_b   block.css
     .grid__row
@@ -89,16 +89,17 @@ block content
           ## Levels
           When you have established styleguide, it is quite nice to have ready-to-go folder with blocks, that can be downloaded to new project and used as __base__ styles for development. We recommend to create multiple levels in one project. For example we will have `base` folder with our style-guided blocks and `project` folder with blocks for our project. Blocks in levels can be extended with styles, that defined in other levels:
 
-          ```
-          base/
-            heading/
-              heading.css
-          project/
-            heading/
-              heading.css
-          ```
-
-          Order of extension is defined by order of the levels (in build configuration for example). Since _C_ in CSS is stands for cascading — concatination of CSS files in right order will provide extending of our styles.
+        .types
+          | base/
+          .types__d_b   header/
+          .types__f_b     header.css
+          .types__d_b   footer/
+          .types__f_b     footer.css
+          | project/
+          .types__d_b   header/
+          .types__f_b     header.css
+        br
+        p Order of extension is defined by order of the levels (in build configuration for example). Since «C» in CSS is stands for cascading — concatination of CSS files in right order will provide extending of our styles.
 
       .grid__cell-xs_size_12.raw-text
         :markdown
@@ -123,9 +124,13 @@ block content
           ```js
           var gulp = require('gulp');
           var concat = require('gulp-concat');
+          var levels = [
+            'base/**/*.css',
+            'project/**/*.css'
+          ];
 
           gulp.task('build', function () {
-              gulp.src(['base/**/*.css', 'project/**/*.css'])
+              gulp.src(levels)
                   .pipe(concat('index.css'))
                   .pipe(gulp.dest('dist'));
           });
@@ -148,5 +153,9 @@ block content
            * [enb](https://github.com/enb-make/enb)
 
           You can see, how this site is getting built. We are using Jade for templates and [gulp-bem-pack](https://github.com/floatdrop/gulp-bem-pack) for JavaScript. Dive in site repository — [https://github.com/getbem/getbem.com](https://github.com/getbem/getbem.com).
+    .grid__row
+      .authors
+        h1 Written by
+        +author("https://avatars2.githubusercontent.com/u/365089?s=140", "Vsevolod Strukchinsky", "https://github.com/floatdrop")
 
   +edit('https://github.com/floatdrop/getbem.com/edit/master/pages/building/building.md')
