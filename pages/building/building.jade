@@ -13,5 +13,87 @@ block content
   .grid
     .grid__row
       .grid__cell-xs_size_12.raw-text
-        include:md ./building.md
+        :markdown
+          # Structuring
+
+          When you developing site, that contains more than one page — you will soon feel, that storing all CSS in `index.css` file is huge pain. When single file becomes more than __1000__ lines of code you can't effectivly navigate in it, neither maintain it.
+
+          Things getting worse, when you have a team, that making changes in single file. Often you will get merge conflicts (if you are using VCS). Some times styles, that belongs to each other will be in opposite ends of this file.
+
+          And most painful part — is transfering common parts of this file into other (often new) project.
+
+          We propose easy and intuitive way to structure your BEM CSS code on file system, that will solve these problems.
+
+          ## File Structure
+
+          If you are read [Naming](naming.html) article, you already know, that any separate entity on the site will be a __Block__. All of __Block__ parts will be __Elements__ and both __Block__ and __Element__ can have __Modifiers__. Keeping that in mind we will split our `index.css` into multiple CSS files on file system in following way. For each __Block__ we will do next steps:
+
+           * __Block__ styles will go to `{block}.css` — where `{block}` is place holder for block name.
+           * __Elements__ styles, that belongs to `{block}` will go to `{block}__{element}.css`.
+           * __Modifiers__ styles, that belongs to `{block}` will go to `{block}_{modifier}.css` (and same for Element  modifiers, but file will be `{block}__{element}_{modifier}.css`).
+
+          After this, you probably will have lots of CSS files. This is good, but navigation in such CSS folder quite annoying in any IDE.
+
+          To make it more friendly to IDE we will create folders. Same principle, that we used to split `index.css` to files is used to place this files into folders:
+
+           * __Block__ files will go to `{block}` folder.
+           * __Element__ files for `{block}` will go to `{block}/__{element}` subfolder.
+           * __Block Modifier__ will go to `{block}/_{modifier}` subfolder.
+           * __Element Modifier__ will go to `{block}/__{element}/_{modifier}` subsubfolder.
+
+          With this structuring you will get less merge conflicts and it is quite easy to copy some blocks from one project to another (just copy entire folder).
+
+          ### Levels
+
+          There is another useful abstraction, that will help you to develope libraries of blocks. We call them `Levels` — folders that contains blocks. Quite intuitive thing to do, right?
+
+          When you have established styleguide, it is quite nice to have ready-to-go folder with blocks, that can be downloaded to new project and used as __base__ styles for development. We recommend to create multiple levels in one project. For example we will have `base` folder with our style-guided blocks and `project` folder with blocks for our project. Blocks in levels can be extended with styles, that defined in other levels:
+
+          ```
+          base/
+            heading/
+              heading.css
+          project/
+            heading/
+              heading.css
+          ```
+
+          Order of extension is defined by order of the levels (in build configuration for example). Since _C_ in CSS is stands for cascading — concatination of CSS files in right order will provide extending of our styles.
+
+      .grid__cell-xs_size_12.raw-text
+        :markdown
+          # Building
+
+          After you get your CSS from single `index.css` file to hierarchy of separate CSS files you probably want to build them back together, otherwise your HTML will be bloated with `<style>` tags.
+
+          We will demonstrate how to build CSS files with [gulpjs](https://gulpjs.com), but you free to choose your own build tool — because it is quite trivial to concatinate files even in `bash` script.
+
+          1. Create `gulpfile.js` with following content in the root of project:
+
+            ```js
+            var gulp = require('gulp');
+            var concat = require('gulp-concat');
+
+            gulp.task('build', function () {
+                gulp.src(['base/**/*.css', 'project/**/*.css'])
+                    .pipe(concat('index.css'))
+                    .pipe(gulp.dest('dist'));
+            });
+            ```
+
+          2. Install `gulp` and `gulp-concat`:
+
+            ```bash
+            npm install gulp -g
+            npm install gulp gulp-concat
+            ```
+
+          3. Run build task:
+
+            ```bash
+            gulp build
+            ```
+
+          Congradulations! You should get your `index.css` file in `dist` directory.
+
   +edit('https://github.com/floatdrop/getbem.com/edit/master/pages/building/building.md')
