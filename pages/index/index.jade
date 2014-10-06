@@ -51,17 +51,33 @@ block content
           To avoid these problems Yandex propose a way of structuring UI in sites — BEM.
 
     .grid__row
-      .grid__cell-xs_size_2
-      .grid__cell-xs_size_8.raw-text
+      .grid__cell-md_size_2
+      .grid__cell-md_size_8.raw-text
         :markdown
           To start using BEM you literally need nothing besides [Naming](naming.html), since BEM is firstly _naming convention_.
-
-          1. We claim, that independent components is good for project maintaining and development. Keeping that in mind, we trying to split every project, that we develope in such components, named `Blocks`.
-
-          1. But `blocks` is not quite enough to describe complex UI objects on page. Imagine, that you need to implement menu — creating new blocks for every menu item would be overkill. That's where `elements` comes to the rescue. `Element` represents parts of the blocks, that should not be used outside of `block`.
-
-          1. And finally every `block` and `element` can have a multiple _states_, which we call `modifiers` — for example `disabled` and `highlighted` is good exapmles of such states.
-
+    .grid__row
+      .grid__cell-md_size_2
+        h3(style="margin-top: 0; color: #76b24f; text-align: right;") Blocks
+      .grid__cell-md_size_8.raw-text
+        :markdown
+          We claim, that independent components is good for project maintaining and development. Keeping that in mind, we trying to split every project, that we develope in such components, named `Blocks`.
+    .grid__row
+      .grid__cell-md_size_2
+        h3(style="margin-top: 0; color: #4f91b2; text-align: right;") Elements
+      .grid__cell-md_size_8.raw-text
+        :markdown
+          But `blocks` is not quite enough to describe complex UI objects on page. Imagine, that you need to implement menu — creating new blocks for every menu item would be overkill. That's where `elements` comes to the rescue. `Element` represents parts of the blocks, that should not be used outside of `block`.
+    .grid__row
+      .grid__cell-md_size_2
+        h3(style="margin-top: 0; color: #d5635d; text-align: right;") Modifiers
+      .grid__cell-md_size_8.raw-text
+        :markdown
+          And finally every `block` and `element` can have a multiple _states_, which we call `modifiers` — for example `disabled` and `highlighted` is good exapmles of such states.
+    .grid__row
+      .grid__cell-md_size_2
+      .grid__cell-md_size_8.raw-text
+        :markdown
+          <br>
           More strict definitions can be found in [Naming](naming.html) page.
     .grid__row
       .grid__cell-xs_size_12.raw-text
