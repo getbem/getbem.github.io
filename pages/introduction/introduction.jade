@@ -12,43 +12,78 @@ block content
       .grid__cell-sm_size_12.raw-text
         :markdown
           # Introduction
-          There are plenty of [methodologies](https://github.com/ikkou/awesome-css#architecture) out there which aimed on reducing CSS codebase and organizing programmers cooperation and maintaining of CSS code. This is obvious in large projects like Twitter, Facebook and [Github](http://markdotto.com/2014/07/23/githubs-css/#two-bundles), but other projects often grows into same "Huge CSS file" state pretty quickly.
+          > "A journey of a thousand miles begins with a single step"
 
-          Here are [some reasons](http://www.youtube.com/watch?v=GhX8iPcDSsI#t=2729), that can convince you to use BEM or other methodology in your front-end:
+          Most common question, that we were asked is — "how BEM will help my project, that contains two and a half pages?". This is hard question, because advantages of methodologies are clear, when your project is grew from one page application to something bigger (or live long enough, that all developers changed). The right answer — if you making page, that will be replaced in one week, you don't need anything — just do it. But if you making a project, that will grow (no matter how small it seems to you at the beginning).
 
-           * __Performance__ — smaller number of CSS selectors (because of reusing Blocks) causing better performance and experience of site.
-           * __Productivity__ — clear and structured CSS is easier to maintain and develop.
+          _Place common problems here_
+
+          After some time you will get a big project, that does not have structure in it's CSS. At this point you will make a decision — to refactor this project and make it structured or suffer from growing development time from features.
+
+          You could avoid refactoring costs, if project has structure from the beginngin, but "who knew". There are quite a lot of ways to structure your CSS (and UI). Often they are called `methodologies` or `architectures`.
+
+          ### Methodologies
+
+          There are plenty of [methodologies](https://github.com/ikkou/awesome-css#architecture) out there which aimed on reducing CSS codebase and organizing programmers cooperation and maintaining of CSS code. This is obvious in large projects like Twitter, Facebook and [Github](http://markdotto.com/2014/07/23/githubs-css/#two-bundles), but other projects often grows into same “Huge CSS file” state pretty quickly.
 
     .grid__row
-      .grid__cell-sm_size_4.raw-text(style="border-right: 1px solid #ddd; text-align: center;")
+      .grid__cell-sm_size_2.raw-text(style="border-right: 1px solid #ddd; text-align: center;")
         :markdown
-          ### [OOCSS](https://oocss.org/)
-          Single “object” abstraction</br>
-          Separate structure and skin</br>
-          Separate container and content
+          #### [OOCSS](https://oocss.org/)
+          Separating container and content with CSS “objects”
 
-      .grid__cell-sm_size_4.raw-text(style="border-right: 1px solid #ddd; text-align: center;")
+      .grid__cell-sm_size_2.raw-text(style="border-right: 1px solid #ddd; text-align: center;")
         :markdown
-          ### [SMACSS](https://smacss.com/)
-          Style-guide to write your CSS</br>
-          Provides five categories for CSS rules</br>
-          Each category has certain guidelines that apply to it
+          #### [SMACSS](https://smacss.com/)
+          Style-guide to write your CSS with five categories for CSS rules
 
-      .grid__cell-sm_size_4.raw-text(style="text-align: center;")
+      .grid__cell-sm_size_2.raw-text(style="border-right: 1px solid #ddd; text-align: center;")
         :markdown
-          ### [AMCSS](http://amcss.github.io/)
-          Uses HTML attributes values for styling</br>
-          Selectors looks like `[am-Button~="primary"]`</br>
-          Nice look in resulting HTML
+          #### [AMCSS](http://amcss.github.io/)
+          Styling via attributes and their values with Modules, Variations & Traits
+
+      .grid__cell-sm_size_2.raw-text(style="border-right: 1px solid #ddd; text-align: center;")
+        :markdown
+          #### [SUITCSS](http://suitcss.github.io/)
+          Structured class names and meaningful hyphens
+
+      .grid__cell-sm_size_2.raw-text(style="border-right: 1px solid #ddd; text-align: center;")
+        :markdown
+          #### [Atomic CSS](https://github.com/nemophrost/atomic-css)
+          Breaking down styles into atomic, or indivisible, pieces
+
+      .grid__cell-sm_size_2.raw-text(style="text-align: center;")
+        :markdown
+          # ...
 
     .grid__row
       .grid__cell-sm_size_12.raw-text
-        h3 Why we choose BEM?
-        p BEM provides easiest way to understand and maintain your CSS, that not relies on interpretation of methodology as much as others do. Yandex is using it many years for now and (despite of the toolchain and turtorials state) it proven to be maintainable and understandable by newcomers.
+        br
+        :markdown
+          > We are looking for authors, that can write proper "[Comparsion of methodologies](https://github.com/getbem/getbem.com/issues/11)"
 
+          Each of these have their own peculiarities, but they are all designed to make your life easier (in long term):
+
+           * First reason to use
+           * Second reason to use
+           * ...
     .grid__row
       .grid__cell-sm_size_12.raw-text
-        h3 Blocks, Elements, Modifiers
-        p You already notice, that all blocks in example pages are pretty same and displayed as blocks.
-        p Some more text about this entities.
+        :markdown
+          ### Why BEM over the others?
+
+          It is hard to be objective to methodology, that was developed in the company, that you work in. Thats why we quote part of "[Maintainable CSS with BEM](http://www.integralist.co.uk/posts/maintainable-css-with-bem/#why-bem-over-the-others)" by Mark McDonnell:
+
+          > The reason I choose BEM over other methodologies comes down to this: it's less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognisable terminology.
+
+          > BEM succeeds because it provides a good object oriented structure with a familiar terminology and is simple enough to not get in your way.
+
+          ### Core concepts
+
+          _Place core concepts (Block, Element and Modifier) here_
+
+          ### Example
+
+          We are prepearing little turtorial on "How to migrate existing project to BEM". In meanwhile you can watch nice presentation by Nicole Sullivan — "[CSS preprocessor performance](http://www.youtube.com/watch?v=0NDyopLKE1w)". It gives a very good explanation of problems, that she meets in major of sites and ways to track and handle them.
+
   +edit('https://github.com/getbem/getbem.com/edit/master/pages/introduction/introduction.jade')

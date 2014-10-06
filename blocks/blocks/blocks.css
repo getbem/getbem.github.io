@@ -12,7 +12,7 @@
 
 .menu-block {
     border-radius: 3px;
-    background-color: #76b24f;
+    background-color: #ddd;
     width: 40px;
     height: 120px;
     margin: 0 20px 10px 0;
@@ -21,7 +21,7 @@
 
 .album-block {
     border-radius: 3px;
-    background-color: #76b24f;
+    background-color: #ddd;
     width: 32px;
     height: 32px;
     margin: 0 10px 10px 0;
