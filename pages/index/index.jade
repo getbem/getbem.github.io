@@ -12,51 +12,61 @@ block scripts
 block content
   +header
     | Block Element Modifier is a methodology, that helps you to achieve reusable components and code sharing in the front-end
-  .grid.grid_fixed_true
+  .grid(style="padding-bottom: 2em;")
     .grid__row
       .grid__cell-sm.grid__cell-sm_size_4
-        +advantage('Easy')
-          | To use BEM you literally do not need nothing besides BEM naming.
+        .advantage
+          .advantage__head(style="color: #76b24f;") Easy
+          .advantage__desc
+            | To use BEM you literally do not need nothing besides BEM naming.
       .grid__cell-sm.grid__cell-sm_size_4
-        +advantage('Modular')
-          | Independent blocks and css selectors plus layer system makes your code reusable and modular.
+        .advantage
+          .advantage__head(style="color: #4f91b2;") Modular
+          .advantage__desc
+            | Independent blocks and css selectors plus layer system makes your code reusable and modular.
       .grid__cell-sm.grid__cell-sm_size_4
-        +advantage('Flexible')
-          | Methodology and tools, that can be recomposed and configured in the way you like BEM.
-  .separator
-  .grid
-    .grid__row
-      .grid__cell-xs_size_12.raw-text
-        :markdown
-          # Why you should use BEM
+        .advantage
+          .advantage__head(style="color: #d5635d;") Flexible
+          .advantage__desc
+            | Methodology and tools, that can be recomposed and configured in the way you like BEM.
 
-          There are plenty of [methodologies](https://github.com/ikkou/awesome-css#architecture) out there which aimed on reducing CSS codebase and organizing programmers cooperation and maintaining of CSS code. This is obvious in large projects like Twitter, Facebook and [Github](http://markdotto.com/2014/07/23/githubs-css/#two-bundles), but other projects often grows into same "Huge CSS file" state pretty quickly.
-
-          Here are [some reasons](http://www.youtube.com/watch?v=GhX8iPcDSsI#t=2729), that can convince you to use BEM or other methodology in your front-end:
-
-           * __Performance__ — smaller number of CSS selectors (because of reusing Blocks) causing better performance and experience of site.
-           * __Productivity__ — clear and structured CSS is easier to maintain and develop.
-
-          Feel free to contact us at [![Gitter chat](http://img.shields.io/badge/gitter-bem--talk-brightgreen.svg?style=flat)](https://gitter.im/bem/talk) if you have more questions about BEM methodology.
-  .separator
-  .grid
+  .grid(style="border-top: 1px solid #ddd;")
     .grid__row
       .grid__cell-xs_size_12.raw-text
+        a(link="getting-started")
+        h2(style="text-align: center;") Getting started
+
+    .grid__row(style="padding-top: 2em;")
+      .grid__cell-xs_size_2
+      .grid__cell-xs_size_8.raw-text
         :markdown
-          # Getting started
+          If you are questioning about — «Why should I use something?», you definatly need to read [Introduction](introduction.html). We wrote some exapmles of problems, that awaits you on the road there. In short:
 
-          We working on step-by-step guide, that will help you understand:
+           * __CSS without structure will be a pain in maintaining__
+           * __Sharing styles between projects becomes hard__
+           * __Bloated CSS slow down site responsivness__
 
-           * [BEM naming](naming.html)
-           * [Folder structure](structure.html)
-           * [Build process](building.html)
+          Many projects run into one or more of this pitfalls.
 
-          After reading those — you can read articles, that listed in [awesome-bem](https://github.com/floatdrop/awesome-bem) repository.
+          To avoid these problems Yandex propose a way of structuring UI in sites — BEM.
 
-          We will be very happy to hear you suggestion about this introduction. Also we accepting requests at [gihub repository](http://github.com/floatdrop/getbem.com) of this site.
+    .grid__row
+      .grid__cell-xs_size_2
+      .grid__cell-xs_size_8.raw-text
+        :markdown
+          To start using BEM you literally need nothing besides [Naming](naming.html), since BEM is firstly _naming convention_.
 
-          Also we [writing list of projects](https://github.com/floatdrop/getbem.com/issues/1), who uses BEM methodology
-  .separator
-  a#companies
-  .companies
-    +edit('https://github.com/floatdrop/getbem.com/edit/master/pages/index/index.jade')
+          1. We claim, that independent components is good for project maintaining and development. Keeping that in mind, we trying to split every project, that we develope in such components, named `Blocks`.
+
+          1. But `blocks` is not quite enough to describe complex UI objects on page. Imagine, that you need to implement menu — creating new blocks for every menu item would be overkill. That's where `elements` comes to the rescue. `Element` represents parts of the blocks, that should not be used outside of `block`.
+
+          1. And finally every `block` and `element` can have a multiple _states_, which we call `modifiers` — for example `disabled` and `highlighted` is good exapmles of such states.
+
+          More strict definitions can be found in [Naming](naming.html) page.
+    .grid__row
+      .grid__cell-xs_size_12.raw-text
+        a(link="getting-started")
+        h2(style="text-align: center;") Welcome to BEM!
+
+
+  +edit('https://github.com/floatdrop/getbem.com/edit/master/pages/index/index.jade')

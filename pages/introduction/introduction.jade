@@ -10,11 +10,14 @@ block content
   .grid
     .grid__row
       .grid__cell-sm_size_12.raw-text
-        h1 Introduction
-        blockquote The only thing that is constant is change
-        p Every project have tendency to change with time. Users will find bugs and management will change buisness logic. If your project was not prepared to embrace those changes — you will have pretty bad time with them.
-        p There are lots of literature out there, that can explain potential problems of developing projects with long timespans of development and how to avoid them. We will demonstrate concrete example of such change.
-        p Suppose managers are found out, that users are frustrated without way to see all albums at artist page (pretty logical). They asked you to «just copy those albums from one page to another — it should not be hard, right?».
+        :markdown
+          # Introduction
+          There are plenty of [methodologies](https://github.com/ikkou/awesome-css#architecture) out there which aimed on reducing CSS codebase and organizing programmers cooperation and maintaining of CSS code. This is obvious in large projects like Twitter, Facebook and [Github](http://markdotto.com/2014/07/23/githubs-css/#two-bundles), but other projects often grows into same "Huge CSS file" state pretty quickly.
+
+          Here are [some reasons](http://www.youtube.com/watch?v=GhX8iPcDSsI#t=2729), that can convince you to use BEM or other methodology in your front-end:
+
+           * __Performance__ — smaller number of CSS selectors (because of reusing Blocks) causing better performance and experience of site.
+           * __Productivity__ — clear and structured CSS is easier to maintain and develop.
 
     .grid__row
       .grid__cell-sm_size_4.raw-text(style="border-right: 1px solid #ddd; text-align: center;")
