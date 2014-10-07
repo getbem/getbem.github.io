@@ -1,0 +1,12 @@
+.badge {
+    border-radius: 3px;
+    font-size: 12px;
+    display: inline;
+    padding: 5px 8px;
+    vertical-align: middle;
+}
+
+.badge_yellow {
+    color: white;
+    background-color: #ec971f;
+}
