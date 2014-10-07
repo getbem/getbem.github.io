@@ -17,8 +17,6 @@ block content
 
           Most common question, that we were asked is — "how BEM will help my project, that contains two and a half pages?". This is hard question, because advantages of methodologies are clear, when your project is grew from one page application to something bigger (or live long enough, that all developers changed). The right answer — if you making page, that will be replaced in one week, you don't need anything — just do it. But if you making a project, that will grow (no matter how small it seems to you at the beginning).
 
-          _Place common problems here_
-
           After some time you will get a big project, that does not have structure in it's CSS. At this point you will make a decision — to refactor this project and make it structured or suffer from growing development time from features.
 
           You could avoid refactoring costs, if project has structure from the beginngin, but "who knew". There are quite a lot of ways to structure your CSS (and UI). Often they are called `methodologies` or `architectures`.
@@ -63,26 +61,30 @@ block content
         :markdown
           > We are looking for authors, that can write proper "[Comparsion of methodologies](https://github.com/getbem/getbem.com/issues/11)"
 
-          Each of these have their own peculiarities, but they are all designed to make your life easier (in long term):
-
-           * First reason to use
-           * Second reason to use
-           * ...
     .grid__row
       .grid__cell-sm_size_12.raw-text
         :markdown
           ### Why BEM over the others?
 
-          It is hard to be objective to methodology, that was developed in the company, that you work in. Thats why we quote part of "[Maintainable CSS with BEM](http://www.integralist.co.uk/posts/maintainable-css-with-bem/#why-bem-over-the-others)" by Mark McDonnell:
+          It is hard to be objective to methodology, that was developed in the company, that you work in.
 
+    .grid__row
+      .grid__cell-sm_size_4.raw-text
+        h4(style="text-align: right")
+          | "
+          a(href="http://www.integralist.co.uk/posts/maintainable-css-with-bem/#why-bem-over-the-others") Maintainable CSS with BEM
+          | "
+          br
+          | by Mark McDonnell
+      .grid__cell-sm_size_8.raw-text
+        :markdown
           > The reason I choose BEM over other methodologies comes down to this: it's less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognisable terminology.
 
           > BEM succeeds because it provides a good object oriented structure with a familiar terminology and is simple enough to not get in your way.
 
-          ### Core concepts
-
-          _Place core concepts (Block, Element and Modifier) here_
-
+    .grid__row
+      .grid__cell-sm_size_12.raw-text
+        :markdown
           ### Example
 
           We are prepearing little turtorial on "How to migrate existing project to BEM". In meanwhile you can watch nice presentation by Nicole Sullivan — "[CSS preprocessor performance](http://www.youtube.com/watch?v=0NDyopLKE1w)". It gives a very good explanation of problems, that she meets in major of sites and ways to track and handle them.
