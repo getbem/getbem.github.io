@@ -26,14 +26,14 @@ block content
 
           If you are read [Naming](naming.html) article, you already know, that any separate entity on the site will be a __Block__ with __Elements__ that can fave __Modifiers__. Keeping that in mind we will split our `index.css` into multiple CSS files on file system. For each BEM entity we will create some files and place them to own folder:
     .grid__row
-      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #76b24f;")
+      .grid__cell-sm_size_4.grid__block-cell.raw-text
         h2 Blocks
-      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #4f91b2;")
+      .grid__cell-sm_size_4.grid__element-cell.raw-text
         h2 Elements
-      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #d5635d;")
+      .grid__cell-sm_size_4.grid__modifier-cell.raw-text
         h2 Modifiers
     .grid__row
-      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #ddd;")
+      .grid__cell-sm_size_4.grid__cell_left-border.raw-text
         p Each block will have it's own directory and file with styles:
 
         .types
@@ -47,7 +47,7 @@ block content
           .types__f_b   block.css
           .types__d_b footer/
           .types__f_b   footer.css
-      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #ddd;")
+      .grid__cell-sm_size_4.grid__cell_left-border.raw-text
         p Since elements can't be outside of blocks — we will place them in subfolder of block:
 
         .types
@@ -66,7 +66,7 @@ block content
           .types__f_e     block__two.css
           .types__f_b block.css
 
-      .grid__cell-sm_size_4.raw-text(style="border-left: 1px solid #ddd;")
+      .grid__cell-sm_size_4.grid__cell_left-border.raw-text
         p Both blocks and elements can have modifiers. So they can be placed either into block folder:
 
         .types

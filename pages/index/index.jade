@@ -16,27 +16,27 @@ block content
     .grid__row
       .grid__cell-sm.grid__cell-sm_size_4
         .advantage
-          .advantage__head(style="color: #76b24f;") Easy
+          .advantage__head.advantage__head_green Easy
           .advantage__desc
             | To use BEM you literally do not need nothing besides BEM naming.
       .grid__cell-sm.grid__cell-sm_size_4
         .advantage
-          .advantage__head(style="color: #4f91b2;") Modular
+          .advantage__head.advantage__head_blue Modular
           .advantage__desc
             | Independent blocks and css selectors plus layer system makes your code reusable and modular.
       .grid__cell-sm.grid__cell-sm_size_4
         .advantage
-          .advantage__head(style="color: #d5635d;") Flexible
+          .advantage__head.advantage__head_red Flexible
           .advantage__desc
             | Methodology and tools, that can be recomposed and configured in the way you like BEM.
 
-  .grid(style="border-top: 1px solid #ddd;")
+  .grid.grid_top-line
     .grid__row
       .grid__cell-xs_size_12.raw-text
         a(link="getting-started")
         h2(style="text-align: center;") Getting started
 
-    .grid__row(style="padding-top: 2em;")
+    .grid__row
       .grid__cell-md_size_2
       .grid__cell-md_size_8.raw-text
         :markdown
@@ -57,19 +57,19 @@ block content
           To start using BEM you literally need nothing besides [Naming](naming.html), since BEM is firstly _naming convention_.
     .grid__row
       .grid__cell-md_size_2
-        h3(style="margin-top: 0; color: #76b24f; text-align: right;") Blocks
+        h3.side-note.side-note_green Blocks
       .grid__cell-md_size_8.raw-text
         :markdown
           We claim, that independent components is good for project maintaining and development. Keeping that in mind, we trying to split every project, that we develope in such components, named `Blocks`.
     .grid__row
       .grid__cell-md_size_2
-        h3(style="margin-top: 0; color: #4f91b2; text-align: right;") Elements
+        h3.side-note.side-note_blue Elements
       .grid__cell-md_size_8.raw-text
         :markdown
           But `blocks` is not quite enough to describe complex UI objects on page. Imagine, that you need to implement menu — creating new blocks for every menu item would be overkill. That's where `elements` comes to the rescue. `Element` represents parts of the blocks, that should not be used outside of `block`.
     .grid__row
       .grid__cell-md_size_2
-        h3(style="margin-top: 0; color: #d5635d; text-align: right;") Modifiers
+        h3.side-note.side-note_red Modifiers
       .grid__cell-md_size_8.raw-text
         :markdown
           And finally every `block` and `element` can have a multiple _states_, which we call `modifiers` — for example `disabled` and `highlighted` is good exapmles of such states.

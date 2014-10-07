@@ -4,6 +4,7 @@ var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 var del = require('del');
 var jade = require('gulp-jade');
+var sass = require('gulp-sass');
 var pack = require('gulp-bem-pack');
 var save = require('save-stream');
 var glue = require('glue-streams');
@@ -21,6 +22,7 @@ var levels = [
     'libs/bootstrap/levels/glyphicons',
     'libs/bootstrap/levels/scaffolding',
     'libs/bootstrap/levels/core-css',
+    'base',
     'blocks'
 ];
 
@@ -33,13 +35,14 @@ gulp.task('js', ['clean'], function () {
 
 gulp.task('css', ['clean'], function () {
     var levelsCss = bem.objects(levels)
-        .pipe(bem.src('{bem}.css'))
+        .pipe(bem.src('{bem}.{scss,css}'))
         .pipe(save());
 
     return bem.objects('pages')
         .pipe(through.obj(function (obj, enc, cb) {
             return glue.obj(levelsCss.load(), getCssFiles(obj))
                 .pipe(concat(obj.id + '.css'))
+                .pipe(sass())
                 .pipe(autoprefixer({
                     browsers: ['last 2 versions'],
                     cascade: false

@@ -8,5 +8,10 @@
 
 .badge_yellow {
     color: white;
-    background-color: #ec971f;
+    background-color: $yellow;
+}
+
+.badge_green {
+    color: white;
+    background-color: $green;
 }

@@ -1,0 +1,16 @@
+.side-note {
+    margin-top: 0;
+    text-align: right;
+}
+
+.side-note_green {
+    color: $green;
+}
+
+.side-note_red {
+    color: $red;
+}
+
+.side-note_blue {
+    color: $blue;
+}
