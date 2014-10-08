@@ -107,13 +107,86 @@ block content
         :markdown
           ### Blocks, Elements and Modifiers
 
+          You will not be surprised, that BEM is abbreviation of the key elements of the methodology — Block, Element and Modifier.
 
+    .grid__row.raw-text
+      .grid__cell-sm_size_2
+      .grid__cell-sm_size_3.grid__block-cell
+        h4 Block
+      .grid__cell-sm_size_3.grid__element-cell
+        h4 Element
+      .grid__cell-sm_size_3.grid__modifier-cell
+        h4 Modifier
+    .grid__row.raw-text
+      .grid__cell-sm_size_2
+      .grid__cell-sm_size_3.grid__cell_left-border
+        :markdown
+          Block explanation
+
+          Picture
+
+          __Examples__
+
+          `header`, `container`, `menu`, `checkbox`, `input`
+      .grid__cell-sm_size_3.grid__cell_left-border
+        :markdown
+          Element explanation
+
+          Picture
+
+          __Examples__
+
+          `menu item`, `list item`, `checkbox caption`, `header title`
+      .grid__cell-sm_size_3.grid__cell_left-border
+        :markdown
+          Modifier explanation
+
+          Picture
+
+          __Examples__
+
+          `disabled`, `highlighted`, `checked`, `fixed`, `size big`, `color yellow`
+    .grid__row
+      .grid__cell-sm_size_12.raw-text
+        br
+        :markdown
+          Abstract examples is not quite enough sometimes.
+
+          We prepeared some popular sites, that was marked up with BEM methodology:
+
+    .grid__row
+      .grid__cell-sm_size_1
+      .grid__cell-sm_size_10.raw-text
+        .browser
+          .browser__title Github
+          .container(style="padding: 10px 20px;")
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+            br
+
+      .grid__cell-sm_size_1
 
     .grid__row
       .grid__cell-sm_size_12.raw-text
         :markdown
-          ### Example
+          ### Case study
 
-          We are prepearing little turtorial on "How to migrate existing project to BEM". In meanwhile you can watch nice presentation by Nicole Sullivan — "[CSS preprocessor performance](http://www.youtube.com/watch?v=0NDyopLKE1w)". It gives a very good explanation of problems, that she meets in major of sites and ways to track and handle them.
+          We are prepearing little case study on "How to migrate existing project to BEM". In meanwhile you can watch nice presentation by Nicole Sullivan — "[CSS preprocessor performance](http://www.youtube.com/watch?v=0NDyopLKE1w)". It gives a very good explanation of problems, that she meets in major of sites and ways to track and handle them.
 
   +edit('https://github.com/getbem/getbem.com/edit/master/pages/introduction/introduction.jade')
