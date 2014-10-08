@@ -13,15 +13,9 @@ block content
         h1 Introduction
           .badge.badge_yellow work in progress
         :markdown
-          > "A journey of a thousand miles begins with a single step"
-
-          Most common question, that we were asked is — "how BEM will help my project, that contains two and a half pages?". This is hard question, because advantages of methodologies are clear, when your project is grew from one page application to something bigger (or live long enough, that all developers changed). The right answer — if you making page, that will be replaced in one week, you don't need anything — just do it. But if you making a project, that will grow (no matter how small it seems to you at the beginning).
-
-          After some time you will get a big project, that does not have structure in it's CSS. At this point you will make a decision — to refactor this project and make it structured or suffer from growing development time from features.
-
-          You could avoid refactoring costs, if project has structure from the beginngin, but "who knew". There are quite a lot of ways to structure your CSS (and UI). Often they are called `methodologies` or `architectures`.
-
           ### Methodologies
+
+
 
           There are plenty of [methodologies](https://github.com/ikkou/awesome-css#architecture) out there which aimed on reducing CSS codebase and organizing programmers cooperation and maintaining of CSS code. This is obvious in large projects like Twitter, Facebook and [Github](http://markdotto.com/2014/07/23/githubs-css/#two-bundles), but other projects often grows into same “Huge CSS file” state pretty quickly.
 
@@ -79,6 +73,32 @@ block content
           > The reason I choose BEM over other methodologies comes down to this: it's less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognisable terminology.
 
           > BEM succeeds because it provides a good object oriented structure with a familiar terminology and is simple enough to not get in your way.
+
+    .grid__row
+      .grid__cell-sm_size_5.raw-text
+        h4(style="text-align: right")
+          | "
+          a(href="http://justinmarsan.com/css-methodology-and-frameworks/") CSS methodology and frameworks
+          | "
+          br
+          | by Justin Marsan
+      .grid__cell-sm_size_7.raw-text
+        :markdown
+          > Unlike OOCss, it doesn’t aim at total modularity, but the opposite: namespacing (through classes names), creating independent modules of css code that don’t interact with each other.
+
+          > To me, independent modules is a simpler approach and while it fails to provide the modularity of OOCss, it gives easier to manage files.
+
+    .grid__row
+      .grid__cell-sm_size_6.raw-text
+        h4(style="text-align: right")
+          | "
+          a(href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/") MindBEMding – getting your head ’round BEM syntax
+          | "
+          br
+          | by Harry Roberts
+      .grid__cell-sm_size_6.raw-text
+        :markdown
+          > BEM is a highly useful, powerful and simple naming convention to make your front-end code easier to read and understand, easier to work with, easier to scale, more robust and explicit and a lot more strict.
 
     .grid__row
       .grid__cell-sm_size_12.raw-text
