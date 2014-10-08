@@ -109,43 +109,41 @@ block content
 
           You will not be surprised, that BEM is abbreviation of the key elements of the methodology — Block, Element and Modifier.
 
-    .grid__row.raw-text
-      .grid__cell-sm_size_2
-      .grid__cell-sm_size_3.grid__block-cell
-        h4 Block
-      .grid__cell-sm_size_3.grid__element-cell
-        h4 Element
-      .grid__cell-sm_size_3.grid__modifier-cell
-        h4 Modifier
-    .grid__row.raw-text
+    .grid__row
       .grid__cell-sm_size_2
       .grid__cell-sm_size_3.grid__cell_left-border
-        :markdown
-          Block explanation
+        .heading.heading_level_1.heading_block Block
+        .raw-text
+          :markdown
+            Block explanation
 
-          Picture
+            Picture
 
-          __Examples__
+            __Examples__
 
-          `header`, `container`, `menu`, `checkbox`, `input`
+            `header`, `container`, `menu`, `checkbox`, `input`
       .grid__cell-sm_size_3.grid__cell_left-border
-        :markdown
-          Element explanation
+        .heading.heading_level_1.heading_element Element
+        .raw-text
+          :markdown
+            Element explanation
 
-          Picture
+            Picture
 
-          __Examples__
+            __Examples__
 
-          `menu item`, `list item`, `checkbox caption`, `header title`
+            `menu item`, `list item`, `checkbox caption`, `header title`
       .grid__cell-sm_size_3.grid__cell_left-border
-        :markdown
-          Modifier explanation
+        .heading.heading_level_1.heading_modifier Modifier
+        .raw-text
+          :markdown
+            Modifier explanation
 
-          Picture
+            Picture
 
-          __Examples__
+            __Examples__
 
-          `disabled`, `highlighted`, `checked`, `fixed`, `size big`, `color yellow`
+            `disabled`, `highlighted`, `checked`, `fixed`, `size big`, `color yellow`
     .grid__row
       .grid__cell-sm_size_12.raw-text
         br
