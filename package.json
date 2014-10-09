@@ -40,7 +40,6 @@
     "yargs": "^1.3.1"
   },
   "devDependencies": {
-    "gulp-minify-css": "^0.3.10",
     "multistream": "~1.4.2",
     "through2": "~0.6.1"
   }
