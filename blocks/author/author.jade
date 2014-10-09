@@ -1,5 +1,6 @@
 mixin author(avatar, name, link)
   .author
-    a.author__name(href=link)
-      img.author__photo(src=avatar)
-      = name
+    a.author__link(href=link)
+      img.img.img_circle_true.author__photo(src=avatar)
+      span.author__name
+        = name

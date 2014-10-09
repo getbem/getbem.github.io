@@ -1,18 +1,19 @@
 .author {
     margin-top: 2em;
-    text-align: center;
+    width: 200px;
+    display: inline-block;
+}
+
+.author__link {
+    font-size: 1.5em;
+    font-weight: 100;
+    display: block;
 }
 
 .author__photo {
     margin: 1rem auto;
-    display: block;
     height: 80px;
     width: 80px;
-    border-radius: 50%;
     box-shadow: 0 0 0 5px white, 0 0 0 6px #ddd;
-}
-
-.author__name {
-    font-size: 1.5em;
-    font-weight: 100;
+    display: block;
 }
