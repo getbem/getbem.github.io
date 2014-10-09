@@ -53,11 +53,9 @@ block content
         :markdown
           # ...
 
-    .grid__row
-      .grid__cell-sm_size_12.raw-text
-        br
-        :markdown
-          > We are looking for authors, that can write proper "[Comparsion of methodologies](https://github.com/getbem/getbem.com/issues/11)"
+    .grid__row.raw-text
+      :markdown
+        > We are looking for authors, that can write proper "[Comparsion of methodologies](https://github.com/getbem/getbem.com/issues/11)"
 
     .grid__row
       .grid__cell-sm_size_12.raw-text
@@ -69,39 +67,24 @@ block content
         p No matter what methodology you choose to use in your projects, you will get advantages of structured CSS and UI. Some of them are less strict and more flexible, other is easier to understand and adapt in team. Instead of writting our opinion on BEM advantages, we leave you with some quotes about it:
 
     .grid__row
-      .grid__cell-sm_size_4.raw-text
-        h4(style="text-align: right")
+      .blockquote
+        p The reason I choose BEM over other methodologies comes down to this: it's less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognisable terminology.
+        .footer
+          | Mark McDonnell 
           a(href="http://www.integralist.co.uk/posts/maintainable-css-with-bem/#why-bem-over-the-others") Maintainable CSS with BEM
-          br
-          | by Mark McDonnell
-      .grid__cell-sm_size_8.raw-text
-        :markdown
-          > The reason I choose BEM over other methodologies comes down to this: it's less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognisable terminology.
-
-          > BEM succeeds because it provides a good object oriented structure with a familiar terminology and is simple enough to not get in your way.
-
     .grid__row
-      .grid__cell-sm_size_5.raw-text
-        h4(style="text-align: right")
+      .blockquote
+        p Unlike OOCss, it doesn’t aim at total modularity, but the opposite: namespacing (through classes names), creating independent modules of css code that don’t interact with each other.
+        .footer
+          | Justin Marsan 
           a(href="http://justinmarsan.com/css-methodology-and-frameworks/") CSS methodology and frameworks
-          br
-          | by Justin Marsan
-      .grid__cell-sm_size_7.raw-text
-        :markdown
-          > Unlike OOCss, it doesn’t aim at total modularity, but the opposite: namespacing (through classes names), creating independent modules of css code that don’t interact with each other.
-
-          > To me, independent modules is a simpler approach and while it fails to provide the modularity of OOCss, it gives easier to manage files.
 
     .grid__row
-      .grid__cell-sm_size_6.raw-text
-        h4(style="text-align: right")
+      .blockquote
+        p BEM is a highly useful, powerful and simple naming convention to make your front-end code easier to read and understand, easier to work with, easier to scale, more robust and explicit and a lot more strict.
+        .footer
+          | Harry Roberts 
           a(href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/") MindBEMding – getting your head ’round BEM syntax
-          br
-          | by Harry Roberts
-      .grid__cell-sm_size_6.raw-text
-        :markdown
-          > BEM is a highly useful, powerful and simple naming convention to make your front-end code easier to read and understand, easier to work with, easier to scale, more robust and explicit and a lot more strict.
-
     .grid__row
       .grid__cell-sm_size_12.raw-text
         :markdown
