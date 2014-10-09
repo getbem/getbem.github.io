@@ -1,0 +1,8 @@
+.github {
+    background-image: url(img/github.png);
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}

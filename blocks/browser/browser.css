@@ -1,5 +1,5 @@
 .browser__title {
-    margin-top: -60px;
+    margin-top: -55px;
     margin-left: 90px;
     position: absolute;
     font-size: 0.8em;
@@ -13,7 +13,7 @@
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0px 15px 20px;
+    padding: 0px 10px 16px;
 }
 
 .browser::before,
@@ -33,9 +33,9 @@
 {
     bottom: 100%;
 
-    border-width: 80px 50px 0 290px;
+    border-width: 76px 50px 0 290px;
     border-style: solid;
-    border-image: url(img/browser-chrome-shadow.png) 80 50 0 290 fill repeat;
+    border-image: url(img/browser-chrome-shadow.png) 76 50 0 290 fill repeat;
 }
 
 .browser::after
@@ -45,5 +45,5 @@
 
     border-width: 0 50px 20px 15px;
     border-style: solid;
-    border-image: url(img/browser-chrome-shadow.png) 80 50 20 15 fill repeat;
+    border-image: url(img/browser-chrome-shadow.png) 76 50 20 15 fill repeat;
 }

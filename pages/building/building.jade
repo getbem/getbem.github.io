@@ -24,7 +24,7 @@ block content
 
           We propose easy and intuitive way to structure your BEM CSS code on file system, that will solve these problems.
 
-          If you are read [Naming](naming.html) article, you already know, that any separate entity on the site will be a __Block__ with __Elements__ that can fave __Modifiers__. Keeping that in mind we will split our `index.css` into multiple CSS files on file system. For each BEM entity we will create some files and place them to own folder:
+          If you are read [Naming](naming.html) article, you already know, that any separate entity on the site will be a __Block__ with __Elements__ that can have __Modifiers__. Keeping that in mind we will split our `index.css` into multiple CSS files on file system. For each BEM entity we will create some files and place them to own folder:
 
     .grid__row
       .grid__cell-sm_size_4.grid__block-cell.raw-text
@@ -155,11 +155,8 @@ block content
         :markdown
           Congradulations! You should get whole `index.css` file in `dist` directory.
 
-          While building CSS is straight forward, JavaScript and Templates is a bit more complex subject. There are some tools, that can help you to build projects, that structured in layers and blocks:
+          While building CSS is straight forward, JavaScript and Templates is a bit more complex subject. There are some tools, that can help you to build projects, that structured in layers and blocks (like [gulp-bem](https://github.com/floatdrop/gulp-bem)).
 
-           * [gulp-bem](https://github.com/floatdrop/gulp-bem)
-           * [enb](https://github.com/enb-make/enb)
-
-          You can see, how this site is getting built. We are using Jade for templates and [gulp-bem-pack](https://github.com/floatdrop/gulp-bem-pack) for JavaScript. Dive in site repository — [https://github.com/getbem/getbem.com](https://github.com/getbem/getbem.com).
+          You can look at how this site is getting built. We are using Jade for templates and [gulp-bem-pack](https://github.com/floatdrop/gulp-bem-pack) for JavaScript. Dive in site repository — [https://github.com/getbem/getbem.com](https://github.com/getbem/getbem.com).
 
   +edit('https://github.com/getbem/getbem.com/edit/master/pages/building/building.md')
