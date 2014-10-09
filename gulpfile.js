@@ -11,6 +11,7 @@ var glue = require('glue-streams');
 var through = require('through2');
 var join = require('path').join;
 var autoprefixer = require('gulp-autoprefixer');
+var minifyCSS = require('gulp-minify-css');
 
 function getCssFiles(bemObject) {
     return gulp.src(join(bemObject.path, bemObject.id + '.css'));
@@ -47,6 +48,7 @@ gulp.task('css', ['clean'], function () {
                     browsers: ['last 2 versions'],
                     cascade: false
                 }))
+                .pipe(minifyCSS())
                 .pipe(gulp.dest('./dist'))
                 .on('error', cb)
                 .on('end', cb);

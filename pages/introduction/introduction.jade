@@ -53,9 +53,10 @@ block content
         :markdown
           # ...
 
-    .grid__row.raw-text
-      :markdown
-        > We are looking for authors, that can write proper "[Comparsion of methodologies](https://github.com/getbem/getbem.com/issues/11)"
+    .grid__row
+      .grid__cell-xs_size_12.raw-text
+        :markdown
+          > We are looking for authors, that can write proper "[Comparsion of methodologies](https://github.com/getbem/getbem.com/issues/11)"
 
     .grid__row
       .grid__cell-sm_size_12.raw-text
@@ -97,7 +98,7 @@ block content
         :markdown
           ### Blocks, Elements and Modifiers
 
-          You will not be surprised, that BEM is abbreviation of the key elements of the methodology — Block, Element and Modifier.
+          You will not be surprised, that BEM is abbreviation of the key elements of the methodology — Block, Element and Modifier. Strict rules of naming can be found in [Naming](naming.html) article.
 
     .grid__row
       .grid__cell-lg_size_1
@@ -135,12 +136,9 @@ block content
 
             `disabled`, `highlighted`, `checked`, `fixed`, `size big`, `color yellow`
     .grid__row
-      .grid__cell-sm_size_12.raw-text
+      .grid__cell-sm_size_12
         br
-        :markdown
-          Abstract examples is not quite enough sometimes.
-
-          We prepeared example, based on popular site, that was marked up with BEM methodology:
+        br
 
     .grid__row
       .grid__cell-sm_size_1
@@ -171,6 +169,7 @@ block content
       .grid__cell-sm_size_1
 
     .grid__row
+      br
       .grid__cell-sm_size_12.raw-text
         :markdown
           ### Case study
