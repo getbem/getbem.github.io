@@ -132,13 +132,36 @@ block content
           .browser__title Github
           img.github(src="img/github.png" width="100%")
       .grid__cell-sm_size_1
-
     .grid__row
       br
+      .grid__cell-sm_size_12.raw-text
+        h3 Benefits
+    .grid__row
+      .grid__cell-sm_size_4.raw-text
+        :markdown
+          #### Modularity
+
+          Blocks styles should not have dependencies on other elements on a page, therefore you will never get [problems from cascading](http://www.phase2technology.com/blog/used-and-abused-css-inheritance-and-our-misuse-of-the-cascade/).
+
+          This also gives you ability to transfer blocks from ready project to new one.
+      .grid__cell-sm_size_4.raw-text
+        :markdown
+          #### Reusablility
+
+          Copmosing independent blocks in a different way and reusing them reduces amout of CSS code, that you will maintain.
+
+          If you have design guidelines, then it is super effective to have ready Blocks library.
+      .grid__cell-sm_size_4.raw-text
+        :markdown
+          #### Structure
+
+          BEM methodology gives you simple and understandable structure in your CSS code. We wrote [Building](building.html) article, that contains straightforward way of storing this structure on file system and a way to build it.
+
+    .grid__row
       .grid__cell-sm_size_12.raw-text
         :markdown
           ### Case study
 
-          We are prepearing little case study on "How to migrate existing project to BEM". In meanwhile you can watch nice presentation by Nicole Sullivan — "[CSS preprocessor performance](http://www.youtube.com/watch?v=0NDyopLKE1w)". It gives a very good explanation of problems, that she meets in major of sites and ways to track and handle them.
+          We are looking forward to writing "How to migrate existing project to BEM". In meanwhile you can watch nice presentation by Nicole Sullivan — "[CSS preprocessor performance](http://www.youtube.com/watch?v=0NDyopLKE1w)". It gives a very good explanation of problems, that she meets in major of sites and ways to track and handle them.
 
   +edit('https://github.com/getbem/getbem.com/edit/master/pages/introduction/introduction.jade')
