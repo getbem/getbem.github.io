@@ -132,61 +132,16 @@ block content
       .grid__cell-sm_size_12.raw-text
         :markdown
           ### Under the hood
+    
     .grid__row
       .grid__cell-sm_size_12.raw-text
-        br
+        h4 Button
         :markdown
-          #### Menu block
-
-          We will use unordered list and list items as DOM entities. Each DOM element will have BEM classes.
-
-          As [Naming](naming.html) says — Blocks should be named as is, but Elements should be named in `block__element` style. Example markup and styles:
-    .grid__row
-      .grid__cell-sm_size_4.raw-text
-        h5 Design
-        .raw-text.text_align_center
-          img(src="img/github_header.jpg")
-      .grid__cell-sm_size_4.raw-text
-        h5 HTML
-        :markdown
-          ```html
-          <ul class="menu">
-            <li class="menu__item">Explore</li>
-            <li class="menu__item">Features</li>
-            <li class="menu__item">Enterprise</li>
-            <li class="menu__item">Blog</li>
-          </ul>
-          ```
-
-      .grid__cell-sm_size_4.raw-text
-        h5 CSS
-        :markdown
-          ```css
-          .menu {
-            list-style: none;
-          }
-
-          .menu__item {
-            margin-left: 1em;
-            display: inline-block;
-          }
-          ```
-
-    .grid__row
-      .grid__cell-sm_size_1
-      .grid__cell-sm_size_10.raw-text.text_align_center
-    .grid__row
-      .grid__cell-sm_size_12.raw-text
-        :markdown
-          #### Button block
-
           We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (`button`, `a` or even `div`). Naming invites us to use `block__modifier_value` syntax.
-    .grid__row
-      .grid__cell-sm_size_2.raw-text
-        h5 Design
-        .raw-text.text_align_center
+        div(style="text-align: center;")
           img(src="img/github_buttons.jpg")
-      .grid__cell-sm_size_5.raw-text
+    .grid__row
+      .grid__cell-sm_size_6.raw-text
         h5 HTML
         :markdown
           ```html
@@ -204,7 +159,7 @@ block content
           </button>
           ```
 
-      .grid__cell-sm_size_5.raw-text
+      .grid__cell-sm_size_6.raw-text
         h5 CSS
         :markdown
           ```css
