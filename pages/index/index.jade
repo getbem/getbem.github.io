@@ -34,55 +34,8 @@ block content
     .grid__row
       .grid__cell-xs_size_12.raw-text
         a(link="getting-started")
-        h2(style="text-align: center;") Getting started
-
-    .grid__row
-      .grid__cell-md_size_2
-      .grid__cell-md_size_8.raw-text
-        :markdown
-          If you are questioning about — «Why should I use something?», you definatly need to read [Introduction](introduction.html). We wrote some exapmles of problems, that awaits you on the road there. In short:
-
-           * __CSS without structure will be a pain in maintaining__
-           * __Sharing styles between projects becomes hard__
-           * __Bloated CSS slow down site responsivness__
-
-          Many projects run into one or more of this pitfalls.
-
-          To avoid these problems Yandex propose a way of structuring UI in sites — BEM.
-
-    .grid__row
-      .grid__cell-md_size_2
-      .grid__cell-md_size_8.raw-text
-        :markdown
-          To start using BEM you literally need nothing besides [Naming](naming.html), since BEM is firstly _naming convention_.
-    .grid__row
-      .grid__cell-md_size_2
-        h3.side-note.side-note_green Blocks
-      .grid__cell-md_size_8.raw-text
-        :markdown
-          We claim, that independent components is good for project maintaining and development. Keeping that in mind, we trying to split every project, that we develope in such components, named `Blocks`.
-    .grid__row
-      .grid__cell-md_size_2
-        h3.side-note.side-note_blue Elements
-      .grid__cell-md_size_8.raw-text
-        :markdown
-          But `blocks` is not quite enough to describe complex UI objects on page. Imagine, that you need to implement menu — creating new blocks for every menu item would be overkill. That's where `elements` comes to the rescue. `Element` represents parts of the blocks, that should not be used outside of `block`.
-    .grid__row
-      .grid__cell-md_size_2
-        h3.side-note.side-note_red Modifiers
-      .grid__cell-md_size_8.raw-text
-        :markdown
-          And finally every `block` and `element` can have a multiple _states_, which we call `modifiers` — for example `disabled` and `highlighted` is good exapmles of such states.
-    .grid__row
-      .grid__cell-md_size_2
-      .grid__cell-md_size_8.raw-text
-        :markdown
-          <br>
-          More strict definitions can be found in [Naming](naming.html) page.
-    .grid__row
-      .grid__cell-xs_size_12.raw-text
-        a(link="getting-started")
-        h2(style="text-align: center;") Welcome to BEM!
+        h2(style="text-align: center;")
+          a(href="introduction.html") Introduction
 
 
   +edit('https://github.com/floatdrop/getbem.com/edit/master/pages/index/index.jade')
