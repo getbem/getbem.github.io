@@ -1,4 +1,4 @@
 .github {
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+    max-width: 930px;
+    width: 100%;
 }
