@@ -6,6 +6,9 @@ block title
 block head
   link(rel="stylesheet" href="introduction.css")
 
+block scripts
+  script(src="index.js")
+
 block content
   .grid
     .grid__row
@@ -126,7 +129,49 @@ block content
         img.github(src="img/github_captions.png" width="100%")
 
     .grid__row
-      br
+      .grid__cell-sm_size_12.raw-text
+        :markdown
+          ### Under the hood
+          Lets look how part of the GitHub header can be represented in BEM. We will take `menu` as example:
+        br
+    .grid__row
+      .grid__cell-sm_size_1
+      .grid__cell-sm_size_10.raw-text
+        img(src="img/github_header.png" width="100%")
+    .grid__row
+      .grid__cell-sm_size_12.raw-text
+        br
+        :markdown
+          We will use unordered list and list items as DOM entities. Each DOM element will have BEM classes.
+
+          As [Naming](naming.html) says — Blocks should be named as is, but Elements should be named in `block__element` style. Example markup and styles:
+    .grid__row
+      .grid__cell-sm_size_6.raw-text
+        h4 HTML
+        :markdown
+          ```html
+          <ul class="menu">
+            <li class="menu__item">Explore</li>
+            <li class="menu__item">Features</li>
+            <li class="menu__item">Enterprise</li>
+            <li class="menu__item">Blog</li>
+          </ul>
+          ```
+
+      .grid__cell-sm_size_6.raw-text
+        h4 CSS
+        :markdown
+          ```css
+          .menu {
+            list-style: none;
+          }
+          .menu__item {
+            margin-left: 1em;
+            display: inline-block;
+          }
+          ```
+
+    .grid__row
       .grid__cell-sm_size_12.raw-text
         h3 Benefits
     .grid__row
