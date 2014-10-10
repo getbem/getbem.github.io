@@ -125,29 +125,31 @@ block content
             `disabled`, `highlighted`, `checked`, `fixed`, `size big`, `color yellow`
 
     .grid__row
-      .grid__cell-sm_size_12(style="text-align: center")
-        img.github(src="img/github_captions.png" width="100%")
+      .grid__cell-sm_size_12.text_align_center
+        img.github(src="img/github_captions.png")
 
     .grid__row
       .grid__cell-sm_size_12.raw-text
         :markdown
           ### Under the hood
-          Lets look how part of the GitHub header can be represented in BEM. We will take `menu` as example:
+          Lets look how part of the GitHub header can be represented in BEM. We will take `menu` and `button` as examples:
         br
-    .grid__row
-      .grid__cell-sm_size_1
-      .grid__cell-sm_size_10.raw-text
-        img(src="img/github_header.png" width="100%")
     .grid__row
       .grid__cell-sm_size_12.raw-text
         br
         :markdown
+          #### Menu block
+
           We will use unordered list and list items as DOM entities. Each DOM element will have BEM classes.
 
           As [Naming](naming.html) says — Blocks should be named as is, but Elements should be named in `block__element` style. Example markup and styles:
     .grid__row
-      .grid__cell-sm_size_6.raw-text
-        h4 HTML
+      .grid__cell-sm_size_4.raw-text
+        h5 Design
+        .raw-text.text_align_center
+          img(src="img/github_header.jpg")
+      .grid__cell-sm_size_4.raw-text
+        h5 HTML
         :markdown
           ```html
           <ul class="menu">
@@ -158,18 +160,76 @@ block content
           </ul>
           ```
 
-      .grid__cell-sm_size_6.raw-text
-        h4 CSS
+      .grid__cell-sm_size_4.raw-text
+        h5 CSS
         :markdown
           ```css
           .menu {
             list-style: none;
           }
+
           .menu__item {
             margin-left: 1em;
             display: inline-block;
           }
           ```
+
+    .grid__row
+      .grid__cell-sm_size_1
+      .grid__cell-sm_size_10.raw-text.text_align_center
+    .grid__row
+      .grid__cell-sm_size_12.raw-text
+        :markdown
+          #### Button block
+
+          We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (`button`, `a` or even `div`). Naming invites us to use `block__modifier_value` syntax.
+    .grid__row
+      .grid__cell-sm_size_2.raw-text
+        h5 Design
+        .raw-text.text_align_center
+          img(src="img/github_buttons.jpg")
+      .grid__cell-sm_size_5.raw-text
+        h5 HTML
+        :markdown
+          ```html
+          <!-- Using `button` tag -->
+          <button class="button">
+            Normal button
+          </button>
+
+          <button class="button button_state_success">
+            Success button
+          </button>
+
+          <button class="button button_state_danger">
+            Danger button
+          </button>
+          ```
+
+      .grid__cell-sm_size_5.raw-text
+        h5 CSS
+        :markdown
+          ```css
+          .button {
+            display: inline-block;
+            border-radius: 3px;
+            padding: 7px 12px;
+            border: 1px solid #D5D5D5;
+            background-image: linear-gradient(#EEE, #DDD);
+            font: 700 13px/18px Helvetica, arial;
+          }
+
+          .button_state_success {
+            color: #FFF;
+            background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
+            border-color: #4A993E;
+          }
+
+          .button_state_danger {
+            color: #900;
+          }
+          ```
+
 
     .grid__row
       .grid__cell-sm_size_12.raw-text
