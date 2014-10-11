@@ -1,4 +1,7 @@
 .index-icon {
-    margin: 1rem auto;
+    margin: 1em auto 3em auto;
+}
+
+.index-icon img {
     box-shadow: 0 0 0 5px white, 0 0 0 6px #ddd;
 }
