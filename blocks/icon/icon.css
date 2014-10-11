@@ -1,4 +1,8 @@
-.index-icon {
+.icon {
+
+}
+
+.icon__image {
     display: block;
     text-align: center;
     width: 128px;
@@ -6,4 +10,12 @@
     margin: 1em auto;
     box-shadow: 0 0 0 5px white, 0 0 0 6px #ddd;
     border-radius: 50%;
+}
+
+.icon__caption {
+    margin-top: -25px;
+    background-color: white;
+    font-size: 30px;
+    font-weight: 100;
+    margin-bottom: 25px;
 }
