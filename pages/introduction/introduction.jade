@@ -131,15 +131,14 @@ block content
     .grid__row
       .grid__cell-sm_size_12.raw-text
         :markdown
-          Lets look how part of the GitHub header can be represented in BEM. We will take `menu` and `button` as examples:
-        br
-    .grid__row
-      .grid__cell-sm_size_12.raw-text
+          ### Under the hood
+
+          Lets look how one particular element on page can be implemented in BEM. We will take `button` from [GitHub styleguide](https://github.com/styleguide/css/1.0):
+
+        p(style="text-align: center; padding: 30px 0;")
+          img(src="img/github_buttons.jpg")
+
         :markdown
-          #### Button
-
-          ![](img/github_buttons.jpg)
-
           We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (`button`, `a` or even `div`). Naming invites us to use `block__modifier_value` syntax.
     .grid__row
       .grid__cell-sm_size_6.raw-text
