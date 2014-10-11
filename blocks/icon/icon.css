@@ -1,5 +1,5 @@
 .icon {
-
+    margin: 1em auto 3em auto;
 }
 
 .icon__image {
@@ -17,5 +17,4 @@
     background-color: white;
     font-size: 30px;
     font-weight: 100;
-    margin-bottom: 25px;
 }
