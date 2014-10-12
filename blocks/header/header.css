@@ -2,15 +2,14 @@
     padding-top: 50px;
     padding-bottom: 50px;
     color: white;
-    background-image: url('img/header-background.jpg');
+    background-image: url('img/header-background.jpg'), linear-gradient(to bottom, #c2d6d5 0%,#358da1 50%,#0c3956 70%);
     background-position: center -100px;
-    background-color: #262c32;
     background-attachment: fixed;
     text-align: center;
 }
 
 .header img {
-    width: 128px;
+    height: 200px;
 }
 
 @media screen and (min-width: 48em) {
