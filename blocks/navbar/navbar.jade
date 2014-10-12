@@ -4,7 +4,7 @@ mixin navbar(actievUrl)
   .navbar.navbar_theme_default.navbar_static-top(role="navigation")
     .grid
       .navbar__header
-        .navbar__toggler(data-toggle="collapse")
+        a.navbar__toggler(data-toggle="collapse" data-target="#menu")
           .sr-only
             | Toggle navigation
           span.icon-bar
@@ -13,7 +13,7 @@ mixin navbar(actievUrl)
         a.navbar__brand(href="index.html")
           | Get BEM
 
-      .navbar__collapse.collapse
+      .navbar__collapse.collapse#menu
         ul.nav.navbar__nav
           each title, url in pages
             li.nav__item(class= url === actievUrl ? 'nav__item_active' : '')
