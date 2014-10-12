@@ -6,10 +6,10 @@
     color: #222;
 }
 
-.navbar_theme_default .navbar__nav > li > a {
+.navbar_theme_default .nav__item .nav__link {
     color: #222;
 }
 
-.navbar_theme_default .navbar__nav > li > a:hover {
+.navbar_theme_default .nav__item .nav__link:hover {
     color: #999;
 }
