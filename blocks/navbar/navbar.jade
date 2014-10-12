@@ -1,0 +1,21 @@
+mixin navbar(actievUrl)
+  - var pages = { introduction: 'Introduction', naming: 'Naming', building: 'Building' }
+
+  .navbar.navbar_theme_default.navbar_static-top(role="navigation")
+    .grid
+      .navbar__header
+        .navbar__toggler(data-toggle="collapse")
+          .sr-only
+            | Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar__brand(href="index.html")
+          | Get BEM
+
+      .navbar__collapse.collapse
+        ul.nav.navbar__nav
+          each title, url in pages
+            li.nav__item(class= url === actievUrl ? 'nav__item_active' : '')
+              a.nav__link(href="#{url}.html")
+               | #{title}
