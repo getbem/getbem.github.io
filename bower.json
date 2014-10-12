@@ -9,6 +9,6 @@
     "libs"
   ],
   "dependencies": {
-    "bootstrap": "matmuchrapna/bem-bootstrap#v0.1.0"
+    "bootstrap": "matmuchrapna/bem-bootstrap#v0.1.2"
   }
 }
