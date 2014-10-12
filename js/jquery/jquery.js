@@ -1,1 +1,1 @@
-module.exports.jQuery = require('jquery');
+global.jQuery = require('jquery');
