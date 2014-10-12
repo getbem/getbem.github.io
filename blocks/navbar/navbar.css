@@ -1,3 +1,15 @@
 .navbar {
     margin-bottom: 0;
 }
+
+.navbar_theme_default .navbar__brand {
+    color: #222;
+}
+
+.navbar_theme_default .navbar__nav > li > a {
+    color: #222;
+}
+
+.navbar_theme_default .navbar__nav > li > a:hover {
+    color: #999;
+}
