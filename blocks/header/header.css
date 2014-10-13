@@ -2,9 +2,9 @@
     padding-top: 50px;
     padding-bottom: 50px;
     color: white;
-    background-image: url('img/header-background.jpg'), linear-gradient(to bottom, #c2d6d5 0%,#358da1 50%,#0c3956 70%);
-    background-position: center -100px;
-    background-attachment: fixed;
+    background:
+        url('img/header-background.jpg') 50% -100px fixed,
+        linear-gradient(to bottom, #F8F8F8 0%, #1C6990 100%);
     text-align: center;
 }
 
