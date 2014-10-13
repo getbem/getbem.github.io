@@ -11,6 +11,7 @@ var glue = require('glue-streams');
 var through = require('through2');
 var join = require('path').join;
 var autoprefixer = require('gulp-autoprefixer');
+var uglify = require('gulp-uglify');
 
 function getCssFiles(bemObject) {
     return gulp.src(join(bemObject.path, bemObject.id + '.css'));
@@ -33,6 +34,7 @@ gulp.task('js', ['clean'], function () {
     return glue.obj(bem.objects(levels), bem.objects('pages'))
         .pipe(bem.src('{bem}.js'))
         .pipe(pack('index.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('./dist'));
 });
 
