@@ -91,7 +91,7 @@ gulp.task('css', ['clean'], function () {
 
 ### HTML
 
-This is tricky part of [getbem.com](https://getbem.com). At first we Try'd to use [bh](https://github.com/bem/bh) as templating language — but quickly realize, that it is too complex to achieve fast development and quick prototyping of site.
+This is tricky part of [getbem.com](https://getbem.com). At first we try'd to use [bh](https://github.com/bem/bh) as templating language — but quickly realize, that it is too complex to achieve fast development and quick prototyping of site.
 
 So we used [Jade](jade-lang.com) and it's [mixins](http://jade-lang.com/reference/mixins/) to achieve reusablility of templates from blocks.
 
