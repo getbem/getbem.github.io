@@ -74,7 +74,7 @@ tree.deps('pages/index')
     .pipe(gulp.dest('./dist'));
 ```
 
-But, if you want to get CSS files for every page (which it self is a block), you need to get all `pages` objects and run building for each of then:
+But, if you want to get CSS files for every page (which it self is a block), you need to get all `pages` objects and run building for each of them:
 
 ```js
 gulp.task('css', ['clean'], function () {
