@@ -159,11 +159,11 @@ gulp.task('html', ['clean'], function () {
 
 Building JavaScript is very hard task to do. We used our wrapper around [browserify](browserify.org) — [gulp-bem-pack](https://github.com/floatdrop/gulp-bem-pack). It converts CommonJS modules that can `require` modules from BEM Levels — which is kind of equivalent of cascading in CSS.
 
-Task to do it is quite short:
+Task to do it is quite short (because we building it only for index page in our case):
 
 ```js
 gulp.task('js', ['clean'], function () {
-    return tree.deps('blocks/page')
+    return tree.deps('pages/index')
         .pipe(bem.src('{bem}.js'))
         .pipe(pack('index.js'))
         .pipe(gulp.dest('./dist'));

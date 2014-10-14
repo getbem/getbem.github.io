@@ -1,4 +1,6 @@
 module.exports.require = [
+    { block: 'highlight' },
+
     { block: 'normalize' },
     { block: 'print' },
     { block: 'scaffolding' },

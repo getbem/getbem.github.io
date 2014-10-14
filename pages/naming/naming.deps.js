@@ -3,6 +3,5 @@ module.exports = {
         { block: 'page' },
         { block: 'author' },
         { block: 'authors' },
-        { block: 'highlight' },
     ]
 };
