@@ -19,13 +19,7 @@ function getCssFiles(bemObject) {
 
 var levels = [
     'js',
-    'libs/bootstrap/levels/normalize',
-    'libs/bootstrap/levels/print',
-    'libs/bootstrap/levels/glyphicons',
-    'libs/bootstrap/levels/scaffolding',
-    'libs/bootstrap/levels/core',
-    'libs/bootstrap/levels/components',
-    'libs/bootstrap/levels/js',
+    'libs/bootstrap/levels/*',
     'base',
     'blocks'
 ];
