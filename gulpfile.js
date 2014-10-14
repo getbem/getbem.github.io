@@ -23,15 +23,11 @@ gulp.task('tree', function () {
 });
 
 gulp.task('js', ['clean'], function () {
-    function buildJs(page) {
-        return tree.deps('pages/' + page.id)
-            .pipe(bem.src('{bem}.js'))
-            .pipe(pack(page.id + '.js'))
-            .pipe(uglify())
-            .pipe(gulp.dest('./dist'));
-    }
-
-    return bem.objects('pages').map(buildJs);
+    return tree.deps('pages/index')
+        .pipe(bem.src('{bem}.js'))
+        .pipe(pack('index.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('css', ['clean'], function () {
