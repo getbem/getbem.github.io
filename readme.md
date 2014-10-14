@@ -1,16 +1,29 @@
-# Get BEM!
+# Get BEM! at [getbem.com](https://getbem.com)
 
-We are gathering information about BEM methodology in separation with building tools. It is clear, that you will need some building stage after you split CSS into files, so Building article is also there. Building article will be separated from concrete building tool by providing multiple tools for building BEM project.
+> If you interested in writing articles or helping with site — feel free to make pull-requests or [creating issues](https://github.com/floatdrop/getbem.com/issues) with discussions.
 
-If you interested in writing articles or helping with site — feel free to make pull-requests or [creating issues](https://github.com/floatdrop/getbem.com/issues) with discussions.
+This repository contains sources of [getbem.com](https://getbem.com) site.
 
-## How to build
+## Quick start
+
+Clone this repository:
 
 ```bash
-git clone https://github.com/getbem/getbem.com
+git clone https://github.com/getbem/getbem.com.git
 cd getbem.com
+```
+
+Build site with three simple steps:
+
+```bash
 npm i
+bower i
 gulp build
+```
+
+Open `dist/index.html` file:
+
+```bash
 open dist/index.html
 ```
 
