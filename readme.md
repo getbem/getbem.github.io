@@ -1,4 +1,4 @@
-# Get BEM! at [getbem.com](https://getbem.com)
+# [Get BEM!](https://getbem.com)
 
 > If you interested in writing articles or helping with site — feel free to make pull-requests or [creating issues](https://github.com/floatdrop/getbem.com/issues) with discussions.
 
