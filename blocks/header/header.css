@@ -4,7 +4,7 @@
     color: white;
     background:
         url('img/header-background.jpg') 50% -100px fixed,
-        linear-gradient(to bottom, #F8F8F8 0%, #1C6990 100%);
+        #4c748c;
     text-align: center;
 }
 
