@@ -170,6 +170,6 @@ gulp.task('js', ['clean'], function () {
 });
 ```
 
-We are looking forward to use [Duo](duojs.org), as soon as resolving parts will be configurable.
+We are looking forward to use [Duo](http://duojs.org/), as soon as resolving parts will be configurable.
 
 ##### MIT License
