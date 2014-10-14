@@ -23,7 +23,7 @@ gulp.task('tree', function () {
 });
 
 gulp.task('js', ['clean'], function () {
-    return tree.deps('pages/index')
+    return tree.deps('blocks/page')
         .pipe(bem.src('{bem}.js'))
         .pipe(pack('index.js'))
         .pipe(uglify())
