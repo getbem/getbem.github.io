@@ -13,6 +13,12 @@ git clone https://github.com/getbem/getbem.com.git
 cd getbem.com
 ```
 
+Install `bower` and `gulp` executables:
+
+```bash
+npm i bower gulp -g
+```
+
 Build site with three simple steps:
 
 ```bash
