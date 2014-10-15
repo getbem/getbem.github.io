@@ -8,6 +8,7 @@ module.exports.require = [
 
     { block: 'navbar' },
     { block: 'grid' },
+    { block: 'text' },
     { block: 'raw-text' },
     { block: 'img' },
     { block: 'heading' },
