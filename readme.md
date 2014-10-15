@@ -165,6 +165,8 @@ gulp.task('html', function () {
 });
 ```
 
+__Warning:__ Jade is not quite suited for processing concatenated templates from different files — so line numbers in error messages will be strange. 
+
 ### JavaScript
 
 Building JavaScript is very hard task to do. We used our wrapper around [browserify](browserify.org) — [gulp-bem-pack](https://github.com/floatdrop/gulp-bem-pack). It add to browserify ability to `require` modules from BEM Levels — which is kind of equivalent of cascading in CSS.
