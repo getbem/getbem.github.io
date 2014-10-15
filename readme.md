@@ -6,24 +6,24 @@ This repository contains sources of [getbem.com](https://getbem.com) site.
 
 ## Quick start
 
-Clone this repository:
-
-```bash
-git clone https://github.com/getbem/getbem.com.git
-cd getbem.com
-```
-
-Install `bower` and `gulp` executables:
+Install `bower` and `gulp` executables, if you are already not:
 
 ```bash
 npm i bower gulp -g
 ```
 
-Build site with three simple steps:
+Clone this repository and install depencies:
 
 ```bash
+git clone https://github.com/getbem/getbem.com.git
+cd getbem.com
 npm i
 bower i
+```
+
+Build site:
+
+```bash
 gulp build
 ```
 
@@ -32,6 +32,8 @@ Open `dist/index.html` file:
 ```bash
 open dist/index.html
 ```
+
+Windows system have no `open` command, so try to open compiled `dist/index.html` file with your favourite browser.
 
 ## Build steps explained
 
@@ -45,15 +47,15 @@ We will look at main parts of [gulpfile.js](gulpfile.js), which are:
 
 These task was intentionally simplified to keep things small.
 
-Before digging in to tasks, we will take short introduction in [gulp-bem](https://github.com/floatdrop/gulp-bem) which is used in all  tasks.
+Before digging into tasks, we will take short introduction in [gulp-bem](https://github.com/floatdrop/gulp-bem) which is used in all tasks.
 
 ### gulp-bem
 
 If you familar with [building](http://getbem.com/building.html) of BEM projects — then you probably know, that BEM projects have certain structure: file with CSS for blocks will be in `block` folder with name `{block}.css` (where `{block}` is placeholder for current block name). All blocks are grouped to levels — folders with blocks.
 
-With this structure is not clear in which order you should concatinate blocks and how get specific files from block (element or modifier) folder. To make it easy - we wrote [gulp-bem](https://github.com/floatdrop/gulp-bem).
+With this structure is not clear in which order you should concatenate blocks and how get specific files from block (element or modifier) folder. To make it easy - we wrote [gulp-bem](https://github.com/floatdrop/gulp-bem).
 
-Main object, that powers gulp-bem is [bem-object](https://github.com/floatdrop/bem-object). You can read readme in bem-object repository, but in short — it represents directory with files (or single file for modifier with value case). To get all bem-object from level you can do `bem.object('level')` - it will return `Stream` of bem-objects.
+Main object, that powers gulp-bem is [bem-object](https://github.com/floatdrop/bem-object). You can explore readme in bem-object repository, but in short — it represents directory with files (or single file for modifier with value case). To get all *bem-objects* from level you can do `bem.object('level')` - it will return `Stream` of bem-objects.
 
 gulp-bem also provides `*.deps.js` files support. They are used to define dependencies between blocks. You can read [gulp-bem-specs](https://github.com/floatdrop/gulp-bem-specs) with explanations.
 
@@ -67,11 +69,11 @@ var tree = bem.objects(levels)
 
 To construct tree of dependencies - you need to read `deps` file - we get you covered, and `bem.deps()` reads file that named `{bem}.deps.js` from bem-object (where `{bem}` is BEM identificator for current bem-object).
 
-After tree is constructed — you can query dependencies of block: `tree.deps('block')` which return `Stream` of bem-objects.
+After tree is constructed — you can query dependencies of block: `tree.deps('block')` which return `Stream` of bem-objects. Usually it is used for building dependency tree for single page.
 
 ### CSS
 
-To build CSS you don't need magic — it just concatination of `{bem}.css` files in right order:
+To build CSS you don't need magic — it just concatenation of `{bem}.css` files in right order:
 
 ```js
 tree.deps('pages/index')
@@ -80,7 +82,7 @@ tree.deps('pages/index')
     .pipe(gulp.dest('./dist'));
 ```
 
-But, if you want to get CSS files for every page (which it self is a block), you need to get all `pages` objects and run building for each of them:
+But, if you want to get CSS files for every page (which itself is a block), you need to get all `pages` objects and run building for each of them:
 
 ```js
 gulp.task('css', ['clean'], function () {
@@ -94,6 +96,9 @@ gulp.task('css', ['clean'], function () {
     return bem.objects('pages').map(buildCss);
 });
 ```
+
+
+*NOTE:* you can see `clean` task here, it will be executed before `css` task. It is usefull for cleaning `dist` folder, before generating our site.
 
 ### HTML
 
@@ -131,7 +136,7 @@ return tree.deps('pages/index')
     .pipe(gulp.dest('./dist'));
 ```
 
-Tricky part is get right `base` path for concatinated file:
+Tricky part is get right `base` path for concatenated file:
 
 ```js
 concat({
@@ -163,7 +168,7 @@ gulp.task('html', ['clean'], function () {
 
 ### JavaScript
 
-Building JavaScript is very hard task to do. We used our wrapper around [browserify](browserify.org) — [gulp-bem-pack](https://github.com/floatdrop/gulp-bem-pack). It converts CommonJS modules that can `require` modules from BEM Levels — which is kind of equivalent of cascading in CSS.
+Building JavaScript is very hard task to do. We used our wrapper around [browserify](browserify.org) — [gulp-bem-pack](https://github.com/floatdrop/gulp-bem-pack). It add to browserify ability to `require` modules from BEM Levels — which is kind of equivalent of cascading in CSS.
 
 Task to do it is quite short (because we building it only for index page in our case):
 
