@@ -85,7 +85,7 @@ tree.deps('pages/index')
 But, if you want to get CSS files for every page (which itself is a block), you need to get all `pages` objects and run building for each of them:
 
 ```js
-gulp.task('css', ['clean'], function () {
+gulp.task('css', function () {
     function buildCss(page) {
         return tree.deps('pages/' + page.id)
             .pipe(bem.src('{bem}.css'))
@@ -96,9 +96,6 @@ gulp.task('css', ['clean'], function () {
     return bem.objects('pages').map(buildCss);
 });
 ```
-
-
-*NOTE:* you can see `clean` task here, it will be executed before `css` task. It is usefull for cleaning `dist` folder, before generating our site.
 
 ### HTML
 
@@ -150,7 +147,7 @@ If you miss `base` property, then `extend` and `include` in Jade template will n
 Again, to build all pages with Jade, we using this code:
 
 ```js
-gulp.task('html', ['clean'], function () {
+gulp.task('html', function () {
     function buildHtml(page) {
         return tree.deps('pages/' + page.id)
             .pipe(bem.src('{bem}.jade'))
@@ -173,7 +170,7 @@ Building JavaScript is very hard task to do. We used our wrapper around [browser
 Task to do it is quite short (because we building it only for index page in our case):
 
 ```js
-gulp.task('js', ['clean'], function () {
+gulp.task('js', function () {
     return tree.deps('pages/index')
         .pipe(bem.src('{bem}.js'))
         .pipe(pack('index.js'))
