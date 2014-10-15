@@ -82,6 +82,8 @@ tree.deps('pages/index')
     .pipe(gulp.dest('./dist'));
 ```
 
+`bem.src('{bem}.css')` takes bem-object and extracts all files, that matches argument. In this example it will get all CSS files with same name as BEM entity.
+
 But, if you want to get CSS files for every page (which itself is a block), you need to get all `pages` objects and run building for each of them:
 
 ```js
