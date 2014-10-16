@@ -20,4 +20,14 @@ describe('index page', function () {
                 if (err) { done(err); }
             });
     });
+
+    it('should have link to introduction', function (done) {
+        new Nightmare()
+            .goto(join(__dirname, '../dist/index.html'))
+            .click('.nav__link[href="introduction.html"]')
+            .run(function (err) {
+                if (err) { return done(err); }
+                done();
+            });
+    });
 });
