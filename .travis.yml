@@ -5,3 +5,4 @@ script:
   - npm install -g bower gulp
   - bower i
   - gulp build
+  - npm test
