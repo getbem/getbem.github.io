@@ -15,7 +15,7 @@ block scripts
 block content
   .grid.grid_fixed
     .grid__row
-      .grid__cell-xs_size_12.raw-text
+      .grid__cell-xs.grid__cell-xs_size_12.raw-text
         :markdown
           # Naming
           > There are only two hard problems in Computer Science: cache invalidation and naming things — _Phil Karlton_
@@ -27,17 +27,17 @@ block content
     br
 
     .grid__row
-      .grid__cell-xs_size_12.grid__block-cell.raw-text
+      .grid__cell-xs.grid__cell-xs_size_12.grid__block-cell.raw-text
         :markdown
           ## Block
           Encapsulates a standalone entity that is meaningful on its own. While blocks can be nested and interact with each other, semantically they remain equal; there is no precedence or hierarchy. Holistic entities without DOM representation (such as controllers or models) can be blocks as well.
     .grid__row
-      .grid__cell-md_size_4.grid__cell_left-border.raw-text
+      .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
         :markdown
           #### Naming
 
           Block name may consist of Latin letters, digits, and dashes. To form a CSS class, add short prefix for namespacing: `.block`
-      .grid__cell-md_size_4.grid__cell_left-border.raw-text
+      .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
         :markdown
           #### HTML
           Any DOM node can be a block if it accepts a class name.
@@ -45,7 +45,7 @@ block content
           ```html
           <div class="block">...</div>
           ```
-      .grid__cell-md_size_4.grid__cell_left-border.raw-text
+      .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
         :markdown
           #### CSS
            * Use class name selector only
@@ -56,18 +56,18 @@ block content
           .block { color: #042 }
           ```
     .grid__row
-      .grid__cell-xs_size_12.grid__element-cell.raw-text
+      .grid__cell-xs.grid__cell-xs_size_12.grid__element-cell.raw-text
         :markdown
           ## Element
           Parts of a block and have no standalone meaning. Any element is semantically tied to its block.
     .grid__row
-      .grid__cell-md_size_4.grid__cell_left-border.raw-text
+      .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
         :markdown
           #### Naming
           Element name may consist of Latin letters, digits, and dashes.
           CSS class is formed as block name plus two undercores plus element name:
           `.block__elem`
-      .grid__cell-md_size_4.grid__cell_left-border.raw-text
+      .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
         :markdown
           #### HTML
           Any DOM node within a block can be an element. Within a given block, all elements are semantically equal.
@@ -78,7 +78,7 @@ block content
             <span class="block__elem"></span>
           </div>
           ```
-      .grid__cell-md_size_4.grid__cell_left-border.raw-text
+      .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
         :markdown
           #### CSS
            * Use class name selector only
@@ -96,12 +96,12 @@ block content
           div.block__elem { color: #042; }
           ```
     .grid__row
-      .grid__cell-xs_size_12.grid__modifier-cell.raw-text
+      .grid__cell-xs.grid__cell-xs_size_12.grid__modifier-cell.raw-text
         :markdown
           ## Modifier
           Flags on blocks or elements. Use them to change appearance or behavior.
     .grid__row
-      .grid__cell-md_size_4.grid__cell_left-border.raw-text
+      .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
         :markdown
           #### Naming
           Modifiers (both keys and values) may consist of Latin letters, digits, and dashes.
@@ -113,7 +113,7 @@ block content
 
            __Key/value modifiers__<br>
               Original block/element name + single underscore + mod key name + single underscore + mod value: `.block_key_value` or `.block__elem_key_value`
-      .grid__cell-md_size_4.grid__cell_left-border.raw-text
+      .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
         :markdown
           #### HTML
           Modifier is an extra class name which you add to a block/element DOM node. Add modifier classes only to blocks/elements they modify, and keep the original class:
@@ -128,7 +128,7 @@ block content
           ```html
           <div class="block_mod">...</div>
           ```
-      .grid__cell-md_size_4.grid__cell_left-border.raw-text
+      .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
         :markdown
           #### CSS
           Use modifier class name as selector:
@@ -149,12 +149,12 @@ block content
           .block__elem_mod { display: none }
           ```
     .grid__row
-      .grid__cell-xs_size_12.raw-text
+      .grid__cell-xs.grid__cell-xs_size_12.raw-text
         :markdown
           ## Example
           Suppose you have block `form` with modifiers `theme: 'xmas'` and `simple: true` and with elements `input` and `submit`, and element `submit` have it's own modifier `disabled: true` for not submitting form while it's not filled:
     .grid__row
-      .grid__cell-md_size_6.raw-text
+      .grid__cell-md.grid__cell-md_size_6.raw-text
         :markdown
           #### HTML
           ```html
@@ -165,7 +165,7 @@ block content
               type="submit" />
           </form>
           ```
-      .grid__cell-md_size_6.raw-text
+      .grid__cell-md.grid__cell-md_size_6.raw-text
         :markdown
           #### CSS
           ```css

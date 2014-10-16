@@ -15,7 +15,7 @@ block scripts
 block content
   .grid.grid_fixed
     .grid__row
-      .grid__cell-xs_size_12.raw-text
+      .grid__cell-xs.grid__cell-xs_size_12.raw-text
         :markdown
           # File system
 
@@ -30,7 +30,7 @@ block content
           If you are read [Naming](naming.html) article, you already know, that any separate entity on the site will be a __Block__ with __Elements__ that can have __Modifiers__. Keeping that in mind we will split our `index.css` into multiple CSS files on file system. For each BEM entity we will create some files and place them to own folder:
 
     .grid__row
-      .grid__cell-sm_size_4.grid__block-cell.raw-text
+      .grid__cell-sm.grid__cell-sm_size_4.grid__block-cell.raw-text
         .heading.heading_level_2 Blocks
 
         p Each block will have it's own directory and file with styles:
@@ -46,7 +46,7 @@ block content
           .types__f_b   block.css
           .types__d_b footer/
           .types__f_b   footer.css
-      .grid__cell-sm_size_4.grid__element-cell.raw-text
+      .grid__cell-sm.grid__cell-sm_size_4.grid__element-cell.raw-text
         .heading.heading_level_2 Elements
 
         p Since elements can't be outside of blocks — we will place them in subfolder of block:
@@ -67,7 +67,7 @@ block content
           .types__f_e     block__two.css
           .types__f_b block.css
 
-      .grid__cell-sm_size_4.grid__modifier-cell.raw-text
+      .grid__cell-sm.grid__cell-sm_size_4.grid__modifier-cell.raw-text
         .heading.heading_level_2 Modifiers
 
         p Both blocks and elements can have modifiers. So they can be placed either into block folder:
@@ -88,19 +88,19 @@ block content
           .types__f_e     block__element.css
           .types__f_b   block.css
     .grid__row
-      .grid__cell-xs_size_12.raw-text
+      .grid__cell-xs.grid__cell-xs_size_12.raw-text
         :markdown
           <br/>
           With this structuring you will get less merge conflicts and it is quite easy to copy some blocks from one project to another (just copy entire folder). There is another useful abstraction, that will help you to develope libraries of blocks. We call them `Levels` — folders that contains blocks. Quite intuitive thing to do, right?
 
           ## Levels
     .grid__row
-      .grid__cell-sm_size_8.raw-text
+      .grid__cell-sm.grid__cell-sm_size_8.raw-text
         :markdown
           When you have established styleguide, it is quite nice to have ready-to-go folder with blocks, that can be downloaded to new project and used as __base__ styles for development. We recommend to create multiple levels in one project. For example we will have `base` folder with our style-guided blocks and `project` folder with blocks for our project. Blocks in levels can be extended with styles, that defined in other levels.
 
           Order of extending is defined by order of the levels (in build configuration for example). Since «C» in CSS is stands for cascading — concatination of CSS files in right order will provide extending of our styles.
-      .grid__cell-sm_size_4.raw-text
+      .grid__cell-sm.grid__cell-sm_size_4.raw-text
         .types
           | base/
           .types__d_b   header/
@@ -111,7 +111,7 @@ block content
           .types__d_b   header/
           .types__f_b     header.css
     .grid__row
-      .grid__cell-xs_size_12.raw-text
+      .grid__cell-xs.grid__cell-xs_size_12.raw-text
         :markdown
           # Building
 
@@ -119,7 +119,7 @@ block content
 
           We will demonstrate how to build CSS files with [gulpjs](https://gulpjs.com), but you free to choose your own build tool — because it is quite trivial to concatinate files even in `bash` script.
     .grid__row
-      .grid__cell-sm_size_4.raw-text
+      .grid__cell-sm.grid__cell-sm_size_4.raw-text
         :markdown
           #### 1. Install modules
 
@@ -127,7 +127,7 @@ block content
           npm install gulp -g
           npm install gulp gulp-concat
           ```
-      .grid__cell-sm_size_4.raw-text
+      .grid__cell-sm.grid__cell-sm_size_4.raw-text
         :markdown
           #### 2. Create `gulpfile.js`
 
@@ -145,7 +145,7 @@ block content
                   .pipe(gulp.dest('dist'));
           });
           ```
-      .grid__cell-sm_size_4.raw-text
+      .grid__cell-sm.grid__cell-sm_size_4.raw-text
         :markdown
           #### 3. Run build task
 
@@ -153,7 +153,7 @@ block content
           gulp build
           ```
     .grid__row
-      .grid__cell-xs_size_12.raw-text
+      .grid__cell-xs.grid__cell-xs_size_12.raw-text
         br
         :markdown
           Congradulations! You should get whole `index.css` file in `dist` directory.

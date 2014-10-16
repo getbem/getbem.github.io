@@ -15,10 +15,10 @@ block scripts
 block content
   .grid.grid_fixed
     .grid__row
-      .grid__cell-md_size_9
+      .grid__cell-md.grid__cell-md_size_9
         .grid
           .grid__row
-            .grid__cell-sm_size_12.raw-text
+            .grid__cell-sm.grid__cell-sm_size_12.raw-text
               h1#introduction Introduction
                 .badge.badge_yellow work in progress
               :markdown
@@ -33,22 +33,22 @@ block content
                 There are plenty of [methodologies](https://github.com/ikkou/awesome-css#architecture) out there which aimed on reducing CSS codebase and organizing programmers cooperation and maintaining of CSS code. This is obvious in large projects like Twitter, Facebook and [Github](http://markdotto.com/2014/07/23/githubs-css/#two-bundles), but other projects often grows into same “Huge CSS file” state pretty quickly.
 
           .grid__row
-            .grid__cell-sm_size_3.methodology.raw-text
+            .grid__cell-sm.grid__cell-sm_size_3.methodology.raw-text
               :markdown
                 #### [OOCSS](https://oocss.org/)
                 Separating container and content with CSS “objects”
 
-            .grid__cell-sm_size_3.methodology.raw-text
+            .grid__cell-sm.grid__cell-sm_size_3.methodology.raw-text
               :markdown
                 #### [SMACSS](https://smacss.com/)
                 Style-guide to write your CSS with five categories for CSS rules
 
-            .grid__cell-sm_size_3.methodology.raw-text
+            .grid__cell-sm.grid__cell-sm_size_3.methodology.raw-text
               :markdown
                 #### [SUITCSS](http://suitcss.github.io/)
                 Structured class names and meaningful hyphens
 
-            .grid__cell-sm_size_3.methodology.methodology_last.raw-text
+            .grid__cell-sm.grid__cell-sm_size_3.methodology.methodology_last.raw-text
               :markdown
                 #### [Atomic CSS](https://github.com/nemophrost/atomic-css)
                 Breaking down styles into atomic, or indivisible, pieces
@@ -59,42 +59,42 @@ block content
                 > We are looking for authors to write proper "[Comparison of methodologies](https://github.com/getbem/getbem.com/issues/11)"
 
           .grid__row
-            .grid__cell-sm_size_12.raw-text
+            .grid__cell-sm.grid__cell-sm_size_12.raw-text
               :markdown
                 ### Why BEM over the others?
 
           .grid__row
-            .grid__cell-sm_size_12.raw-text
+            .grid__cell-sm.grid__cell-sm_size_12.raw-text
               p No matter what methodology you choose to use in your projects, you will get advantages of structured CSS and UI. Some of them are less strict and more flexible, other is easier to understand and adapt in team. Instead of writting our opinion on BEM advantages, we leave you with some quotes about it:
 
           .grid__row
-            .grid__cell-sm_size_6
+            .grid__cell-sm.grid__cell-sm_size_6
               .blockquote
                 p The reason I choose BEM over other methodologies comes down to this: it's less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognisable terminology.
                 .footer
                   | Mark McDonnell, 
                   a(href="http://www.integralist.co.uk/posts/maintainable-css-with-bem/#why-bem-over-the-others") Maintainable CSS with BEM
-            .grid__cell-sm_size_6
+            .grid__cell-sm.grid__cell-sm_size_6
               .blockquote
                 p I was so happy to start using this, finally I had an order in things, I had a clear system to name elements. It kind of freed a lot of resources in my brain, as puny thing as element naming can still occupy a lot of brainpower. Kinda.
                 .footer
                   | Antti Hiljá, 
                   a(href="http://clubmate.fi/oocss-acss-bem-smacss-what-are-they-what-should-i-use/") OOCSS, ACSS, BEM, SMACSS: what are they? What should I use?
           .grid__row
-            .grid__cell-sm_size_6
+            .grid__cell-sm.grid__cell-sm_size_6
               .blockquote
                 p Unlike OOCss, it doesn’t aim at total modularity, but the opposite: namespacing (through classes names), creating independent modules of css code that don’t interact with each other.
                 .footer
                   | Justin Marsan, 
                   a(href="http://justinmarsan.com/css-methodology-and-frameworks/") CSS methodology and frameworks
-            .grid__cell-sm_size_6
+            .grid__cell-sm.grid__cell-sm_size_6
               .blockquote
                 p BEM is a highly useful, powerful and simple naming convention to make your front-end code easier to read and understand, easier to work with, easier to scale, more robust and explicit and a lot more strict.
                 .footer
                   | Harry Roberts, 
                   a(href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/") MindBEMding – getting your head ’round BEM syntax
           .grid__row
-            .grid__cell-sm_size_12.raw-text
+            .grid__cell-sm.grid__cell-sm_size_12.raw-text
               :markdown
                 ### Blocks, Elements and Modifiers
 
@@ -130,11 +130,11 @@ block content
                   `disabled`, `highlighted`, `checked`, `fixed`, `size big`, `color yellow`
 
           .grid__row
-            .grid__cell-sm_size_12.text_align_center
+            .grid__cell-sm.grid__cell-sm_size_12.text_align_center
               img.github(src="img/github_captions.jpg")
 
           .grid__row
-            .grid__cell-sm_size_12.raw-text
+            .grid__cell-sm.grid__cell-sm_size_12.raw-text
               :markdown
                 ### Under the hood
 
@@ -146,7 +146,7 @@ block content
               :markdown
                 We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (`button`, `a` or even `div`). Naming invites us to use `block__modifier_value` syntax.
           .grid__row
-            .grid__cell-sm_size_6.raw-text
+            .grid__cell-sm.grid__cell-sm_size_6.raw-text
               h5 HTML
               :markdown
                 ```html
@@ -163,7 +163,7 @@ block content
                 </button>
                 ```
 
-            .grid__cell-sm_size_6.raw-text
+            .grid__cell-sm.grid__cell-sm_size_6.raw-text
               h5 CSS
               :markdown
                 ```css
@@ -188,32 +188,32 @@ block content
                 ```
 
           .grid__row
-            .grid__cell-sm_size_12.raw-text
+            .grid__cell-sm.grid__cell-sm_size_12.raw-text
               :markdown
                 ### Further Reading
 
                 For more examples of building BEM blocks you can read "[Building My Health Skills — Part 3](http://www.bluegg.co.uk/building-my-health-skills-part-3/)" by Hamish Taplin.
 
           .grid__row
-            .grid__cell-sm_size_12.raw-text
+            .grid__cell-sm.grid__cell-sm_size_12.raw-text
               :markdown
                 ### Benefits
           .grid__row
-            .grid__cell-sm_size_4.raw-text
+            .grid__cell-sm.grid__cell-sm_size_4.raw-text
               :markdown
                 #### Modularity
 
                 Blocks styles should not have dependencies on other elements on a page, therefore you will never get [problems from cascading](http://www.phase2technology.com/blog/used-and-abused-css-inheritance-and-our-misuse-of-the-cascade/).
 
                 This also gives you ability to transfer blocks from ready project to new one.
-            .grid__cell-sm_size_4.raw-text
+            .grid__cell-sm.grid__cell-sm_size_4.raw-text
               :markdown
                 #### Reusablility
 
                 Copmosing independent blocks in a different way and reusing them reduces amout of CSS code, that you will maintain.
 
                 If you have design guidelines, then it is super effective to have ready Blocks library.
-            .grid__cell-sm_size_4.raw-text
+            .grid__cell-sm.grid__cell-sm_size_4.raw-text
               :markdown
                 #### Structure
 
@@ -222,12 +222,12 @@ block content
                 We wrote [Building](building.html) article, that contains straightforward way of storing this structure on file system and a way to build it.
 
           .grid__row
-            .grid__cell-sm_size_12.raw-text
+            .grid__cell-sm.grid__cell-sm_size_12.raw-text
               :markdown
                 ### Case study
 
                 We are looking forward to writing "How to migrate existing project to BEM". In meanwhile you can watch nice presentation by Nicole Sullivan — "[CSS preprocessor performance](http://www.youtube.com/watch?v=0NDyopLKE1w)". It gives a very good explanation of problems, that she meets in major of sites and ways to track and handle them.
-      .grid__cell-md_size_3
+      .grid__cell-md.grid__cell-md_size_3
         .affix__menu.hidden-xs.hidden-sm(data-spy="affix" data-offset-top="50" data-offset-bottom="200")
           ul.nav.nav_pills.nav_stacked
             li.nav__item
