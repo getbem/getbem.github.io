@@ -1,8 +1,8 @@
 {
-  "name": "gulp-bem-stub",
+  "name": "getbem",
   "version": "0.0.0",
-  "description": "gulp BEM stub",
-  "bugs": "https://github.com/matmuchrapna/gulp-bem-stub/issues",
+  "description": "'Get BEM' to all people in simplest way",
+  "bugs": "https://github.com/getbem/getbem.com/issues",
   "ignore": [
     ".bem/cache",
     "node_modules",
