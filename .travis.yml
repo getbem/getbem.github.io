@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - '0.10'
+script:
+  - npm install -g bower gulp
+  - bower i
+  - gulp build

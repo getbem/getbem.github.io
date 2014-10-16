@@ -1,5 +1,7 @@
 # [Get BEM!](https://getbem.com)
 
+[![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
+
 > If you interested in writing articles or helping with site — feel free to make pull-requests or [creating issues](https://github.com/floatdrop/getbem.com/issues) with discussions.
 
 This repository contains sources of [getbem.com](https://getbem.com) site.
@@ -165,7 +167,7 @@ gulp.task('html', function () {
 });
 ```
 
-__Warning:__ Jade is not quite suited for processing concatenated templates from different files — so line numbers in error messages will be strange. 
+__Warning:__ Jade is not quite suited for processing concatenated templates from different files — so line numbers in error messages will be strange.
 
 ### JavaScript
 
@@ -185,3 +187,9 @@ gulp.task('js', function () {
 We are looking forward to use [Duo](http://duojs.org/), as soon as resolving parts will be configurable.
 
 ##### MIT License
+
+[travis-url]: http://travis-ci.org/getbem/getbem.com
+[travis-image]: http://img.shields.io/travis/getbem/getbem.com.svg?branch=master&style=flat
+
+[depstat-url]: https://david-dm.org/getbem/getbem.com
+[depstat-image]: http://img.shields.io/david/getbem/getbem.com.svg?style=flat
