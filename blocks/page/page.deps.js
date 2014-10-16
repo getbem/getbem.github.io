@@ -20,5 +20,6 @@ module.exports.require = [
     { block: 'gauges' },
 
     { block: 'affix' },
+    { block: 'scrollspy' },
     { block: 'list' }
 ];
