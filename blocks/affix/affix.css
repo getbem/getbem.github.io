@@ -1,0 +1,26 @@
+.affix__menu
+{
+    position: relative;
+    width: 263px;
+    top: 30px;
+}
+
+.affix__menu.affix
+{
+    position: fixed;
+}
+
+
+@media (max-width:767px){
+    .hidden-xs{
+        display:none!important
+    }
+
+}
+
+@media (min-width:768px) and (max-width:991px){
+    .hidden-sm{
+        display:none!important
+    }
+
+}

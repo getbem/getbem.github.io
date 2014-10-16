@@ -18,4 +18,7 @@ module.exports.require = [
 
     { block: 'ga' },
     { block: 'gauges' },
+
+    { block: 'affix' },
+    { block: 'list' }
 ];
