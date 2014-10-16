@@ -31,7 +31,7 @@
     "gulp-bem-debug": "^0.2.0",
     "gulp-bem-pack": "^0.1.1",
     "gulp-concat": "^2.4.0",
-    "gulp-jade": "^0.7.0",
+    "gulp-jade": "^0.9.0",
     "gulp-plumber": "^0.6.5",
     "gulp-sass": "^1.0.0",
     "gulp-uglify": "^1.0.1",
