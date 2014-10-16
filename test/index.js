@@ -1,11 +1,12 @@
 /* global describe, it */
 
 var Nightmare = require('nightmare');
+var join = require('path').join;
 
 describe('index page', function () {
     it('should have global jQuery', function (done) {
         new Nightmare()
-            .goto('./dist/index.html')
+            .goto(join(__dirname, '../dist/index.html'))
             .evaluate(function() {
                 /* global jQuery */
                 return jQuery;
@@ -15,6 +16,8 @@ describe('index page', function () {
                 }
                 done();
             })
-            .run();
+            .run(function (err) {
+                if (err) { done(err); }
+            });
     });
 });
