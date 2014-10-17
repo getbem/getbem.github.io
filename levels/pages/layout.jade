@@ -15,4 +15,11 @@ html(lang="en")
   +ga('UA-15345174-10')
   +gauges('54070a998bfdf7145100b613')
   script#github-bjs(async defer src="https://buttons.github.io/buttons.js")
+
+  block footer
+    .grid.grid_fixed
+      .grid__row
+        .grid__cell-lg.grid__cell-lg_size_12
+          +footer()
+
   block scripts

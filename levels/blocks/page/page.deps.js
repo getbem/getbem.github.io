@@ -21,5 +21,6 @@ module.exports.require = [
 
     { block: 'affix' },
     { block: 'scrollspy' },
-    { block: 'list' }
+    { block: 'list' },
+    { block: 'footer' }
 ];
