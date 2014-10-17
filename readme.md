@@ -78,7 +78,7 @@ After tree is constructed — you can query dependencies of block: `tree.deps('b
 To build CSS you don't need magic — it just concatenation of `{bem}.css` files in right order:
 
 ```js
-tree.deps('pages/index')
+tree.deps('levels/pages/index')
     .pipe(bem.src('{bem}.css'))
     .pipe(concat(page.id + '.css'))
     .pipe(gulp.dest('./dist'));
@@ -91,13 +91,13 @@ But, if you want to get CSS files for every page (which itself is a block), you 
 ```js
 gulp.task('css', function () {
     function buildCss(page) {
-        return tree.deps('pages/' + page.id)
+        return tree.deps('levels/pages/' + page.id)
             .pipe(bem.src('{bem}.css'))
             .pipe(concat(page.id + '.css'))
             .pipe(gulp.dest('./dist'));
     }
 
-    return bem.objects('pages').map(buildCss);
+    return bem.objects('levels/pages').map(buildCss);
 });
 ```
 
@@ -127,11 +127,11 @@ After you get this code in main Jade template, you can call it:
 We just get addicted to Jade after some time with it. Here is part of task, that compiles Jade template for `index` page:
 
 ```js
-return tree.deps('pages/index')
+return tree.deps('levels/pages/index')
     .pipe(bem.src('{bem}.jade'))
     .pipe(concat({
         path: 'index.jade',
-        base: 'pages/index'
+        base: 'levels/pages/index'
     }))
     .pipe(jade({pretty: true}))
     .pipe(gulp.dest('./dist'));
@@ -142,7 +142,7 @@ Tricky part is get right `base` path for concatenated file:
 ```js
 concat({
     path: 'index.jade',
-    base: 'pages/index'
+    base: 'levels/pages/index'
 })
 ```
 
@@ -153,7 +153,7 @@ Again, to build all pages with Jade, we using this code:
 ```js
 gulp.task('html', function () {
     function buildHtml(page) {
-        return tree.deps('pages/' + page.id)
+        return tree.deps('levels/pages/' + page.id)
             .pipe(bem.src('{bem}.jade'))
             .pipe(concat({
                 path: page.path + '/' + page.id + '.jade',
@@ -163,7 +163,7 @@ gulp.task('html', function () {
             .pipe(gulp.dest('./dist'));
     }
 
-    return bem.objects('pages').map(buildHtml);
+    return bem.objects('levels/pages').map(buildHtml);
 });
 ```
 
@@ -177,7 +177,7 @@ Task to do it is quite short (because we building it only for index page in our 
 
 ```js
 gulp.task('js', function () {
-    return tree.deps('pages/index')
+    return tree.deps('levels/pages/index')
         .pipe(bem.src('{bem}.js'))
         .pipe(pack('index.js'))
         .pipe(gulp.dest('./dist'));
