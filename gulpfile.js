@@ -10,11 +10,11 @@ var uglify = require('gulp-uglify');
 var buildBranch = require('buildbranch');
 
 var levels = [
-    'js',
+    'levels/js',
     'libs/bootstrap/levels/*',
-    'base',
-    'blocks',
-    'pages'
+    'levels/base',
+    'levels/blocks',
+    'levels/pages'
 ];
 
 var tree;
@@ -22,18 +22,23 @@ gulp.task('tree', function () {
     tree = bem.objects(levels).pipe(bem.deps()).pipe(bem.tree());
 });
 
-gulp.task('js', ['clean'], function () {
-    return tree.deps('pages/index')
+gulp.task('js', ['tree'], function () {
+    return tree.deps('levels/pages/index')
         .pipe(bem.src('{bem}.js'))
         .pipe(pack('index.js'))
-        .pipe(uglify())
         .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('css', ['clean'], function () {
+gulp.task('uglify', ['js'], function () {
+    return gulp.src('dist/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('css', ['tree'], function () {
     function buildCss(page) {
-        return tree.deps('pages/' + page.id)
-            .pipe(bem.src('{bem}.{scss,css}'))
+        return tree.deps('levels/pages/' + page.id)
+            .pipe(bem.src('{bem}.{css,scss}'))
             .pipe(concat(page.id + '.css'))
             .pipe(sass())
             .pipe(autoprefixer({
@@ -43,12 +48,12 @@ gulp.task('css', ['clean'], function () {
             .pipe(gulp.dest('./dist'));
     }
 
-    return bem.objects('pages').map(buildCss);
+    return bem.objects('levels/pages').map(buildCss);
 });
 
-gulp.task('html', ['clean'], function () {
+gulp.task('html', ['tree'], function () {
     function buildHtml(page) {
-        return tree.deps('pages/' + page.id)
+        return tree.deps('levels/pages/' + page.id)
             .pipe(bem.src('{bem}.jade'))
             .pipe(concat({
                 path: page.path + '/' + page.id + '.jade',
@@ -58,32 +63,34 @@ gulp.task('html', ['clean'], function () {
             .pipe(gulp.dest('./dist'));
     }
 
-    return bem.objects('pages').map(buildHtml);
+    return bem.objects('levels/pages').map(buildHtml);
 });
 
-gulp.task('cname', ['clean'], function () {
+gulp.task('cname', function () {
     return gulp.src('CNAME').pipe(gulp.dest('dist'));
 });
 
-gulp.task('assets', ['clean'], function () {
+gulp.task('assets', function () {
     return gulp.src('assets/**').pipe(gulp.dest('dist'));
 });
 
-gulp.task('clean', ['tree'], function (cb) {
+gulp.task('clean', function (cb) {
     del(['./dist'], cb);
 });
 
-gulp.task('build', ['clean', 'html', 'css', 'js', 'assets', 'cname']);
+gulp.task('build', ['html', 'css', 'js', 'assets', 'cname']);
 
-gulp.task('gh', ['build'], function(done) {
+gulp.task('production', ['build', 'uglify']);
+
+gulp.task('gh', ['production'], function(done) {
     buildBranch({ folder: 'dist', ignore: ['libs'] }, done);
 });
 
 var watch = require('gulp-watch');
 gulp.task('watch', ['build'], function() {
-    return watch(levels.map(function (l) { return l + '/**/*.{js,css,jade}'; }), function () {
-        gulp.start('build');
-    });
+    watch('levels/**/*.js', { name: 'JS' }, function () { gulp.start('js'); });
+    watch('levels/**/*.scss', { name: 'CSS' }, function () { gulp.start('css'); });
+    watch('levels/**/*.jade', { name: 'HTML' }, function () { gulp.start('html'); });
 });
 
 gulp.task('default', ['watch']);
