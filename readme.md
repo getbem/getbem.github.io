@@ -53,7 +53,7 @@ Before digging into tasks, we will take short introduction in [gulp-bem](https:/
 
 ### gulp-bem
 
-If you familar with [building](http://getbem.com/building) of BEM projects — then you probably know, that BEM projects have certain structure: file with CSS for blocks will be in `block` folder with name `{block}.css` (where `{block}` is placeholder for current block name). All blocks are grouped to levels — folders with blocks.
+If you familar with [building](http://getbem.com/building/) of BEM projects — then you probably know, that BEM projects have certain structure: file with CSS for blocks will be in `block` folder with name `{block}.css` (where `{block}` is placeholder for current block name). All blocks are grouped to levels — folders with blocks.
 
 With this structure is not clear in which order you should concatenate blocks and how get specific files from block (element or modifier) folder. To make it easy - we wrote [gulp-bem](https://github.com/floatdrop/gulp-bem).
 
