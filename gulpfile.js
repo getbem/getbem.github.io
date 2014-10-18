@@ -89,7 +89,7 @@ gulp.task('gh', ['production'], function(done) {
 var watch = require('gulp-watch');
 gulp.task('watch', ['build'], function() {
     watch('levels/**/*.js', { name: 'JS' }, function () { gulp.start('js'); });
-    watch('levels/**/*.scss', { name: 'CSS' }, function () { gulp.start('css'); });
+    watch('levels/**/*.{scss,css}', { name: 'CSS' }, function () { gulp.start('css'); });
     watch('levels/**/*.jade', { name: 'HTML' }, function () { gulp.start('html'); });
 });
 
