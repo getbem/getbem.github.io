@@ -6,11 +6,10 @@ mixin footer()
         span.github-btn.hide(data-user="getbem" data-repo="getbem.com" data-type="watch" data-count="1")
       li.list__item
         span.github-btn.hide(data-user="getbem" data-repo="getbem.com" data-type="fork" data-count="1")
-      li.list__item
+      li.list__item.footer__follow-fix
         +tw-btn__follow()
       li.list__item
         +tw-btn__tweet()
-
 
     :markdown
       Brought to you by [@floatdrop](https://github.com/floatdrop) and [@matmuchrapna](https://github.com/matmuchrapna).  

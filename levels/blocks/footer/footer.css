@@ -2,3 +2,7 @@
     padding: 40px 0;
     color: #777;
 }
+
+.footer__follow-fix {
+    margin-right: -30px;
+}
