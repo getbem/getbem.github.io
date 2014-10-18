@@ -8,9 +8,6 @@ var pack = require('gulp-bem-pack');
 var autoprefixer = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
 var buildBranch = require('buildbranch');
-var refresh = require('gulp-livereload');
-var lr = require('tiny-lr');
-var server = lr();
 
 var levels = [
     'levels/js',
@@ -29,8 +26,7 @@ gulp.task('js', ['tree'], function () {
     return tree.deps('levels/pages/index')
         .pipe(bem.src('{bem}.js'))
         .pipe(pack('index.js'))
-        .pipe(gulp.dest('./dist'))
-        .pipe(refresh(server));
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('uglify', ['js'], function () {
@@ -49,8 +45,7 @@ gulp.task('css', ['tree'], function () {
                 browsers: ['last 2 versions'],
                 cascade: false
             }))
-            .pipe(gulp.dest('./dist'))
-            .pipe(refresh(server));
+            .pipe(gulp.dest('./dist'));
     }
 
     return bem.objects('levels/pages').map(buildCss);
@@ -65,8 +60,7 @@ gulp.task('html', ['tree'], function () {
                 base: page.path
             }))
             .pipe(jade({pretty: true}))
-            .pipe(gulp.dest('./dist'))
-            .pipe(refresh(server));
+            .pipe(gulp.dest('./dist'));
     }
 
     return bem.objects('levels/pages').map(buildHtml);
@@ -100,14 +94,8 @@ gulp.task('express', function() {
     console.log('Server is running on http://localhost:4000');
 });
 
-gulp.task('lr-server', function() {
-    server.listen(35729, function(err) {
-        if(err) { return console.log(err); }
-    });
-});
-
 var watch = require('gulp-watch');
-gulp.task('watch', ['express', 'lr-server', 'build'], function() {
+gulp.task('watch', ['express', 'build'], function() {
     watch('assets/**/*', function () { gulp.start('assets'); });
     watch('levels/**/*.js', function () { gulp.start('js'); });
     watch('levels/**/*.{scss,css}', function () { gulp.start('css'); });
