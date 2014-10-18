@@ -88,9 +88,10 @@ gulp.task('gh', ['production'], function(done) {
 
 var watch = require('gulp-watch');
 gulp.task('watch', ['build'], function() {
-    watch('levels/**/*.js', { name: 'JS' }, function () { gulp.start('js'); });
-    watch('levels/**/*.{scss,css}', { name: 'CSS' }, function () { gulp.start('css'); });
-    watch('levels/**/*.jade', { name: 'HTML' }, function () { gulp.start('html'); });
+    watch('assets/**/*', function () { gulp.start('assets'); });
+    watch('levels/**/*.js', function () { gulp.start('js'); });
+    watch('levels/**/*.{scss,css}', function () { gulp.start('css'); });
+    watch('levels/**/*.jade', function () { gulp.start('html'); });
 });
 
 gulp.task('default', ['watch']);
