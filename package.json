@@ -37,7 +37,7 @@
     "gulp-uglify": "^1.0.1",
     "gulp-watch": "^1.0.0",
     "jquery": "^2.1.1",
-    "marked": "^0.3.2",
+    "marked": "^0.3.2"
   },
   "devDependencies": {
     "gulp-bem-debug": "^0.2.0",
