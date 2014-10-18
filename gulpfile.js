@@ -8,6 +8,7 @@ var pack = require('gulp-bem-pack');
 var autoprefixer = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
 var buildBranch = require('buildbranch');
+var rename = require('gulp-rename');
 
 var levels = [
     'levels/js',
@@ -60,7 +61,10 @@ gulp.task('html', ['tree'], function () {
                 base: page.path
             }))
             .pipe(jade({pretty: true}))
-            .pipe(gulp.dest('./dist'));
+            .pipe(rename({basename: 'index'}))
+            .pipe(gulp.dest('./dist' +
+                (page.id === 'index' ? '' : '/' + page.id)
+            ));
     }
 
     return bem.objects('levels/pages').map(buildHtml);
