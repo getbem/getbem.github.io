@@ -11,9 +11,9 @@ module.exports.require = [
     { block: 'text' },
     { block: 'raw-text' },
     { block: 'img' },
+
     { block: 'heading' },
 
-    { block: 'edit' },
     { block: 'fork' },
 
     { block: 'ga' },
@@ -22,5 +22,6 @@ module.exports.require = [
     { block: 'affix' },
     { block: 'scrollspy' },
     { block: 'list' },
-    { block: 'footer' }
+    { block: 'footer' },
+
 ];

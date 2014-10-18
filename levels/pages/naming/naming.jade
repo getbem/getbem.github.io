@@ -13,11 +13,15 @@ block scripts
   script(src="index.js")
 
 block content
+
   .grid.grid_fixed
     .grid__row
-      .grid__cell-xs.grid__cell-xs_size_12.raw-text
+      .grid__cell-sm.grid__cell-sm_size_12
+        +heading('Naming', 'naming')
+
+    .grid__row
+      .grid__cell-sm.grid__cell-sm_size_12.raw-text
         :markdown
-          # Naming
           > There are only two hard problems in Computer Science: cache invalidation and naming things — _Phil Karlton_
 
           It is known fact, that right styleguide can significantly increase development speed, debugging and implementing new features in legacy code. Sadly, most CSS codebase is developed without (sometimes) any structure and naming conventions. This leads to unmantainable CSS codebase in long term run.

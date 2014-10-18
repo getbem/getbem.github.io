@@ -1,0 +1,6 @@
+mixin heading(title, page, hash)
+  .heading.heading_level_1
+    h1.heading.heading_level_1.heading_inline.heading_wrapped(id= hash ? hash : page)= title
+    block
+    a.badge.badge_theme_simple(href='https://github.com/getbem/getbem.com/edit/master/levels/pages/' + page + '/' + page + '.jade')
+      | Improve this article

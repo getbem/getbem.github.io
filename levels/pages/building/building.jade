@@ -13,12 +13,16 @@ block scripts
   script(src="index.js")
 
 block content
+
+  .grid.grid_fixed
+    .grid__row
+      .grid__cell-sm.grid__cell-sm_size_12
+        +heading('File system', 'building', 'file-system')
+
   .grid.grid_fixed
     .grid__row
       .grid__cell-xs.grid__cell-xs_size_12.raw-text
         :markdown
-          # File system
-
           When you developing site, that contains more than one page — you will soon feel, that storing all CSS in `index.css` file is huge pain. When single file becomes more than __1000__ lines of code you can't effectivly navigate in it, neither maintain it.
 
           Things getting worse, when you have a team, that making changes in single file. Often you will get merge conflicts (if you are using VCS). Some times styles, that belongs to each other will be in opposite ends of this file.

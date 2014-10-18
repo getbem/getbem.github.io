@@ -13,14 +13,18 @@ block scripts
   script(src="index.js")
 
 block content
+
   .grid.grid_fixed
     .grid__row
       .grid__cell-md.grid__cell-md_size_9
         .grid(style="padding-left: 0")
           .grid__row
+            .grid__cell-sm.grid__cell-sm_size_12
+              +heading('Introduction', 'introduction')
+                .badge.badge_theme_yellow work In progress
+
+          .grid__row
             .grid__cell-sm.grid__cell-sm_size_12.raw-text
-              h1#introduction Introduction
-                .badge.badge_yellow work in progress
               :markdown
                 On smaller brochure sites, how your organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.
 
