@@ -1,6 +1,11 @@
 mixin footer()
   .footer.text_align_center
 
+    ul.list.list_unstyled.list_inline
+      li.list__item
+        span.github-btn.hide(data-user="getbem" data-repo="getbem.com" data-type="watch" data-count="1")
+
+
     :markdown
       Brought to you by [@floatdrop](https://github.com/floatdrop) and [@matmuchrapna](https://github.com/matmuchrapna).  
       Maintained by the [core team](https://github.com/orgs/getbem/people) with the help of our [contributors](https://github.com/getbem/getbem.com/graphs/contributors).  
@@ -17,5 +22,3 @@ mixin footer()
         a(href="https://github.com/getbem/getbem.com/issues/8") Project Goals
       li.list__item
         a(href="https://github.com/getbem/getbem.com/issues/1") Are you using BEM?
-
-

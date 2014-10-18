@@ -1,5 +1,6 @@
 module.exports.require = [
     { block: 'highlight' },
+    { block: 'github-buttons' },
 
     { block: 'normalize' },
     { block: 'print' },
