@@ -10,7 +10,7 @@ block head
   link(rel="stylesheet" href="introduction.css")
 
 block scripts
-  script(src="index.js")
+  script(src="/index.js")
 
 block content
 
@@ -134,7 +134,7 @@ block content
 
           .grid__row
             .grid__cell-sm.grid__cell-sm_size_12.text_align_center
-              img.github(src="img/github_captions.jpg")
+              img.github(src="/img/github_captions.jpg")
 
           .grid__row
             .grid__cell-sm.grid__cell-sm_size_12.raw-text
@@ -144,7 +144,7 @@ block content
                 Lets look how one particular element on page can be implemented in BEM. We will take `button` from [GitHub styleguide](https://github.com/styleguide/css/1.0):
 
               p(style="text-align: center; padding: 30px 0;")
-                img(src="img/github_buttons.jpg")
+                img(src="/img/github_buttons.jpg")
 
               :markdown
                 We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (`button`, `a` or even `div`). Naming invites us to use `block__modifier_value` syntax.
