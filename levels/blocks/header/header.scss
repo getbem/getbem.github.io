@@ -1,5 +1,5 @@
 .header {
-    padding-top: 50px;
+    padding-top: 75px;
     padding-bottom: 50px;
     color: white;
     background:
@@ -10,10 +10,4 @@
 
 .header img {
     height: 200px;
-}
-
-@media screen and (min-width: 48em) {
-    .header img {
-        width: 192px;
-    }
 }
