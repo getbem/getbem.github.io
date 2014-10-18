@@ -2,16 +2,22 @@
     border-radius: 3px;
     font-size: 12px;
     display: inline;
-    padding: 5px 8px;
     vertical-align: middle;
+    white-space: nowrap;
+}
+
+.badge + .badge {
+    margin-left: 10px;
 }
 
 .badge_theme_yellow {
+    padding: 5px 8px;
     color: white;
     background-color: $yellow;
 }
 
 .badge_theme_green {
+    padding: 5px 8px;
     color: white;
     background-color: $green;
 }
