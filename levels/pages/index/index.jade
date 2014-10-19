@@ -35,7 +35,7 @@ block content
             | Methodology and tools, that can be recomposed and configured in the way you like BEM.
 
   .grid.grid_fixed
-    .grid__row(style="text-align: center")
+    .grid__row.text_align_center
       .grid__cell-sm.grid__cell-sm_size_4.raw-text
         .icon
           a(href="/introduction/")
@@ -54,3 +54,18 @@ block content
             .icon__image
               img(src="/img/build.svg" style="width: 100px; height: 100px; padding-top: 10px; margin-top: 5px;")
             .icon__caption Building
+
+  .grid.grid_fixed
+    .grid__row.text_align_center.bem-consumers
+      h3.bem-consumers__heading Companies using BEM:
+      ul.list.list_inline.list_unstyled
+        li.list__item.bem-consumers__item
+          a.bem-consumers__item-link(href='https://yandex.com/' title='Yandex')
+            img.bem-consumers__item-logo(src="/img/consumers/yandex.png" height=70)
+        li.list__item.bem-consumers
+          a.bem-consumers__item-link(href='http://new.factory.mn/' title='Manufactura')
+            img.bem-consumers__item-logo(src="/img/consumers/manufactura.png" height=70)
+        li.list__item.bem-consumers
+          a.bem-consumers__item-link(href='http://eu.ideus.biz/' title='iDeus')
+            img.bem-consumers__item-logo(src="/img/consumers/ideus.png" height=70)
+

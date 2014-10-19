@@ -23,6 +23,6 @@ module.exports.require = [
     { block: 'affix' },
     { block: 'scrollspy' },
     { block: 'list' },
+    { block: 'bem-consumers' },
     { block: 'footer' },
-
 ];
