@@ -1,6 +1,7 @@
 .bem-consumers__heading {
     font-size: 23px;
     font-weight: normal;
+    margin-top: 0;
 }
 
 .bem-consumers__item-link {
