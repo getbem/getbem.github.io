@@ -20,5 +20,7 @@ build: off
 test_script:
   - node --version
   - npm --version
+  - cmd: npm install -g bower gulp
+  - cmd: bower i
   - cmd: gulp build
   - cmd: npm test
