@@ -1,6 +1,6 @@
 # [Get BEM!](https://getbem.com)
 
-[![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
+[![Build Status][travis-image]][travis-url] [![Build Status][appveyor-image]][appveyor-url] [![Dependency Status][depstat-image]][depstat-url]
 
 > If you interested in writing articles or helping with site — feel free to make pull-requests or [creating issues](https://github.com/floatdrop/getbem.com/issues) with discussions.
 
