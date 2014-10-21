@@ -1,6 +1,6 @@
 # [Get BEM!](https://getbem.com)
 
-[![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
+[![Build Status][travis-image]][travis-url] [![Build Status][appveyor-image]][appveyor-url] [![Dependency Status][depstat-image]][depstat-url]
 
 > If you interested in writing articles or helping with site — feel free to make pull-requests or [creating issues](https://github.com/floatdrop/getbem.com/issues) with discussions.
 
@@ -187,6 +187,9 @@ gulp.task('js', function () {
 We are looking forward to use [Duo](http://duojs.org/), as soon as resolving parts will be configurable.
 
 ##### MIT License
+
+[appveyor-url]: https://ci.appveyor.com/project/floatdrop/getbem-com
+[appveyor-image]: http://img.shields.io/appveyor/ci/floatdrop/getbem.com.svg?branch=master&style=flat
 
 [travis-url]: http://travis-ci.org/getbem/getbem.com
 [travis-image]: http://img.shields.io/travis/getbem/getbem.com.svg?branch=master&style=flat
