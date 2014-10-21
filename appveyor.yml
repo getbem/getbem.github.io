@@ -13,7 +13,7 @@ version: "{build}"
 # what combinations to test
 environment:
   matrix:
-    - nodejs_version: 0.10
+    - nodejs_version: 0.10.30
 
 # Get the latest stable version of Node 0.STABLE.latest
 install:
