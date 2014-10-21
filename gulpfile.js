@@ -8,21 +8,27 @@ var pack = require('gulp-bem-pack');
 var autoprefixer = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
 var buildBranch = require('buildbranch');
+var each = require('each-done');
 
 var levels = [
     'levels/js',
-    'libs/bootstrap/levels/*',
+    'libs/bootstrap/levels/normalize',
+    'libs/bootstrap/levels/print',
+    'libs/bootstrap/levels/glyphicons',
+    'libs/bootstrap/levels/scaffolding',
+    'libs/bootstrap/levels/core',
+    'libs/bootstrap/levels/components',
+    'libs/bootstrap/levels/js',
     'levels/base',
     'levels/blocks',
     'levels/pages'
 ];
 
-var tree;
-gulp.task('tree', function () {
-    tree = bem.objects(levels).pipe(bem.deps()).pipe(bem.tree());
-});
+var pages = [ '404', 'index', 'introduction', 'naming', 'building'];
 
-gulp.task('js', ['tree'], function () {
+var tree = bem(levels);
+
+gulp.task('js', function () {
     return tree.deps('levels/pages/index')
         .pipe(bem.src('{bem}.js'))
         .pipe(pack('index.js'))
@@ -35,35 +41,33 @@ gulp.task('uglify', ['js'], function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('css', ['tree'], function () {
-    function buildCss(page) {
-        return tree.deps('levels/pages/' + page.id)
+gulp.task('css', function (cb) {
+    each(pages, function (page) {
+        return tree.deps('levels/pages/' + page)
             .pipe(bem.src('{bem}.{css,scss}'))
-            .pipe(concat(page.id + '.css'))
+            .pipe(concat(page + '.css'))
             .pipe(sass())
             .pipe(autoprefixer({
                 browsers: ['last 2 versions'],
                 cascade: false
             }))
             .pipe(gulp.dest('./dist'));
-    }
-
-    return bem.objects('levels/pages').map(buildCss);
+    }, cb);
 });
 
-gulp.task('html', ['tree'], function () {
-    function buildHtml(page) {
-        return tree.deps('levels/pages/' + page.id)
+gulp.task('html', function (cb) {
+    each(pages, function (page) {
+        return tree.deps('levels/pages/' + page)
             .pipe(bem.src('{bem}.jade'))
             .pipe(concat({
-                path: page.path + '/' + (page.id !== '404' ? 'index' : '404') + '.jade',
-                base: page.path
+                path: 'levels/pages/' + page + '/index.jade',
+                base: 'levels/pages/' + page
             }))
             .pipe(jade({pretty: true}))
-            .pipe(gulp.dest(/(404|index)/.test(page.id) ? 'dist' : 'dist/' + page.id))
-    }
-
-    return bem.objects('levels/pages').map(buildHtml);
+            .pipe(gulp.dest(
+                /(404|index)/.test(page.id) ? 'dist' : 'dist/' + page.id
+            ));
+    }, cb);
 });
 
 gulp.task('cname', function () {
