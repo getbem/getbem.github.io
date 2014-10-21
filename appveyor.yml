@@ -20,4 +20,5 @@ build: off
 test_script:
   - node --version
   - npm --version
+  - cmd: gulp build
   - cmd: npm test

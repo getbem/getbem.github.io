@@ -1,10 +1,17 @@
 /* global it */
 
-var Nightmare = require('nightmare');
-var join = require('path').join;
+var assert = require('assert');
+var fs = require('fs');
 
-it('should have index page', function (done) {
-    new Nightmare()
-        .goto(join(__dirname, '../dist/index.html'))
-        .run(done);
+function exist(path) {
+    assert(fs.existsSync('./dist/' + path), path + ' is not exist!');
+}
+
+it('should build pages', function () {
+    exist('index.html');
+    exist('index.css');
+    exist('index.js');
+    exist('introduction/index.html');
+    exist('building/index.html');
+    exist('naming/index.html');
 });
