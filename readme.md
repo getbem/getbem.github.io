@@ -189,7 +189,7 @@ We are looking forward to use [Duo](http://duojs.org/), as soon as resolving par
 ##### MIT License
 
 [appveyor-url]: https://ci.appveyor.com/project/floatdrop/getbem-com
-[appveyor-image]: http://img.shields.io/appveyor/ci/floatdrop/getbem.com.svg?branch=master&style=flat
+[appveyor-image]: http://img.shields.io/appveyor/ci/floatdrop/getbem-com.svg?branch=master&style=flat
 
 [travis-url]: http://travis-ci.org/getbem/getbem.com
 [travis-image]: http://img.shields.io/travis/getbem/getbem.com.svg?branch=master&style=flat
