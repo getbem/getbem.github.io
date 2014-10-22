@@ -1,6 +1,6 @@
 # [Get BEM!](https://getbem.com)
 
-[![Build Status][travis-image]][travis-url] [![Build Status][appveyor-image]][appveyor-url] [![Dependency Status][depstat-image]][depstat-url]
+[![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 
 > If you interested in writing articles or helping with site — feel free to make pull-requests or [creating issues](https://github.com/floatdrop/getbem.com/issues) with discussions.
 
@@ -212,9 +212,6 @@ gulp gh
 ```
 
 ##### MIT License
-
-[appveyor-url]: https://ci.appveyor.com/project/floatdrop/getbem-com
-[appveyor-image]: https://ci.appveyor.com/api/projects/status/1pbi09onmmb0p2a3?svg=true
 
 [travis-url]: http://travis-ci.org/getbem/getbem.com
 [travis-image]: http://img.shields.io/travis/getbem/getbem.com.svg?branch=master&style=flat
