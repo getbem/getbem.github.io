@@ -186,6 +186,29 @@ gulp.task('js', function () {
 
 We are looking forward to use [Duo](http://duojs.org/), as soon as resolving parts will be configurable.
 
+### Development
+
+```
+git clone https://github.com/getbem/getbem.com.git
+cd getbem.com
+npm i
+bower i
+```
+
+After you cloned repo and installed requirements, you can start development server:
+
+```
+gulp
+```
+
+It will build site and start local server on [localhost:4000](http://localhost:4000).
+
+When you are sure about changes (and if you can push in this repository), you can publish [getbem.com](http://getbem.com):
+
+```
+gulp gh
+```
+
 ##### MIT License
 
 [appveyor-url]: https://ci.appveyor.com/project/floatdrop/getbem-com
