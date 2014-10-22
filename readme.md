@@ -186,7 +186,9 @@ gulp.task('js', function () {
 
 We are looking forward to use [Duo](http://duojs.org/), as soon as resolving parts will be configurable.
 
-### Development
+## Development
+
+First, clone this repo and install dependencies:
 
 ```
 git clone https://github.com/getbem/getbem.com.git
@@ -201,7 +203,7 @@ After you cloned repo and installed requirements, you can start development serv
 gulp
 ```
 
-It will build site and start local server on [localhost:4000](http://localhost:4000).
+It will build site, start watcher on files and start local server on [localhost:4000](http://localhost:4000).
 
 When you are sure about changes (and if you can push in this repository), you can publish [getbem.com](http://getbem.com):
 
