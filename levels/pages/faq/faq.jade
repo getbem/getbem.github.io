@@ -24,3 +24,57 @@ block content
       .grid__cell-xs.grid__cell-xs_size_12.raw-text
         :markdown
           We are working on Frequently Asked Question list [here](https://docs.google.com/document/d/1KD9tNdArCv1U1NvFX7rYPvUdbpPGVkuPZ2723KW5p4Y) — fear not, it will be translated from Russian to English before publishing.
+
+          ##CSS
+
+          ###Why the modifier CSS classes are prefixed with their parent block name?
+
+          ####Question
+          BEM recommends to modify blocks like this `<div class="block block_mod">`. Why not to use the simple version like
+          `<div class="block mod">`? Since we now have combined selectors `.block.mod`, it's easy to define all the CSS
+          properties to it.
+
+          ####Answer
+          The recommendation to prefix modifier CSS class with its block name has multiple reasons.
+
+          Firsly, since it is possible to mix several blocks an elements at the same DOM node, we need to ensure that a modifier would affect only
+          the block it belongs to. Let's say that we have a menu item element and a button mixed together. In HTML this construction is represented
+          by the following markup:
+
+          ```
+          <div class="menu__item button"></div>
+          ```
+          In this case adding `.active` modifier to them would affect both.
+
+          ```
+          <div class="menu__item button active"></div>
+          ```
+          All the 3 sit at the same DOM node, so it is impposible to differenciate if we mean `menu__item.active` or `button.active`.
+          Whereas in the prefixed case the naming `button_ative` unambiguously says as that this is only the button that has to be
+          affected.
+
+          Another point is CSS specifity. The combined selectors are more specific (means more important) than single class selectors.
+          This means that you might have trouble when redefining them with parent block code.
+
+          ```
+          <div class="header">
+            <button class="button active">
+          </div>
+          ```
+
+          If you are already having `.button.active` selector in code, the specifity of your redefining `.header .button` would be exactly
+          the same as the specifity of modifier combined selector which makes you dependent on the order of the CSS rules
+          declared. Whereas in case of using a prefixed modifier you can always be sure that the cascade selector `.header .button` will
+          overwrite the `.button_active` modifier.
+
+          This makes life easier especially for mantainable projects.
+
+          The third point is that looking at the `<div class="block block_mod">` markup you can clearly see the block structure. It is easy
+          to recognize that we are having a block and its modifier and there is no different interpretations here. Unfortunately a grasp onto
+          `<div class="block mod">` code does not give such information. Depending on what are the exact CSS classes sometimes it is impossible
+          to recognize if we are having a block and a modifier or a mix of 2 blocks here. This might be even more confusing if the names of the
+          entities are complex or contracted/abbreviated (which sometimes happens in big projects).
+
+          And lastly, from a development process standpoint the difference between `.block.mod` and `.block_mod` is only one symbol. Using
+          `-` instead of `.` costs nothing but it brings all the benefits listed above. Moreover, since pre-processor began to support BEM
+          notation, it is pretty natural to write `&_mod` there and finally get a modifier declared as it was recommended.
