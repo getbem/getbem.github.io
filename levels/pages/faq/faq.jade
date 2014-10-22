@@ -25,16 +25,10 @@ block content
         :markdown
           We are working on Frequently Asked Question list [here](https://docs.google.com/document/d/1KD9tNdArCv1U1NvFX7rYPvUdbpPGVkuPZ2723KW5p4Y) — fear not, it will be translated from Russian to English before publishing.
 
-          ##CSS
-
           ###Why the modifier CSS classes are prefixed with their parent block name?
 
-          ####Question
-          BEM recommends to modify blocks like this `<div class="block block_mod">`. Why not to use the simple version like
-          `<div class="block mod">`? Since we now have combined selectors `.block.mod`, it's easy to define all the CSS
-          properties to it.
+          > BEM recommends to modify blocks like this `<div class="block block_mod">`. Why not to use the simple version like `<div class="block mod">`? Since we now have combined selectors `.block.mod`, it's easy to define all the CSS properties to it.
 
-          ####Answer
           The recommendation to prefix modifier CSS class with its block name has multiple reasons.
 
           Firsly, since it is possible to mix several blocks an elements at the same DOM node, we need to ensure that a modifier would affect only
