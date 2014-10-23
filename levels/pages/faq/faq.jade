@@ -67,7 +67,11 @@ block content
           to recognize that we are having a block and its modifier and there is no different interpretations here. Unfortunately a grasp onto
           `<div class="block mod">` code does not give such information. Depending on what are the exact CSS classes sometimes it is impossible
           to recognize if we are having a block and a modifier or a mix of 2 blocks here. This might be even more confusing if the names of the
-          entities are complex or contracted/abbreviated (which sometimes happens in big projects).
+          entities are complex or contracted/abbreviated (which sometimes happens in big projects).<br/>
+          Clear understandting of a block structure especially helps in looking for corresponsing code on a file system.
+
+          You will also appreciate `.block_mod` practice when refactoring and use global search over all your project files. Imagine the
+          same looking for not-prefixed `.mod` and all the HTML pieces it might be.
 
           And lastly, from a development process standpoint the difference between `.block.mod` and `.block_mod` is only one symbol. Using
           `-` instead of `.` costs nothing but it brings all the benefits listed above. Moreover, since pre-processor began to support BEM
