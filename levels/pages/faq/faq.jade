@@ -25,6 +25,17 @@ block content
         :markdown
           We are working on Frequently Asked Question list [here](https://docs.google.com/document/d/1KD9tNdArCv1U1NvFX7rYPvUdbpPGVkuPZ2723KW5p4Y) — fear not, it will be translated from Russian to English before publishing.
 
+        ul
+          li
+            a(href="#why-the-modifier-classes-are-prefixed") Why the modifier CSS classes are prefixed with their parent block name?
+          li
+            a(href="#can-i-create-global-modifier") Can I create a modifier global applicable to any block? Like visible/invisible.
+
+  .grid.grid_fixed
+    .grid__row
+      .grid__cell-xs.grid__cell-xs_size_12.raw-text
+        a(id="why-the-modifier-classes-are-prefixed")
+        :markdown
           ### Why the modifier CSS classes are prefixed with their parent block name?
 
           > BEM recommends to modify blocks like this `<div class="block block_mod">`. Why not to use the simple version like `<div class="block mod">`? Since we now have combined selectors `.block.mod`, it's easy to define all the CSS properties to it.
@@ -76,7 +87,8 @@ block content
           And lastly, from a development process standpoint the difference between `.block.mod` and `.block_mod` is only one symbol. Using
           `-` instead of `.` costs nothing but it brings all the benefits listed above. Moreover, since pre-processor began to support BEM
           notation, it is pretty natural to write `&_mod` there and finally get a modifier declared as it was recommended.
-
+        a(id="can-i-create-global-modifier")
+        :markdown
           ### Can I create a modifier global applicable to any block? Like `visible`/`invisible`.
 
           > I've heard that global modifiers like `visible`, `invisible`, `red`, `opacity50` are not welcomed in BEM. Why?
