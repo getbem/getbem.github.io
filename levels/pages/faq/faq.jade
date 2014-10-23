@@ -67,8 +67,83 @@ block content
           to recognize that we are having a block and its modifier and there is no different interpretations here. Unfortunately a grasp onto
           `<div class="block mod">` code does not give such information. Depending on what are the exact CSS classes sometimes it is impossible
           to recognize if we are having a block and a modifier or a mix of 2 blocks here. This might be even more confusing if the names of the
-          entities are complex or contracted/abbreviated (which sometimes happens in big projects).
+          entities are complex or contracted/abbreviated (which sometimes happens in big projects).<br/>
+          Clear understandting of a block structure especially helps in looking for corresponsing code on a file system.
+
+          You will also appreciate `.block_mod` practice when refactoring and use global search over all your project files. Imagine the
+          same looking for not-prefixed `.mod` and all the HTML pieces it might be.
 
           And lastly, from a development process standpoint the difference between `.block.mod` and `.block_mod` is only one symbol. Using
           `-` instead of `.` costs nothing but it brings all the benefits listed above. Moreover, since pre-processor began to support BEM
           notation, it is pretty natural to write `&_mod` there and finally get a modifier declared as it was recommended.
+
+          ### Can I create a modifier global applicable to any block? Like `visible`/`invisible`.
+
+          > I've heard that global modifiers like `visible`, `invisible`, `red`, `opacity50` are not welcomed in BEM. Why?
+          > I think it is useful to incorporate common properties like this in such a global class and than apply it to different blocks.
+
+          Indeed you can have 2 main CSS classes at the same DOM node. In BEM we call it `mix`:
+
+          ```
+          <div class="block1 block2"></div>
+          ```
+
+          But important thing about it is that both `block1` and `block2` should be standalone blocks. This is slightly different
+          from what people usually mean by "global modifiers" as modifiers do not have any sence on they own and are just a set
+          of properties to change.
+
+          ```
+          <div class="block globalmod"></div>
+          ```
+
+          If you think that in your case you would have a global modifier, these are the problems you may face:
+
+          First of all the specifity problem appears. In a local modifier case CSS code goes like this:
+
+          ```
+          .block {
+            display: block;
+          }
+          .block_hidden {
+            display: none;
+          }
+          ```
+          Both block and modifier selectots have the same specifity. As modifier declaration goes after the block, it redefines the CSS
+          properties. These styles belong to block and are stored in the block file. Thus, independantly on how the resultant CSS is built
+          from source, you will always have them in this order and be sure that redefining happens.
+
+          In the case of global modifier, its properties can be redefined by the blocks if they follow modifiers in code:
+
+          ```
+          .hidden { display: none }
+          /* ... */
+          .block { display: block }
+          ```
+          ```
+          <div class="block hidden">you still see me</div>
+          ```
+          One of the possible solutions to this problem is to rase the selector specifity of global modifiers by adding `!important` to them.
+          But in this case any side-effects of such a global modifier might be overwritten only by declarations with the same `!important`
+          instruction.
+
+          Another way is to load global modifier CSS after al the other styles. But in this case you are not able any more to use *lazy
+          loading* strategy for your components. The additinal lazy CSS will still be loaded after the modifiers and you get the same problem.
+
+          The next problem is combination of several global modifiers at the same block.
+
+          ```
+          <div class="block mod1 mod2"></div>
+          ```
+          In this case you absolutely have no control over the block. The order of modifiers in code can be different. If it conflicts
+          with other declarations, changing the order can fix this conflict but lead to another one. The only way would be to redefine the mess
+          in block. And don't forget about the `!important` to your hack.
+
+          Also, depending on a block the same modifier can be implemented differently. Even the simple `.hidden` sometimes needs to be
+          not `display: none;' but `visibility: hidden` or even `postition: ablosulte; left: -9999px` etc. And if you need to bring some changes
+          into your block, it is much nicer not to waste time searching for all the places where this block can be combined with a global modifier.
+          Espacially assuming that such dependencies usually are not described anywhere.
+
+          All this hell can be avoided by encapsulating a modifier in a block like `.block_mod`.
+
+          Indeed using global modifiers makes the resultant code less. However if you measure the real difference in bytes it usually does not
+          seam that big. Especially if you are using CSS optimizator which can combine selectors.
