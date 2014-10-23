@@ -84,7 +84,7 @@ block content
 
           Indeed you can have 2 main CSS classes at the same DOM node. In BEM we call it `mix`:
 
-          ```
+          ```html
           <div class="block1 block2"></div>
           ```
 
@@ -92,7 +92,7 @@ block content
           from what people usually mean by "global modifiers" as modifiers do not have any sence on they own and are just a set
           of properties to change.
 
-          ```
+          ```html
           <div class="block globalmod"></div>
           ```
 
@@ -100,7 +100,7 @@ block content
 
           First of all the specifity problem appears. In a local modifier case CSS code goes like this:
 
-          ```
+          ```css
           .block {
             display: block;
           }
@@ -114,12 +114,12 @@ block content
 
           In the case of global modifier, its properties can be redefined by the blocks if they follow modifiers in code:
 
-          ```
+          ```css
           .hidden { display: none }
           /* ... */
           .block { display: block }
           ```
-          ```
+          ```html
           <div class="block hidden">you still see me</div>
           ```
           One of the possible solutions to this problem is to rase the selector specifity of global modifiers by adding `!important` to them.
@@ -131,7 +131,7 @@ block content
 
           The next problem is combination of several global modifiers at the same block.
 
-          ```
+          ```html
           <div class="block mod1 mod2"></div>
           ```
           In this case you absolutely have no control over the block. The order of modifiers in code can be different. If it conflicts
