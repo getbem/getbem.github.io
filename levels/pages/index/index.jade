@@ -14,46 +14,47 @@ block scripts
 
 block content
   +header
-    | Block Element Modifier is a methodology, that helps you to achieve reusable components and code sharing in the front-end.
+    h1.heading.heading_level_2
+      | BEM — Block Element Modifier is a methodology, that helps you to achieve reusable components and code sharing in the front-end.
 
   .grid.grid_fixed.grid_spaced
     .grid__row
       .grid__cell-sm.grid__cell-sm_size_4
         .advantage
-          .advantage__head.advantage__head_green Easy
+          h2.advantage__head.advantage__head_green Easy
           .advantage__desc
             | To use BEM you literally do not need nothing besides BEM naming.
       .grid__cell-sm.grid__cell-sm_size_4
         .advantage
-          .advantage__head.advantage__head_blue Modular
+          h2.advantage__head.advantage__head_blue Modular
           .advantage__desc
             | Independent blocks and css selectors plus layer system makes your code reusable and modular.
       .grid__cell-sm.grid__cell-sm_size_4
         .advantage
-          .advantage__head.advantage__head_red Flexible
+          h2.advantage__head.advantage__head_red Flexible
           .advantage__desc
             | Methodology and tools, that can be recomposed and configured in the way you like BEM.
 
   .grid.grid_fixed.grid_spaced
-    .grid__row.text_align_center
-      .grid__cell-sm.grid__cell-sm_size_4.raw-text
+    .grid__row.text.text_align_center
+      .grid__cell-sm.grid__cell-sm_size_4
         .icon
           a(href="/introduction/")
             .icon__image
               img(src="/img/book.svg" style="width: 100px; height: 100px; padding-top: 10px; margin-top: 10px;")
-            .icon__caption Introduction
-      .grid__cell-sm.grid__cell-sm_size_4.raw-text
+            h2.icon__caption Introduction
+      .grid__cell-sm.grid__cell-sm_size_4
         .icon
           a(href="/naming/")
             .icon__image
               img(src="/img/rename.svg" style="width: 100px; height: 100px; padding-top: 10px; margin-top: 5px;")
-            .icon__caption Naming
-      .grid__cell-sm.grid__cell-sm_size_4.raw-text
+            h2.icon__caption Naming
+      .grid__cell-sm.grid__cell-sm_size_4
         .icon
           a(href="/building/")
             .icon__image
               img(src="/img/build.svg" style="width: 100px; height: 100px; padding-top: 10px; margin-top: 5px;")
-            .icon__caption Building
+            h2.icon__caption Building
 
   .grid.grid_fixed.grid_spaced
     .grid__row.text_align_center.bem-consumers#companies
