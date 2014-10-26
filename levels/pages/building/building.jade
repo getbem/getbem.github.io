@@ -35,7 +35,7 @@ block content
 
     .grid__row
       .grid__cell-sm.grid__cell-sm_size_4.grid__block-cell.raw-text
-        .heading.heading_level_2 Blocks
+        .heading.heading_level_3 Blocks
 
         p Each block will have it's own directory and file with styles:
 
@@ -51,7 +51,7 @@ block content
           .types__d_b footer/
           .types__f_b   footer.css
       .grid__cell-sm.grid__cell-sm_size_4.grid__element-cell.raw-text
-        .heading.heading_level_2 Elements
+        .heading.heading_level_3 Elements
 
         p Since elements can't be outside of blocks — we will place them in subfolder of block:
 
@@ -72,7 +72,7 @@ block content
           .types__f_b block.css
 
       .grid__cell-sm.grid__cell-sm_size_4.grid__modifier-cell.raw-text
-        .heading.heading_level_2 Modifiers
+        .heading.heading_level_3 Modifiers
 
         p Both blocks and elements can have modifiers. So they can be placed either into block folder:
 
@@ -117,7 +117,7 @@ block content
     .grid__row
       .grid__cell-xs.grid__cell-xs_size_12.raw-text
         :markdown
-          # Building
+          ## Building
 
           After you get your CSS from single `index.css` file to hierarchy of separate CSS files you probably want to build them back together, otherwise your HTML will be bloated with `<style>` tags.
 
@@ -125,7 +125,7 @@ block content
     .grid__row
       .grid__cell-sm.grid__cell-sm_size_4.raw-text
         :markdown
-          #### 1. Install modules
+          ### 1. Install modules
 
           ```bash
           npm install gulp -g
@@ -133,7 +133,7 @@ block content
           ```
       .grid__cell-sm.grid__cell-sm_size_4.raw-text
         :markdown
-          #### 2. Create `gulpfile.js`
+          ### 2. Create `gulpfile.js`
 
           ```js
           var gulp = require('gulp');
@@ -151,7 +151,7 @@ block content
           ```
       .grid__cell-sm.grid__cell-sm_size_4.raw-text
         :markdown
-          #### 3. Run build task
+          ### 3. Run build task
 
           ```bash
           gulp build
