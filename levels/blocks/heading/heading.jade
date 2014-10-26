@@ -1,6 +1,7 @@
-mixin heading(title, page, hash)
+mixin heading(title, page, hash, improve)
   .heading.heading_level_1
     h1.heading.heading_level_1.heading_inline.heading_wrapped(id= hash ? hash : page)= title
     block
-    a.badge.badge_theme_text(href='https://github.com/getbem/getbem.com/edit/master/levels/pages/' + page + '/' + page + '.jade')
-      | Improve this article
+    if (!improve)
+      a.badge.badge_theme_text(href='https://github.com/getbem/getbem.com/edit/master/levels/pages/' + page + '/' + page + '.jade')
+        | Improve this article

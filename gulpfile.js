@@ -56,13 +56,11 @@ gulp.task('html', ['tree'], function () {
         return tree.deps('levels/pages/' + page.id)
             .pipe(bem.src('{bem}.jade'))
             .pipe(concat({
-                path: page.path + '/index.jade',
+                path: page.path + '/' + (page.id !== '404' ? 'index' : '404') + '.jade',
                 base: page.path
             }))
             .pipe(jade({pretty: true}))
-            .pipe(gulp.dest('./dist' +
-                (page.id === 'index' ? '' : '/' + page.id)
-            ));
+            .pipe(gulp.dest(/(404|index)/.test(page.id) ? 'dist' : 'dist/' + page.id))
     }
 
     return bem.objects('levels/pages').map(buildHtml);

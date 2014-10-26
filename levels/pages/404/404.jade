@@ -1,0 +1,26 @@
+extends ../layout.jade
+
+block menu
+  +navbar()
+
+block title
+  title BEM — 404 Page not found
+
+block head
+  link(rel="stylesheet" href="/faq.css")
+
+block scripts
+  script(src="/index.js")
+
+block content
+  .grid.grid_fixed.grid_404.text.text_align_center
+    .grid__row
+      .grid__cell-sm.grid__cell-sm_size_12
+        +heading('404 Page not found', '404', '404', true)
+
+    .grid__row
+      .grid__cell-xs.grid__cell-xs_size_12.raw-text
+        :markdown
+          Page you are searching was deleted or never exists.
+
+          You can start from [Home page](/).
