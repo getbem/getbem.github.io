@@ -25,4 +25,5 @@ module.exports.require = [
     { block: 'list' },
     { block: 'bem-consumers' },
     { block: 'footer' },
+    { block: 'og' }
 ];
