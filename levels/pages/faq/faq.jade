@@ -36,7 +36,11 @@ block content
             a(href="#why-the-modifier-classes-are-prefixed") Why the modifier CSS classes are prefixed with their parent block name and
               not represented as a combined .block.mod selector?
           li
+            a(href="#custom-tags-for-blocks") Why do I need CSS classes for block instead of using semantical custom tags?
+          li
             a(href="#can-i-create-global-modifier") Can I create a global modifier applicable to any block? Like visible/invisible.
+          li
+            a(href="#encapsulating-tag-selector") Block selectors can combine a tag and a class `button.button`. Anything against it?
 
   .grid.grid_fixed
     .grid__row
@@ -94,6 +98,29 @@ block content
           And lastly, from a development process standpoint the difference between `.block.mod` and `.block_mod` is only one symbol. Using
           `-` instead of `.` costs nothing but it brings all the benefits listed above. Moreover, since pre-processor began to support BEM
           notation, it is pretty natural to write `&_mod` there and finally get a modifier declared as it was recommended.
+
+        a(id="custom-tags-for-blocks")
+        :markdown
+          ## Why do I need CSS classes for block instead of using semantical custom tags?
+
+          > Blocks can be respesented as custom tags which we may define CSS rules for. Looks like we do not need CSS classes for blocks
+          > at all. They can be used for modifiers only, like `<button class="mod"/>`.
+
+          Using custom tags as block selectors is indeed one of the BEMish solutions and can be used. However this variant is less
+          flexible than the recommended "class" approach.
+
+          This is more likely that you would need to prefix modifier classes with their block name to provide them namespace.
+          The details are uncovered in ["Why the modifier CSS classes are prefixed with their parent block name?"](#why-the-modifier-classes-are-prefixed)
+          question. So, finally the custom-tag version of a block is like `<block class="block_mod"/>`. This does not look
+          very different from `<div class="block block_mod">` especially assuming that being tag-independent you can use any
+          custom node and stay with `<block class="block block_mod">`.
+
+          Second drawback is that "tag" version makes using the mixes of blocks impossible whereas the "class" version
+          represent that naturally by `<div class="block1 block2">`.
+
+          And the last clench against such an approach is that in many cases you are not able to represent your blocks with
+          custom tags at all. For a `link` block you definitely need `<a>` tag, and the same for `<input>`.
+
         a(id="can-i-create-global-modifier")
         :markdown
           ## Can I create a global modifier applicable to any block? Like `visible`/`invisible`.
@@ -166,3 +193,28 @@ block content
 
           Indeed using global modifiers makes the resultant code less. However if you measure the real difference in bytes it usually does not
           seem that big. Especially if you are using CSS optimizator which can combine selectors.
+
+        a(id="encapsulating-tag-selector")
+        :markdown
+          ## Block selectors can combine a tag and a class `button.button`. Anything against&nbsp;it?
+
+          > I want to use selectors like `button.button` to encapsulate my blocks functionality within a particular tag.
+          > If lately someone else would use in their code `<h2 class="button">`, such an encapsulation would prevent
+          > a conflict.
+
+          The CSS specificity of such a selector grows. `.button_mod` selector will not overwrite CSS properties of the block, only
+          `button.button_mod` would work. You will need its modifiers to be combined with the tag as well and so do the developers
+          who lately would redefine your block.
+
+          Lately, when a project goes larger, it's very likely that you may have `input.button`, `span.button` and `a.button`
+          as well. And all the prefixed selectors for modifiers and nested elements will need 4 declarations.
+
+          So, it is better not to tie your own hands with such prefixing. However if you still can softly-softly ensure that
+          your blocks are used with proper tags if your provide your users with templates for every block. This is the most
+          flexible and automatic solution.
+
+          If the templating looks overhead, the is a "documentation" approach to inform your users which tag the block CSS class
+          would be applied to, this
+          can be done with documenting the block code. The shortest version could be just a comment with a tag name prefixing
+          the block declaration `/*button*/.button`. Or that can be a larger comment with full HTML piece needed to the
+          block to function.
