@@ -33,6 +33,8 @@ block content
             a(href="#custom-tags-for-blocks") Why do I need CSS classes for block instead of using semantical custom tags?
           li
             a(href="#can-i-create-global-modifier") Can I create a global modifier applicable to any block? Like visible/invisible.
+          li
+            a(href="#encapsulating-tag-selector") Block selectors can combine a tag and a class `button.button`. Anything against it?
 
   .grid.grid_fixed
     .grid__row
@@ -186,3 +188,27 @@ block content
           Indeed using global modifiers makes the resultant code less. However if you measure the real difference in bytes it usually does not
           seem that big. Especially if you are using CSS optimizator which can combine selectors.
 
+        a(id="encapsulating-tag-selector")
+        :markdown
+          ## Block selectors can combine a tag and a class `button.button`. Anything against&nbsp;it?
+
+          > I want to use selectors like `button.button` to encapsulate my blocks functionality within a particular tag.
+          > If lately someone else would use in their code `<h2 class="button">`, such an encapsulation would prevent
+          > a conflict.
+
+          The CSS specificity of such a selector grows. `.button_mod` selector will not overwrite CSS properties of the block, only
+          `button.button_mod` would work. You will need its modifiers to be combined with the tag as well and so do the developers
+          who lately would redefine your block.
+
+          Lately, when a project goes larger, it's very likely that you may have `input.button`, `span.button` and `a.button`
+          as well. And all the prefixed selectors for modifiers and nested elements will need 4 declarations.
+
+          So, it is better not to tie your own hands with such prefixing. However if you still can softly-softly ensure that
+          your blocks are used with proper tags if your provide your users with templates for every block. This is the most
+          flexible and automatic solution.
+
+          If the templating looks overhead, the is a "documentation" approach to inform your users which tag the block CSS class
+          would be applied to, this
+          can be done with documenting the block code. The shortest version could be just a comment with a tag name prefixing
+          the block declaration `/*button*/.button`. Or that can be a larger comment with full HTML piece needed to the
+          block to function.
