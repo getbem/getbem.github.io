@@ -27,22 +27,23 @@ block content
 
         ul
           li
-            a(href="#why-the-modifier-classes-are-prefixed") Why the modifier CSS classes are prefixed with their parent block name?
+            a(href="#why-the-modifier-classes-are-prefixed") Why the modifier CSS classes are prefixed with their parent block name and
+              not represented as a combined .block.mod selector?
           li
-            a(href="#can-i-create-global-modifier") Can I create a modifier global applicable to any block? Like visible/invisible.
+            a(href="#can-i-create-global-modifier") Can I create a global modifier applicable to any block? Like visible/invisible.
 
   .grid.grid_fixed
     .grid__row
       .grid__cell-xs.grid__cell-xs_size_12.raw-text
         a(id="why-the-modifier-classes-are-prefixed")
         :markdown
-          ## Why the modifier CSS classes are prefixed with their parent block name?
+          ## Why the modifier CSS classes are prefixed with their parent block name and not represented as a combined `.block.mod` selector?
 
           > BEM recommends to modify blocks like this `<div class="block block_mod">`. Why not to use the simple version like `<div class="block mod">`? Since we now have combined selectors `.block.mod`, it's easy to define all the CSS properties to it.
 
           The recommendation to prefix modifier CSS class with its block name has multiple reasons.
 
-          Firsly, since it is possible to mix several blocks an elements at the same DOM node, we need to ensure that a modifier would affect only
+          Firstly, since it is possible to mix several blocks and elements at the same DOM node, we need to ensure that a modifier would affect only
           the block it belongs to. Let's say that we have a menu item element and a button mixed together. In HTML this construction is represented
           by the following markup:
 
@@ -54,11 +55,11 @@ block content
           ```html
           <div class="menu__item button active"></div>
           ```
-          All the 3 sit at the same DOM node, so it is impposible to differenciate if we mean `menu__item.active` or `button.active`.
+          All the 3 sit at the same DOM node, so it is impposible to differentiate if we mean `menu__item.active` or `button.active`.
           Whereas in the prefixed case the naming `button_ative` unambiguously says as that this is only the button that has to be
           affected.
 
-          Another point is CSS specifity. The combined selectors are more specific (means more important) than single class selectors.
+          Another point is CSS specificity. The combined selectors are more specific (means more important) than single class selectors.
           This means that you might have trouble when redefining them with parent block code.
 
           ```html
@@ -67,19 +68,19 @@ block content
           </div>
           ```
 
-          If you are already having `.button.active` selector in code, the specifity of your redefining `.header .button` would be exactly
-          the same as the specifity of modifier combined selector which makes you dependent on the order of the CSS rules
+          If you are already having `.button.active` selector in code, the specificity of your redefining `.header .button` would be exactly
+          the same as the specificity of modifier combined selector which makes you dependent on the order of the CSS rules
           declared. Whereas in case of using a prefixed modifier you can always be sure that the cascade selector `.header .button` will
           overwrite the `.button_active` modifier.
 
-          This makes life easier especially for mantainable projects.
+          This makes life easier especially for maintainable projects.
 
           The third point is that looking at the `<div class="block block_mod">` markup you can clearly see the block structure. It is easy
           to recognize that we are having a block and its modifier and there is no different interpretations here. Unfortunately a grasp onto
           `<div class="block mod">` code does not give such information. Depending on what are the exact CSS classes sometimes it is impossible
           to recognize if we are having a block and a modifier or a mix of 2 blocks here. This might be even more confusing if the names of the
           entities are complex or contracted/abbreviated (which sometimes happens in big projects).<br/>
-          Clear understandting of a block structure especially helps in looking for corresponsing code on a file system.
+          Clear understanding of a block structure especially helps in looking for corresponding code on a file system.
 
           You will also appreciate `.block_mod` practice when refactoring and use global search over all your project files. Imagine the
           same looking for not-prefixed `.mod` and all the HTML pieces it might be.
@@ -89,10 +90,10 @@ block content
           notation, it is pretty natural to write `&_mod` there and finally get a modifier declared as it was recommended.
         a(id="can-i-create-global-modifier")
         :markdown
-          ## Can I create a modifier global applicable to any block? Like `visible`/`invisible`.
+          ## Can I create a global modifier applicable to any block? Like `visible`/`invisible`.
 
           > I've heard that global modifiers like `visible`, `invisible`, `red`, `opacity50` are not welcomed in BEM. Why?
-          > I think it is useful to incorporate common properties like this in such a global class and than apply it to different blocks.
+          > I think it is useful to incorporate common properties like this in such a global class and then apply it to different blocks.
 
           Indeed you can have 2 main CSS classes at the same DOM node. In BEM we call it `mix`:
 
@@ -101,7 +102,7 @@ block content
           ```
 
           But important thing about it is that both `block1` and `block2` should be standalone blocks. This is slightly different
-          from what people usually mean by "global modifiers" as modifiers do not have any sence on they own and are just a set
+          from what people usually mean by "global modifiers" as modifiers do not have any sense on they own and are just a set
           of properties to change.
 
           ```html
@@ -110,7 +111,7 @@ block content
 
           If you think that in your case you would have a global modifier, these are the problems you may face:
 
-          First of all the specifity problem appears. In a local modifier case CSS code goes like this:
+          First of all the specificity problem appears. In a local modifier case CSS code goes like this:
 
           ```css
           .block {
@@ -120,8 +121,8 @@ block content
             display: none;
           }
           ```
-          Both block and modifier selectots have the same specifity. As modifier declaration goes after the block, it redefines the CSS
-          properties. These styles belong to block and are stored in the block file. Thus, independantly on how the resultant CSS is built
+          Both block and modifier selectors have the same specificity. As modifier declaration goes after the block, it redefines the CSS
+          properties. These styles belong to block and are stored in the block file. Thus, independently on how the resultant CSS is built
           from source, you will always have them in this order and be sure that redefining happens.
 
           In the case of global modifier, its properties can be redefined by the blocks if they follow modifiers in code:
@@ -134,12 +135,12 @@ block content
           ```html
           <div class="block hidden">you still see me</div>
           ```
-          One of the possible solutions to this problem is to rase the selector specifity of global modifiers by adding `!important` to them.
+          One of the possible solutions to this problem is to raise the selector specificity of global modifiers by adding `!important` to them.
           But in this case any side-effects of such a global modifier might be overwritten only by declarations with the same `!important`
           instruction.
 
           Another way is to load global modifier CSS after al the other styles. But in this case you are not able any more to use *lazy
-          loading* strategy for your components. The additinal lazy CSS will still be loaded after the modifiers and you get the same problem.
+          loading* strategy for your components. The additional lazy CSS will still be loaded after the modifiers and you get the same problem.
 
           The next problem is combination of several global modifiers at the same block.
 
@@ -158,4 +159,4 @@ block content
           All this hell can be avoided by encapsulating a modifier in a block like `.block_mod`.
 
           Indeed using global modifiers makes the resultant code less. However if you measure the real difference in bytes it usually does not
-          seam that big. Especially if you are using CSS optimizator which can combine selectors.
+          seem that big. Especially if you are using CSS optimizator which can combine selectors.
