@@ -1,29 +1,29 @@
 module.exports.require = [
-    { block: 'highlight' },
-    { block: 'github-buttons' },
+    'highlight',
+    'github-buttons',
 
-    { block: 'normalize' },
-    { block: 'print' },
-    { block: 'scaffolding' },
-    { block: 'jquery' },
+    'normalize',
+    'print',
+    'scaffolding',
+    'jquery',
 
-    { block: 'navbar' },
-    { block: 'grid' },
-    { block: 'text' },
-    { block: 'raw-text' },
-    { block: 'img' },
+    'navbar',
+    'grid',
+    'text',
+    'raw-text',
+    'img',
 
-    { block: 'heading' },
+    'heading',
 
-    { block: 'fork' },
+    'fork',
 
-    { block: 'ga' },
-    { block: 'gauges' },
+    'ga',
+    'gauges',
 
-    { block: 'affix' },
-    { block: 'scrollspy' },
-    { block: 'list' },
-    { block: 'bem-consumers' },
-    { block: 'footer' },
-    { block: 'og' }
+    'affix',
+    'scrollspy',
+    'list',
+    'bem-consumers',
+    'footer',
+    'og'
 ];

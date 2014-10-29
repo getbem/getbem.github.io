@@ -1,8 +1,8 @@
 module.exports = {
     require: [
-        { block: 'page' },
-        { block: 'types' },
-        { block: 'highlight' },
-        { block: 'blockquote' }
+        'page',
+        'types',
+        'highlight',
+        'blockquote'
     ]
 };
