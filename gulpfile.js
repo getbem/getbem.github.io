@@ -24,7 +24,7 @@ var levels = [
     'levels/pages'
 ];
 
-var pages = [ '404', 'index', 'introduction', 'naming', 'building'];
+var pages = [ '404', 'index', 'introduction', 'naming', 'building', 'faq' ];
 
 var tree = bem(levels);
 
@@ -60,12 +60,12 @@ gulp.task('html', function (cb) {
         return tree.deps('levels/pages/' + page)
             .pipe(bem.src('{bem}.jade'))
             .pipe(concat({
-                path: 'levels/pages/' + page + '/index.jade',
+                path: 'levels/pages/' + page + '/' + (page === '404' ? '404' : 'index') + '.jade',
                 base: 'levels/pages/' + page
             }))
             .pipe(jade({pretty: true}))
             .pipe(gulp.dest(
-                /(404|index)/.test(page.id) ? 'dist' : 'dist/' + page.id
+                /(404|index)/.test(page) ? 'dist' : 'dist/' + page
             ));
     }, cb);
 });

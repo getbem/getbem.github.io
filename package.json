@@ -28,7 +28,7 @@
     "express": "^4.9.8",
     "gulp": "^3.8.6",
     "gulp-autoprefixer": "^1.0.1",
-    "gulp-bem": "^1.0.0-alpha-1",
+    "gulp-bem": "^1.0.1",
     "gulp-bem-pack": "^0.1.1",
     "gulp-concat": "^2.4.0",
     "gulp-jade": "^0.9.0",
