@@ -33,188 +33,191 @@ block content
 
         ul
           li
-            a(href="#why-the-modifier-classes-are-prefixed") Why the modifier CSS classes are prefixed with their parent block name and
-              not represented as a combined .block.mod selector?
+            a(href="#why-the-modifier-classes-are-prefixed") Why the modifier CSS classes are not represented as a combined selector?
           li
             a(href="#custom-tags-for-blocks") Why do I need CSS classes for block instead of using semantical custom tags?
           li
-            a(href="#can-i-create-global-modifier") Can I create a global modifier applicable to any block? Like visible/invisible.
+            a(href="#can-i-create-global-modifier") Can I create a global modifier applicable to any block?
           li
-            a(href="#encapsulating-tag-selector") Block selectors can combine a tag and a class `button.button`. Anything against it?
+            a(href="#encapsulating-tag-selector") Can I combine a tag and a class in selector like `button.button`?
 
   .grid.grid_fixed
     .grid__row
-      .grid__cell-xs.grid__cell-xs_size_12.raw-text
+      .grid__cell-xs.grid__cell-xs_size_12
         a(id="why-the-modifier-classes-are-prefixed")
-        :markdown
-          ## Why the modifier CSS classes are prefixed with their parent block name and not represented as a combined `.block.mod` selector?
+        .raw-text
+          :markdown
+            ## Why the modifier CSS classes are not represented as a combined selector?
 
-          > BEM recommends to modify blocks like this `<div class="block block_mod">`. Why not to use the simple version like `<div class="block mod">`? Since we now have combined selectors `.block.mod`, it's easy to define all the CSS properties to it.
+            > BEM recommends to modify blocks like this `<div class="block block_mod">`. Why not to use the simple version like `<div class="block mod">`? Since we now have combined selectors `.block.mod`, it's easy to define all the CSS properties to it.
 
-          The recommendation to prefix modifier CSS class with its block name has multiple reasons.
+            The recommendation to prefix modifier CSS class with its block name has multiple reasons.
 
-          Firstly, since it is possible to mix several blocks and elements at the same DOM node, we need to ensure that a modifier would affect only
-          the block it belongs to. Let's say that we have a menu item element and a button mixed together. In HTML this construction is represented
-          by the following markup:
+            Firstly, since it is possible to mix several blocks and elements at the same DOM node, we need to ensure that a modifier would affect only
+            the block it belongs to. Let's say that we have a menu item element and a button mixed together. In HTML this construction is represented
+            by the following markup:
 
-          ```html
-          <div class="menu__item button"></div>
-          ```
-          In this case adding `.active` modifier to them would affect both.
+            ```html
+            <div class="menu__item button"></div>
+            ```
+            In this case adding `.active` modifier to them would affect both.
 
-          ```html
-          <div class="menu__item button active"></div>
-          ```
-          All the 3 sit at the same DOM node, so it is impposible to differentiate if we mean `menu__item.active` or `button.active`.
-          Whereas in the prefixed case the naming `button_ative` unambiguously says as that this is only the button that has to be
-          affected.
+            ```html
+            <div class="menu__item button active"></div>
+            ```
+            All the 3 sit at the same DOM node, so it is impposible to differentiate if we mean `menu__item.active` or `button.active`.
+            Whereas in the prefixed case the naming `button_ative` unambiguously says as that this is only the button that has to be
+            affected.
 
-          Another point is CSS specificity. The combined selectors are more specific (means more important) than single class selectors.
-          This means that you might have trouble when redefining them with parent block code.
+            Another point is CSS specificity. The combined selectors are more specific (means more important) than single class selectors.
+            This means that you might have trouble when redefining them with parent block code.
 
-          ```html
-          <div class="header">
-            <button class="button active">
-          </div>
-          ```
+            ```html
+            <div class="header">
+              <button class="button active">
+            </div>
+            ```
 
-          If you are already having `.button.active` selector in code, the specificity of your redefining `.header .button` would be exactly
-          the same as the specificity of modifier combined selector which makes you dependent on the order of the CSS rules
-          declared. Whereas in case of using a prefixed modifier you can always be sure that the cascade selector `.header .button` will
-          overwrite the `.button_active` modifier.
+            If you are already having `.button.active` selector in code, the specificity of your redefining `.header .button` would be exactly
+            the same as the specificity of modifier combined selector which makes you dependent on the order of the CSS rules
+            declared. Whereas in case of using a prefixed modifier you can always be sure that the cascade selector `.header .button` will
+            overwrite the `.button_active` modifier.
 
-          This makes life easier especially for maintainable projects.
+            This makes life easier especially for maintainable projects.
 
-          The third point is that looking at the `<div class="block block_mod">` markup you can clearly see the block structure. It is easy
-          to recognize that we are having a block and its modifier and there is no different interpretations here. Unfortunately a grasp onto
-          `<div class="block mod">` code does not give such information. Depending on what are the exact CSS classes sometimes it is impossible
-          to recognize if we are having a block and a modifier or a mix of 2 blocks here. This might be even more confusing if the names of the
-          entities are complex or contracted/abbreviated (which sometimes happens in big projects).<br/>
-          Clear understanding of a block structure especially helps in looking for corresponding code on a file system.
+            The third point is that looking at the `<div class="block block_mod">` markup you can clearly see the block structure. It is easy
+            to recognize that we are having a block and its modifier and there is no different interpretations here. Unfortunately a grasp onto
+            `<div class="block mod">` code does not give such information. Depending on what are the exact CSS classes sometimes it is impossible
+            to recognize if we are having a block and a modifier or a mix of 2 blocks here. This might be even more confusing if the names of the
+            entities are complex or contracted/abbreviated (which sometimes happens in big projects).<br/>
+            Clear understanding of a block structure especially helps in looking for corresponding code on a file system.
 
-          You will also appreciate `.block_mod` practice when refactoring and use global search over all your project files. Imagine the
-          same looking for not-prefixed `.mod` and all the HTML pieces it might be in.
+            You will also appreciate `.block_mod` practice when refactoring and use global search over all your project files. Imagine the
+            same looking for not-prefixed `.mod` and all the HTML pieces it might be in.
 
-          And lastly, from a development process standpoint the difference between `.block.mod` and `.block_mod` is only one symbol. Using
-          `-` instead of `.` costs nothing but it brings all the benefits listed above. Moreover, since pre-processor began to support BEM
-          notation, it is pretty natural to write `&_mod` there and finally get a modifier declared as it was recommended.
+            And lastly, from a development process standpoint the difference between `.block.mod` and `.block_mod` is only one symbol. Using
+            `-` instead of `.` costs nothing but it brings all the benefits listed above. Moreover, since pre-processor began to support BEM
+            notation, it is pretty natural to write `&_mod` there and finally get a modifier declared as it was recommended.
 
         a(id="custom-tags-for-blocks")
-        :markdown
-          ## Why do I need CSS classes for block instead of using semantical custom tags?
+        .raw-text
+          :markdown
+            ## Why do I need CSS classes for block instead of using semantical custom tags?
 
-          > Blocks can be respesented as custom tags which we may define CSS rules for. Looks like we do not need CSS classes for blocks
-          > at all. They can be used for modifiers only, like `<button class="mod"/>`.
+            > Blocks can be respesented as custom tags which we may define CSS rules for. Looks like we do not need CSS classes for blocks
+            > at all. They can be used for modifiers only, like `<button class="mod"/>`.
 
-          Using custom tags as block selectors is indeed one of the BEMish solutions and can be used. However this variant is less
-          flexible than the recommended "class" approach.
+            Using custom tags as block selectors is indeed one of the BEMish solutions and can be used. However this variant is less
+            flexible than the recommended "class" approach.
 
-          This is more likely that you would need to prefix modifier classes with their block name to provide them namespace.
-          The details are uncovered in ["Why the modifier CSS classes are prefixed with their parent block name?"](#why-the-modifier-classes-are-prefixed)
-          question. So, finally the custom-tag version of a block is like `<block class="block_mod"/>`. This does not look
-          very different from `<div class="block block_mod">` especially assuming that being tag-independent you can use any
-          custom node and stay with `<block class="block block_mod">`.
+            This is more likely that you would need to prefix modifier classes with their block name to provide them namespace.
+            The details are uncovered in ["Why the modifier CSS classes are prefixed with their parent block name?"](#why-the-modifier-classes-are-prefixed)
+            question. So, finally the custom-tag version of a block is like `<block class="block_mod"/>`. This does not look
+            very different from `<div class="block block_mod">` especially assuming that being tag-independent you can use any
+            custom node and stay with `<block class="block block_mod">`.
 
-          Second drawback is that "tag" version makes using the mixes of blocks impossible whereas the "class" version
-          represent that naturally by `<div class="block1 block2">`.
+            Second drawback is that "tag" version makes using the mixes of blocks impossible whereas the "class" version
+            represent that naturally by `<div class="block1 block2">`.
 
-          And the last clench against such an approach is that in many cases you are not able to represent your blocks with
-          custom tags at all. For a `link` block you definitely need `<a>` tag, and the same for `<input>`.
+            And the last clench against such an approach is that in many cases you are not able to represent your blocks with
+            custom tags at all. For a `link` block you definitely need `<a>` tag, and the same for `<input>`.
 
         a(id="can-i-create-global-modifier")
-        :markdown
-          ## Can I create a global modifier applicable to any block? Like `visible`/`invisible`.
+        .raw-text
+          :markdown
+            ## Can I create a global modifier applicable to any block?
 
-          > I've heard that global modifiers like `visible`, `invisible`, `red`, `opacity50` are not welcomed in BEM. Why?
-          > I think it is useful to incorporate common properties like this in such a global class and then apply it to different blocks.
+            > I've heard that global modifiers like `visible`, `invisible`, `red`, `opacity50` are not welcomed in BEM. Why?
+            > I think it is useful to incorporate common properties like this in such a global class and then apply it to different blocks.
 
-          Indeed you can have 2 main CSS classes at the same DOM node. In BEM we call it `mix`:
+            Indeed you can have 2 main CSS classes at the same DOM node. In BEM we call it `mix`:
 
-          ```html
-          <div class="block1 block2"></div>
-          ```
+            ```html
+            <div class="block1 block2"></div>
+            ```
 
-          But important thing about it is that both `block1` and `block2` should be standalone blocks. This is slightly different
-          from what people usually mean by "global modifiers" as modifiers do not have any sense on they own and are just a set
-          of properties to change.
+            But important thing about it is that both `block1` and `block2` should be standalone blocks. This is slightly different
+            from what people usually mean by "global modifiers" as modifiers do not have any sense on they own and are just a set
+            of properties to change.
 
-          ```html
-          <div class="block globalmod"></div>
-          ```
+            ```html
+            <div class="block globalmod"></div>
+            ```
 
-          If you think that in your case you would have a global modifier, these are the problems you may face:
+            If you think that in your case you would have a global modifier, these are the problems you may face:
 
-          First of all the specificity problem appears. In a local modifier case CSS code goes like this:
+            First of all the specificity problem appears. In a local modifier case CSS code goes like this:
 
-          ```css
-          .block {
-            display: block;
-          }
-          .block_hidden {
-            display: none;
-          }
-          ```
-          Both block and modifier selectors have the same specificity. As modifier declaration goes after the block, it redefines the CSS
-          properties. These styles belong to block and are stored in the block file. Thus, independently on how the resultant CSS is built
-          from source, you will always have them in this order and be sure that redefining happens.
+            ```css
+            .block {
+              display: block;
+            }
+            .block_hidden {
+              display: none;
+            }
+            ```
+            Both block and modifier selectors have the same specificity. As modifier declaration goes after the block, it redefines the CSS
+            properties. These styles belong to block and are stored in the block file. Thus, independently on how the resultant CSS is built
+            from source, you will always have them in this order and be sure that redefining happens.
 
-          In the case of global modifier, its properties can be redefined by the blocks if they follow modifiers in code:
+            In the case of global modifier, its properties can be redefined by the blocks if they follow modifiers in code:
 
-          ```css
-          .hidden { display: none }
-          /* ... */
-          .block { display: block }
-          ```
-          ```html
-          <div class="block hidden">you still see me</div>
-          ```
-          One of the possible solutions to this problem is to raise the selector specificity of global modifiers by adding `!important` to them.
-          But in this case any side-effects of such a global modifier might be overwritten only by declarations with the same `!important`
-          instruction.
+            ```css
+            .hidden { display: none }
+            /* ... */
+            .block { display: block }
+            ```
+            ```html
+            <div class="block hidden">you still see me</div>
+            ```
+            One of the possible solutions to this problem is to raise the selector specificity of global modifiers by adding `!important` to them.
+            But in this case any side-effects of such a global modifier might be overwritten only by declarations with the same `!important`
+            instruction.
 
-          Another way is to load global modifier CSS after al the other styles. But in this case you are not able any more to use *lazy
-          loading* strategy for your components. The additional lazy CSS will still be loaded after the modifiers and you get the same problem.
+            Another way is to load global modifier CSS after al the other styles. But in this case you are not able any more to use *lazy
+            loading* strategy for your components. The additional lazy CSS will still be loaded after the modifiers and you get the same problem.
 
-          The next problem is combination of several global modifiers at the same block.
+            The next problem is combination of several global modifiers at the same block.
 
-          ```html
-          <div class="block mod1 mod2"></div>
-          ```
-          In this case you absolutely have no control over the block. The order of modifiers in code can be different. If it conflicts
-          with other declarations, changing the order can fix this conflict but lead to another one. The only way would be to redefine the mess
-          in block. And don't forget about the `!important` to your hack.
+            ```html
+            <div class="block mod1 mod2"></div>
+            ```
+            In this case you absolutely have no control over the block. The order of modifiers in code can be different. If it conflicts
+            with other declarations, changing the order can fix this conflict but lead to another one. The only way would be to redefine the mess
+            in block. And don't forget about the `!important` to your hack.
 
-          Also, depending on a block the same modifier can be implemented differently. Even the simple `.hidden` sometimes needs to be
-          not `display: none;' but `visibility: hidden` or even `postition: ablosulte; left: -9999px` etc. And if you need to bring some changes
-          into your block, it is much nicer not to waste time searching for all the places where this block can be combined with a global modifier.
-          Espacially assuming that such dependencies usually are not described anywhere.
+            Also, depending on a block the same modifier can be implemented differently. Even the simple `.hidden` sometimes needs to be
+            not `display: none;' but `visibility: hidden` or even `postition: ablosulte; left: -9999px` etc. And if you need to bring some changes
+            into your block, it is much nicer not to waste time searching for all the places where this block can be combined with a global modifier.
+            Espacially assuming that such dependencies usually are not described anywhere.
 
-          All this hell can be avoided by encapsulating a modifier in a block like `.block_mod`.
+            All this hell can be avoided by encapsulating a modifier in a block like `.block_mod`.
 
-          Indeed using global modifiers makes the resultant code less. However if you measure the real difference in bytes it usually does not
-          seem that big. Especially if you are using CSS optimizator which can combine selectors.
+            Indeed using global modifiers makes the resultant code less. However if you measure the real difference in bytes it usually does not
+            seem that big. Especially if you are using CSS optimizator which can combine selectors.
 
         a(id="encapsulating-tag-selector")
-        :markdown
-          ## Block selectors can combine a tag and a class `button.button`. Anything against&nbsp;it?
+        .raw-text
+          :markdown
+            ## Can I combine a tag and a class in selector like `button.button`?
 
-          > I want to use selectors like `button.button` to encapsulate my blocks functionality within a particular tag.
-          > If lately someone else would use in their code `<h2 class="button">`, such an encapsulation would prevent
-          > a conflict.
+            > I want to use selectors like `button.button` to encapsulate my blocks functionality within a particular tag.
+            > If lately someone else would use in their code `<h2 class="button">`, such an encapsulation would prevent
+            > a conflict.
 
-          The CSS specificity of such a selector grows. `.button_mod` selector will not overwrite CSS properties of the block, only
-          `button.button_mod` would work. You will need its modifiers to be combined with the tag as well and so do the developers
-          who lately would redefine your block.
+            The CSS specificity of such a selector grows. `.button_mod` selector will not overwrite CSS properties of the block, only
+            `button.button_mod` would work. You will need its modifiers to be combined with the tag as well and so do the developers
+            who lately would redefine your block.
 
-          Lately, when a project goes larger, it's very likely that you may have `input.button`, `span.button` and `a.button`
-          as well. And all the prefixed selectors for modifiers and nested elements will need 4 declarations.
+            Lately, when a project goes larger, it's very likely that you may have `input.button`, `span.button` and `a.button`
+            as well. And all the prefixed selectors for modifiers and nested elements will need 4 declarations.
 
-          So, it is better not to tie your own hands with such prefixing. However if you still can softly-softly ensure that
-          your blocks are used with proper tags if your provide your users with templates for every block. This is the most
-          flexible and automatic solution.
+            So, it is better not to tie your own hands with such prefixing. However if you still can softly-softly ensure that
+            your blocks are used with proper tags if your provide your users with templates for every block. This is the most
+            flexible and automatic solution.
 
-          If the templating looks overhead, the is a "documentation" approach to inform your users which tag the block CSS class
-          would be applied to, this
-          can be done with documenting the block code. The shortest version could be just a comment with a tag name prefixing
-          the block declaration `/*button*/.button`. Or that can be a larger comment with full HTML piece needed to the
-          block to function.
+            If the templating looks overhead, the is a "documentation" approach to inform your users which tag the block CSS class
+            would be applied to, this
+            can be done with documenting the block code. The shortest version could be just a comment with a tag name prefixing
+            the block declaration `/*button*/.button`. Or that can be a larger comment with full HTML piece needed to the
+            block to function.

@@ -3,5 +3,6 @@ module.exports = {
         { block: 'page' },
         { block: 'types' },
         { block: 'highlight' },
+        { block: 'blockquote' }
     ]
 };
