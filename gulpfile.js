@@ -9,6 +9,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
 var buildBranch = require('buildbranch');
 var each = require('each-done');
+var rename = require('gulp-rename');
 
 var levels = [
     'levels/js',
@@ -24,7 +25,17 @@ var levels = [
     'levels/pages'
 ];
 
-var pages = [ '404', 'index', 'introduction', 'naming', 'building', 'faq' ];
+var paths = {
+    '404': '404.html',
+    'index': 'index.html',
+    'introduction': 'introduction/index.html',
+    'naming': 'naming/index.html',
+    'building': 'building/index.html',
+    'faq': 'faq/index.html'
+};
+
+
+var pages = Object.keys(paths);
 
 var tree = bem(levels);
 
@@ -60,13 +71,12 @@ gulp.task('html', function (cb) {
         return tree.deps('levels/pages/' + page)
             .pipe(bem.src('{bem}.jade'))
             .pipe(concat({
-                path: 'levels/pages/' + page + '/' + (page === '404' ? '404' : 'index') + '.jade',
+                path: 'levels/pages/' + page + '/index.jade',
                 base: 'levels/pages/' + page
             }))
             .pipe(jade({pretty: true}))
-            .pipe(gulp.dest(
-                /(404|index)/.test(page) ? 'dist' : 'dist/' + page
-            ));
+            .pipe(rename(paths[page]))
+            .pipe(gulp.dest('dist'));
     }, cb);
 });
 
