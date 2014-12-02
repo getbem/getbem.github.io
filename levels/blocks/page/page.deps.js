@@ -17,8 +17,7 @@ module.exports.require = [
 
     'fork',
 
-    'ga',
-    'gauges',
+    'segment',
 
     'affix',
     'scrollspy',
