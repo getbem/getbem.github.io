@@ -12,7 +12,7 @@ block head
   +og('image', 'http://getbem.com/img/bem_black.png')
   +og('url', 'http://getbem.com/building/')
   +og('title', 'BEM — Building')
-  +og('description', 'When you developing site, that contains more than one page — you will soon feel, that storing all CSS in `index.css` file is huge pain. When single file becomes more than __1000__ lines of code you can\'t effectivly navigate in it, neither maintain it.')
+  +og('description', 'When you are building up a website that contains more than one page — you will soon feel that storing all CSS in a single `index.css` file is a huge pain. When the file becomes larger than __1000__ lines of code, you won't be able to either effectively navigate it or keep maintaining it.')
 
 
 block scripts
@@ -29,27 +29,27 @@ block content
     .grid__row
       .grid__cell-xs.grid__cell-xs_size_12.raw-text
         :markdown
-          When you developing site, that contains more than one page — you will soon feel, that storing all CSS in `index.css` file is huge pain. When single file becomes more than __1000__ lines of code you can't effectivly navigate in it, neither maintain it.
+          When you are building up a website that contains more than one page — you will soon feel that storing all CSS in a single `index.css` file is a huge pain. When the file becomes larger than __1000__ lines of code, you won't be able to either effectively navigate it or keep maintaining it.
 
-          Things getting worse, when you have a team, that making changes in single file. Often you will get merge conflicts (if you are using VCS). Some times styles, that belongs to each other will be in opposite ends of this file.
+          Things are getting worse when you have a team that makes changes in that single file. You will often get merge conflicts (if you are using VCS). Sometimes styles that depend on each other will appear on the opposite sides of this file.
 
-          And most painful part — is transfering common parts of this file into other (often new) project.
+          And the most painful part is transfering common parts of this file into another (often new) project.
 
-          We propose easy and intuitive way to structure your BEM CSS code on file system, that will solve these problems.
+          We propose an easy and intuitive way to structure your BEM CSS code in the filesystem that will solve these problems.
 
-          If you are read [Naming](/naming/) article, you already know, that any separate entity on the site will be a __Block__ with __Elements__ that can have __Modifiers__. Keeping that in mind we will split our `index.css` into multiple CSS files on file system. For each BEM entity we will create some files and place them to own folder:
+          If you have read the [Naming](/naming/) article, you already know that every independent entity on the website will be represented as a __Block__ with __Elements__ that can have __Modifiers__. Keeping that in mind we will split our `index.css` into multiple CSS files on the filesystem. For each BEM entity we will create some files and place them to their own directories:
 
     .grid__row
       .grid__cell-sm.grid__cell-sm_size_4.grid__block-cell.raw-text
         .heading.heading_level_3 Blocks
 
-        p Each block will have it's own directory and file with styles:
+        p Each block will have its own directory and styles file:
 
         .types
           .types__d_b block/
           .types__f_b   block.css
 
-        p New blocks should have their own folders:
+        p New blocks should have their own directories:
 
         .types
           .types__d_b block/
@@ -59,7 +59,7 @@ block content
       .grid__cell-sm.grid__cell-sm_size_4.grid__element-cell.raw-text
         .heading.heading_level_3 Elements
 
-        p Since elements can't be outside of blocks — we will place them in subfolder of block:
+        p Since elements can't appear outside of the blocks — we will place them in subdirectories of the block directory:
 
         .types
           .types__d_b block/
@@ -80,7 +80,7 @@ block content
       .grid__cell-sm.grid__cell-sm_size_4.grid__modifier-cell.raw-text
         .heading.heading_level_3 Modifiers
 
-        p Both blocks and elements can have modifiers. So they can be placed either into block folder:
+        p Both blocks and elements can have modifiers, so they can be placed either in the block directory:
 
         .types
           .types__d_b block/
@@ -88,7 +88,7 @@ block content
           .types__f_m     block_mod_value.css
           .types__f_b block.css
 
-        p or element subfolder:
+        p or the element subdirectory:
 
         .types
           .types__d_b block/
@@ -101,15 +101,15 @@ block content
       .grid__cell-xs.grid__cell-xs_size_12.raw-text
         :markdown
           <br/>
-          With this structuring you will get less merge conflicts and it is quite easy to copy some blocks from one project to another (just copy entire folder). There is another useful abstraction, that will help you to develope libraries of blocks. We call them `Levels` — folders that contains blocks. Quite intuitive thing to do, right?
+          Using this structure you will get less merge conflicts and it 'll be quite easy to copy some blocks from one project to another (you just need to copy the entire directory). There is another useful abstraction that will help you to develop libraries of blocks. We call it `Levels` — directories that contain blocks. Quite intuitive thing to do, right?
 
           ## Levels
     .grid__row
       .grid__cell-sm.grid__cell-sm_size_8.raw-text
         :markdown
-          When you have established styleguide, it is quite nice to have ready-to-go folder with blocks, that can be downloaded to new project and used as __base__ styles for development. We recommend to create multiple levels in one project. For example we will have `base` folder with our style-guided blocks and `project` folder with blocks for our project. Blocks in levels can be extended with styles, that defined in other levels.
+          When you have established the styleguide, it is quite nice to have a ready-to-go directory with blocks that can be downloaded to the new project and used as __base__ styles for development. We recommend to create multiple levels for one project. For example, we will have a `base` directory with our style-guided blocks and a `project` directory containing blocks for our project. Blocks in levels can be extended with styles defined in other levels.
 
-          Order of extending is defined by order of the levels (in build configuration for example). Since «C» in CSS is stands for cascading — concatination of CSS files in right order will provide extending of our styles.
+          The order of extending is defined by the order of levels (for example, in the build configuration). Since «C» in CSS stands for "Cascading" — concatenation of CSS files in the right order will result in extending the styles.
       .grid__cell-sm.grid__cell-sm_size_4.raw-text
         .types
           | base/
@@ -125,9 +125,9 @@ block content
         :markdown
           ## Building
 
-          After you get your CSS from single `index.css` file to hierarchy of separate CSS files you probably want to build them back together, otherwise your HTML will be bloated with `<style>` tags.
+          After you move your CSS from a single `index.css` file to a hierarchy of separate CSS files you'll probably want to build them back together so your HTML won't be bloated with `<style>` tags.
 
-          We will demonstrate how to build CSS files with [gulpjs](http://gulpjs.com), but you free to choose your own build tool — because it is quite trivial to concatinate files even in `bash` script.
+          We will demonstrate how to build CSS files with [gulpjs](http://gulpjs.com), but feel free to choose your own build tool, because it is quite trivial to concatenate files even using a `bash` script.
     .grid__row
       .grid__cell-sm.grid__cell-sm_size_4.raw-text
         :markdown
@@ -157,7 +157,7 @@ block content
           ```
       .grid__cell-sm.grid__cell-sm_size_4.raw-text
         :markdown
-          ### 3. Run build task
+          ### 3. Run the build task
 
           ```bash
           gulp build
@@ -166,8 +166,8 @@ block content
       .grid__cell-xs.grid__cell-xs_size_12.raw-text
         br
         :markdown
-          Congradulations! You should get whole `index.css` file in `dist` directory.
+          Congradulations! You should get the `index.css` file with all styles in the `dist` directory.
 
-          While building CSS is straight forward, JavaScript and Templates is a bit more complex subject. There are some tools, that can help you to build projects, that structured in layers and blocks (like [gulp-bem](https://github.com/floatdrop/gulp-bem)).
+          While building CSS is straight forward, JavaScript and Templates is a bit more complex subject. There are some tools that can help you to build projects structured in layers and blocks (like [gulp-bem](https://github.com/floatdrop/gulp-bem)).
 
-          You can look at how this site is getting built. We are using Jade for templates and [gulp-bem-pack](https://github.com/floatdrop/gulp-bem-pack) for JavaScript. Dive in site repository — [https://github.com/getbem/getbem.com](https://github.com/getbem/getbem.com).
+          You can look at how this site is built. We are using Jade for templates and [gulp-bem-pack](https://github.com/floatdrop/gulp-bem-pack) for JavaScript. Dive into the site repository — [https://github.com/getbem/getbem.com](https://github.com/getbem/getbem.com).
