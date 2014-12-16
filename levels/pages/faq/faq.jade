@@ -35,7 +35,7 @@ block content
           li
             a(href="#why-the-modifier-classes-are-prefixed") Why the modifier CSS classes are not represented as a combined selector?
           li
-            a(href="#custom-tags-for-blocks") Why do I need CSS classes for block instead of using semantical custom tags?
+            a(href="#custom-tags-for-blocks") Why do I need CSS classes for block instead of using semantic custom tags?
           li
             a(href="#can-i-create-global-modifier") Can I create a global modifier applicable to any block?
           li
@@ -65,7 +65,7 @@ block content
             ```html
             <div class="menu__item button active"></div>
             ```
-            All the 3 sit at the same DOM node, so it is impposible to differentiate if we mean `menu__item.active` or `button.active`.
+            All the 3 sit at the same DOM node, so it is imposible to differentiate if we mean `menu__item.active` or `button.active`.
             Whereas in the prefixed case the naming `button_ative` unambiguously says as that this is only the button that has to be
             affected.
 
@@ -102,9 +102,9 @@ block content
         a(id="custom-tags-for-blocks")
         .raw-text
           :markdown
-            ## Why do I need CSS classes for block instead of using semantical custom tags?
+            ## Why do I need CSS classes for block instead of using semantic custom tags?
 
-            > Blocks can be respesented as custom tags which we may define CSS rules for. Looks like we do not need CSS classes for blocks
+            > Blocks can be represented as custom tags which we may define CSS rules for. Looks like we do not need CSS classes for blocks
             > at all. They can be used for modifiers only, like `<button class="mod"/>`.
 
             Using custom tags as block selectors is indeed one of the BEMish solutions and can be used. However this variant is less
@@ -187,14 +187,14 @@ block content
             in block. And don't forget about the `!important` to your hack.
 
             Also, depending on a block the same modifier can be implemented differently. Even the simple `.hidden` sometimes needs to be
-            not `display: none` but `visibility: hidden` or even `postition: ablosulte; left: -9999px` etc. And if you need to bring some changes
+            not `display: none` but `visibility: hidden` or even `position: absolute; left: -9999px` etc. And if you need to bring some changes
             into your block, it is much nicer not to waste time searching for all the places where this block can be combined with a global modifier.
             Espacially assuming that such dependencies usually are not described anywhere.
 
             All this hell can be avoided by encapsulating a modifier in a block like `.block_mod`.
 
             Indeed using global modifiers makes the resultant code less. However if you measure the real difference in bytes it usually does not
-            seem that big. Especially if you are using CSS optimizator which can combine selectors.
+            seem that big. Especially if you are using CSS optimizer which can combine selectors.
 
         a(id="encapsulating-tag-selector")
         .raw-text
