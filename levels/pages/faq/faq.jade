@@ -40,6 +40,8 @@ block content
             a(href="#can-i-create-global-modifier") Can I create a global modifier applicable to any block?
           li
             a(href="#encapsulating-tag-selector") Can I combine a tag and a class in selector like button.button?
+          li
+            a(href="#css-modifier-names") Is this good to name modifiers corresponding to what they have in CSS? Like `.block__element_border-bottom_5px`.
 
   .grid.grid_fixed
     .grid__row
@@ -221,3 +223,22 @@ block content
             can be done with documenting the block code. The shortest version could be just a comment with a tag name prefixing
             the block declaration `/*button*/.button`. Or that can be a larger comment with full HTML piece needed to the
             block to function.
+
+        a(id="css-modifier-names")
+        .raw-text
+          :markdown
+            ## Is this good to name modifiers corresponding to what they have in CSS?
+
+            > Thanks to mixes, we can create a lot of modifiers which represent CSS properties and assign them to blocks.
+            > But I've heard that "it is bad". For example, this selector `.block__element_border-bottom_5px` was stamped as
+            > "awful". I am wondering why and how should the modifiers be named then?
+
+            Naming the modifiers corresponding to their CSS representation is not recommended. Indeed it looks not very nice but
+            there are also practical reasons against it. Lately then the view of your components is changed, you will need to
+            fix not only CSS but also the selectors. So, when you border is 6px, it would require changes in all the templates and
+            sometimes in JavaScript.
+
+            Also, it never happens that a modifier has only one CSS property to define and will have it forever. Even if now it is
+            only border that differentiates one state from another, this is very likely that lately you would need other CSS properties
+            for the same state of your block. This would be messy if you define a background or padding in a modifier called "border".
+            So, it is recommended to choose semantical names for modifiers even if they only have one property by now.
