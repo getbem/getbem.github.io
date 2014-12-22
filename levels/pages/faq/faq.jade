@@ -273,3 +273,46 @@ block content
             only border that differentiates one state from another, this is very likely that lately you would need other CSS properties
             for the same state of your block. This would be messy if you define a background or padding in a modifier called "border".
             So, it is recommended to choose semantical names for modifiers even if they only have one property by now.
+
+        a(id="css-nested-elements")
+        .raw-text
+          :markdown
+            ## What would be a class name for an element inside another element?
+
+            > What should I do if my block has a complex structure and its elements are nested?
+            > CSS classes like `block__elem1__elem2__elem3` look scaring.
+
+            According to BEM method, block structure should be fallen; you do not need to reflect nested DOM structure of the block.
+            So, the class names for this case would be:
+
+            ```
+            .block{}
+            .block__elem1{}
+            .block__elem2{}
+            .block__elem3{}
+            ```
+
+            Whereas the DOM representation of the block may be nested:
+
+            ```
+            <div class='block'>
+                <div class='block__elem1'>
+                    <div class='block__elem2'>
+                        <div class='block__elem3'></div>
+                    </div>
+                </div>
+            </div>
+            ```
+
+            Besides the fact that the classes look much nicer, it makes the elements be dependent on the block only. So, you can
+            easily move them  across the block when providing changes to the interface. The changes of the block DOM structure
+            would not need corresponding changes to the CSS code.
+
+            ```
+            <div class='block'>
+                <div class='block__elem1'>
+                    <div class='block__elem2'></div>
+                </div>
+                <div class='block__elem3'></div>
+            </div>
+            ```
