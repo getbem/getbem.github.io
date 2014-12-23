@@ -33,6 +33,8 @@ block content
 
         ul
           li
+            a(href="#why-bem") Why should I choose BEM and not another CSS modular solution?
+          li
             a(href="#why-the-modifier-classes-are-prefixed") Why the modifier CSS classes are not represented as a combined selector?
           li
             a(href="#custom-tags-for-blocks") Why do I need CSS classes for block instead of using semantic custom tags?
@@ -42,10 +44,39 @@ block content
             a(href="#encapsulating-tag-selector") Can I combine a tag and a class in selector like button.button?
           li
             a(href="#css-modifier-names") Is this good to name modifiers corresponding to what they have in CSS? Like `.block__element_border-bottom_5px`.
+          li
+            a(href="#css-nested-elements") What would be a class name for an element inside another element?
 
   .grid.grid_fixed
     .grid__row
       .grid__cell-xs.grid__cell-xs_size_12
+
+        a(id="why-bem")
+        .raw-text
+          :markdown
+            ## Why should I choose BEM as a modular solution for CSS?
+
+            > There are some other modular solutions for CSS (such as OOCSS, AMCSS, SMACSS, SUITCSS). What are the
+            > reasons to choose BEM?
+
+            BEM provides solutions for all the frontend technologies: CSS, JavaSript, templating; and also for building process
+            of your web application. The methodology is applicable anywhere. However, to apply this in JavaScript and templating
+            you would need special frameworks whereas in CSS you may just follow the methodological recommendations. The CSS part
+            of BEM is the easiest to take into your development process. This is why many use only it. On the other hand, if lately
+            you would found your project fully BEMed (in CSS) and yourself happy for its grown maintenance, you probably would
+            take next step in modularazing your web application. BEM CSS will be easier to coordinate with modular JavaScript and
+            blocks-based project file structure.
+
+            If speaking about CSS modular solutions only, the key feature of BEM is block's independency. Following the CSS
+            recomentations enables to put a block into any place on a page and be sure that is won't be affected by its
+            surrounders. Also, if you would lately need to nest another block into the current one, their full compatibility is
+            guaranteed. In other words, when maintaining your web application you would be able to move blocks across the page,
+            add others and combine them.
+
+            BEM CSS unambiguously defines which CSS belongs to a piece of interface and so usign it gives answers to questions
+            "Can I remove this piece of code?" and "What happens and which interface parts will be affected if I change this piece
+            of code?".
+
         a(id="why-the-modifier-classes-are-prefixed")
         .raw-text
           :markdown
@@ -242,3 +273,46 @@ block content
             only border that differentiates one state from another, this is very likely that lately you would need other CSS properties
             for the same state of your block. This would be messy if you define a background or padding in a modifier called "border".
             So, it is recommended to choose semantical names for modifiers even if they only have one property by now.
+
+        a(id="css-nested-elements")
+        .raw-text
+          :markdown
+            ## What would be a class name for an element inside another element?
+
+            > What should I do if my block has a complex structure and its elements are nested?
+            > CSS classes like `block__elem1__elem2__elem3` look scaring.
+
+            According to BEM method, block structure should be fallen; you do not need to reflect nested DOM structure of the block.
+            So, the class names for this case would be:
+
+            ```
+            .block{}
+            .block__elem1{}
+            .block__elem2{}
+            .block__elem3{}
+            ```
+
+            Whereas the DOM representation of the block may be nested:
+
+            ```
+            <div class='block'>
+                <div class='block__elem1'>
+                    <div class='block__elem2'>
+                        <div class='block__elem3'></div>
+                    </div>
+                </div>
+            </div>
+            ```
+
+            Besides the fact that the classes look much nicer, it makes the elements be dependent on the block only. So, you can
+            easily move them  across the block when providing changes to the interface. The changes of the block DOM structure
+            would not need corresponding changes to the CSS code.
+
+            ```
+            <div class='block'>
+                <div class='block__elem1'>
+                    <div class='block__elem2'></div>
+                </div>
+                <div class='block__elem3'></div>
+            </div>
+            ```
