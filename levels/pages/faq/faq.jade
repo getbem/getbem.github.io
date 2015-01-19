@@ -47,7 +47,9 @@ block content
           li
             a(href="#css-modifier-names") Is this good to name modifiers corresponding to what they have in CSS? Like `.block__element_border-bottom_5px`.
           li
-            a(href="#css-nested-elements") What would be a class name for an element inside another element?
+            a(href="#css-nested-elements") What would be a class name for an element inside another element? `.block__elem1__elem2`?
+          li
+            a(href="#global-css-resets") I've heard that BEM does not recommend global CSS resets? Why?
           li
             a(href="#ask-you-question") Did not find the answer?
 
@@ -298,7 +300,7 @@ block content
         a(id="css-nested-elements")
         .raw-text
           :markdown
-            ## What would be a class name for an element inside another element?
+            ## What would be a class name for an element inside another element? `.block__elem1__elem2`?
 
             > What should I do if my block has a complex structure and its elements are nested?
             > CSS classes like `block__elem1__elem2__elem3` look scaring.
@@ -337,6 +339,51 @@ block content
                 <div class='block__elem3'></div>
             </div>
             ```
+
+        a(id="global-css-resets")
+        .raw-text
+          :markdown
+            ## I've heard that BEM does not recommend global CSS resets. Why?
+
+            > CSS resets is a practise making a good showing. Many frameworks first align anything and then
+            > apply their special styles. BEM does not recommend common resets. Why? And what we are supposed
+            > to do instead?
+
+            Nothing bad would happen to your blocks if you use common reset (well, except of some special cases below).
+            So, BEM does not prohibit to use them. But using them BEM-way would be more effective.
+
+            Common CSS reset is a set of CSS to be applied to document nodes and ensure that their default view is the
+            same in different browsers. In most cases the CSS rules are written for tag selectors and this is not recommended
+            in BEM (you can find a lot of explanation above).
+
+            Another point is that in BEM a block encapsulates everything which is needed for it to be displayed and function.
+            And this is why we call the BEM blocks independent. If the block does not look properly without a third-party
+            CSS being added onto the page, it cannot be called "independent§" that much.
+
+            Assuming this all, BEM recommends every block to reset itself. If you have `menu` block and `list` block both
+            as `<ul>` in your HTML, each of them should provide the reset CSS usually given to `<ul>`. However, in order
+            to prevent copy-paste and make the resultant code less heavy, this practise should go together with preprocessor
+            mixins. Thus, with every new block you can make it reset itself mixing the proper code:
+
+            ```
+            .menu {
+                @include reset-list;
+            }
+            .menu__item {
+                @include reset-list-item;
+            }
+            ...
+            .list {
+                @include reset-list;
+            }
+            .list__item {
+                @include reset-list-item;
+            }
+            ```
+            This approach (besides being nice and BEMish) will also prevent problems with injecting a third-party piece of HTML/CSS
+            markup which relies on browser defaults and so can be affected by global resets. For example, this is a known problem for
+            webmails.
+
         a(id="ask-you-question")
         .raw-text
           :markdown
