@@ -363,7 +363,8 @@ block content
             Assuming this all, BEM recommends every block to reset itself. If you have `menu` block and `list` block both
             as `<ul>` in your HTML, each of them should provide the reset CSS usually given to `<ul>`. However, in order
             to prevent copy-paste and make the resultant code less heavy, this practise should go together with preprocessor
-            mixins. Thus, with every new block you can make it reset itself mixing the proper code:
+            mixins. Thus, with every new block you can make it reset itself mixing the proper code. For example, with SASS
+            this would look like:
 
             ```
             .menu {
