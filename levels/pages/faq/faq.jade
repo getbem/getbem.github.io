@@ -361,10 +361,14 @@ block content
             CSS being added onto the page, it cannot be called "independent" that much.
 
             Assuming this all, BEM recommends every block to reset itself. If you have `menu` block and `list` block both
-            as `<ul>` in your HTML, each of them should provide the reset CSS usually given to `<ul>`. However, in order
-            to prevent copy-paste and make the resultant code less heavy, this practise should go together with preprocessor
-            mixins. Thus, with every new block you can make it reset itself mixing the proper code. For example, with SASS
-            this would look like:
+            as `<ul>` in your HTML, each of them should provide the reset CSS usually given to `<ul>`. You may worry that
+            having several blocks with the same reset rules will case repeats in the resultunt code. *But this is what CSS
+            optimizers should do for you.* As a developer you develop every block independently, as there is no other blocks
+            at the same page.
+
+            In the case you don't have a CSS optimizer to combine selectors with the same set of rules, you may use
+            preprocessors to prevent copy-paste. With every new block you can make it reset itself mixing the proper code.
+            For example, with SASS this would look like:
 
             ```
             .menu {
@@ -381,13 +385,16 @@ block content
                 @include reset-list-item;
             }
             ```
-            This approach (besides being nice and BEMish) will also prevent problems with injecting a third-party piece of HTML/CSS
-            markup which relies on browser defaults and so can be affected by global resets. For example, this is a known problem for
-            webmails.
+
+            However using this mixin-way you should realize that the only reason for it is not having a proper optimizer.
+
+            Having resets for every block (besides being nice and BEMish) will also prevent problems with injecting a third-party
+            piece of HTML/CSS markup which relies on browser defaults and so can be affected by global resets. For example, this
+            is a known problem for webmails.
 
         a(id="ask-you-question")
         .raw-text
           :markdown
             ## Did not find the answer? Please ask your question, don't be shy.
-            
+
             If you didn't found the proper answer, please [ask your question](https://github.com/getbem/getbem.com/issues/new?title=Type+your+question&body=Explain+in+detail+your+question&labels=question)!
