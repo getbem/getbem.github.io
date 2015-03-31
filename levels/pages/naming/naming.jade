@@ -120,10 +120,10 @@ block content
           Modifier can be a boolean flag or a key/value pair:
 
           __Boolean modifiers__<br>
-              Original block/element name + single underscore + mod name: `.block_mod` or `.block__elem_mod`
+              Original block/element name + single underscore + mod name: `.block--mod` or `.block__elem--mod`
 
            __Key/value modifiers__<br>
-              Original block/element name + single underscore + mod key name + single underscore + mod value: `.block_key_value` or `.block__elem_key_value`
+              Original block/element name + single underscore + mod key name + single underscore + mod value: `.block--key--value` or `.block__elem--key--value`
       .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
         :markdown
           #### HTML
@@ -131,13 +131,13 @@ block content
 
           **Good**
           ```html
-          <div class="block block_mod">...</div>
-          <div class="block block_size_big block_shadow_yes">...</div>
+          <div class="block block--mod">...</div>
+          <div class="block block--size--big block--shadow--yes">...</div>
           ```
 
           **Bad**
           ```html
-          <div class="block_mod">...</div>
+          <div class="block--mod">...</div>
           ```
       .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
         :markdown
@@ -151,13 +151,13 @@ block content
           To alter elements based on a block-level modifier:
 
           ```css
-          .block_mod .block__elem { display: none }
+          .block--mod .block__elem { display: none }
           ```
 
           Element modifier:
 
           ```css
-          .block__elem_mod { display: none }
+          .block__elem--mod { display: none }
           ```
     .grid__row
       .grid__cell-xs.grid__cell-xs_size_12.raw-text
@@ -169,10 +169,10 @@ block content
         :markdown
           #### HTML
           ```html
-          <form class="form form_theme_xmas form_simple">
+          <form class="form form--theme--xmas form--simple">
             <input class="form__input" type="text" />
             <input
-              class="form__submit form__submit_disabled"
+              class="form__submit form__submit--disabled"
               type="submit" />
           </form>
           ```
@@ -181,11 +181,11 @@ block content
           #### CSS
           ```css
           .form { /* ... */ }
-          .form_theme_xmas { /* ... */ }
+          .form--theme--xmas { /* ... */ }
           .form_simple { /* ... */ }
           .form__input { /* ... */ }
           .form__submit { /* ... */ }
-          .form__submit_disabled { /* ... */ }
+          .form__submit--disabled { /* ... */ }
           ```
     .authors
       h1.authors__heading Written by
