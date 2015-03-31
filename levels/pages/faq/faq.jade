@@ -45,7 +45,7 @@ block content
           li
             a(href="#encapsulating-tag-selector") Can I combine a tag and a class in selector like button.button?
           li
-            a(href="#css-modifier-names") Is this good to name modifiers corresponding to what they have in CSS? Like `.block__element--border-bottom--5px`.
+            a(href="#css-modifier-names") Is this good to name modifiers corresponding to what they have in CSS? Like `.block__element_border-bottom_5px`.
           li
             a(href="#css-nested-elements") What would be a class name for an element inside another element? `.block__elem1__elem2`?
           li
@@ -88,7 +88,7 @@ block content
           :markdown
             ## Why the modifier CSS classes are not represented as a combined selector?
 
-            > BEM recommends to modify blocks like this `<div class="block block--mod">`. Why not to use the simple version like `<div class="block mod">`? Since we now have combined selectors `.block.mod`, it's easy to define all the CSS properties to it.
+            > BEM recommends to modify blocks like this `<div class="block block_mod">`. Why not to use the simple version like `<div class="block mod">`? Since we now have combined selectors `.block.mod`, it's easy to define all the CSS properties to it.
 
             The recommendation to prefix modifier CSS class with its block name has multiple reasons.
 
@@ -105,7 +105,7 @@ block content
             <div class="menu__item button active"></div>
             ```
             All the 3 sit at the same DOM node, so it is imposible to differentiate if we mean `menu__item.active` or `button.active`.
-            Whereas in the prefixed case the naming `button--active` unambiguously says as that this is only the button that has to be
+            Whereas in the prefixed case the naming `button_active` unambiguously says as that this is only the button that has to be
             affected.
 
             Another point is CSS specificity. The combined selectors are more specific (means more important) than single class selectors.
@@ -120,23 +120,23 @@ block content
             If you are already having `.button.active` selector in code, the specificity of your redefining `.header .button` would be exactly
             the same as the specificity of modifier combined selector which makes you dependent on the order of the CSS rules
             declared. Whereas in case of using a prefixed modifier you can always be sure that the cascade selector `.header .button` will
-            overwrite the `.button--active` modifier.
+            overwrite the `.button_active` modifier.
 
             This makes life easier especially for maintainable projects.
 
-            The third point is that looking at the `<div class="block block--mod">` markup you can clearly see the block structure. It is easy
+            The third point is that looking at the `<div class="block block_mod">` markup you can clearly see the block structure. It is easy
             to recognize that we are having a block and its modifier and there is no different interpretations here. Unfortunately a grasp onto
             `<div class="block mod">` code does not give such information. Depending on what are the exact CSS classes sometimes it is impossible
             to recognize if we are having a block and a modifier or a mix of 2 blocks here. This might be even more confusing if the names of the
             entities are complex or contracted/abbreviated (which sometimes happens in big projects).<br/>
             Clear understanding of a block structure especially helps in looking for corresponding code on a file system.
 
-            You will also appreciate `.block--mod` practice when refactoring and use global search over all your project files. Imagine the
+            You will also appreciate `.block_mod` practice when refactoring and use global search over all your project files. Imagine the
             same looking for not-prefixed `.mod` and all the HTML pieces it might be in.
 
-            And lastly, from a development process standpoint the difference between `.block.mod` and `.block--mod` is only one symbol. Using
+            And lastly, from a development process standpoint the difference between `.block.mod` and `.block_mod` is only one symbol. Using
             `-` instead of `.` costs nothing but it brings all the benefits listed above. Moreover, since pre-processor began to support BEM
-            notation, it is pretty natural to write `&--mod` there and finally get a modifier declared as it was recommended.
+            notation, it is pretty natural to write `&_mod` there and finally get a modifier declared as it was recommended.
 
         a(id="custom-tags-for-blocks")
         .raw-text
@@ -151,9 +151,9 @@ block content
 
             This is more likely that you would need to prefix modifier classes with their block name to provide them namespace.
             The details are uncovered in ["Why the modifier CSS classes are prefixed with their parent block name?"](#why-the-modifier-classes-are-prefixed)
-            question. So, finally the custom-tag version of a block is like `<block class="block--mod"/>`. This does not look
-            very different from `<div class="block block--mod">` especially assuming that being tag-independent you can use any
-            custom node and stay with `<block class="block block--mod">`.
+            question. So, finally the custom-tag version of a block is like `<block class="block_mod"/>`. This does not look
+            very different from `<div class="block block_mod">` especially assuming that being tag-independent you can use any
+            custom node and stay with `<block class="block block_mod">`.
 
             Second drawback is that "tag" version makes using the mixes of blocks impossible whereas the "class" version
             represent that naturally by `<div class="block1 block2">`.
@@ -166,13 +166,13 @@ block content
           :markdown
             ## Why do I need to combine block and prefixed modifier class for a modified block?
 
-            > Why does both block's and modifier's class sit together in the modified block like `<div class=”block block--mod”>`?
-            > Everything about a modified block can be decribed in `.block--mod`. If there is something common between 2 modifiers,
+            > Why does both block's and modifier's class sit together in the modified block like `<div class=”block block_mod”>`?
+            > Everything about a modified block can be decribed in `.block_mod`. If there is something common between 2 modifiers,
             > it's possible to use preprocessor's mixins to avoid copy-paste.
 
             This approach is possible thanks to preprocessors. However it brings some drawbacks which you should be aware of.
 
-            In case of combining 2 or more modifiers at the same block `<div class="block--theme--christmas block--size--big">` you
+            In case of combining 2 or more modifiers at the same block `<div class="block_theme_christmas block_size_big">` you
             would get the core block's styles twice. However this depends on the preprocessor algorythms.
 
             When operating modifiers dynamically with JavaScript, additional modifier is more handy. Switching it off would mean
@@ -247,7 +247,7 @@ block content
             into your block, it is much nicer not to waste time searching for all the places where this block can be combined with a global modifier.
             Espacially assuming that such dependencies usually are not described anywhere.
 
-            All this hell can be avoided by encapsulating a modifier in a block like `.block--mod`.
+            All this hell can be avoided by encapsulating a modifier in a block like `.block_mod`.
 
             Indeed using global modifiers makes the resultant code less. However if you measure the real difference in bytes it usually does not
             seem that big. Especially if you are using CSS optimizer which can combine selectors.
@@ -261,8 +261,8 @@ block content
             > If lately someone else would use in their code `<h2 class="button">`, such an encapsulation would prevent
             > a conflict.
 
-            The CSS specificity of such a selector grows. `.button--mod` selector will not overwrite CSS properties of the block, only
-            `button.button--mod` would work. You will need its modifiers to be combined with the tag as well and so do the developers
+            The CSS specificity of such a selector grows. `.button_mod` selector will not overwrite CSS properties of the block, only
+            `button.button_mod` would work. You will need its modifiers to be combined with the tag as well and so do the developers
             who lately would redefine your block.
 
             Lately, when a project goes larger, it's very likely that you may have `input.button`, `span.button` and `a.button`
@@ -284,7 +284,7 @@ block content
             ## Is this good to name modifiers corresponding to what they have in CSS?
 
             > Thanks to mixes, we can create a lot of modifiers which represent CSS properties and assign them to blocks.
-            > But I've heard that "it is bad". For example, this selector `.block__element--border-bottom--5px` was stamped as
+            > But I've heard that "it is bad". For example, this selector `.block__element_border-bottom_5px` was stamped as
             > "awful". I am wondering why and how should the modifiers be named then?
 
             Naming the modifiers corresponding to their CSS representation is not recommended. Indeed it looks not very nice but
