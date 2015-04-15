@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:matmuchrapna/gulp-bem-stub.git"
+    "url": "git@github.com:getbem/getbem.com.git"
   },
   "keywords": [
     "gulp",
@@ -17,9 +17,9 @@
   "author": "Vsevolod Strukchinsky",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/floatdrop/getbem.com/issues"
+    "url": "https://github.com/getbem/getbem.com/issues"
   },
-  "homepage": "https://github.com/floatdrop/getbem.com",
+  "homepage": "https://github.com/getbem/getbem.com",
   "dependencies": {
     "bower": "^1.3.9",
     "buildbranch": "^0.0.1",
