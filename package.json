@@ -6,7 +6,8 @@
   "scripts": {
     "postinstall": "bower install",
     "pretest": "gulp build",
-    "test": "mocha"
+    "test": "mocha",
+    "start": "gulp"
   },
   "repository": {
     "type": "git",
