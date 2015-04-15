@@ -1,7 +1,7 @@
 {
   "name": "getbem.com",
   "version": "0.0.0",
-  "description": "getbem.com site project",
+  "description": "Get BEM to all people in simplest way",
   "main": "index.js",
   "scripts": {
     "test": "mocha -R spec -t 10000"
