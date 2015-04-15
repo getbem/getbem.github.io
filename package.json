@@ -4,7 +4,7 @@
   "description": "Get BEM to all people in simplest way",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec -t 10000"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
