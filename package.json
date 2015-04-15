@@ -4,6 +4,7 @@
   "description": "Get BEM to all people in simplest way",
   "main": "index.js",
   "scripts": {
+    "pretest": "gulp build",
     "test": "mocha"
   },
   "repository": {
