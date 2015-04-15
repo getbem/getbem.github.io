@@ -4,6 +4,7 @@
   "description": "Get BEM to all people in simplest way",
   "main": "index.js",
   "scripts": {
+    "postinstall": "bower install",
     "pretest": "gulp build",
     "test": "mocha"
   },
