@@ -30,7 +30,6 @@ var paths = {
     'index': 'index.html',
     'introduction': 'introduction/index.html',
     'naming': 'naming/index.html',
-    'building': 'building/index.html',
     'faq': 'faq/index.html'
 };
 
