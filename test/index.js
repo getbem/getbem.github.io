@@ -12,6 +12,5 @@ it('should build pages', function () {
     exist('index.css');
     exist('index.js');
     exist('introduction/index.html');
-    exist('building/index.html');
     exist('naming/index.html');
 });
