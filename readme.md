@@ -37,7 +37,7 @@ open dist/index.html
 
 Windows system have no `open` command, so try to open compiled `dist/index.html` file with your favourite browser.
 
-## Build steps explained
+## GetBem’s build steps explained
 
 To build this site we are using [gulpjs](http://gulpjs.com/) — which is extremely fast and extensible build system. We recommend to read the [docs](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) or watch [Gulp — The Basics](http://www.youtube.com/playlist?list=PLRk95HPmOM6PN-G1xyKj9q6ap_dc9Yckm) turtorials.
 
