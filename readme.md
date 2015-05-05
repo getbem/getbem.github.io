@@ -1,10 +1,10 @@
-# [Get BEM!](https://getbem.com)
+# [Get BEM!](http://getbem.com)
 
 [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 
 > If you interested in writing articles or helping with site — feel free to make pull-requests or [creating issues](https://github.com/floatdrop/getbem.com/issues) with discussions.
 
-This repository contains sources of [getbem.com](https://getbem.com) site.
+This repository contains sources of [getbem.com](http://getbem.com) site.
 
 ## Quick start
 
@@ -103,7 +103,7 @@ gulp.task('css', function () {
 
 ### HTML
 
-This is tricky part of [getbem.com](https://getbem.com). At first we try'd to use [bh](https://github.com/bem/bh) as templating language — but quickly realize, that it is too complex to achieve fast development and quick prototyping of site.
+This is tricky part of [getbem.com](http://getbem.com). At first we try'd to use [bh](https://github.com/bem/bh) as templating language — but quickly realize, that it is too complex to achieve fast development and quick prototyping of site.
 
 So we used [Jade](jade-lang.com) and it's [mixins](http://jade-lang.com/reference/mixins/) to achieve reusablility of templates from blocks.
 
