@@ -75,7 +75,7 @@ block content
       .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
         :markdown
           #### Naming
-          Element names may consist of Latin letters, digits, and dashes.
+          Element names may consist of Latin letters, digits, dashes and underscores.
           CSS class is formed as block name plus two underscores plus element name:
           `.block__elem`
       .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
@@ -110,20 +110,17 @@ block content
       .grid__cell-xs.grid__cell-xs_size_12.grid__modifier-cell.raw-text
         :markdown
           ## Modifier
-          Flags on blocks or elements. Use them to change appearance or behavior.
+          Flags on blocks or elements. Use them to change appearance, behavior or state.
     .grid__row
       .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
         :markdown
           #### Naming
-          Modifiers (both keys and values) may consist of Latin letters, digits, and dashes.
+          Modifier names may consist of Latin letters, digits, dashes and underscores.
+          CSS class is formed as block’s or element’s name plus two dashes:
+          `.block--mod` or `.block__mod--mod` and `.block--color-black`
+           with `.block--color-red`. Spaces in complicated modifiers are replaced by dash.
+          
 
-          Modifier can be a boolean flag or a key/value pair:
-
-          __Boolean modifiers__<br>
-              Original block/element name + single underscore + mod name: `.block--mod` or `.block__elem--mod`
-
-           __Key/value modifiers__<br>
-              Original block/element name + single underscore + mod key name + single underscore + mod value: `.block--key--value` or `.block__elem--key--value`
       .grid__cell-md.grid__cell-md_size_4.grid__cell_left-border.raw-text
         :markdown
           #### HTML
@@ -132,7 +129,7 @@ block content
           **Good**
           ```html
           <div class="block block--mod">...</div>
-          <div class="block block--size--big block--shadow--yes">...</div>
+          <div class="block block--size-big block--shadow-yes">...</div>
           ```
 
           **Bad**
@@ -145,7 +142,7 @@ block content
           Use modifier class name as selector:
 
           ```css
-          .block_hidden { display: none }
+          .block--hidden { display: none }
           ```
 
           To alter elements based on a block-level modifier:
@@ -169,7 +166,7 @@ block content
         :markdown
           #### HTML
           ```html
-          <form class="form form--theme--xmas form--simple">
+          <form class="form form--theme-xmas form--simple">
             <input class="form__input" type="text" />
             <input
               class="form__submit form__submit--disabled"
@@ -181,7 +178,7 @@ block content
           #### CSS
           ```css
           .form { /* ... */ }
-          .form--theme--xmas { /* ... */ }
+          .form--theme-xmas { /* ... */ }
           .form_simple { /* ... */ }
           .form__input { /* ... */ }
           .form__submit { /* ... */ }
