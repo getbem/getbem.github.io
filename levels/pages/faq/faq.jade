@@ -45,7 +45,7 @@ block content
           li
             a(href="#encapsulating-tag-selector") Can I combine a tag and a class in selector like button.button?
           li
-            a(href="#css-modifier-names") Is this good to name modifiers corresponding to what they have in CSS? Like `.block__element--border-bottom--5px`.
+            a(href="#css-modifier-names") Is this good to name modifiers corresponding to what they have in CSS? Like `.block__element--border-bottom-5px`.
           li
             a(href="#css-nested-elements") What would be a class name for an element inside another element? `.block__elem1__elem2`?
           li
@@ -208,7 +208,7 @@ block content
             .block {
               display: block;
             }
-            .block_hidden {
+            .block--hidden {
               display: none;
             }
             ```
@@ -284,7 +284,7 @@ block content
             ## Is this good to name modifiers corresponding to what they have in CSS?
 
             > Thanks to mixes, we can create a lot of modifiers which represent CSS properties and assign them to blocks.
-            > But I've heard that "it is bad". For example, this selector `.block__element--border-bottom--5px` was stamped as
+            > But I've heard that "it is bad". For example, this selector `.block__element--border-bottom-5px` was stamped as
             > "awful". I am wondering why and how should the modifiers be named then?
 
             Naming the modifiers corresponding to their CSS representation is not recommended. Indeed it looks not very nice but
