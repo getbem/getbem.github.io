@@ -28,7 +28,7 @@ block content
   .grid.grid_fixed
     .grid__row
       .grid__cell-xs.grid__cell-xs_size_12.raw-text
-        :markdown
+        :markdown-it
           When you are building up a website that contains more than one page — you will soon feel that storing all CSS in a single `index.css` file is a huge pain. When the file becomes larger than __1000__ lines of code, you won't be able to either effectively navigate it or keep maintaining it.
 
           Things are getting worse when you have a team that makes changes in that single file. You will often get merge conflicts (if you are using VCS). Sometimes styles that depend on each other will appear on the opposite sides of this file.
@@ -99,14 +99,14 @@ block content
           .types__f_b   block.css
     .grid__row
       .grid__cell-xs.grid__cell-xs_size_12.raw-text
-        :markdown
+        :markdown-it
           <br/>
           Using this structure you will get less merge conflicts and it 'll be quite easy to copy some blocks from one project to another (you just need to copy the entire directory). There is another useful abstraction that will help you to develop libraries of blocks. We call it `Levels` — directories that contain blocks. Quite intuitive thing to do, right?
 
           ## Levels
     .grid__row
       .grid__cell-sm.grid__cell-sm_size_8.raw-text
-        :markdown
+        :markdown-it
           When you have established the styleguide, it is quite nice to have a ready-to-go directory with blocks that can be downloaded to the new project and used as __base__ styles for development. We recommend to create multiple levels for one project. For example, we will have a `base` directory with our style-guided blocks and a `project` directory containing blocks for our project. Blocks in levels can be extended with styles defined in other levels.
 
           The order of extending is defined by the order of levels (for example, in the build configuration). Since «C» in CSS stands for "Cascading" — concatenation of CSS files in the right order will result in extending the styles.
@@ -122,7 +122,7 @@ block content
           .types__f_b     header.css
     .grid__row
       .grid__cell-xs.grid__cell-xs_size_12.raw-text
-        :markdown
+        :markdown-it
           ## Building
 
           After you move your CSS from a single `index.css` file to a hierarchy of separate CSS files you'll probably want to build them back together so your HTML won't be bloated with `<style>` tags.
@@ -130,7 +130,7 @@ block content
           We will demonstrate how to build CSS files with [gulpjs](http://gulpjs.com), but feel free to choose your own build tool, because it is quite trivial to concatenate files even using a `bash` script.
     .grid__row
       .grid__cell-sm.grid__cell-sm_size_4.raw-text
-        :markdown
+        :markdown-it
           ### 1. Install modules
 
           ```bash
@@ -138,7 +138,7 @@ block content
           npm install gulp gulp-concat
           ```
       .grid__cell-sm.grid__cell-sm_size_4.raw-text
-        :markdown
+        :markdown-it
           ### 2. Create `gulpfile.js`
 
           ```js
@@ -156,7 +156,7 @@ block content
           });
           ```
       .grid__cell-sm.grid__cell-sm_size_4.raw-text
-        :markdown
+        :markdown-it
           ### 3. Run the build task
 
           ```bash
@@ -165,7 +165,7 @@ block content
     .grid__row
       .grid__cell-xs.grid__cell-xs_size_12.raw-text
         br
-        :markdown
+        :markdown-it
           Congratulations! You should get the `index.css` file with all styles in the `dist` directory.
 
           While building CSS is straight forward, JavaScript and Templates is a bit more complex subject. There are some tools that can help you to build projects structured in layers and blocks (like [gulp-bem](https://github.com/floatdrop/gulp-bem)).
