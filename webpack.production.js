@@ -6,10 +6,12 @@ const DefinePlugin = webpack.DefinePlugin;
 const NoErrorsPlugin = webpack.NoErrorsPlugin;
 
 module.exports = {
-	entry: './src/index',
+	entry: {
+		index: './src/index'
+	},
 	output: {
 		path: path.join(__dirname, 'static'),
-		filename: 'bundle.js',
+		filename: '[name].js',
 		publicPath: '/static/'
 	},
 	plugins: [
@@ -33,6 +35,12 @@ module.exports = {
 		}, {
 			test: /\.css$/,
 			loader: 'style-loader!css-loader'
+		}, {
+			test: /\.png$/,
+			loader: 'url-loader?limit=100000'
+		}, {
+			test: /\.jpg$/,
+			loader: 'file-loader'
 		}]
 	}
 };

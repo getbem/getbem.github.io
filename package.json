@@ -42,9 +42,14 @@
   },
   "dependencies": {
     "css-loader": "^0.16.0",
+    "file-loader": "^0.8.4",
     "material-design-lite": "^1.0.2",
+    "normalize-css": "^2.3.1",
     "react": "^0.13.0",
-    "style-loader": "^0.12.3"
+    "react-router": "^0.13.3",
+    "rgx": "^0.2.1",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6"
   },
   "eslintConfig": {
     "extends": [

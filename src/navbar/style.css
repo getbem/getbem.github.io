@@ -1,0 +1,44 @@
+.navbar {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.3);
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	height: 50px;
+	line-height: 20px;
+	padding: 0px 25px;
+}
+
+.navbar__title {
+	color: white;
+	display: block;
+	float: left;
+	font-size: 18px;
+	line-height: 20px;
+	padding: 15px 15px;
+}
+
+.navbar__menu {
+	display: block;
+	float: left;
+	font-size: 14px;
+}
+
+.navbar__menu ul {
+	padding: 0;
+}
+
+.navbar__menu ul li {
+	float: left;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+.navbar__menu ul li a {
+	color: white;
+	text-decoration: none;
+	padding: 0px 15px;
+}
+
+.navbar__menu ul li a:hover {
+	text-decoration: underline;
+}
