@@ -4,6 +4,7 @@ const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const DedupePlugin = webpack.optimize.DedupePlugin;
 const DefinePlugin = webpack.DefinePlugin;
 const NoErrorsPlugin = webpack.NoErrorsPlugin;
+const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 
 module.exports = {
 	entry: {
@@ -25,7 +26,8 @@ module.exports = {
 				NODE_ENV: JSON.stringify('production')
 			}
 		}),
-		new NoErrorsPlugin()
+		new NoErrorsPlugin(),
+		new CommonsChunkPlugin('commons.chunk.js')
 	],
 	resolve: {
 		extensions: ['', '.js', '.jsx']
