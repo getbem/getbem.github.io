@@ -1,8 +1,10 @@
 .panel {
-	padding: 50px 200px;
+	padding: 100px 200px;
 	margin: 0px 0px 0px 0px;
 	position: relative;
 	color: white;
+	border-top: 10px white solid;
+	overflow: hidden;
 }
 
 .panel p {
@@ -38,7 +40,7 @@
 }
 
 .panel--naming h2 {
-	color: #76b24f;
+	/*color: #76b24f;*/
 	right: 200px;
 }
 
@@ -54,7 +56,7 @@
 }
 
 .panel--questions h2 {
-	color: #4f91b2;
+	/*color: #4f91b2;*/
 }
 
 .panel--questions img {
@@ -69,9 +71,10 @@
 }
 
 .panel--companies h2 {
-	top: inherit;
-	right: 50px;
-	bottom: -120px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	top: -130px;
 }
 
 .panel--companies ul {
@@ -106,6 +109,5 @@
 
 .panel--companies a.panel--companies__add-button:hover {
 	background-color: transparent;
-	-webkit-transform: scale(1.3);
 	transform: scale(1.3);
 }

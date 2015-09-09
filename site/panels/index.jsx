@@ -6,7 +6,7 @@ export class IntroductionPanel extends Component {
 		return (
 			<div className='panel panel--introduction'>
 				<h2><a href='/introduction'>Introduction</a></h2>
-				<img src='assets/introduction-panel.png'/>
+				<img src='assets/ic_book_white_24px.svg'/>
 				<p>On smaller brochure sites, how you organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
 			</div>
 		);
@@ -18,7 +18,7 @@ export class NamingPanel extends Component {
 		return (
 			<div className='panel panel--naming'>
 				<h2><a href='/naming'>Naming</a></h2>
-				<img src='assets/introduction-panel.png'/>
+				<img src='assets/ic_text_format_white_24px.svg'/>
 				<p>It is known fact, that the right styleguide can significantly increase development speed, debugging and implementing new features in legacy code. Sadly, most CSS codebase is developed without (sometimes) any structure and naming conventions. This leads to an unmaintainable CSS codebase in the long term.</p>
 			</div>
 		);
@@ -30,7 +30,7 @@ export class QuestionsPanel extends Component {
 		return (
 			<div className='panel panel--questions'>
 				<h2><a href='/faq'>FAQ</a></h2>
-				<img src='assets/introduction-panel.png'/>
+				<img src='assets/ic_question_answer_white_24px.svg'/>
 				<p>On smaller brochure sites, how you organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
 			</div>
 		);

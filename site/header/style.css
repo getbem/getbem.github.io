@@ -1,10 +1,14 @@
 .header {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	text-align: center;
-	background: url('../../assets/transparent.jpg') center / cover;
+	background: #222 url('../../assets/transparent.jpg') center / cover;
 }
 
 .header img {
 	padding: 64px;
 	width: 256px;
+	height: 256px;
+	color: white;
+	font-size: 200px;
+	font-weight: bold;
 }

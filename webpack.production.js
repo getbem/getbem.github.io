@@ -7,7 +7,7 @@ const NoErrorsPlugin = webpack.NoErrorsPlugin;
 
 module.exports = {
 	entry: {
-		index: './src/index'
+		index: './site/index'
 	},
 	output: {
 		path: path.join(__dirname, 'static'),
