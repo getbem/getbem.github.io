@@ -7,7 +7,10 @@ const NoErrorsPlugin = webpack.NoErrorsPlugin;
 
 module.exports = {
 	entry: {
-		index: './site/index'
+		index: './site/index',
+		introduction: './site/introduction',
+		naming: './site/naming',
+		faq: './site/faq'
 	},
 	output: {
 		path: path.join(__dirname, 'static'),
@@ -30,17 +33,20 @@ module.exports = {
 	module: {
 		loaders: [{
 			test: /\.jsx?$/,
-			loaders: ['babel'],
-			include: path.join(__dirname, 'src')
+			loaders: ['react-hot', 'babel'],
+			include: path.join(__dirname, 'site')
 		}, {
 			test: /\.css$/,
-			loader: 'style-loader!css-loader'
+			loader: 'style-loader!css-loader!autoprefixer-loader'
 		}, {
 			test: /\.png$/,
 			loader: 'url-loader?limit=100000'
 		}, {
 			test: /\.jpg$/,
 			loader: 'file-loader'
+		}, {
+			test: /\.md$/,
+			loader: 'html!markdown'
 		}]
 	}
 };
