@@ -50,6 +50,8 @@ export class CompaniesPanel extends Component {
 					<li><a href='http://alfabank.com' title='Alfa-Bank'><img src='assets/companies/alfabank.png'/></a></li>
 					<li><a href='http://edster.ru' title='Edster'><img src='assets/companies/edster.png'/></a></li>
 					<li><a href='http://www.wimdu.com' title='Wimdu'><img src='assets/companies/wimdu.png'/></a></li>
+					<li><a href='http://megafon.com' title='Megafon'><img src='assets/companies/megafon.svg'/></a></li>
+					<li><a className='panel--companies__add-button' href='https://github.com/getbem/getbem.com/issues/1' title='Add your company'><img src='assets/ic_add_circle_outline_white_24px.svg'/></a></li>
 				</ul>
 			</div>
 		);

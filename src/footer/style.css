@@ -1,14 +1,14 @@
 .footer {
 	color: #777;
 	font-size: 12px;
-	padding: 50px 25px;
+	padding: 100px 50px;
 	text-align: center;
 }
 
 .footer__links {
 	list-style: none;
 	margin: 0;
-	padding: 0;	
+	padding: 0;
 }
 
 .footer__links li {
