@@ -4,6 +4,7 @@ require('./naming.css');
 import React from 'react';
 import Navbar from './navbar';
 import {Grid, Cell} from 'rgx';
+import Footer from './footer';
 
 React.render((
 	<div>
@@ -127,7 +128,7 @@ div.block__elem { color: #042; }`}</pre>
 .form__submit--disabled { /* ... */ }`}</pre>
 				</Cell>
 			</Grid>
-
 		</div>
+		<Footer/>
 	</div>
 ), document.getElementById('root'));

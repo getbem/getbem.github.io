@@ -3,8 +3,8 @@ require('./introduction.css');
 
 import React from 'react';
 import Navbar from './navbar';
-import Markdown from './markdown';
 import {Grid, Cell} from 'rgx';
+import Footer from './footer';
 
 const introduction = require('./markdown/introduction.md');
 
@@ -157,5 +157,6 @@ React.render((
 
 			<p>We are looking forward to writing "How to migrate existing project to BEM". In meanwhile you can watch nice presentation by Nicole Sullivan — "<a href='http://www.youtube.com/watch?v=0NDyopLKE1w'>CSS preprocessor performance</a>". It gives a very good explanation of problems, that she meets in major of sites and ways to track and handle them.</p>
 		</div>
+        <Footer/>
 	</div>
 ), document.getElementById('root'));
