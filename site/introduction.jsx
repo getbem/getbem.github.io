@@ -80,13 +80,15 @@ React.render((
 				</Cell>
 			</Grid>
 
-			<img src='../../assets/github_captions.jpg'/>
+			<img src='../../assets/github_captions.jpg' style={{width: '100%'}}/>
 
 		<h2>Under the hood</h2>
 
 			<p>Lets look how one particular element on page can be implemented in BEM. We will take `button` from <a href='https://github.com/styleguide/css/1.0'>GitHub styleguide</a>:</p>
 
-			<img src='../../assets/github_buttons.jpg'/>
+			<div style={{textAlign: 'center'}}>
+				<img src='../../assets/github_buttons.jpg'/>
+			</div>
 
 			<p>We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (`button`, `a` or even `div`). Naming invites us to use `block--modifier--value` syntax.</p>
 
