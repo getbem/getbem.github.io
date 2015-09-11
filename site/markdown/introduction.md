@@ -32,7 +32,7 @@ Breaking down styles into atomic, or indivisible, pieces
 
 ## Why BEM over the others?
 
-No matter what methodology you choose to use in your projects, you will get advantages of structured CSS and UI. Some of them are less strict and more flexible, other is easier to understand and adapt in team. Instead of writing our opinion on BEM advantages, we leave you with some quotes about it:
+No matter what methodology you choose to use in your projects, you will get advantages of structured CSS and UI. Some of them are less strict and more flexible, other is easier to understand and adapt in team.
 
 <blockquote>
 	<p>The reason I choose BEM over other methodologies comes down to this: it's less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognizable terminology.</p>

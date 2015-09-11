@@ -1,4 +1,5 @@
 require('normalize-css');
+require('./faq.css');
 
 import React from 'react';
 import Navbar from './navbar';
@@ -9,6 +10,8 @@ const faq = require('./markdown/faq.md');
 React.render((
 	<div>
 		<Navbar/>
-		<Markdown>{faq}</Markdown>
+		<div className='faq'>
+			<Markdown>{faq}</Markdown>
+		</div>
 	</div>
 ), document.getElementById('root'));
