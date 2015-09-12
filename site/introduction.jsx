@@ -25,20 +25,28 @@ React.render((
 
 		<Grid gutter={0}>
 			<Cell min={150}>
-				<h4><a href='https://oocss.org/'>OOCSS</a></h4>
-				Separating container and content with CSS “objects”
+				<div className='introduction__cell'>
+					<h4><a href='https://oocss.org/'>OOCSS</a></h4>
+					Separating container and content with CSS “objects”
+				</div>
 			</Cell>
 			<Cell min={150}>
-				<h4><a href='https://smacss.com/'>SMACSS</a></h4>
-				Style-guide to write your CSS with five categories for CSS rules
+				<div className='introduction__cell'>
+					<h4><a href='https://smacss.com/'>SMACSS</a></h4>
+					Style-guide to write your CSS with five categories for CSS rules
+				</div>
 			</Cell>
 			<Cell min={150}>
-				<h4><a href='http://suitcss.github.io/'>SUITCSS</a></h4>
-				Structured class names and meaningful hyphens
+				<div className='introduction__cell'>
+					<h4><a href='http://suitcss.github.io/'>SUITCSS</a></h4>
+					Structured class names and meaningful hyphens
+				</div>
 			</Cell>
 			<Cell min={150}>
-				<h4><a href='https://github.com/nemophrost/atomic-css'>Atomic</a></h4>
-				Breaking down styles into atomic, or indivisible, pieces
+				<div className='introduction__cell'>
+					<h4><a href='https://github.com/nemophrost/atomic-css'>Atomic</a></h4>
+					Breaking down styles into atomic, or indivisible, pieces
+				</div>
 			</Cell>
 		</Grid>
 
@@ -57,25 +65,31 @@ React.render((
 
 			<Grid gutter={0}>
 				<Cell min={150}>
-					<h4>Block</h4>
-					<p>Standalone entity that is meaningful on its own.</p>
+					<div className='introduction__cell introduction__cell--block'>
+						<h3>Block</h3>
+						<p>Standalone entity that is meaningful on its own.</p>
 
-					<b>Examples</b>
-					`header`, `container`, `menu`, `checkbox`, `input`
+						<h5>Examples</h5>
+						<code>header</code>, <code>container</code>, <code>menu</code>, <code>checkbox</code>, <code>input</code>
+					</div>
 				</Cell>
 				<Cell min={150}>
-					<h4>Element</h4>
-					<p>Parts of a block and have no standalone meaning. They are semantically tied to its block.</p>
+					<div className='introduction__cell introduction__cell--element'>
+						<h3>Element</h3>
+						<p>Parts of a block and have no standalone meaning. They are semantically tied to its block.</p>
 
-					<b>Examples</b>
-					`menu item`, `list item`, `checkbox caption`, `header title`
+						<h5>Examples</h5>
+						<code>menu item</code>, <code>list item</code>, <code>checkbox caption</code>, <code>header title</code>
+					</div>
 				</Cell>
 				<Cell min={150}>
-					<h4>Modifier</h4>
-					<p>Flags on blocks or elements. Use them to change appearance or behavior.</p>
+					<div className='introduction__cell introduction__cell--modifier'>
+						<h3>Modifier</h3>
+						<p>Flags on blocks or elements. Use them to change appearance or behavior.</p>
 
-					<b>Examples</b>
-					`disabled`, `highlighted`, `checked`, `fixed`, `size big`, `color yellow`
+						<h5>Examples</h5>
+						<code>disabled</code>, <code>highlighted</code>, <code>checked</code>, <code>fixed</code>, <code>size big</code>, <code>color yellow</code>
+					</div>
 				</Cell>
 			</Grid>
 
@@ -83,49 +97,53 @@ React.render((
 
 		<h2>Under the hood</h2>
 
-			<p>Lets look how one particular element on page can be implemented in BEM. We will take `button` from <a href='https://github.com/styleguide/css/1.0'>GitHub styleguide</a>:</p>
+			<p>Lets look how one particular element on page can be implemented in BEM. We will take <code>button</code> from <a href='https://github.com/styleguide/css/1.0'>GitHub styleguide</a>:</p>
 
-			<div style={{textAlign: 'center'}}>
+			<div style={{textAlign: 'center', paddingTop: 10, paddingBottom: 50}}>
 				<img src='../../assets/github_buttons.jpg'/>
 			</div>
 
-			<p>We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (`button`, `a` or even `div`). Naming invites us to use `block--modifier--value` syntax.</p>
+			<p>We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (<code>button</code>, <code>a</code> or even <code>div</code>). Naming invites us to use <code>block--modifier--value</code> syntax.</p>
 
 			<Grid gutter={0}>
 				<Cell min={200}>
-					<h4>HTML</h4>
-					<pre>{`<button class="button">
-  Normal button
-</button>
+					<div className='introduction__cell'>
+						<h4>HTML</h4>
+						<pre>{`<button class="button">
+	  Normal button
+	</button>
 
-<button class="button button--state-success">
-  Success button
-</button>
+	<button class="button button--state-success">
+	  Success button
+	</button>
 
-<button class="button button--state-danger">
-  Danger button
-</button>`}</pre>
+	<button class="button button--state-danger">
+	  Danger button
+	</button>`}</pre>
+					</div>
 				</Cell>
 				<Cell min={200}>
-					<h4>CSS</h4>
-					<pre>{`.button {
-  display: inline-block;
-  border-radius: 3px;
-  padding: 7px 12px;
-  border: 1px solid #D5D5D5;
-  background-image: linear-gradient(#EEE, #DDD);
-  font: 700 13px/18px Helvetica, arial;
-}
+					<div className='introduction__cell'>
+						<h4>CSS</h4>
+						<pre>{`.button {
+	  display: inline-block;
+	  border-radius: 3px;
+	  padding: 7px 12px;
+	  border: 1px solid #D5D5D5;
+	  background-image: linear-gradient(#EEE, #DDD);
+	  font: 700 13px/18px Helvetica, arial;
+	}
 
-.button--state-success {
-  color: #FFF;
-  background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
-  border-color: #4A993E;
-}
+	.button--state-success {
+	  color: #FFF;
+	  background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
+	  border-color: #4A993E;
+	}
 
-.button--state-danger {
-  color: #900;
-}`}</pre>
+	.button--state-danger {
+	  color: #900;
+	}`}</pre>
+				</div>
 				</Cell>
 			</Grid>
 
@@ -133,24 +151,39 @@ React.render((
 
 			<Grid gutter={0}>
 				<Cell min={150}>
-					<h4>Modularity</h4>
-					<p>Blocks styles should not have dependencies on other elements on a page, therefore you will never get <a href='http://www.phase2technology.com/blog/used-and-abused-css-inheritance-and-our-misuse-of-the-cascade/'>problems from cascading</a>.</p>
-					<p>This also gives you ability to transfer blocks from ready project to new one.</p>
+					<div className='introduction__cell'>
+						<h4>Modularity</h4>
+						<p>Blocks styles should not have dependencies on other elements on a page, therefore you will never get <a href='http://www.phase2technology.com/blog/used-and-abused-css-inheritance-and-our-misuse-of-the-cascade/'>problems from cascading</a>.</p>
+						<p>This also gives you ability to transfer blocks from ready project to new one.</p>
+					</div>
 				</Cell>
 				<Cell min={150}>
-					<h4>Reusability</h4>
-					<p>Composing independent blocks in a different way and reusing them reduces amount of CSS code, that you will maintain.</p>
-					<p>If you have design guidelines, then it is super effective to have ready Blocks library.</p>
+					<div className='introduction__cell'>
+						<h4>Reusability</h4>
+						<p>Composing independent blocks in a different way and reusing them reduces amount of CSS code, that you will maintain.</p>
+						<p>If you have design guidelines, then it is super effective to have ready Blocks library.</p>
+					</div>
 				</Cell>
 				<Cell min={150}>
-					<h4>Structure</h4>
-					<p>BEM methodology gives you simple and understandable structure in your CSS code.</p>
+					<div className='introduction__cell'>
+						<h4>Structure</h4>
+						<p>BEM methodology gives you simple and understandable structure in your CSS code.</p>
+					</div>
 				</Cell>
 			</Grid>
 
 		<h2>Further Reading</h2>
 
 			<ul>
+				<li><a href='http://blog.decaf.de/2015/06/24/why-bem-in-a-nutshell/'>‘Why BEM?’ in a nutshell</a></li>
+				<li><a href='http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/'>MindBEMding</a> — getting your head ’round BEM syntax</li>
+				<li><a href='http://cssguidelin.es/#bem-like-naming'>CSS guidelines</a></li>
+				<li><a href='http://www.smashingmagazine.com/2014/07/17/bem-methodology-for-small-projects/'>BEM methodology for small projects</a></li>
+				<li><a href='http://www.slideshare.net/MaxShirshin/bem-it-for-brandwatch'>BEM It! for Brandwatch</a></li>
+				<li><a href='http://www.phase2technology.com/blog/used-and-abused-css-inheritance-and-our-misuse-of-the-cascade/'>Used and Abused</a> — CSS Inheritance and Our Misuse of the Cascade.</li>
+				<li><a href='https://medium.com/objects-in-space/objects-in-space-f6f404727'>Objects in Space</a> — A style-guide for modular SASS development using SMACSS and BEM</li>
+				<li><a href='http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/'>How to Scale and Maintain Legacy CSS with Sass and SMACSS</a></li>
+				<li><a href='http://www.bluegg.co.uk/building-my-health-skills-part-3/'>Building a modular My Health Skills with BEM and Sass</a></li>
 				<li><a href='http://www.bluegg.co.uk/building-my-health-skills-part-3/'>Building My Health Skills — Part 3</a></li>
 			</ul>
 

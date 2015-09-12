@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import colors from '../colors';
-require('./style.css');
+require('./style.less');
 
 export default class Advantage extends Component {
 	render() {
 		return (
-			<div className='advantage'>
-				<h2 style={{color: colors[this.props.color]}}>{this.props.title}</h2>
+			<div className={'advantage advantage--' + this.props.color}>
+				<h2>{this.props.title}</h2>
 				<div>{this.props.children}</div>
 			</div>
 		);
