@@ -5,8 +5,6 @@ import Navbar from './navbar';
 import {Grid, Cell} from 'rgx';
 import Footer from './footer';
 
-const introduction = require('./markdown/introduction.md');
-
 React.render((
 	<div>
 		<Navbar active='introduction'/>

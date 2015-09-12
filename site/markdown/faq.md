@@ -1,5 +1,4 @@
-# FAQ
-
+<a id="why-bem"></a>
 ## Why should I choose BEM as a modular solution for CSS?
 
 > There are some other modular solutions for CSS (such as OOCSS, AMCSS, SMACSS, SUITCSS). What are the reasons to choose BEM?
@@ -10,7 +9,7 @@ If speaking about CSS modular solutions only, the key feature of BEM is block's 
 
 BEM CSS unambiguously defines which CSS belongs to a piece of interface and so usign it gives answers to questions "Can I remove this piece of code?" and "What happens and which interface parts will be affected if I change this piece of code?".
 
-
+<a id="why-the-modifier-classes-are-prefixed"></a>
 ## Why the modifier CSS classes are not represented as a combined selector?
 
 > BEM recommends to modify blocks like this `<div class="block block--mod">`. Why not to use the simple version like `<div class="block mod">`? Since we now have combined selectors `.block.mod`, it's easy to define all the CSS properties to it.
@@ -50,7 +49,7 @@ You will also appreciate `.block--mod` practice when refactoring and use global 
 
 And lastly, from a development process standpoint the difference between `.block.mod` and `.block--mod` is only one symbol. Using `-` instead of `.` costs nothing but it brings all the benefits listed above. Moreover, since pre-processor began to support BEM notation, it is pretty natural to write `&--mod` there and finally get a modifier declared as it was recommended.
 
-
+<a id="custom-tags-for-blocks"></a>
 ## Why do I need CSS classes for block instead of using semantic custom tags?
 
 > Blocks can be represented as custom tags which we may define CSS rules for. Looks like we do not need CSS classes for blocks at all. They can be used for modifiers only, like `<button class="mod"/>`.
@@ -63,7 +62,7 @@ Second drawback is that "tag" version makes using the mixes of blocks impossible
 
 And the last clench against such an approach is that in many cases you are not able to represent your blocks with custom tags at all. For a `link` block you definitely need `<a>` tag, and the same for `<input>`.
 
-
+<a id="block-modifier-mix"></a>
 ## Why do I need to combine block and prefixed modifier class for a modified block?
 
 > Why does both block's and modifier's class sit together in the modified block like `<div class=”block block--mod”>`?
@@ -76,7 +75,7 @@ In case of combining 2 or more modifiers at the same block `<div class="block--t
 
 When operating modifiers dynamically with JavaScript, additional modifier is more handy. Switching it off would mean only removing one CSS class from the DOM node with no need to add the core block CSS class back as it sits there forever.
 
-
+<a id="can-i-create-global-modifier"></a>
 ## Can I create a global modifier applicable to any block?
 
 > I've heard that global modifiers like `visible`, `invisible`, `red`, `opacity50` are not welcomed in BEM. Why?
@@ -139,7 +138,7 @@ All this hell can be avoided by encapsulating a modifier in a block like `.block
 
 Indeed using global modifiers makes the resultant code less. However if you measure the real difference in bytes it usually does not seem that big. Especially if you are using CSS optimizer which can combine selectors.
 
-
+<a id="encapsulating-tag-selector"></a>
 ## Can I combine a tag and a class in selector like `button.button`?
 
 > I want to use selectors like `button.button` to encapsulate my blocks functionality within a particular tag.
@@ -154,7 +153,7 @@ So, it is better not to tie your own hands with such prefixing. However if you s
 If the templating looks overhead, there is a "documentation" approach to inform your users which tag the block CSS class would be applied to, this can be done with documenting the block code. The shortest version could be just a comment with a tag name prefixing the block declaration `/*button*/.button`. Or that can be a larger comment with full HTML piece needed to the
 block to function.
 
-
+<a id="css-modifier-names"></a>
 ## Is this good to name modifiers corresponding to what they have in CSS?
 
 > Thanks to mixes, we can create a lot of modifiers which represent CSS properties and assign them to blocks.
@@ -164,7 +163,7 @@ Naming the modifiers corresponding to their CSS representation is not recommende
 
 Also, it never happens that a modifier has only one CSS property to define and will have it forever. Even if now it is only border that differentiates one state from another, this is very likely that lately you would need other CSS properties for the same state of your block. This would be messy if you define a background or padding in a modifier called "border". So, it is recommended to choose semantical names for modifiers even if they only have one property by now.
 
-
+<a id="css-nested-elements"></a>
 ## What would be a class name for an element inside another element? `.block__elem1__elem2`?
 
 > What should I do if my block has a complex structure and its elements are nested?
@@ -202,6 +201,7 @@ Besides the fact that the classes look much nicer, it makes the elements be depe
 </div>
 ```
 
+<a id="global-css-resets"></a>
 ## I've heard that BEM does not recommend global CSS resets. Why?
 
 > CSS resets is a practise making a good showing. Many frameworks first align anything and then
@@ -240,7 +240,7 @@ However using this mixin-way you should realize that the only reason for it is n
 
 Having resets for every block (besides being nice and BEMish) will also prevent problems with injecting a third-party piece of HTML/CSS markup which relies on browser defaults and so can be affected by global resets. For example, this is a known problem for webmails.
 
-
+<a id="ask-you-question"></a>
 ## Did not find the answer? Please ask your question, don't be shy.
 
 If you didn't find the proper answer, please [ask your question](https://github.com/getbem/getbem.com/issues/new?title=Type+your+question&body=Explain+in+detail+your+question&labels=question)!
