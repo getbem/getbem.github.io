@@ -106,43 +106,43 @@ React.render((
 			<p>We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (<code>button</code>, <code>a</code> or even <code>div</code>). Naming invites us to use <code>block--modifier--value</code> syntax.</p>
 
 			<Grid gutter={0}>
-				<Cell min={200}>
+				<Cell min={300}>
 					<div className='introduction__cell'>
 						<h4>HTML</h4>
 						<pre>{`<button class="button">
-	  Normal button
-	</button>
+  Normal button
+</button>
 
-	<button class="button button--state-success">
-	  Success button
-	</button>
+<button class="button button--state-success">
+  Success button
+</button>
 
-	<button class="button button--state-danger">
-	  Danger button
-	</button>`}</pre>
+<button class="button button--state-danger">
+  Danger button
+</button>`}</pre>
 					</div>
 				</Cell>
-				<Cell min={200}>
+				<Cell min={300}>
 					<div className='introduction__cell'>
 						<h4>CSS</h4>
 						<pre>{`.button {
-	  display: inline-block;
-	  border-radius: 3px;
-	  padding: 7px 12px;
-	  border: 1px solid #D5D5D5;
-	  background-image: linear-gradient(#EEE, #DDD);
-	  font: 700 13px/18px Helvetica, arial;
-	}
+  display: inline-block;
+  border-radius: 3px;
+  padding: 7px 12px;
+  border: 1px solid #D5D5D5;
+  background-image: linear-gradient(#EEE, #DDD);
+  font: 700 13px/18px Helvetica, arial;
+}
 
-	.button--state-success {
-	  color: #FFF;
-	  background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
-	  border-color: #4A993E;
-	}
+.button--state-success {
+  color: #FFF;
+  background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
+  border-color: #4A993E;
+}
 
-	.button--state-danger {
-	  color: #900;
-	}`}</pre>
+.button--state-danger {
+  color: #900;
+}`}</pre>
 				</div>
 				</Cell>
 			</Grid>

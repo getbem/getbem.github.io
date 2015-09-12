@@ -1,10 +1,15 @@
 .panel {
-	padding: 100px 200px;
 	margin: 0px 0px 0px 0px;
-	position: relative;
 	color: white;
 	border-top: 10px white solid;
 	overflow: hidden;
+}
+
+.panel__container {
+	padding: 100px 50px;
+	margin: auto;
+	max-width: 1045px;
+	position: relative;
 }
 
 .panel p {
@@ -25,8 +30,8 @@
 	color: white;
 	position: absolute;
 	margin-top: 83px;
-	top: -130px;
-	font-size: 100px;
+	top: -100px;
+	font-size: 72px;
 }
 
 .panel--introduction {
@@ -35,8 +40,8 @@
 
 .panel--introduction img {
 	float: right;
-	margin: 30px 0px 0px 40px;
-	width: 40%;
+	margin: 30px 0px 50px 20px;
+	width: 30%;
 	height: 160px;
 }
 
@@ -46,7 +51,7 @@
 
 .panel--naming h2 {
 	/*color: #76b24f;*/
-	right: 200px;
+	right: 50px;
 }
 
 .panel--naming img {
@@ -79,7 +84,7 @@
 	left: 0;
 	width: 100%;
 	text-align: center;
-	top: -130px;
+	top: -100px;
 }
 
 .panel--companies ul {

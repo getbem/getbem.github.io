@@ -136,22 +136,22 @@ div.block__elem { color: #042; }`}</pre>
 					<div className='naming__cell'>
 						<h4>HTML</h4>
 						<pre>{`<form class="form form--theme-xmas form--simple">
-	  <input class="form__input" type="text" />
-	  <input
-	    class="form__submit form__submit--disabled"
-	    type="submit" />
-	</form>`}</pre>
+  <input class="form__input" type="text" />
+  <input
+    class="form__submit form__submit--disabled"
+    type="submit" />
+</form>`}</pre>
 					</div>
 				</Cell>
 				<Cell min={220}>
 					<div className='naming__cell'>
 						<h4>CSS</h4>
 						<pre>{`.form { /* ... */ }
-	.form--theme-xmas { /* ... */ }
-	.form--simple { /* ... */ }
-	.form__input { /* ... */ }
-	.form__submit { /* ... */ }
-	.form__submit--disabled { /* ... */ }`}</pre>
+.form--theme-xmas { /* ... */ }
+.form--simple { /* ... */ }
+.form__input { /* ... */ }
+.form__submit { /* ... */ }
+.form__submit--disabled { /* ... */ }`}</pre>
 					</div>
 				</Cell>
 			</Grid>
