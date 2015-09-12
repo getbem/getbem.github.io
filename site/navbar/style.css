@@ -4,7 +4,7 @@
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	height: 50px;
 	line-height: 50px;
-	padding: 0px 25px;
+	padding: 0px 0px;
 	marign: auto 0;
 }
 
@@ -48,7 +48,7 @@ a.navbar__title:hover {
 .navbar__menu ul li a {
 	color: white;
 	text-decoration: none;
-	padding: 0px 15px;
+	padding: 0px 10px;
 }
 
 .navbar__menu ul li a:hover {
