@@ -15,17 +15,19 @@ export default class Index extends Component {
 				<Header/>
 				<div className='index'>
 					<Description/>
-					<Grid gutter={0}>
-						<Cell min={256}>
-							<Advantage title='Easy' color='block'>To use BEM you literally do not need nothing besides BEM naming.</Advantage>
-						</Cell>
-						<Cell min={256}>
-							<Advantage title='Modular' color='element'>Independent blocks and css selectors makes your code reusable and modular.</Advantage>
-						</Cell>
-						<Cell min={256}>
-							<Advantage title='Flexible' color='modifier'>Methodology and tools, that can be recomposed and configured in the way you like BEM.</Advantage>
-						</Cell>
-					</Grid>
+					<div style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: 1035}}>
+						<Grid gutter={0}>
+							<Cell min={256}>
+								<Advantage title='Easy' color='block'>To use BEM you literally do not need nothing besides BEM naming.</Advantage>
+							</Cell>
+							<Cell min={256}>
+								<Advantage title='Modular' color='element'>Independent blocks and css selectors makes your code reusable and modular.</Advantage>
+							</Cell>
+							<Cell min={256}>
+								<Advantage title='Flexible' color='modifier'>Methodology and tools, that can be recomposed and configured in the way you like BEM.</Advantage>
+							</Cell>
+						</Grid>
+					</div>
 					<br/><br/><br/><br/><br/><br/><br/><br/>
 					<IntroductionPanel/>
 					<NamingPanel/>

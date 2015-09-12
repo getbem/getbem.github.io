@@ -13,8 +13,12 @@
 }
 
 .panel a {
-	color: inherit;
+	color: white;
 	text-decoration: none;
+}
+
+.panel a:hover {
+	color: white;
 }
 
 .panel h2 {

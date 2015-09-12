@@ -5,6 +5,7 @@
 	height: 50px;
 	line-height: 50px;
 	padding: 0px 25px;
+	marign: auto 0;
 }
 
 a.navbar__title {
