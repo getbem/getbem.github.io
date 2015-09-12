@@ -1,6 +1,6 @@
 .navbar {
 	color: white;
-	background-color: rgba(22, 22, 22, 0.3);
+	background-color: rgba(22, 22, 55, 0.5);
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	height: 50px;
 	line-height: 50px;
@@ -36,6 +36,13 @@ a.navbar__title:hover {
 	list-style-image: none;
 	list-style-position: outside;
 	list-style-type: none;
+}
+
+.navbar__menu ul li.navbar__item--active {
+	background-color: white;
+}
+.navbar__menu ul li.navbar__item--active a {
+	color: black;
 }
 
 .navbar__menu ul li a {

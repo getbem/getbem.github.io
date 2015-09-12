@@ -7,7 +7,7 @@ import Footer from './footer';
 
 React.render((
 	<div>
-		<Navbar/>
+		<Navbar active='naming'/>
 		<div className='naming'>
 			<h1>Naming</h1>
 

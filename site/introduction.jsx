@@ -9,7 +9,7 @@ const introduction = require('./markdown/introduction.md');
 
 React.render((
 	<div>
-		<Navbar/>
+		<Navbar active='introduction'/>
 		<div className='introduction'>
 		<h1>Introduction</h1>
 

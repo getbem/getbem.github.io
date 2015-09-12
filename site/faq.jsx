@@ -9,7 +9,7 @@ const faq = require('./markdown/faq.md');
 
 React.render((
 	<div>
-		<Navbar/>
+		<Navbar active='faq'/>
 		<div className='faq'>
 			<Markdown>{faq}</Markdown>
 		</div>
