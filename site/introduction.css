@@ -1,5 +1,25 @@
 .introduction {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	max-width: 860px;
 	padding: 0px 100px;
 	margin: auto;
+	color: rgb(55, 58, 60);
+}
+
+.introduction h1 {
+	font-size: 48px;
+	font-weight: 500;
+	margin-bottom: 8px;
+}
+
+.introduction h2 {
+	font-size: 28px;
+	font-weight: 500;
+	margin-bottom: 8px;
+}
+
+.introduction p {
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 16px;
 }
