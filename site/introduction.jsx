@@ -1,5 +1,4 @@
-require('normalize-css');
-require('./introduction.css');
+require('./introduction.less');
 
 import React from 'react';
 import Navbar from './navbar';

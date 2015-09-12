@@ -1,5 +1,4 @@
-require('normalize-css');
-require('./faq.css');
+require('./faq.less');
 
 import React from 'react';
 import Navbar from './navbar';

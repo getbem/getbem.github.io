@@ -3,17 +3,21 @@
 	background-color: rgba(22, 22, 22, 0.3);
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	height: 50px;
-	line-height: 20px;
+	line-height: 50px;
 	padding: 0px 25px;
 }
 
-.navbar__title {
+a.navbar__title {
 	color: white;
 	display: block;
 	float: left;
 	font-size: 18px;
 	line-height: 20px;
 	padding: 15px 15px;
+}
+
+a.navbar__title:hover {
+	color: white;
 }
 
 .navbar__menu {

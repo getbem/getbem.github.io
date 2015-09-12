@@ -49,6 +49,9 @@ module.exports = {
 		}, {
 			test: /\.md$/,
 			loader: 'html!markdown'
+		}, {
+			test: /\.less$/,
+			loader: 'style!css!less'
 		}]
 	}
 };

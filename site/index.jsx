@@ -1,5 +1,4 @@
-require('normalize-css');
-require('./index.css');
+require('./index.less');
 
 import React, {Component} from 'react';
 import Header from './header';
