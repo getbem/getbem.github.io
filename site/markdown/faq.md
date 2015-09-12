@@ -241,6 +241,6 @@ However using this mixin-way you should realize that the only reason for it is n
 Having resets for every block (besides being nice and BEMish) will also prevent problems with injecting a third-party piece of HTML/CSS markup which relies on browser defaults and so can be affected by global resets. For example, this is a known problem for webmails.
 
 <a id="ask-you-question"></a>
-## Did not find the answer? Please ask your question, don't be shy.
+## Did not find the answer? Please ask your questions!
 
 If you didn't find the proper answer, please [ask your question](https://github.com/getbem/getbem.com/issues/new?title=Type+your+question&body=Explain+in+detail+your+question&labels=question)!
