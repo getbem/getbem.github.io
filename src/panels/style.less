@@ -41,6 +41,22 @@
 	background-color: @block;
 }
 
+@media (max-width: 500px) {
+	.panel__container {
+		padding: 50px 10px;
+	}
+
+	.panel h2 {
+		top: -96px;
+		font-size: 48px;
+	}
+
+	.panel p {
+		font-size: 18px;
+		line-height: 24px;
+	}
+}
+
 .panel--introduction img {
 	float: right;
 	margin: 0px 0px 0px 20px;
@@ -61,6 +77,7 @@
 	margin: 0px 50px 0px 0px;
 	height: 160px;
 }
+
 @media (max-width: 800px) {
 	.panel--naming img {
 		margin: 0px 0px 0px 0px;
@@ -95,8 +112,8 @@
 .panel--companies ul {
 	text-align: center;
 	list-style: none;
-	margin: auto;
-	padding: 50px 50px 50px 50px;
+	margin: 0;
+	padding: 0;
 }
 
 .panel--companies li {

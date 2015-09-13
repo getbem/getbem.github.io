@@ -8,16 +8,11 @@
 	marign: auto 0;
 }
 
-a.navbar__title {
-	color: white;
-	display: block;
-	float: left;
+.navbar__item--title {
 	font-size: 18px;
-	line-height: 20px;
-	padding: 15px 15px;
 }
 
-a.navbar__title:hover {
+.navbar__item--title a:hover {
 	color: white;
 }
 
@@ -36,6 +31,7 @@ a.navbar__title:hover {
 	list-style-image: none;
 	list-style-position: outside;
 	list-style-type: none;
+	white-space: nowrap;
 }
 
 .navbar__menu ul li.navbar__item--active {
@@ -48,7 +44,7 @@ a.navbar__title:hover {
 .navbar__menu ul li a {
 	color: white;
 	text-decoration: none;
-	padding: 0px 10px;
+	padding: 0px 15px;
 }
 
 .navbar__menu ul li a:hover {
