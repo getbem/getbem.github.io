@@ -15,7 +15,7 @@ export default class Index extends Component {
 				<Header/>
 				<div className='index'>
 					<Description/>
-					<div style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: 1035}}>
+					<div style={{marginLeft: 'auto', marginRight: 'auto', maxWidth: 1035, paddingBottom: 150}}>
 						<Grid gutter={0}>
 							<Cell min={256}>
 								<Advantage title='Easy' color='block'>To use BEM you literally do not need nothing besides BEM naming.</Advantage>
@@ -28,7 +28,6 @@ export default class Index extends Component {
 							</Cell>
 						</Grid>
 					</div>
-					<br/><br/><br/><br/><br/><br/><br/><br/>
 					<IntroductionPanel/>
 					<NamingPanel/>
 					<QuestionsPanel/>
