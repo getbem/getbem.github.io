@@ -27,12 +27,6 @@ This project includes React-friendly ESLint configuration.
 npm run lint
 ```
 
-### Deploying
-
-```
-npm run publish
-```
-
 ### License
 
 [MIT](license)
