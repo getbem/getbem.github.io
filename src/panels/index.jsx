@@ -18,7 +18,7 @@ export class Panel extends Component {
 export class IntroductionPanel extends Panel {
 	render() {
 		return (
-			<Panel className='panel--introduction' title='Introduction' link='/introduction.html' img='/assets/ic_book_white_24px.svg'>
+			<Panel className='panel--introduction' title='Introduction' link='/introduction/' img='/assets/ic_book_white_24px.svg'>
 				<p>On smaller brochure sites, how you organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
 			</Panel>
 		);
@@ -28,7 +28,7 @@ export class IntroductionPanel extends Panel {
 export class NamingPanel extends Panel {
 	render() {
 		return (
-			<Panel className='panel--naming' title='Naming' link='/naming.html' img='/assets/ic_text_format_white_24px.svg'>
+			<Panel className='panel--naming' title='Naming' link='/naming/' img='/assets/ic_text_format_white_24px.svg'>
 				<p>It is known fact, that the right styleguide can significantly increase development speed, debugging and implementing new features in legacy code. Sadly, most CSS codebase is developed without (sometimes) any structure and naming conventions. This leads to an unmaintainable CSS codebase in the long term.</p>
 			</Panel>
 		);
@@ -38,7 +38,7 @@ export class NamingPanel extends Panel {
 export class QuestionsPanel extends Panel {
 	render() {
 		return (
-			<Panel className='panel--questions' title='FAQ' link='/faq.html' img='/assets/ic_question_answer_white_24px.svg'>
+			<Panel className='panel--questions' title='FAQ' link='/faq/' img='/assets/ic_question_answer_white_24px.svg'>
 				<p>On smaller brochure sites, how you organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
 			</Panel>
 		);
