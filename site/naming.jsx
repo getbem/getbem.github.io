@@ -26,7 +26,7 @@ React.render((
 			<Grid gutter={0}>
 				<Cell min={300}>
 					<div className='naming__cell'>
-						<h4>Meaning</h4>
+						<h4>Naming</h4>
 						<p>Block names may consist of Latin letters, digits, and dashes. To form a CSS class, add a short prefix for namespacing: <code>.block</code></p>
 					</div>
 				</Cell>
@@ -58,7 +58,7 @@ React.render((
 			<Grid gutter={0}>
 				<Cell min={300}>
 					<div className='naming__cell'>
-						<h4>Meaning</h4>
+						<h4>Naming</h4>
 						<p>Element names may consist of Latin letters, digits, dashes and underscores. CSS class is formed as block name plus two underscores plus element name: <code>.block__elem</code></p>
 					</div>
 				</Cell>
@@ -98,7 +98,7 @@ div.block__elem { color: #042; }`}</pre>
 			<Grid gutter={0}>
 				<Cell min={300}>
 					<div className='naming__cell'>
-						<h4>Meaning</h4>
+						<h4>Naming</h4>
 						<p>Modifier names may consist of Latin letters, digits, dashes and underscores. CSS class is formed as block’s or element’s name plus two dashes: <code>.block--mod</code> or <code>.block__mod--mod</code> and <code>.block--color-black</code> with <code>.block--color-red</code>. Spaces in complicated modifiers are replaced by dash.</p>
 					</div>
 				</Cell>

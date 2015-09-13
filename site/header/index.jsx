@@ -7,7 +7,7 @@ export default class Header extends Component {
 		return (
 			<div className='header'>
 				<Navbar/>
-				<img src='assets/b_.svg' alt='b_'/>
+				<img src='/assets/b_.svg' alt='b_'/>
 			</div>
 		);
 	}

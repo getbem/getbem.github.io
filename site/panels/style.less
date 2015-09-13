@@ -1,3 +1,6 @@
+@import "../bootstrap/variables";
+@import '../variables';
+
 .panel {
 	margin: 0px 0px 0px 0px;
 	color: white;
@@ -35,7 +38,7 @@
 }
 
 .panel--introduction {
-	background-color: #76b24f;
+	background-color: @block;
 }
 
 .panel--introduction img {
@@ -46,11 +49,10 @@
 }
 
 .panel--naming {
-	background-color: #4f91b2;
+	background-color: @element;
 }
 
 .panel--naming h2 {
-	/*color: #76b24f;*/
 	right: 50px;
 }
 
@@ -62,11 +64,10 @@
 }
 
 .panel--questions {
-	background-color: #d5635d;
+	background-color: @modifier;
 }
 
 .panel--questions h2 {
-	/*color: #4f91b2;*/
 }
 
 .panel--questions img {
@@ -77,7 +78,7 @@
 }
 
 .panel--companies {
-	background-color: #e0e0e0;
+	background-color: @gray-lighter;
 }
 
 .panel--companies h2 {
