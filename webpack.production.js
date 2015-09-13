@@ -41,19 +41,19 @@ module.exports = {
 			include: path.join(__dirname, 'src')
 		}, {
 			test: /\.css$/,
-			loader: ExtractTextPlugin.extract('style-loader','css-loader!autoprefixer-loader')
+			loader: ExtractTextPlugin.extract('style','css!autoprefixer')
 		}, {
 			test: /\.png$/,
-			loader: 'url-loader?limit=100000'
+			loader: 'url?limit=100000'
 		}, {
 			test: /\.jpg$/,
-			loader: 'file-loader'
+			loader: 'file'
 		}, {
 			test: /\.md$/,
 			loader: 'html!markdown'
 		}, {
 			test: /\.less$/,
-			loader: ExtractTextPlugin.extract('style-loader','css-loader!less-loader')
+			loader: ExtractTextPlugin.extract('style','css!autoprefixer!less')
 		}]
 	}
 };
