@@ -43,11 +43,12 @@
     "webpack-dev-server": "^1.8.2"
   },
   "dependencies": {
-    "html-loader": "^0.3.0",
-    "markdown-loader": "^0.1.7",
     "autoprefixer-loader": "^3.1.0",
     "css-loader": "^0.16.0",
+    "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
+    "html-loader": "^0.3.0",
+    "markdown-loader": "^0.1.7",
     "react": "^0.13.0",
     "react-router": "^0.13.3",
     "rgx": "^0.2.1",

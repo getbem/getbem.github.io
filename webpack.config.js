@@ -12,10 +12,10 @@ function devEntry(entry) {
 module.exports = {
 	devtool: 'eval',
 	entry: {
-		index: devEntry('./site/index'),
-		introduction: devEntry('./site/introduction'),
-		naming: devEntry('./site/naming'),
-		faq: devEntry('./site/faq')
+		index: devEntry('./src/index'),
+		introduction: devEntry('./src/introduction'),
+		naming: devEntry('./src/naming'),
+		faq: devEntry('./src/faq')
 	},
 	output: {
 		path: path.join(__dirname, 'static'),

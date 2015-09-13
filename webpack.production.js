@@ -5,16 +5,17 @@ const DedupePlugin = webpack.optimize.DedupePlugin;
 const DefinePlugin = webpack.DefinePlugin;
 const NoErrorsPlugin = webpack.NoErrorsPlugin;
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	entry: {
-		index: './site/index',
-		introduction: './site/introduction',
-		naming: './site/naming',
-		faq: './site/faq'
+		index: './src/index',
+		introduction: './src/introduction',
+		naming: './src/naming',
+		faq: './src/faq'
 	},
 	output: {
-		path: path.join(__dirname, 'static'),
+		path: path.join(__dirname, '/static'),
 		filename: '[name].js',
 		publicPath: '/static/'
 	},
@@ -27,7 +28,8 @@ module.exports = {
 			}
 		}),
 		new NoErrorsPlugin(),
-		new CommonsChunkPlugin('commons.chunk.js')
+		new CommonsChunkPlugin('commons.chunk.js'),
+		new ExtractTextPlugin('css/[name].css')
 	],
 	resolve: {
 		extensions: ['', '.js', '.jsx']
@@ -36,10 +38,10 @@ module.exports = {
 		loaders: [{
 			test: /\.jsx?$/,
 			loaders: ['react-hot', 'babel'],
-			include: path.join(__dirname, 'site')
+			include: path.join(__dirname, 'src')
 		}, {
 			test: /\.css$/,
-			loader: 'style-loader!css-loader!autoprefixer-loader'
+			loader: ExtractTextPlugin.extract('style-loader','css-loader!autoprefixer-loader')
 		}, {
 			test: /\.png$/,
 			loader: 'url-loader?limit=100000'
@@ -51,7 +53,7 @@ module.exports = {
 			loader: 'html!markdown'
 		}, {
 			test: /\.less$/,
-			loader: 'style!css!less'
+			loader: ExtractTextPlugin.extract('style-loader','css-loader!less-loader')
 		}]
 	}
 };
