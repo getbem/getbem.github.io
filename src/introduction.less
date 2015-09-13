@@ -1,0 +1,51 @@
+@import "bootstrap/base.less";
+@import "variables.less";
+
+.introduction {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	max-width: 1095px;
+	padding: 0px 40px;
+	margin: auto;
+	color: rgb(55, 58, 60);
+}
+
+@media (max-width: 400px) {
+	.introduction {
+		padding: 0px 5px;
+	}
+}
+
+.introduction h1 {
+	font-size: 48px;
+	font-weight: 500;
+	margin-bottom: 8px;
+}
+
+.introduction h2 {
+	font-size: 28px;
+	font-weight: 500;
+	margin-bottom: 8px;
+}
+
+.introduction p {
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 16px;
+}
+
+.introduction__cell {
+	padding: 0 15px;
+	border-left: 1px @gray-lighter solid;
+}
+
+.introduction__cell--block h3 {
+	color: @block;
+}
+
+.introduction__cell--element h3 {
+	color: @element;
+}
+
+.introduction__cell--modifier h3 {
+	color: @modifier;
+}

@@ -1,0 +1,74 @@
+@import "bootstrap/base.less";
+@import "variables";
+
+.naming {
+	color: rgb(55, 58, 60);
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	max-width: 1095px;
+	padding: 0px 40px;
+	margin: auto;
+}
+
+@media (max-width: 400px) {
+	.naming {
+		padding: 0px 5px;
+	}
+}
+
+.naming pre {
+	font-size: 14px;
+}
+
+.naming h1 {
+	font-size: 48px;
+	font-weight: 500;
+	margin-bottom: 8px;
+}
+
+.naming h2 {
+	font-size: 28px;
+	font-weight: 500;
+	margin-bottom: 8px;
+}
+
+.naming p {
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 16px;
+}
+
+.naming__cell {
+	padding: 0 15px 0px 15px;
+	border-left: 1px @gray-lighter solid;
+}
+
+.naming__cell pre {
+	font-size: 12px;
+}
+
+.naming__cell--block {
+	border-left: 1px @block solid;
+	margin-bottom: -16px;
+}
+
+.naming__cell--block h3 {
+	color: @block;
+}
+
+.naming__cell--element {
+	border-left: 1px @element solid;
+	margin-bottom: -16px;
+}
+
+.naming__cell--element h3 {
+	color: @element;
+}
+
+.naming__cell--modifier {
+	border-left: 1px @modifier solid;
+	margin-bottom: -16px;
+}
+
+.naming__cell--modifier h3 {
+	color: @modifier;
+}

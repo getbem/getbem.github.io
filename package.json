@@ -1,0 +1,64 @@
+{
+  "name": "getbem.com",
+  "version": "1.0.0",
+  "description": "Get BEM to all people in simplest way",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint src",
+    "build": "webpack --config webpack.production.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/getbem/getbem.com.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "boilerplate",
+    "hot",
+    "reload",
+    "hmr",
+    "live",
+    "edit",
+    "webpack",
+    "BEM"
+  ],
+  "author": "Vsevolod Strukchinsky <floatdrop@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/getbem/getbem.com/issues"
+  },
+  "homepage": "http://getbem.com/",
+  "devDependencies": {
+    "babel-core": "^5.4.7",
+    "babel-eslint": "^3.1.9",
+    "babel-loader": "^5.1.2",
+    "eslint": "^1.1.0",
+    "eslint-config-xo": "^0.3.1",
+    "eslint-config-xo-react": "^0.2.0",
+    "less": "^2.5.1",
+    "less-loader": "^2.2.0",
+    "react-hot-loader": "^1.2.7",
+    "webpack": "^1.9.6",
+    "webpack-dev-server": "^1.8.2"
+  },
+  "dependencies": {
+    "autoprefixer-loader": "^3.1.0",
+    "css-loader": "^0.16.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
+    "html-loader": "^0.3.0",
+    "markdown-loader": "^0.1.7",
+    "react": "^0.13.0",
+    "react-router": "^0.13.3",
+    "rgx": "^0.2.1",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6"
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo/esnext",
+      "xo-react"
+    ]
+  }
+}
