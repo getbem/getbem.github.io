@@ -1,6 +1,0 @@
-dist
-libs
-.DS_Store
-static/libs
-node_modules
-.idea
