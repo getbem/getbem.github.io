@@ -16,7 +16,7 @@
 }
 
 .panel p {
-	font-size: 18px;
+	font-size: 24px;
 	line-height: 32px;
 }
 
@@ -43,7 +43,7 @@
 
 .panel--introduction img {
 	float: right;
-	margin: 30px 0px 50px 20px;
+	margin: 0px 0px 0px 20px;
 	width: 30%;
 	height: 160px;
 }
@@ -58,9 +58,13 @@
 
 .panel--naming img {
 	float: left;
-	margin: 30px 40px 0px 0px;
-	width: 40%;
+	margin: 0px 50px 0px 0px;
 	height: 160px;
+}
+@media (max-width: 800px) {
+	.panel--naming img {
+		margin: 0px 0px 0px 0px;
+	}
 }
 
 .panel--questions {
@@ -72,7 +76,7 @@
 
 .panel--questions img {
 	float: right;
-	margin: 30px 0px 0px 40px;
+	margin: 0px 0px;
 	width: 40%;
 	height: 160px;
 }

@@ -6,8 +6,8 @@ export class Panel extends Component {
 		return (
 			<div className={'panel ' + this.props.className}>
 				<div className='panel__container'>
+					<a href={this.props.link}><img src={this.props.img}/></a>
 					<h2><a href={this.props.link}>{this.props.title}</a></h2>
-					<img src={this.props.img}/>
 					{this.props.children}
 				</div>
 			</div>
@@ -19,7 +19,7 @@ export class IntroductionPanel extends Panel {
 	render() {
 		return (
 			<Panel className='panel--introduction' title='Introduction' link='/introduction/' img='/assets/ic_book_white_24px.svg'>
-				<p>On smaller brochure sites, how you organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
+				<p>BEM is a highly useful, powerful and simple naming convention to make your front-end code easier to read and understand, easier to work with, easier to scale, more robust and explicit and a lot more strict.</p>
 			</Panel>
 		);
 	}
@@ -29,7 +29,7 @@ export class NamingPanel extends Panel {
 	render() {
 		return (
 			<Panel className='panel--naming' title='Naming' link='/naming/' img='/assets/ic_text_format_white_24px.svg'>
-				<p>It is known fact, that the right styleguide can significantly increase development speed, debugging and implementing new features in legacy code. Sadly, most CSS codebase is developed without (sometimes) any structure and naming conventions. This leads to an unmaintainable CSS codebase in the long term.</p>
+				<p>The BEM approach ensures that everyone who participates in the development of a website works with a single codebase and speaks the same language. Using proper naming will prepare you for the changes in design of the website.</p>
 			</Panel>
 		);
 	}
@@ -39,7 +39,10 @@ export class QuestionsPanel extends Panel {
 	render() {
 		return (
 			<Panel className='panel--questions' title='FAQ' link='/faq/' img='/assets/ic_question_answer_white_24px.svg'>
-				<p>On smaller brochure sites, how you organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
+				<p><i>— <a href='/faq/#custom-tags-for-blocks'>Why do I need CSS classes for block instead of using semantic custom tags?</a></i></p>
+				<p><i>— <a href='/faq/#encapsulating-tag-selector'>Can I combine a tag and a class in selector like button.button?</a></i></p>
+				<br/>
+				<p>Look for answers in awesome <a href='/faq/'>FAQ list</a>!</p>
 			</Panel>
 		);
 	}
