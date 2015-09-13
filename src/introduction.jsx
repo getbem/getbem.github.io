@@ -95,7 +95,7 @@ React.render((
 
 		<h2>Under the hood</h2>
 
-			<p>Lets look how one particular element on page can be implemented in BEM. We will take <code>button</code> from <a href='https://github.com/styleguide/css/1.0'>GitHub styleguide</a>:</p>
+			<p>Lets look how one particular element on page can be implemented in BEM. We will take <code>button</code> from <a href='http://primercss.io/buttons/'>GitHub</a>:</p>
 
 			<div style={{textAlign: 'center', paddingTop: 10, paddingBottom: 50}}>
 				<img src='../../assets/github_buttons.jpg'/>
@@ -159,7 +159,7 @@ React.render((
 					<div className='introduction__cell'>
 						<h4>Reusability</h4>
 						<p>Composing independent blocks in a different way and reusing them reduces amount of CSS code, that you will maintain.</p>
-						<p>If you have design guidelines, then it is super effective to have ready Blocks library.</p>
+						<p>If you have design guidelines, then it is super effective to have ready blocks library.</p>
 					</div>
 				</Cell>
 				<Cell min={150}>
