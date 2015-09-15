@@ -19,12 +19,14 @@ npm run build
 http-server -c=3600 -o
 ```
 
-### Linting
+### Deploying
 
-This project includes React-friendly ESLint configuration.
+We are working on better deployment method, but for now you can just push to `gh-pages` after production build.
 
 ```
-npm run lint
+git checkout gh-pages
+git merge master
+git push
 ```
 
 ### License
