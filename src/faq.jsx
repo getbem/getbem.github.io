@@ -12,7 +12,9 @@ React.render((
 		<Navbar active='faq'/>
 		<div className='faq'>
 			<h1>FAQ</h1>
-			<p>We are working on Frequently Asked Question <a href='https://docs.google.com/document/d/1KD9tNdArCv1U1NvFX7rYPvUdbpPGVkuPZ2723KW5p4Y/edit'>list here</a> — fear not, it will be translated from Russian to English before publishing.</p>
+			<p>These Frequently Asked Question are real questions of developers started with BEM, answered by the GetBEM community.
+				Feel free to <a href="https://github.com/getbem/getbem.com/issues/new?title=FAQ:%20Type%20your%20question%20here">ask
+				your question</a> too, and we will answer it as well.</p>
 
 			<ul>
 				<li><a href="#why-bem">Why should I choose BEM and not another CSS modular solution?</a></li>
