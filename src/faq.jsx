@@ -19,6 +19,7 @@ React.render((
 				<li><a href="#why-the-modifier-classes-are-prefixed">Why the modifier CSS classes are not represented as a combined selector?</a></li>
 				<li><a href="#custom-tags-for-blocks">Why do I need CSS classes for block instead of using semantic custom tags?</a></li>
 				<li><a href="#block-modifier-mix">Why do I need to combine block and prefixed modifier class for a modified block?</a></li>
+				<li><a href="#block-modifier-affects-elements">Can a block modifier affect elements?</a></li>
 				<li><a href="#can-i-create-global-modifier">Can I create a global modifier applicable to any block?</a></li>
 				<li><a href="#encapsulating-tag-selector">Can I combine a tag and a class in selector like button.button?</a></li>
 				<li><a href="#css-modifier-names">Is this good to name modifiers corresponding to what they have in CSS? Like `.block__element--border-bottom-5px`.</a></li>

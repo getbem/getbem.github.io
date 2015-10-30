@@ -75,6 +75,32 @@ In case of combining 2 or more modifiers at the same block `<div class="block--t
 
 When operating modifiers dynamically with JavaScript, additional modifier is more handy. Switching it off would mean only removing one CSS class from the DOM node with no need to add the core block CSS class back as it sits there forever.
 
+<a id="block-modifier-affects-elements"></a>
+## Can a block modifier affect elements?
+
+> If I have a block modifier, for example "xmas," and I want the elements within that block to also be xmas themed, how
+> would it be best to do it.
+
+> Does a `--xmas` suffix for every element seem necessary? Or would this be the one use-case for nesting (e.g. `block--xmas
+block__elem { ... }`?)
+
+However in general BEM recommends to avoid nested selectors, this is the case when they are reasonable.
+
+When creating the nested selector, you declare that one entity depends on another. As BEM introduces independent
+components, such an approach is not suggested when we are speaking about 2 different blocks.
+
+But when it comes to a block and its element, they are not of equivalent meaning. By it definition, an element does not
+make any sense outside its parent block. So, an element is a block-dependent entity. Assuming this, it is quite normal
+and logical that an element is affected by the block's current state.
+
+So, this is quite a pattern in BEM to code
+
+```
+.my-block--xmas .my-block__button {
+	/* Jingle bells, jingle bells, jingle all the way.*/
+}
+```
+
 <a id="can-i-create-global-modifier"></a>
 ## Can I create a global modifier applicable to any block?
 
