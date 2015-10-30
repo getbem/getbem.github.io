@@ -78,7 +78,7 @@ When operating modifiers dynamically with JavaScript, additional modifier is mor
 <a id="block-modifier-affects-elements"></a>
 ## Can a block modifier affect elements?
 
-> If I have a block modifier, for example "xmas," and I want the elements within that block to also be xmas themed, how
+> If I have a block modifier, for example `xmas`, and I want the elements within that block to also be xmas themed, how
 > would it be best to do it.
 
 > Does a `--xmas` suffix for every element seem necessary? Or would this be the one use-case for nesting (e.g. `block--xmas
