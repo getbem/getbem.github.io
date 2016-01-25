@@ -1,0 +1,122 @@
+.description
+  font-size 22px
+  max-width 700px
+  margin auto
+  padding 100px 50px 100px 50px
+  text-align center
+
+.advantage
+  text-align center
+  max-width 320px
+  margin auto
+
+.advantage--block
+  h2
+    color $blockColor
+
+.advantage--element
+  h2
+    color $elementColor
+
+.advantage--modifier
+  h2
+    color $modifierColor
+
+.panel
+  color white
+  border-top 10px white solid
+  overflow hidden
+  p
+    font-size 24px
+    line-height 32px
+    a
+      text-decoration underline
+  a
+    color white
+    text-decoration none
+    &:hover
+      color white
+  h2
+    color white
+    position absolute
+    margin-top 83px
+    top -80px
+    font-size 72px
+
+.panel__container
+  margin: 0 auto
+  max-width: 112rem
+  padding: 100px 2rem
+  position: relative
+  width: 100%
+
+.panel--introduction
+  background-color $blockColor
+  img
+    float right
+    margin 0px 0px 0px 20px
+    width 30%
+    height 160px
+
+@media (max-width: 500px)
+  .panel__container
+    padding 50px 10px
+  .panel
+    h2
+      top -96px
+      font-size 48px
+    p
+      font-size 18px
+      line-height 24px
+
+.panel--naming
+  background-color $elementColor
+  h2
+    right 50px
+  img
+    float left
+    margin 0px 50px 0px 0px
+    height 160px
+
+@media (max-width: 800px)
+  .panel--naming
+    img
+      margin 0px 0px 0px 0px
+
+.panel--questions
+  background-color $modifierColor
+  img
+    float right
+    margin 0px 0px
+    width 40%
+    height 160px
+
+.panel--companies
+  .panel__container
+    padding 150px 50px 50px 50px
+  h2
+    color #eee
+    left 0
+    width 100%
+    text-align center
+  ul
+    text-align center
+    list-style none
+    margin 0
+    padding 0
+  li
+    display inline-block
+    padding-left 5px
+    padding-right 5px
+  a
+    padding 20px
+    display block
+    &:hover
+      background #f5f5f5
+    img
+      height 50px
+    &.panel--companies__add-button
+      transition all .2s ease-in-out
+      &:hover
+        background-color transparent
+        transform scale(1.3)
