@@ -148,7 +148,7 @@ In the case of global modifier, its properties can be redefined by the blocks if
 ```
 One of the possible solutions to this problem is to raise the selector specificity of global modifiers by adding `!important` to them. But in this case any side-effects of such a global modifier might be overwritten only by declarations with the same `!important` instruction.
 
-Another way is to load global modifier CSS after al the other styles. But in this case you are not able any more to use *lazy loading* strategy for your components. The additional lazy CSS will still be loaded after the modifiers and you get the same problem.
+Another way is to load global modifier CSS after all the other styles. But in this case you are not able any more to use *lazy loading* strategy for your components. The additional lazy CSS will still be loaded after the modifiers and you get the same problem.
 
 The next problem is combination of several global modifiers at the same block.
 
