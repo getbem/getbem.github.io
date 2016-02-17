@@ -99,7 +99,7 @@ div.block__elem { color: #042; }`}</pre>
 				<Cell min={300}>
 					<div className='naming__cell'>
 						<h4>Naming</h4>
-						<p>Modifier names may consist of Latin letters, digits, dashes and underscores. CSS class is formed as block’s or element’s name plus two dashes: <code>.block--mod</code> or <code>.block__mod--mod</code> and <code>.block--color-black</code> with <code>.block--color-red</code>. Spaces in complicated modifiers are replaced by dash.</p>
+						<p>Modifier names may consist of Latin letters, digits, dashes and underscores. CSS class is formed as block’s or element’s name plus two dashes: <code>.block--mod</code> or <code>.block__elem--mod</code> and <code>.block--color-black</code> with <code>.block--color-red</code>. Spaces in complicated modifiers are replaced by dash.</p>
 					</div>
 				</Cell>
 				<Cell min={300}>
