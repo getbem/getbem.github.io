@@ -21,6 +21,7 @@
     "stylus-loader": "^1.4.2",
     "surge": "^0.17.3",
     "url-loader": "^0.5.7",
+    "vdom-parser": "^1.2.1",
     "vdom-to-html": "^2.2.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0",

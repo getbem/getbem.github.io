@@ -17,9 +17,10 @@ const config = getConfig({
 		}
 
 		return {
-			'about.html': render({url: '/about'}),
-			'about/index.html': render({url: '/about'}),
-			'index.html': render({url: '/'})
+			'index.html': render({url: '/'}),
+			'introduction/index.html': render({url: '/introduction/'}),
+			'naming/index.html': render({url: '/naming/'}),
+			'faq/index.html': render({url: '/faq/'})
 		};
 	}
 });
