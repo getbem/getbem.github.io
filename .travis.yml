@@ -1,11 +1,10 @@
 sudo: false
-language: nodejs
+language: node_js
+node_js:
+  - 'stable'
 script:
+  - npm install
   - npm run build
-
-deploy:
-  provider: script
-  script:
-    - npm run deploy
-  on:
-    branch: master
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+      npm run deploy;
+    fi
