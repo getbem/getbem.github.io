@@ -1,5 +1,5 @@
 export default () => (
-	<div className='container'>
+	<div className='container introduction'>
 		<h1>Introduction</h1>
 
 		<p>On smaller brochure sites, how you organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
@@ -51,7 +51,7 @@ export default () => (
 			<footer>Mark McDonnell, <a href="http://www.integralist.co.uk/posts/bem.html#4">Maintainable CSS with BEM</a></footer>
 		</blockquote>
 
-	<h2>Blocks, Elements and Modifiers</h2>
+		<h2>Blocks, Elements and Modifiers</h2>
 
 		<p>You will not be surprised, that BEM is abbreviation of the key elements of the methodology — Block, Element and Modifier. Strict rules of naming can be found in <a href='/naming'>Naming</a> article.</p>
 
@@ -85,16 +85,16 @@ export default () => (
 			</div>
 		</div>
 
-		<div style={{textAlign: 'center', paddingTop: 10, paddingBottom: 50}}>
-			<img src='../../assets/github_captions.jpg' style={{width: '100%', maxWidth: '930'}}/>
+		<div style={{textAlign: 'center', paddingTop: '10px', paddingBottom: '40px'}}>
+			<img src='/assets/github_captions.jpg'/>
 		</div>
 
-	<h2>Under the hood</h2>
+		<h2>Under the hood</h2>
 
 		<p>Lets look how one particular element on page can be implemented in BEM. We will take <code>button</code> from <a href='http://primercss.io/buttons/'>GitHub</a>:</p>
 
-		<div style={{textAlign: 'center', paddingTop: 10, paddingBottom: 50}}>
-			<img src='../../assets/github_buttons.jpg' style={{width: '100%', maxWidth: '361'}}/>
+		<div style={{textAlign: 'center', paddingTop: '10px', paddingBottom: '40px'}}>
+			<img src='/assets/github_buttons.jpg'/>
 		</div>
 
 		<p>We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (<code>button</code>, <code>a</code> or even <code>div</code>). Naming invites us to use <code>block--modifier--value</code> syntax.</p>
@@ -104,13 +104,13 @@ export default () => (
 				<div className='introduction__cell'>
 					<h4>HTML</h4>
 					<pre>{`<button class="button">
-Normal button
+	Normal button
 </button>
 <button class="button button--state-success">
-Success button
+	Success button
 </button>
 <button class="button button--state-danger">
-Danger button
+	Danger button
 </button>`}</pre>
 				</div>
 			</div>
@@ -118,20 +118,20 @@ Danger button
 				<div className='introduction__cell'>
 					<h4>CSS</h4>
 					<pre>{`.button {
-display: inline-block;
-border-radius: 3px;
-padding: 7px 12px;
-border: 1px solid #D5D5D5;
-background-image: linear-gradient(#EEE, #DDD);
-font: 700 13px/18px Helvetica, arial;
+	display: inline-block;
+	border-radius: 3px;
+	padding: 7px 12px;
+	border: 1px solid #D5D5D5;
+	background-image: linear-gradient(#EEE, #DDD);
+	font: 700 13px/18px Helvetica, arial;
 }
 .button--state-success {
-color: #FFF;
-background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
-border-color: #4A993E;
+	color: #FFF;
+	background: #569E3D linear-gradient(#79D858, #569E3D) repeat-x;
+	border-color: #4A993E;
 }
 .button--state-danger {
-color: #900;
+	color: #900;
 }`}</pre>
 			</div>
 			</div>
