@@ -13,34 +13,34 @@ export default () => (
 
 		<p>There are plenty of <a href='https://github.com/ikkou/awesome-css#architecture'>methodologies</a> out there which aimed on reducing CSS codebase and organizing programmers cooperation and maintaining of CSS code. This is obvious in large projects like Twitter, Facebook and <a href='http://markdotto.com/2014/07/23/githubs-css/#two-bundles'>Github</a>, but other projects often grows into same “Huge CSS file” state pretty quickly.</p>
 
-		<div className='container'>
-			<div className='row'>
-				<div className='column'>
-					<div className='introduction__cell'>
-						<h4><a href='https://oocss.org/'>OOCSS</a></h4>
-						Separating container and content with CSS “objects”
-					</div>
+		<div className='row'>
+			<div className='column'>
+				<div className='introduction__cell'>
+					<h4><a href='https://oocss.org/'>OOCSS</a></h4>
+					Separating container and content with CSS “objects”
 				</div>
-				<div className='column'>
-					<div className='introduction__cell'>
-						<h4><a href='https://smacss.com/'>SMACSS</a></h4>
-						Style-guide to write your CSS with five categories for CSS rules
-					</div>
+			</div>
+			<div className='column'>
+				<div className='introduction__cell'>
+					<h4><a href='https://smacss.com/'>SMACSS</a></h4>
+					Style-guide to write your CSS with five categories for CSS rules
 				</div>
-				<div className='column'>
-					<div className='introduction__cell'>
-						<h4><a href='http://suitcss.github.io/'>SUITCSS</a></h4>
-						Structured class names and meaningful hyphens
-					</div>
+			</div>
+			<div className='column'>
+				<div className='introduction__cell'>
+					<h4><a href='http://suitcss.github.io/'>SUITCSS</a></h4>
+					Structured class names and meaningful hyphens
 				</div>
-				<div className='column'>
-					<div className='introduction__cell'>
-						<h4><a href='https://github.com/nemophrost/atomic-css'>Atomic</a></h4>
-						Breaking down styles into atomic, or indivisible, pieces
-					</div>
+			</div>
+			<div className='column'>
+				<div className='introduction__cell'>
+					<h4><a href='https://github.com/nemophrost/atomic-css'>Atomic</a></h4>
+					Breaking down styles into atomic, or indivisible, pieces
 				</div>
 			</div>
 		</div>
+
+		<p></p>
 
 		<h2>Why BEM over the others?</h2>
 
