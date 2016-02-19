@@ -2,5 +2,10 @@ sudo: false
 language: nodejs
 script:
   - npm run build
-after_success:
-  - npm run deploy
+
+deploy:
+  provider: script
+  script:
+    - npm run deploy
+  on:
+    branch: master
