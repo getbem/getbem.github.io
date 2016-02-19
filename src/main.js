@@ -12,6 +12,15 @@ function render(page) {
 	requestAnimationFrame(() => {
 		patch(rootElement, diff(parse(rootElement), app({url: page})));
 	});
+
+	// we only want to update the URL
+	// if it's different than the current
+	// URL. Otherwise we keep pushing
+	// the same url to the history with
+	// each render
+	if (location.pathname !== page) {
+		history.pushState(null, null, page)
+	}
 }
 
 // if the user hits the back/forward buttons
