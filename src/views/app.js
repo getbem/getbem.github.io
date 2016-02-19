@@ -3,8 +3,9 @@ import introduction from './introduction';
 import naming from './naming';
 import faq from './faq';
 
-import navbar from '../blocks/navbar';
+import header from '../blocks/header';
 import footer from '../blocks/footer';
+import counters from '../blocks/counters';
 
 export default (state) => {
 	const {url} = state;
@@ -22,9 +23,10 @@ export default (state) => {
 
 	return (
 		<div>
-		{navbar({active: url})}
+		{header(state)}
 		{page}
 		{footer()}
+		{counters()}
 		</div>
 	);
 };
