@@ -7,10 +7,13 @@ import diff from 'virtual-dom/diff';
 import patch from 'virtual-dom/patch';
 
 const rootElement = document.body.firstChild;
+let currentVTree = parse(rootElement);
 
 function render(page) {
 	requestAnimationFrame(() => {
-		patch(rootElement, diff(parse(rootElement), app({url: page})));
+		const newVTree = app({url: page});
+		patch(rootElement, diff(currentVTree, newVTree));
+		currentVTree = newVTree;
 	});
 
 	// we only want to update the URL
