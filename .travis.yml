@@ -1,0 +1,6 @@
+sudo: false
+language: nodejs
+script:
+  - npm run build
+after_success:
+  - npm run deploy
