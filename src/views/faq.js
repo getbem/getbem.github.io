@@ -193,7 +193,7 @@ Naming the modifiers corresponding to their CSS representation is not recommende
 Also, it never happens that a modifier has only one CSS property to define and will have it forever. Even if now it is only border that differentiates one state from another, this is very likely that lately you would need other CSS properties for the same state of your block. This would be messy if you define a background or padding in a modifier called "border". So, it is recommended to choose semantical names for modifiers even if they only have one property by now.
 
 <a id="css-nested-elements"></a>
-## What would be a class name for an element inside another element? \`.block__elem1__elem2\`?
+## What would be a class name for an element inside another element? \`.block__el1__el2\`?
 
 > What should I do if my block has a complex structure and its elements are nested?
 > CSS classes like \`block__elem1__elem2__elem3\` look scaring.
@@ -291,7 +291,7 @@ export default () => (
 			<li><a href="#can-i-create-global-modifier">Can I create a global modifier applicable to any block?</a></li>
 			<li><a href="#encapsulating-tag-selector">Can I combine a tag and a class in selector like button.button?</a></li>
 			<li><a href="#css-modifier-names">Is this good to name modifiers corresponding to what they have in CSS? Like &#96;.block__element--border-bottom-5px&#96;.</a></li>
-			<li><a href="#css-nested-elements">What would be a class name for an element inside another element? &#96;.block__elem1__elem2&#96;?</a></li>
+			<li><a href="#css-nested-elements">What would be a class name for an element inside another element? &#96;.block__el1__el2&#96;?</a></li>
 			<li><a href="#global-css-resets">I&#96;ve heard that BEM does not recommend global CSS resets? Why?</a></li>
 			<li><a href="#ask-you-question">Did not find the answer?</a></li>
 		</ul>
