@@ -1,300 +1,244 @@
 import marked from 'marked';
 
 const faq = `
-<a id="why-bem"></a>
-## Why should I choose BEM as a modular solution for CSS?
+这些频繁被问到的问题是刚刚开始使用BEM的开发者们真实遇到的问题，由GetBEM社区来回答。请不要客气地的随便提问，然后我们也会解答。
 
-> There are some other modular solutions for CSS (such as OOCSS, AMCSS, SMACSS, SUITCSS). What are the reasons to choose BEM?
+-	为什么我要选择BEM而不是其他的CSS模块化解决方案？
+-	为什么修饰符(modifier)的CSS类们不能用联合选择器来代表？
+-	为什么我需要用块的CSS类来代替使用语义化的定制标签？
+-	为什么我需要同时使用块和带前缀的修饰符来定义修饰符块？
+-	一个块的修饰符能不能影响元素？
+-	我能不能创建一个全局的修饰符(modifier)来适用于任意一个块(block)？
+-	我能不能联合一个标签和一个类在选择器里，就像button.button？
+-	通过其CSS内容来命名修饰符这样好吗？比如 .block__element--border-bottom-5px
+-	当一个元素嵌套在另一个元素里面，应该怎么命名？比如 block__elem1__elem2？
+-	我听说BEM不推荐全局CSS reset ？为什么？
+-	没有找到答案？
 
-BEM provides solutions for all the frontend technologies: CSS, JavaSript, templating; and also for building process of your web application. The methodology is applicable anywhere. However, to apply this in JavaScript and templating you would need special frameworks whereas in CSS you may just follow the methodological recommendations. The CSS part of BEM is the easiest to take into your development process. This is why many use only it. On the other hand, if lately you would found your project fully BEMed (in CSS) and yourself happy for its grown maintenance, you probably would take next step in modularazing your web application. BEM CSS will be easier to coordinate with modular JavaScript and blocks-based project file structure.
 
-If speaking about CSS modular solutions only, the key feature of BEM is block's independency. Following the CSS recommendations enables to put a block into any place on a page and be sure that is won't be affected by its surrounders. Also, if you would lately need to nest another block into the current one, their full compatibility is guaranteed. In other words, when maintaining your web application you would be able to move blocks across the page, add others and combine them.
+### 为什么我要选择BEM而不是其他的CSS模块化解决方案
 
-BEM CSS unambiguously defines which CSS belongs to a piece of interface and so usign it gives answers to questions "Can I remove this piece of code?" and "What happens and which interface parts will be affected if I change this piece of code?".
+>有一些其他的CSS的模块化解决方案（比如OOCSS,AMCSS,SMACSS,SUITCSS)。我们选择BEM的原因是什么。
 
-<a id="why-the-modifier-classes-are-prefixed"></a>
-## Why the modifier CSS classes are not represented as a combined selector?
+BEM为所有的前端技术提供了解决方案：CSS,JavaScript,templating(模板），也有web应用的建立过程。这个方法论适用于任何地方。虽然让这个方法论适用于JavaScript和templating的时候你需要专门的框架，但是用在CSS的时候你可能只需要依照推荐的方法。CSS部分是BEM里最简单的能应用在你的开发过程中的。这就是为什么很多人只用这一部分。另一方面，如果你近来发现你的项目充分的使用了BEM并且你自己因为维护而开心，你大概就准备进行下一步来模块化的你的web应用了。BEM CSS可以更简单的调整模块化JavaScript 和基于块的项目文件结构
 
-> BEM recommends to modify blocks like this \`<div class="block block--mod">\`. Why not to use the simple version like \`<div class="block mod">\`? Since we now have combined selectors \`.block.mod\`, it's easy to define all the CSS properties to it.
+如果只谈CSS模块化解决方案，BEM特色的关键是块的相互独立。依据CSS的建议，可以把一个块放到任意一个页面的任意位置并且可以确保它不会被它周围的东西所影响。并且，如果你需要嵌套另一个块到现有的一个块，他们的整体兼容性是可以保证的。换一句话说，当维持你的Web应用的时候，你可以跨页面移动块，添加其他的块并结合他们。
 
-The recommendation to prefix modifier CSS class with its block name has multiple reasons.
+BEM CSS 明确的定义了哪个CSS属于界面的哪一块。所以他回答诸如“我能不能移动这里的代码？”，“如果我更改这里的代码那么会发生什么，页面哪部分会受到影响？”这些问题。
 
-Firstly, since it is possible to mix several blocks and elements at the same DOM node, we need to ensure that a modifier would affect only the block it belongs to. Let's say that we have a menu item element and a button mixed together. In HTML this construction is represented
-by the following markup:
+### 为什么修饰符(modifier)的CSS类们不能用联合选择器来代表？
 
-\`\`\`html
-<div class="menu__item button"></div>
-\`\`\`
+>BEM 推荐像 \`<div class="block block--mod">\` 这样来修饰一个块，为什么不使用简单的版本像 \`<div class="block mod">\`？既然我们已经联合了选择器 \`.block.mod\`，那么依此定义所有的CSS都不难。
 
-In this case adding \`.active\` modifier to them would affect both.
+推荐把修饰符的CSS用它的块名来加前缀有多重原因。
 
-\`\`\`html
-<div class="menu__item button active"></div>
-\`\`\`
+第一，因为有可能在同一个DOM节点混合使用几个块和元素，我们需要保证一个修饰符仅仅只影响它属于的块。让我们假设这里有一个menu item和一个button混合在一起。在HTML里这种构筑表现的像下面这样。
 
-All the 3 sit at the same DOM node, so it is imposible to differentiate if we mean \`menu__item.active\` or \`button.active\`. Whereas in the prefixed case the naming \`button--active\` unambiguously says as that this is only the button that has to be affected.
+\`<div class="menu__item button"></div>\`
 
-Another point is CSS specificity. The combined selectors are more specific (means more important) than single class selectors. This means that you might have trouble when redefining them with parent block code.
+在这种情况下，增加\`.active\`修饰符给他们会影响二者。
 
-\`\`\`html
-<div class="header">
-    <button class="button active">
-</div>
-\`\`\`
+\`<div class="menu__item button active"></div>\`
 
-If you are already having \`.button.active\` selector in code, the specificity of your redefining \`.header .button\` would be exactly the same as the specificity of modifier combined selector which makes you dependent on the order of the CSS rules declared. Whereas in case of using a prefixed modifier you can always be sure that the cascade selector \`.header .button\` will overwrite the \`.button--active\` modifier.
+所有这三者都在同样的一个DOM节点里，所有不可能去区分我们的意思是\`menu__item.active\`还是\`button.active\`。<br>然而在有前缀的情况下，命名\`button--active\` 明确的说明了这个只是影响了 button这个块。
 
-This makes life easier especially for maintainable projects.
+另外一个重点是CSS的specificity（特异性）。联合的选择器比单一类选择器更加特殊（意思是更加重要）。这意味着当你用parent块的代码来重新定义他们的时候可能会遇到麻烦。
 
-The third point is that looking at the \`<div class="block block--mod">\` markup you can clearly see the block structure. It is easy to recognize that we are having a block and its modifier and there is no different interpretations here. Unfortunately a grasp onto \`<div class="block mod">\` code does not give such information. Depending on what are the exact CSS classes sometimes it is impossible to recognize if we are having a block and a modifier or a mix of 2 blocks here. This might be even more confusing if the names of the entities are complex or contracted/abbreviated (which sometimes happens in big projects).<br/> Clear understanding of a block structure especially helps in looking for corresponding code on a file system.
+	<div class="header">
+		<button class="button active">
+	</div>
 
-You will also appreciate \`.block--mod\` practice when refactoring and use global search over all your project files. Imagine the same looking for not-prefixed \`.mod\` and all the HTML pieces it might be in.
+如果你已经有了\`.button.active\` 选择器在代码里了，那么重新定义\`.header.button\`的specificity（特异性）和联合修饰符的选择器的specificity（特异性）是完全相同的，这取决于CSS规则声明的顺序。然而为了防备使用了有前缀的修饰符，你可以一直确使自己使用的层叠选择器\`.header .button\`会覆盖\`.button--active\`修饰符。
 
-And lastly, from a development process standpoint the difference between \`.block.mod\` and \`.block--mod\` is only one symbol. Using \`-\` instead of \`.\` costs nothing but it brings all the benefits listed above. Moreover, since pre-processor began to support BEM notation, it is pretty natural to write \`&--mod\` there and finally get a modifier declared as it was recommended.
+这会让人生更加容易，尤其是对于可维持的项目。
 
-<a id="custom-tags-for-blocks"></a>
-## Why do I need CSS classes for block instead of using semantic custom tags?
+第三点是看看这个代码\`<div class="block block--mod">\` ，你可以清晰的看出块的结构。很容易认出这个块以及它的修饰符，也没什么需要解释的。不幸的是这个代码\`<div class="block mod">\`并没有给出什么信息。在一些精密的CSS类里，有时候并不可能辨认出这里是一个块和一个修饰符还是有两个块。这甚至可能会更加混乱如果实体的名字很复杂或者很简短（这是有时候在大的项目里发生的）<br>对块的结构清楚的理解对我们在文件系统里寻找一致的代码十分有帮助。
 
-> Blocks can be represented as custom tags which we may define CSS rules for. Looks like we do not need CSS classes for blocks at all. They can be used for modifiers only, like \`<button class="mod"/>\`.
+你也会感激\`.block--mod\`的使用当重构和使用全局搜索在你的项目文件的时候。想象一下同样是在所有HTML文件中寻找没用前缀的\`.mod\`的情景。
 
-Using custom tags as block selectors is indeed one of the BEMish solutions and can be used. However this variant is less flexible than the recommended "class" approach.
+最后，站在一个开发过程的立场，\`.block.mod\`和\`.block--mod\`唯一区别就是他们的符号用 \`-\`代替了 \`.\` ，这什么都没有花费就给你带来了上述的好处。此外，因为预处理机开始支持BEM符号了，那么相当的自然去写\`&--mod\`，并得到一个修饰符声明像推荐的一样。
 
-This is more likely that you would need to prefix modifier classes with their block name to provide them namespace. The details are uncovered in ["Why the modifier CSS classes are prefixed with their parent block name?"](#why-the-modifier-classes-are-prefixed) question. So, finally the custom-tag version of a block is like \`<block class="block--mod"/>\`. This does not look very different from \`<div class="block block--mod">\` especially assuming that being tag-independent you can use any custom node and stay with \`<block class="block block--mod">\`.
+### 为什么我需要用块的CSS类来代替使用语义化的定制标签？
 
-Second drawback is that "tag" version makes using the mixes of blocks impossible whereas the "class" version represent that naturally by \`<div class="block1 block2">\`.
+>块可以被CSS规则定义的定制的标签来代表，所有看上去我们一点也不需要CSS类来代表块。他们可以只用修饰符，就像\`<button class="mod"/>\`
 
-And the last clench against such an approach is that in many cases you are not able to represent your blocks with custom tags at all. For a \`link\` block you definitely need \`<a>\` tag, and the same for \`<input>\`.
+使用定制的标签作为块选择器确实是BEM下的一种解决方案，然而这种变体比推荐的“class"方法少了一些灵活性。
 
-<a id="block-modifier-mix"></a>
-## Why do I need to combine block and prefixed modifier class for a modified block?
+看上去你需要加块名前缀的修饰符类来提供他们的命名空间，细节你可以看看“为什么修饰符(modifier)的CSS类们不能用联合选择器来代表？”这个问题。所以，最后的这个块的定制标签版本就像\`<block class="block--mod"/>\`。这个看上去和\`<div class="block block--mod">\`区别并不大，尤其是假设标签独立，你可以使用任意定制的节点并坚持使用\`<block class="block block--mod">\`
 
-> Why does both block's and modifier's class sit together in the modified block like \`<div class=”block block--mod”>\`?
+第二个缺点是，“标签”版本让混合使用块变得不可能，然而"类"版本表现的自然比如 \`<div class="block1 block2">\`
 
-> Everything about a modified block can be described in \`.block--mod\`. If there is something common between 2 modifiers, it's possible to use preprocessor's mixins to avoid copy-paste.
+最后的反对意见是，在许多情况下，你不能把你的块表现的全部像一个定制的标签。比如一个\`link\`的块你清楚的需要一个\`<a>\`标签，同样还有\`<input>\`。
 
-This approach is possible thanks to preprocessors. However it brings some drawbacks which you should be aware of.
+### 为什么我需要同时使用块和带前缀的修饰符来定义修饰符块？
 
-In case of combining 2 or more modifiers at the same block \`<div class="block--theme--christmas block--size--big">\` you would get the core block's styles twice. However this depends on the preprocessor algorithms.
+>为什么块和修饰符的类要放在一起，在同一个修饰符块比如\`<div class="block block--mod">\`？
 
-When operating modifiers dynamically with JavaScript, additional modifier is more handy. Switching it off would mean only removing one CSS class from the DOM node with no need to add the core block CSS class back as it sits there forever.
+>关于修饰符块的所有内容都可以描述在 \`.block--mod\`。如果两个修饰符里有一些共同的东西，那么可以用预处理器去消除copy-paste的问题。
 
-<a id="block-modifier-affects-elements"></a>
-## Can a block modifier affect elements?
+这个方法的可能性要感谢预处理器。然而这却带来了一些缺点，你应该意识到。
 
-> If I have a block modifier, for example \`xmas\`, and I want the elements within that block to also be xmas themed, how
-> would it be best to do it.
+为了防止两个或更多修饰符在同一个块 \`<div class="block--theme--christmas block--size--big">\`，你可能得到了两次块样式的核心内容。这取决于预处理器的算法。
 
-> Does a \`--xmas\` suffix for every element seem necessary? Or would this be the one use-case for nesting (e.g. \`block--xmas
-block__elem { ... }\`?)
+当使用JavaScript动态的操作修饰符的时候，那么附加的修饰符就会容易。转换它意味着仅仅从DOM节点移除一个CSS类，而不需要增加block的核心CSS 因为这个类一直在这里。
 
-However in general BEM recommends to avoid nested selectors, this is the case when they are reasonable.
+### 一个块的修饰符能不能影响元素？
 
-When creating the nested selector, you declare that one entity depends on another. As BEM introduces independent
-components, such an approach is not suggested when we are speaking about 2 different blocks.
+>如果我有一个块的修饰符，比如\`xmas\`,然后我想要一个在这个块里的元素也有这个修饰 ，那么我最好该怎么做。
 
-But when it comes to a block and its element, they are not of equivalent meaning. By it definition, an element does not
-make any sense outside its parent block. So, an element is a block-dependent entity. Assuming this, it is quite normal
-and logical that an element is affected by the block's current state.
+>把\`--xmas\`这个后缀加到每一个元素的后面必要吗？还是应该把这一个用例来嵌套进去。（e.g \`block--xmas block__elem{...}\`?）
 
-So, this is quite a pattern in BEM to code
+尽管总的来说BEM建议避免嵌套选择器，但是这种情况是合理的。
 
-\`\`\`
-.my-block--xmas .my-block__button {
-	/* Jingle bells, jingle bells, jingle all the way.*/
-}
-\`\`\`
+当创建嵌套的选择器的时候，你就声明了一个实体依靠于另外一个。因为 BEM采用的是独立的组件，这样的一个方法在我们说两个不同的块的时候并不建议。
 
-<a id="can-i-create-global-modifier"></a>
-## Can I create a global modifier applicable to any block?
+但是当他们是一个块和它的元素的时候，他们并不是等价的含义。根据定义，一个元素当它脱离了它的块没有了任何意义。所以，一个元素是一个块依赖的实体。明白了这个，那么一个元素被它的块现有的状态影响就很正常且合乎逻辑了。
 
-> I've heard that global modifiers like \`visible\`, \`invisible\`, \`red\`, \`opacity50\` are not welcomed in BEM. Why?
+所以，这完全是一个BEM的代码模式。
 
-> I think it is useful to incorporate common properties like this in such a global class and then apply it to different blocks.
+	.my-block--xmas .my-block__button {
+	    /* Jingle bells, jingle bells, jingle all the way.*/
+	}
 
-Indeed you can have 2 main CSS classes at the same DOM node. In BEM we call it \`mix\`:
+### 我能不能创建一个全局的修饰符(modifier)来适用于任意一个块(block)？
 
-\`\`\`html
-<div class="block1 block2"></div>
-\`\`\`
+>我听说全局的修饰符比如\`visible\`,\`invisible\`,\`red\`,\`opacity50\` 在BEM里并不受欢迎，为什么？
 
-But important thing about it is that both \`block1\` and \`block2\` should be standalone blocks. This is slightly different from what people usually mean by "global modifiers" as modifiers do not have any sense on they own and are just a set of properties to change.
+>我认为在全局类里包含这些共通的属性，然后让他们适用于不同的块比较实用。
 
-\`\`\`html
-<div class="block globalmod"></div>
-\`\`\`
+确实你可以有两个主要CSS类在相同的DOM节点里，在BEM里我们叫它 \`mix\`:
 
-If you think that in your case you would have a global modifier, these are the problems you may face:
+\`<div class="block1 block2"></div>\`
 
-First of all the specificity problem appears. In a local modifier case CSS code goes like this:
+但是重要的事情是，\`block1\`和\`block2\`都应该是单独的块。这和人们经常意指的没有任何含义而仅仅是设置属性变更的“全局修饰符”有轻微的区别，
 
-\`\`\`css
-.block {
-  display: block;
-}
-.block--hidden {
-  display: none;
-}
-\`\`\`
+\`<div class="block globalmod"></div>\`
 
-Both block and modifier selectors have the same specificity. As modifier declaration goes after the block, it redefines the CSS properties. These styles belong to block and are stored in the block file. Thus, independently on how the resultant CSS is built from source, you will always have them in this order and be sure that redefining happens.
+如果你认为你的情况你会有一个全局修饰符，那么这些问题你有可能会遇到。
 
-In the case of global modifier, its properties can be redefined by the blocks if they follow modifiers in code:
+第一，specificity（特异性）的问题会出现。在局部的情况CSS的代码像这样。
 
-\`\`\`css
-.hidden { display: none }
-/* ... */
-.block { display: block }
-\`\`\`
+	.block {
+	  display: block;
+	}
+	.block--hidden {
+	  display: none;
+	}
 
-\`\`\`html
-<div class="block hidden">you still see me</div>
-\`\`\`
-One of the possible solutions to this problem is to raise the selector specificity of global modifiers by adding \`!important\` to them. But in this case any side-effects of such a global modifier might be overwritten only by declarations with the same \`!important\` instruction.
+块和修饰符选择器有相同的specificity（特异性）。因为修饰符声明在块的后面，所有重新定义了CSS的属性。这些样式属于块并且存储在了块文件中。因此，在源文件编译的结果里，你一直会得到他们按照这个顺序，并且可以确定重定义的发生。
 
-Another way is to load global modifier CSS after all the other styles. But in this case you are not able any more to use *lazy loading* strategy for your components. The additional lazy CSS will still be loaded after the modifiers and you get the same problem.
+在全局修饰符的情况下，它的属性们可以被块们重定义，如果块的代码在修饰符之后：
 
-The next problem is combination of several global modifiers at the same block.
+	.hidden { display: none }
+	/* ... */
+	.block { display: block }
 
-\`\`\`html
-<div class="block mod1 mod2"></div>
-\`\`\`
+\`<div class="block hidden">you still see me</div>\`
 
-In this case you absolutely have no control over the block. The order of modifiers in code can be different. If it conflicts with other declarations, changing the order can fix this conflict but lead to another one. The only way would be to redefine the mess in block. And don't forget about the \`!important\` to your hack.
+一个针对这个问题的可能的解决方案是通过使用\`!important\`提升全局修饰符的选择器的specificity。但是这样也会出现副作用，那就是只有同样声明了\`!important\`的指令才可以覆盖它。
 
-Also, depending on a block the same modifier can be implemented differently. Even the simple \`.hidden\` sometimes needs to be not \`display: none\` but \`visibility: hidden\` or even \`position: absolute; left: -9999px\` etc. And if you need to bring some changes into your block, it is much nicer not to waste time searching for all the places where this block can be combined with a global modifier. Especially assuming that such dependencies usually are not described anywhere.
+另外一个方法在加载了所有其他样式后再读取全局修饰符的CSS。但是这种情况你不能再为你的其他组件使用延迟加载（lazy boading)的方法。因为额外的延迟CSS会仍然在你的修饰符之后加载，然后就会出现同样的问题。
 
-All this hell can be avoided by encapsulating a modifier in a block like \`.block--mod\`.
+下一个问题是结合多个全局修饰符在同一个块里。
 
-Indeed using global modifiers makes the resultant code less. However if you measure the real difference in bytes it usually does not seem that big. Especially if you are using CSS optimizer which can combine selectors.
+\`<div class="block mod1 mod2"></div>\`
 
-<a id="encapsulating-tag-selector"></a>
-## Can I combine a tag and a class in selector like \`button.button\`?
+在这种情况下你绝对不能完全支配这个块。修饰符在代码里的顺序不同，如果和其他声明冲突了，更改顺序可以解决这个冲突但是会导致另外一个冲突。唯一的办法是重定义这些块里的混乱部分。别忘了对你的hack用\`!important\`。
 
-> I want to use selectors like \`button.button\` to encapsulate my blocks functionality within a particular tag.
-> If lately someone else would use in their code \`<h2 class="button">\`, such an encapsulation would prevent a conflict.
+同时，基于不同的块，同一个修饰符也可能执行的不同。即使是一个简单的\`.hidden\`,有时候需要的不是\`display:none\`而是\`visibility:hidden\`，甚至是\`position: absolute(绝对的); left: -9999px\`等等，如果你需要在你的块里做一些修改，那么更好的不是浪费时间在所有的地方来寻找可以和这个块联合的全局修饰符，尤其是这种并没有在很多地方使用的修饰。
 
-The CSS specificity of such a selector grows. \`.button--mod\` selector will not overwrite CSS properties of the block, only \`button.button--mod\` would work. You will need its modifiers to be combined with the tag as well and so do the developers who lately would redefine your block.
+所有这种地狱般的情况通过把一个修饰符封装进块如\`.block--mod\`来避免。
 
-Lately, when a project goes larger, it's very likely that you may have \`input.button\`, \`span.button\` and \`a.button\` as well. And all the prefixed selectors for modifiers and nested elements will need 4 declarations.
+确实使用全局修饰符可以让最后的代码变少，但是如果你用bytes测量不同，它看上去并没有那么大。尤其是你通过使用联合选择器使CSS最优化。
 
-So, it is better not to tie your own hands with such prefixing. However if you still can softly-softly ensure that your blocks are used with proper tags if your provide your users with templates for every block. This is the most flexible and automatic solution.
+### 我能不能联合一个标签和一个类在选择器里，就像\`button.button?\`
 
-If the templating looks overhead, there is a "documentation" approach to inform your users which tag the block CSS class would be applied to, this can be done with documenting the block code. The shortest version could be just a comment with a tag name prefixing the block declaration \`/*button*/.button\`. Or that can be a larger comment with full HTML piece needed to the
-block to function.
+>我想使用选择器像\`button.button\`来把我的块的功能封装到一个特别的标签里。这样的话，如果别人使用他们的代码\`<h2 class="button">\`，这个封装就可以防止冲突。
 
-<a id="css-modifier-names"></a>
-## Is this good to name modifiers corresponding to what they have in CSS?
+对于有这样CSS specificity(特异性)的选择器， \`.button--mod\`选择器并不会覆盖块CSS属性，只有当\`button.button--mod\`才会有用。你会需要它的标签结合它的修饰符，而且其他开发者也会如此当他们重定义你的块的时候。
 
-> Thanks to mixes, we can create a lot of modifiers which represent CSS properties and assign them to blocks.
-> But I've heard that "it is bad". For example, this selector \`.block__element--border-bottom-5px\` was stamped as "awful". I am wondering why and how should the modifiers be named then?
+当一个项目变大的时候，很可能你会有\`input.button\`,\`span.button\`和\`a.button\`，这所有的加前缀后的修饰符选择器和嵌套的元素都需要4个声明。
 
-Naming the modifiers corresponding to their CSS representation is not recommended. Indeed it looks not very nice but there are also practical reasons against it. Lately then the view of your components is changed, you will need to fix not only CSS but also the selectors. So, when you border is 6px, it would require changes in all the templates and sometimes in JavaScript.
+所以还是不要把你的手用去加前缀比较好，但是如果你仍然可以保证你的块用在适当的标签下，如果你提供给你的使用者每个块的模板，那么这是最灵活的和必然的解决方案。
 
-Also, it never happens that a modifier has only one CSS property to define and will have it forever. Even if now it is only border that differentiates one state from another, this is very likely that lately you would need other CSS properties for the same state of your block. This would be messy if you define a background or padding in a modifier called "border". So, it is recommended to choose semantical names for modifiers even if they only have one property by now.
+如果模板看上去很难，那么可以用“文档”的方法来告诉你的使用者块CSS类应用于哪个标签，文档记录块代码可以完成这些。最短版本可以仅仅用注释的方式把标签名称加到块声明的前面\`/\*button\*/.button',或者可以是很长的注释评论在HTML里，块作用的地方。
 
-<a id="css-nested-elements"></a>
-## What would be a class name for an element inside another element? \`.block__el1__el2\`?
+### 通过其CSS内容来命名修饰符这样好吗？比如\`.block__element--border-bottom-5px\`
 
-> What should I do if my block has a complex structure and its elements are nested?
-> CSS classes like \`block__elem1__elem2__elem3\` look scaring.
+>感谢mixes,我们可以创建很多修饰符来代表CSS的属性，并且分配他们到块里。但是我听说这并不好。比如，这样的选择器\`block__element--border-bottom-5px\`是被称为很可怕的。我在想为什么还有如何命名修饰符呢？
 
-According to BEM method, block structure should be flatten; you do not need to reflect nested DOM structure of the block. So, the class names for this case would be:
+命名修饰符使其和他们CSS内容一致并不推荐。确实它看上去很好但是这里也有很多实用性的原因来反对它。比如你近来改变了你的组件的视图，那么你需要修正的不仅仅是CSS内容，还有选择器。所以，你把border改成6px，那么你需要修改所有的模板有时甚至包括JavaScript。
 
-\`\`\`css
-.block {}
-.block__elem1 {}
-.block__elem2 {}
-.block__elem3 {}
-\`\`\`
+并且，从来没有过一个修饰符仅仅由一个CSS属性定义，并且永远不会。即使现在它只有一个border用来区分一个状态，这很可能你很快就需要其他CSS属性来修饰你这个块里的同一个状态。如果你在一个叫"border"的修饰符里定义一个background或者padding可能会让代码变得凌乱。所以，推荐使用语义化的修饰符命名即使现在只有一个属性。
 
-Whereas the DOM representation of the block may be nested:
+### 当一个元素嵌套在另一个元素里面，应该怎么命名？比如 \`block__elem1__elem2\`
 
-\`\`\`html
-<div class='block'>
-    <div class='block__elem1'>
-        <div class='block__elem2'>
-            <div class='block__elem3'></div>
-        </div>
-    </div>
-</div>
-\`\`\`
+>如果我的块有一个复杂的结构，它的元素相互嵌套，我应该怎么办？CSS类像\`block__elem1__elme2__elem3\`看着很恐怖。
 
-Besides the fact that the classes look much nicer, it makes the elements be dependent on the block only. So, you can easily move them  across the block when providing changes to the interface. The changes of the block DOM structure would not need corresponding changes to the CSS code.
+根据BEM理论，块的结构是应该被扁平。你不需要反映出块的DOM结构的嵌套关系，所以，在这种情况下这些类命名应该是:
 
-\`\`\`html
-<div class='block'>
-    <div class='block__elem1'>
-        <div class='block__elem2'></div>
-    </div>
-    <div class='block__elem3'></div>
-</div>
-\`\`\`
+	.block {}
+	.block__elem1 {}
+	.block__elem2 {}
+	.block__elem3 {}
 
-<a id="global-css-resets"></a>
-## I've heard that BEM does not recommend global CSS resets. Why?
+然而DOM表现在块里是嵌套的:
 
-> CSS resets is a practise making a good showing. Many frameworks first align anything and then
-> apply their special styles. BEM does not recommend common resets. Why? And what we are supposed
-> to do instead?
+	<div class='block'>
+	    <div class='block__elem1'>
+	        <div class='block__elem2'>
+	            <div class='block__elem3'></div>
+	        </div>
+	    </div>
+	</div>
 
-Nothing bad would happen to your blocks if you use common reset (well, except of some special cases below). So, BEM does not prohibit to use them. But using them BEM-way would be more effective.
+除此之外的事实是，这些类看着更加好看了，这让这些元素仅仅依靠块。所以，假如你需要更改页面，你可以轻易的穿越块来移动这些元素。这些块DOM结构的改变不需要对应的CSS代码的改变。
 
-Common CSS reset is a set of CSS to be applied to document nodes and ensure that their default view is the same in different browsers. In most cases the CSS rules are written for tag selectors and this is not recommended in BEM (you can find a lot of explanation above).
+	<div class='block'>
+		<div class='block__elem1'>
+			<div class='block__elem2'></div>
+		</div>
+		<div class='block__elem3'></div>
+	</div>
 
-Another point is that in BEM a block encapsulates everything which is needed for it to be displayed and function. And this is why we call the BEM blocks independent. If the block does not look properly without a third-party CSS being added onto the page, it cannot be called "independent" that much.
+### 我听说BEM不推荐全局CSS reset ？为什么？
 
-Assuming this all, BEM recommends every block to reset itself. If you have \`menu\` block and \`list\` block both as \`<ul>\` in your HTML, each of them should provide the reset CSS usually given to \`<ul>\`. You may worry that having several blocks with the same reset rules will case repeats in the resultunt code. *But this is what CSS optimizers should do for you.* As a developer you develop every block independently, as there is no other blocks at the same page.
+>实践证明CSS resets有不错的效果，许多框架先把一切东西先对齐，然后再应用特定的样式。BEM不推荐用共通的resets.为什么？那么我们假定了什么来代替它？
 
-In the case you don't have a CSS optimizer to combine selectors with the same set of rules, you may use preprocessors to prevent copy-paste. With every new block you can make it reset itself mixing the proper code. For example, with SASS this would look like:
+如果你使用共通的reset其实并不会有什么坏事发生在你的块上(好吧，除了下面的特殊的情况)。所以，BEM不阻止你使用它们。但是使用它们按照BEM的方式会更加有效。
 
-\`\`\`css
-.menu {
-    @include reset-list;
-}
-.menu__item {
-    @include reset-list-item;
-}
+共通的CSS reset是一个应用于文档节点的CSS设置，它保证了即使在不同的浏览器下这些节点也有相同的默认视图。在大多数情况下这些CSS规则被写给标签选择器，这样BEM并不推荐（你可以在上面找到解释）
 
-/* ... */
+另外一个关键点是在BEM中，块压缩了所有它在表现和作用时需要的东西。这就是我们为什么称BEM的块是独立的。如果块离开了页面添加的第三方CSS就看着不那么正确了，那么就不太能把它的称为“独立”了。
 
-.list {
-    @include reset-list;
-}
-.list__item {
-    @include reset-list-item;
-}
-\`\`\`
+在这种前提下，BEM推荐每个块来reset自己。如果你在你的HTML里有\`menu\`块和\`list\`块，并且都是\`<ul>\`。那么他们每一个分别要提供一个通常提供给\`<ul>\`的reset。你可能会担心几个块有相同的reset规则而造成重复以致代码的冗余。但是这是CSS 优化器需要帮你做的。作为一个开发人员，你开发每个块独立的，因为在同一个页面不会有其他的块。
 
-However using this mixin-way you should realize that the only reason for it is not having a proper optimizer.
+在你没有CSS优化器来联合选择器处理相同的代码时，你可以使用预处理器来阻止copy-paste。对每一个新的块，你都可以让他通过混合适当的代码reset自己，使用SASS就会看着像这样：
 
-Having resets for every block (besides being nice and BEMish) will also prevent problems with injecting a third-party piece of HTML/CSS markup which relies on browser defaults and so can be affected by global resets. For example, this is a known problem for webmails.
+	.menu {
+	    @include reset-list;
+	}
+	.menu__item {
+	    @include reset-list-item;
+	}
 
-<a id="ask-you-question"></a>
-## Did not find the answer? Please ask your questions!
+	/* ... */
 
-If you didn't find the proper answer, please [ask your question](https://github.com/getbem/getbem.com/issues/new?title=Type+your+question&body=Explain+in+detail+your+question&labels=question)!
+	.list {
+	    @include reset-list;
+	}
+	.list__item {
+	    @include reset-list-item;
+	}
+
+然而使用这种混合的方式的时候你需要意识到你这么做的唯一原因是因为没有一个合适的优化器。
+
+为每个块reset（除了更好看和更加BEM化），也会阻止注入那些依靠浏览器默认值的第三方的HTML/CSS markup来影响全局resets的问题。举个例子就是，webmails的问题。
 `;
 
 export default () => (
 	<div className='container faq'>
 		<h1>FAQ</h1>
-		<p>These Frequently Asked Question are real questions of developers started with BEM, answered by the GetBEM community.
-			Feel free to <a href="https://github.com/getbem/getbem.com/issues/new?title=FAQ:%20Type%20your%20question%20here">ask
-			your question</a> too, and we will answer it as well.</p>
-
-		<ul>
-			<li><a href="#why-bem">Why should I choose BEM and not another CSS modular solution?</a></li>
-			<li><a href="#why-the-modifier-classes-are-prefixed">Why the modifier CSS classes are not represented as a combined selector?</a></li>
-			<li><a href="#custom-tags-for-blocks">Why do I need CSS classes for block instead of using semantic custom tags?</a></li>
-			<li><a href="#block-modifier-mix">Why do I need to combine block and prefixed modifier class for a modified block?</a></li>
-			<li><a href="#block-modifier-affects-elements">Can a block modifier affect elements?</a></li>
-			<li><a href="#can-i-create-global-modifier">Can I create a global modifier applicable to any block?</a></li>
-			<li><a href="#encapsulating-tag-selector">Can I combine a tag and a class in selector like button.button?</a></li>
-			<li><a href="#css-modifier-names">Is this good to name modifiers corresponding to what they have in CSS? Like &#96;.block__element--border-bottom-5px&#96;.</a></li>
-			<li><a href="#css-nested-elements">What would be a class name for an element inside another element? &#96;.block__el1__el2&#96;?</a></li>
-			<li><a href="#global-css-resets">I&#96;ve heard that BEM does not recommend global CSS resets? Why?</a></li>
-			<li><a href="#ask-you-question">Did not find the answer?</a></li>
-		</ul>
 
 		<div innerHTML={marked(faq)}></div>
 	</div>
