@@ -34,7 +34,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "deploy": "surge -p public -d getbem.surge.sh",
+    "deploy": "surge -p public -d getbem.com",
     "lint": "xo",
     "start": "webpack-dev-server",
     "yolo": "npm run build && npm run deploy",
