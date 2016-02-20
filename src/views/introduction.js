@@ -86,7 +86,7 @@ export default () => (
 		</div>
 
 		<div style={{textAlign: 'center', paddingTop: '10px', paddingBottom: '40px'}}>
-			<img src='/assets/github_captions.jpg'/>
+			<img src='/assets/github_captions.jpg'  style={{width: '100%', maxWidth: '930px'}}/>
 		</div>
 
 		<h2>Under the hood</h2>
@@ -94,7 +94,7 @@ export default () => (
 		<p>Lets look how one particular element on page can be implemented in BEM. We will take <code>button</code> from <a href='http://primercss.io/buttons/'>GitHub</a>:</p>
 
 		<div style={{textAlign: 'center', paddingTop: '10px', paddingBottom: '40px'}}>
-			<img src='/assets/github_buttons.jpg'/>
+			<img src='/assets/github_buttons.jpg' style={{width: '100%', maxWidth: '361px'}}/>
 		</div>
 
 		<p>We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (<code>button</code>, <code>a</code> or even <code>div</code>). Naming invites us to use <code>block--modifier--value</code> syntax.</p>
