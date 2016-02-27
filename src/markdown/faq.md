@@ -1,3 +1,15 @@
+- [Why should I choose BEM and not another CSS modular solution?](#why-bem)
+- [Why the modifier CSS classes are not represented as a combined selector?](#why-the-modifier-classes-are-prefixed)
+- [Why do I need CSS classes for block instead of using semantic custom tags?](#custom-tags-for-blocks)
+- [Why do I need to combine block and prefixed modifier class for a modified block?](#block-modifier-mix)
+- [Can a block modifier affect elements?](#block-modifier-affects-elements)
+- [Can I create a global modifier applicable to any block?](#can-i-create-global-modifier)
+- [Can I combine a tag and a class in selector like button.button?](#encapsulating-tag-selector)
+- [Is this good to name modifiers corresponding to what they have in CSS? Like `.block__element--border-bottom-5px`.](#css-modifier-names)
+- [What would be a class name for an element inside another element? `.block__el1__el2`?](#css-nested-elements)
+- [I\`ve heard that BEM does not recommend global CSS resets? Why?](#global-css-resets)
+- [Did not find the answer?](#ask-you-question)
+
 <a id="why-bem"></a>
 ## Why should I choose BEM as a modular solution for CSS?
 
