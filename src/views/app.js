@@ -21,6 +21,10 @@ export default (state) => {
 		page = faq(faqMarkdown);
 	}
 
+	if (typeof window !== 'undefined' && typeof window.ga !== 'undefined') {
+		window.ga('send', 'pageview', url);
+	}
+
 	return (
 		<div>
 		{header(state)}
