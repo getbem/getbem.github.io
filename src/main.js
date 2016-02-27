@@ -1,6 +1,7 @@
 import 'milligram/dist/milligram.css'
 import './styles/main.styl';
 import app from './views/app.js';
+import faqMarkdown from 'raw!./markdown/faq.md';
 import { getLocalPathname } from 'local-links';
 import parse from 'vdom-parser';
 import diff from 'virtual-dom/diff';
@@ -11,7 +12,7 @@ let currentVTree = parse(rootElement);
 
 function render(page) {
 	requestAnimationFrame(() => {
-		const newVTree = app({url: page});
+		const newVTree = app({url: page, faqMarkdown});
 		patch(rootElement, diff(currentVTree, newVTree));
 		currentVTree = newVTree;
 	});

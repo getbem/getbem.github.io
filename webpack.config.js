@@ -1,8 +1,9 @@
-require('babel-register');
+require('babel-register')({});
 
 var getConfig = require('hjs-webpack');
 var toHtml = require('vdom-to-html');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var webpackRequire = require('webpack-require');
 var app = require('./src/views/app').default;
 
 const config = getConfig({

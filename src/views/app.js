@@ -8,7 +8,7 @@ import footer from '../blocks/footer';
 import counters from '../blocks/counters';
 
 export default (state) => {
-	const {url} = state;
+	const {url, faqMarkdown} = state;
 	let page;
 
 	if (url === '/') {
@@ -18,7 +18,7 @@ export default (state) => {
 	} else if (url === '/naming/') {
 		page = naming();
 	} else if (url === '/faq/') {
-		page = faq();
+		page = faq(faqMarkdown);
 	}
 
 	return (
