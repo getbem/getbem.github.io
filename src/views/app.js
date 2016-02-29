@@ -18,7 +18,7 @@ export default (state) => {
 	} else if (url === '/naming/') {
 		page = naming();
 	} else if (url === '/faq/') {
-		page = faq(faqMarkdown);
+		page = faq();
 	}
 
 	if (typeof window !== 'undefined' && typeof window.ga !== 'undefined') {

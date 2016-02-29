@@ -1,3 +1,9 @@
+var fs = require('fs');
+
+require.extensions['.md'] = function mdLoader(module, filename) {
+	module.exports = fs.readFileSync(filename, 'utf-8');
+};
+
 require('babel-register');
 
 var getConfig = require('hjs-webpack');
@@ -43,5 +49,7 @@ const config = getConfig({
 config.plugins.push(
 	new CopyWebpackPlugin([{from: './src/assets', to: 'assets'}])
 );
+
+config.module.loaders.push({test: /\.md$/, loader: 'raw-loader'});
 
 module.exports = config;
