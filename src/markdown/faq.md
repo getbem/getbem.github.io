@@ -205,9 +205,9 @@ Also, it never happens that a modifier has only one CSS property to define and w
 ## What would be a class name for an element inside another element? `.block__el1__el2`?
 
 > What should I do if my block has a complex structure and its elements are nested?
-> CSS classes like `block__elem1__elem2__elem3` look scaring.
+> CSS classes like `block__elem1__elem2__elem3` look scary.
 
-According to BEM method, block structure should be flatten; you do not need to reflect nested DOM structure of the block. So, the class names for this case would be:
+According to BEM method, block structure should be flattened; you do not need to reflect nested DOM structure of the block. So, the class names for this case would be:
 
 ```css
 .block {}
