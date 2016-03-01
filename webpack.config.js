@@ -47,7 +47,10 @@ const config = getConfig({
 });
 
 config.plugins.push(
-	new CopyWebpackPlugin([{from: './src/assets', to: 'assets'}])
+	new CopyWebpackPlugin([
+        {from: './src/assets', to: 'assets'},
+        {from: './src/sitemap.xml', to: '.'}
+    ])
 );
 
 config.module.loaders.push({test: /\.md$/, loader: 'raw-loader'});
