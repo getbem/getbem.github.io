@@ -102,6 +102,7 @@ function companiesPanel() {
 					<li><a href='http://www.wimdu.com' title='Wimdu'><img src='/assets/companies/wimdu.png'/></a></li>
 					<li><a href='http://megafon.com' title='Megafon'><img src='/assets/companies/megafon.svg'/></a></li>
 					<li><a href='http://decaf.de' title='Decaf'><img src='/assets/companies/decaf.png'/></a></li>
+					<li><a href='http://epam.com' title='EPAM'><img src='/assets/companies/epam.svg'/></a></li>
 					<li><a className='panel--companies__add-button' href='https://github.com/getbem/getbem.com/issues/1' title='Add your company'><img src='/assets/ic_add_circle_outline_white_24px.svg'/></a></li>
 				</ul>
 			</div>
