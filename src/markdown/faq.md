@@ -19,7 +19,7 @@ BEM provides solutions for all the frontend technologies: CSS, JavaSript, templa
 
 If speaking about CSS modular solutions only, the key feature of BEM is block's independency. Following the CSS recommendations enables to put a block into any place on a page and be sure that is won't be affected by its surrounders. Also, if you would lately need to nest another block into the current one, their full compatibility is guaranteed. In other words, when maintaining your web application you would be able to move blocks across the page, add others and combine them.
 
-BEM CSS unambiguously defines which CSS belongs to a piece of interface and so usign it gives answers to questions "Can I remove this piece of code?" and "What happens and which interface parts will be affected if I change this piece of code?".
+BEM CSS unambiguously defines which CSS belongs to a piece of interface and so using it gives answers to questions "Can I remove this piece of code?" and "What happens and which interface parts will be affected if I change this piece of code?".
 
 <a id="why-the-modifier-classes-are-prefixed"></a>
 ## Why the modifier CSS classes are not represented as a combined selector?
