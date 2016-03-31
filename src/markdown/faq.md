@@ -15,9 +15,9 @@
 
 > There are some other modular solutions for CSS (such as OOCSS, AMCSS, SMACSS, SUITCSS). What are the reasons to choose BEM?
 
-BEM provides solutions for all the frontend technologies: CSS, JavaSript, templating; and also for building process of your web application. The methodology is applicable anywhere. However, to apply this in JavaScript and templating you would need special frameworks whereas in CSS you may just follow the methodological recommendations. The CSS part of BEM is the easiest to take into your development process. This is why many use only it. On the other hand, if lately you would found your project fully BEMed (in CSS) and yourself happy for its grown maintenance, you probably would take next step in modularazing your web application. BEM CSS will be easier to coordinate with modular JavaScript and blocks-based project file structure.
+BEM provides solutions for all the frontend technologies: CSS, JavaScript, templating; and also for building process of your web application. The methodology is applicable anywhere. However, to apply this in JavaScript and templating you would need special frameworks whereas in CSS you may just follow the methodological recommendations. The CSS part of BEM is the easiest to take into your development process. This is why many use only it. On the other hand, if lately you would found your project fully BEMed (in CSS) and yourself happy for its grown maintenance, you probably would take next step in modularizing your web application. BEM CSS will be easier to coordinate with modular JavaScript and blocks-based project file structure.
 
-If speaking about CSS modular solutions only, the key feature of BEM is block's independency. Following the CSS recommendations enables to put a block into any place on a page and be sure that is won't be affected by its surrounders. Also, if you would lately need to nest another block into the current one, their full compatibility is guaranteed. In other words, when maintaining your web application you would be able to move blocks across the page, add others and combine them.
+If speaking about CSS modular solutions only, the key feature of BEM is block's independence. Following the CSS recommendations enables to put a block into any place on a page and be sure that is won't be affected by its surroundings. Also, if you would lately need to nest another block into the current one, their full compatibility is guaranteed. In other words, when maintaining your web application you would be able to move blocks across the page, add others and combine them.
 
 BEM CSS unambiguously defines which CSS belongs to a piece of interface and so using it gives answers to questions "Can I remove this piece of code?" and "What happens and which interface parts will be affected if I change this piece of code?".
 
@@ -41,7 +41,7 @@ In this case adding `.active` modifier to them would affect both.
 <div class="menu__item button active"></div>
 ```
 
-All the 3 sit at the same DOM node, so it is imposible to differentiate if we mean `menu__item.active` or `button.active`. Whereas in the prefixed case the naming `button--active` unambiguously says as that this is only the button that has to be affected.
+All the 3 sit at the same DOM node, so it is impossible to differentiate if we mean `menu__item.active` or `button.active`. Whereas in the prefixed case the naming `button--active` unambiguously says as that this is only the button that has to be affected.
 
 Another point is CSS specificity. The combined selectors are more specific (means more important) than single class selectors. This means that you might have trouble when redefining them with parent block code.
 
@@ -199,7 +199,7 @@ block to function.
 
 Naming the modifiers corresponding to their CSS representation is not recommended. Indeed it looks not very nice but there are also practical reasons against it. Lately then the view of your components is changed, you will need to fix not only CSS but also the selectors. So, when you border is 6px, it would require changes in all the templates and sometimes in JavaScript.
 
-Also, it never happens that a modifier has only one CSS property to define and will have it forever. Even if now it is only border that differentiates one state from another, this is very likely that lately you would need other CSS properties for the same state of your block. This would be messy if you define a background or padding in a modifier called "border". So, it is recommended to choose semantical names for modifiers even if they only have one property by now.
+Also, it never happens that a modifier has only one CSS property to define and will have it forever. Even if now it is only border that differentiates one state from another, this is very likely that lately you would need other CSS properties for the same state of your block. This would be messy if you define a background or padding in a modifier called "border". So, it is recommended to choose semantic names for modifiers even if they only have one property by now.
 
 <a id="css-nested-elements"></a>
 ## What would be a class name for an element inside another element? `.block__el1__el2`?
@@ -252,7 +252,7 @@ Common CSS reset is a set of CSS to be applied to document nodes and ensure that
 
 Another point is that in BEM a block encapsulates everything which is needed for it to be displayed and function. And this is why we call the BEM blocks independent. If the block does not look properly without a third-party CSS being added onto the page, it cannot be called "independent" that much.
 
-Assuming this all, BEM recommends every block to reset itself. If you have `menu` block and `list` block both as `<ul>` in your HTML, each of them should provide the reset CSS usually given to `<ul>`. You may worry that having several blocks with the same reset rules will case repeats in the resultunt code. *But this is what CSS optimizers should do for you.* As a developer you develop every block independently, as there is no other blocks at the same page.
+Assuming this all, BEM recommends every block to reset itself. If you have `menu` block and `list` block both as `<ul>` in your HTML, each of them should provide the reset CSS usually given to `<ul>`. You may worry that having several blocks with the same reset rules will case repeats in the resultant code. *But this is what CSS optimizers should do for you.* As a developer you develop every block independently, as there is no other blocks at the same page.
 
 In the case you don't have a CSS optimizer to combine selectors with the same set of rules, you may use preprocessors to prevent copy-paste. With every new block you can make it reset itself mixing the proper code. For example, with SASS this would look like:
 
