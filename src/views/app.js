@@ -1,14 +1,14 @@
+import header from '../blocks/header';
+import footer from '../blocks/footer';
+import counters from '../blocks/counters';
+
 import home from './home';
 import introduction from './introduction';
 import naming from './naming';
 import faq from './faq';
 
-import header from '../blocks/header';
-import footer from '../blocks/footer';
-import counters from '../blocks/counters';
-
 export default (state) => {
-	const {url, faqMarkdown} = state;
+	const {url} = state;
 	let page;
 
 	if (url === '/') {

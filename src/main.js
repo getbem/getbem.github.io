@@ -1,10 +1,10 @@
-import 'milligram/dist/milligram.css'
+import 'milligram/dist/milligram.css';
 import './styles/main.styl';
-import app from './views/app.js';
-import { getLocalPathname } from 'local-links';
+import {getLocalPathname} from 'local-links';
 import parse from 'vdom-parser';
 import diff from 'virtual-dom/diff';
 import patch from 'virtual-dom/patch';
+import app from './views/app.js';
 
 const rootElement = document.body.firstChild;
 let currentVTree = parse(rootElement);
@@ -22,7 +22,7 @@ function render(page) {
 	// the same url to the history with
 	// each render
 	if (location.pathname !== page) {
-		history.pushState(null, null, page)
+		history.pushState(null, null, page);
 	}
 }
 
@@ -30,7 +30,7 @@ function render(page) {
 // pass the new url to the worker
 window.addEventListener('popstate', () => {
 	render(location.pathname);
-})
+});
 
 // listen for all clicks globally
 document.body.addEventListener('click', (event) => {
@@ -38,10 +38,10 @@ document.body.addEventListener('click', (event) => {
 	// clicks on <a> tags that have `href` that is
 	// on the same origin.
 	// https://www.npmjs.com/package/local-links
-	const pathname = getLocalPathname(event)
+	const pathname = getLocalPathname(event);
 	if (pathname) {
 		// stop browser from following the link
-		event.preventDefault()
+		event.preventDefault();
 		// instead, render new VDom
 		render(pathname);
 	}

@@ -15,4 +15,4 @@ export default (state) => {
 			</div>
 		</div>
 	);
-}
+};
