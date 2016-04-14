@@ -76,10 +76,10 @@ function questionsPanel() {
 		img: '/assets/ic_question_answer_white_24px.svg',
 		children: (
 			<div>
-				<p><i>— <a href="/faq#custom-tags-for-blocks">Why do I need CSS classes for block instead of using semantic custom tags?</a></i></p>
-				<p><i>— <a href="/faq#encapsulating-tag-selector">Can I combine a tag and a class in selector like button.button?</a></i></p>
+				<p><i>— <a href="/faq/#custom-tags-for-blocks">Why do I need CSS classes for block instead of using semantic custom tags?</a></i></p>
+				<p><i>— <a href="/faq/#encapsulating-tag-selector">Can I combine a tag and a class in selector like button.button?</a></i></p>
 				<br/>
-				<p>Look for answers in awesome <a href="/faq">FAQ list</a>!</p>
+				<p>Look for answers in awesome <a href="/faq/">FAQ list</a>!</p>
 			</div>
 		)
 	});
