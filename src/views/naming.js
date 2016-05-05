@@ -17,20 +17,20 @@ export default () => (
 			<div className="row">
 				<div className="column">
 					<div className="naming__cell">
-						<h4>Naming</h4>
+						<h5>Naming</h5>
 						<p>Block names may consist of Latin letters, digits, and dashes. To form a CSS class, add a short prefix for namespacing: <code>.block</code></p>
 					</div>
 				</div>
 				<div className="column">
 					<div className="naming__cell">
-						<h4>HTML</h4>
+						<h5>HTML</h5>
 						<p>Any DOM node can be a block if it accepts a class name.</p>
 						<pre>{'<div class="block">...</div>'}</pre>
 					</div>
 				</div>
 				<div className="column">
 					<div className="naming__cell">
-						<h4>CSS</h4>
+						<h5>CSS</h5>
 						<ul>
 							<li>Use class name selector only</li>
 							<li>No tag name or ids</li>
@@ -49,13 +49,13 @@ export default () => (
 			<div className="row">
 				<div className="column">
 					<div className="naming__cell">
-						<h4>Naming</h4>
+						<h5>Naming</h5>
 						<p>Element names may consist of Latin letters, digits, dashes and underscores. CSS class is formed as block name plus two underscores plus element name: <code>.block__elem</code></p>
 					</div>
 				</div>
 				<div className="column">
 					<div className="naming__cell">
-						<h4>HTML</h4>
+						<h5>HTML</h5>
 						<p>Any DOM node within a block can be an element. Within a given block, all elements are semantically equal.</p>
 						<pre>{`<div class="block">
   ...
@@ -65,7 +65,7 @@ export default () => (
 				</div>
 				<div className="column">
 					<div className="naming__cell">
-						<h4>CSS</h4>
+						<h5>CSS</h5>
 						<ul>
 							<li>Use class name selector only</li>
 							<li>No tag name or ids</li>
@@ -88,13 +88,13 @@ div.block__elem { color: #042; }`}</pre>
 			<div className="row">
 				<div className="column">
 					<div className="naming__cell">
-						<h4>Naming</h4>
+						<h5>Naming</h5>
 						<p>Modifier names may consist of Latin letters, digits, dashes and underscores. CSS class is formed as block’s or element’s name plus two dashes: <code>.block--mod</code> or <code>.block__elem--mod</code> and <code>.block--color-black</code> with <code>.block--color-red</code>. Spaces in complicated modifiers are replaced by dash.</p>
 					</div>
 				</div>
 				<div className="column">
 					<div className="naming__cell">
-						<h4>HTML</h4>
+						<h5>HTML</h5>
 						<p>Modifier is an extra class name which you add to a block/element DOM node. Add modifier classes only to blocks/elements they modify, and keep the original class:</p>
 						<b>Good</b>
 						<pre>{`<div class="block block--mod">...</div>
@@ -106,7 +106,7 @@ div.block__elem { color: #042; }`}</pre>
 				</div>
 				<div className="column">
 					<div className="naming__cell">
-						<h4>CSS</h4>
+						<h5>CSS</h5>
 						<p>Use modifier class name as selector:</p>
 						<pre>{".block--hidden { }"}</pre>
 						<p>To alter elements based on a block-level modifier:</p>
@@ -124,7 +124,7 @@ div.block__elem { color: #042; }`}</pre>
 			<div className="row">
 				<div className="column">
 					<div className="naming__cell">
-						<h4>HTML</h4>
+						<h5>HTML</h5>
 						<pre>{`<form class="form form--theme-xmas form--simple">
   <input class="form__input" type="text" />
   <input
@@ -135,7 +135,7 @@ div.block__elem { color: #042; }`}</pre>
 				</div>
 				<div className="column">
 					<div className="naming__cell">
-						<h4>CSS</h4>
+						<h5>CSS</h5>
 						<pre>{`.form { }
 .form--theme-xmas { }
 .form--simple { }
