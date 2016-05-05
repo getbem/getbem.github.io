@@ -21,7 +21,8 @@
     "raw-loader": "^0.5.1",
     "script-loader": "^0.6.1",
     "style-loader": "^0.13.0",
-    "stylus-loader": "^1.4.2",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.0.0",
     "surge": "^0.17.3",
     "url-loader": "^0.5.7",
     "vdom-parser": "^1.2.1",
@@ -29,6 +30,7 @@
     "virtual-dom": "^2.1.1",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0",
+    "copy-webpack-plugin": "^1.1.1",
     "xo": "^0.12.1"
   },
   "license": "MIT",
@@ -48,8 +50,5 @@
     "ignores": [
       "public/**"
     ]
-  },
-  "devDependencies": {
-    "copy-webpack-plugin": "^1.1.1"
   }
 }
