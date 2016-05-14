@@ -17,4 +17,4 @@ Merge commits into master or run `npm run yolo`.
 
 ### License
 
-[MIT](license)
+[MIT](LICENSE.md)
