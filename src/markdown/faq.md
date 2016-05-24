@@ -1,5 +1,5 @@
 - [Why should I choose BEM and not another CSS modular solution?](#why-bem)
-- [Why the modifier CSS classes are not represented as a combined selector?](#why-the-modifier-classes-are-prefixed)
+- [Why are the modifier CSS classes not represented as a combined selector?](#why-the-modifier-classes-are-prefixed)
 - [Why do I need CSS classes for block instead of using semantic custom tags?](#custom-tags-for-blocks)
 - [Why do I need to combine block and prefixed modifier class for a modified block?](#block-modifier-mix)
 - [Can a block modifier affect elements?](#block-modifier-affects-elements)
