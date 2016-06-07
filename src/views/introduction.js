@@ -16,25 +16,25 @@ export default () => (
 		<div className="row">
 			<div className="column">
 				<div className="introduction__cell">
-					<h4><a href="https://oocss.org/">OOCSS</a></h4>
+					<h4><a href="//oocss.org/">OOCSS</a></h4>
 					Separating container and content with CSS “objects”
 				</div>
 			</div>
 			<div className="column">
 				<div className="introduction__cell">
-					<h4><a href="https://smacss.com/">SMACSS</a></h4>
+					<h4><a href="//smacss.com/">SMACSS</a></h4>
 					Style-guide to write your CSS with five categories for CSS rules
 				</div>
 			</div>
 			<div className="column">
 				<div className="introduction__cell">
-					<h4><a href="http://suitcss.github.io/">SUITCSS</a></h4>
+					<h4><a href="//suitcss.github.io/">SUITCSS</a></h4>
 					Structured class names and meaningful hyphens
 				</div>
 			</div>
 			<div className="column">
 				<div className="introduction__cell">
-					<h4><a href="https://github.com/nemophrost/atomic-css">Atomic</a></h4>
+					<h4><a href="//github.com/nemophrost/atomic-css">Atomic</a></h4>
 					Breaking down styles into atomic, or indivisible, pieces
 				</div>
 			</div>
