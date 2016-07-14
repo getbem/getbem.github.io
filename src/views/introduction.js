@@ -53,7 +53,7 @@ export default () => (
 
 		<h2>Blocks, Elements and Modifiers</h2>
 
-		<p>You will not be surprised, that BEM is abbreviation of the key elements of the methodology — Block, Element and Modifier. Strict rules of naming can be found in <a href="/naming">Naming</a> article.</p>
+		<p>You will not be surprised, that BEM is abbreviation of the key elements of the methodology — Block, Element and Modifier. Strict rules of naming can be found in <a href="/naming/">Naming</a> article.</p>
 
 		<div className="row">
 			<div className="column">
