@@ -8,6 +8,7 @@
 - [Is this good to name modifiers corresponding to what they have in CSS? Like `.block__element--border-bottom-5px`.](#css-modifier-names)
 - [What would be a class name for an element inside another element? `.block__el1__el2`?](#css-nested-elements)
 - [I\`ve heard that BEM does not recommend global CSS resets? Why?](#global-css-resets)
+- [Why shouldn\`t I use IDs or tag names?](#why-not-use-ids-or-tagnames)
 - [Did not find the answer?](#ask-you-question)
 
 <a id="why-bem"></a>
@@ -277,6 +278,14 @@ In the case you don't have a CSS optimizer to combine selectors with the same se
 However using this mixin-way you should realize that the only reason for it is not having a proper optimizer.
 
 Having resets for every block (besides being nice and BEMish) will also prevent problems with injecting a third-party piece of HTML/CSS markup which relies on browser defaults and so can be affected by global resets. For example, this is a known problem for webmails.
+
+<a id="why-not-use-ids-or-tagnames"></a>
+## Why shouldn`t I use IDs or tag names?
+
+BEM recommends to avoid ID and tag name usage as much as possible, due to the very high specificity of the resulting CSS selectors.
+
+* [Specificity](http://cssguidelin.es/#specificity)
+* [When using IDs can be a pain in the class...](http://csswizardry.com/2011/09/when-using-ids-can-be-a-pain-in-the-class/)
 
 <a id="ask-you-question"></a>
 ## Did not find the answer? Please ask your questions!

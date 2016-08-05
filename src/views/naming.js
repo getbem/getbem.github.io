@@ -34,7 +34,7 @@ export default () => (
 							<h5>CSS</h5>
 							<ul>
 								<li>Use class name selector only</li>
-								<li>No tag name or ids</li>
+								<li><a href="/faq/#why-not-use-ids-or-tagnames">No tag name or ids</a></li>
 								<li>No dependency on other blocks/elements on a page</li>
 							</ul>
 							<pre>{".block { color: #042; }"}</pre>
