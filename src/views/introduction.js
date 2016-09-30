@@ -97,7 +97,7 @@ export default () => (
 			<img src="/assets/github_buttons.jpg" style={{width: '100%', maxWidth: '361px'}}/>
 		</div>
 
-		<p>We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (<code>button</code>, <code>a</code> or even <code>div</code>). Naming invites us to use <code>block--modifier--value</code> syntax.</p>
+		<p>We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (<code>button</code>, <code>a</code> or even <code>div</code>). Naming invites us to use <code>block--modifier-value</code> syntax.</p>
 
 		<div className="row">
 			<div className="column">
