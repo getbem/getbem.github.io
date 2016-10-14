@@ -63,7 +63,7 @@ function namingPanel() {
 		link: '/naming/',
 		img: '/assets/ic_text_format_white_24px.svg',
 		children: (
-			<p>The BEM approach ensures that everyone who participates in the development of a website works with a single codebase and speaks the same language. Using proper naming will prepare you for the changes in design of the website.</p>
+			<p>The BEM approach ensures that everyone who participates in the development of a website works with a single codebase and speaks the same language. Using BEM’s proper naming convention will better prepare you for design changes made to your website.</p>
 		)
 	});
 }
