@@ -6,7 +6,7 @@ export default () => (
 		<div className="container" style={{marginBottom: '50px'}}>
 			<div className="row">
 				<div className="column">
-					{advantage({title: 'Easy', color: 'block', text: 'To use BEM you literally do not need nothing besides BEM naming.'})}
+					{advantage({title: 'Easy', color: 'block', text: 'To use BEM, you only need to employ BEM’s naming convention.'})}
 				</div>
 				<div className="column">
 					{advantage({title: 'Modular', color: 'element', text: 'Independent blocks and css selectors makes your code reusable and modular.'})}
