@@ -9,7 +9,7 @@ export default () => (
 					{advantage({title: 'Easy', color: 'block', text: 'To use BEM, you only need to employ BEM’s naming convention.'})}
 				</div>
 				<div className="column">
-					{advantage({title: 'Modular', color: 'element', text: 'Independent blocks and css selectors makes your code reusable and modular.'})}
+					{advantage({title: 'Modular', color: 'element', text: 'Independent blocks and CSS selectors make your code reusable and modular.'})}
 				</div>
 				<div className="column">
 					{advantage({title: 'Flexible', color: 'modifier', text: 'Methodology and tools, that can be recomposed and configured in the way you like BEM.'})}
