@@ -1,7 +1,7 @@
 export default () => (
 	<div className="index">
 		<div className="description">
-			BEM – Block Element Modifier is a methodology, that helps you to achieve reusable components and code sharing in the front-end
+			BEM — Block Element Modifier is a methodology that helps you to create reusable components and code sharing in front-end development
 		</div>
 		<div className="container" style={{marginBottom: '50px'}}>
 			<div className="row">
