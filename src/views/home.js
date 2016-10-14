@@ -12,7 +12,7 @@ export default () => (
 					{advantage({title: 'Modular', color: 'element', text: 'Independent blocks and CSS selectors make your code reusable and modular.'})}
 				</div>
 				<div className="column">
-					{advantage({title: 'Flexible', color: 'modifier', text: 'Methodology and tools, that can be recomposed and configured in the way you like BEM.'})}
+					{advantage({title: 'Flexible', color: 'modifier', text: 'Using BEM, methodologies and tools can be recomposed and configured the way you like.'})}
 				</div>
 			</div>
 		</div>
