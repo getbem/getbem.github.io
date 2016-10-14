@@ -51,7 +51,7 @@ function introductionPanel() {
 		link: '/introduction/',
 		img: '/assets/ic_book_white_24px.svg',
 		children: (
-			<p>BEM is a highly useful, powerful and simple naming convention to make your front-end code easier to read and understand, easier to work with, easier to scale, more robust and explicit and a lot more strict.</p>
+			<p>BEM is a highly useful, powerful, and simple naming convention that makes your front-end code easier to read and understand, easier to work with, easier to scale, more robust and explicit, and a lot more strict.</p>
 		)
 	});
 }
