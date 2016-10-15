@@ -44,7 +44,7 @@ export default () => (
 
 		<h2>Why BEM over the others?</h2>
 
-		<p>No matter what methodology you choose to use in your projects, you will get advantages of structured CSS and UI. Some of them are less strict and more flexible, other is easier to understand and adapt in team.</p>
+		<p>No matter what methodology you choose to use in your projects, you will get advantages of structured CSS and UI. Some of them are less strict and more flexible, others are easier to understand and adapt in a team.</p>
 
 		<blockquote>
 			<p>The reason I choose BEM over other methodologies comes down to this: it is less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognizable terminology.</p>
