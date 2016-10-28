@@ -1,18 +1,18 @@
 export default () => (
 	<div className="index">
 		<div className="description">
-			BEM – Block Element Modifier is a methodology, that helps you to achieve reusable components and code sharing in the front-end
+			BEM — Block Element Modifier is a methodology that helps you to create reusable components and code sharing in front-end development
 		</div>
 		<div className="container" style={{marginBottom: '50px'}}>
 			<div className="row">
 				<div className="column">
-					{advantage({title: 'Easy', color: 'block', text: 'To use BEM you literally do not need nothing besides BEM naming.'})}
+					{advantage({title: 'Easy', color: 'block', text: 'To use BEM, you only need to employ BEM’s naming convention.'})}
 				</div>
 				<div className="column">
-					{advantage({title: 'Modular', color: 'element', text: 'Independent blocks and css selectors makes your code reusable and modular.'})}
+					{advantage({title: 'Modular', color: 'element', text: 'Independent blocks and CSS selectors make your code reusable and modular.'})}
 				</div>
 				<div className="column">
-					{advantage({title: 'Flexible', color: 'modifier', text: 'Methodology and tools, that can be recomposed and configured in the way you like BEM.'})}
+					{advantage({title: 'Flexible', color: 'modifier', text: 'Using BEM, methodologies and tools can be recomposed and configured the way you like.'})}
 				</div>
 			</div>
 		</div>
@@ -51,7 +51,7 @@ function introductionPanel() {
 		link: '/introduction/',
 		img: '/assets/ic_book_white_24px.svg',
 		children: (
-			<p>BEM is a highly useful, powerful and simple naming convention to make your front-end code easier to read and understand, easier to work with, easier to scale, more robust and explicit and a lot more strict.</p>
+			<p>BEM is a highly useful, powerful, and simple naming convention that makes your front-end code easier to read and understand, easier to work with, easier to scale, more robust and explicit, and a lot more strict.</p>
 		)
 	});
 }
@@ -63,7 +63,7 @@ function namingPanel() {
 		link: '/naming/',
 		img: '/assets/ic_text_format_white_24px.svg',
 		children: (
-			<p>The BEM approach ensures that everyone who participates in the development of a website works with a single codebase and speaks the same language. Using proper naming will prepare you for the changes in design of the website.</p>
+			<p>The BEM approach ensures that everyone who participates in the development of a website works with a single codebase and speaks the same language. Using BEM’s proper naming convention will better prepare you for design changes made to your website.</p>
 		)
 	});
 }
@@ -77,9 +77,9 @@ function questionsPanel() {
 		children: (
 			<div>
 				<p><i>— <a href="/faq/#custom-tags-for-blocks">Why do I need CSS classes for block instead of using semantic custom tags?</a></i></p>
-				<p><i>— <a href="/faq/#encapsulating-tag-selector">Can I combine a tag and a class in selector like button.button?</a></i></p>
+				<p><i>— <a href="/faq/#encapsulating-tag-selector">May I combine a tag and a class in a selector, such as button.button?</a></i></p>
 				<br/>
-				<p>Look for answers in awesome <a href="/faq/">FAQ list</a>!</p>
+				<p>Look for answers in the awesome <a href="/faq/">FAQ list</a>!</p>
 			</div>
 		)
 	});
