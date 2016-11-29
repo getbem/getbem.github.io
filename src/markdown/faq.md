@@ -7,7 +7,7 @@
 - [Can I combine a tag and a class in selector like button.button?](#encapsulating-tag-selector)
 - [Is this good to name modifiers corresponding to what they have in CSS? Like `.block__element--border-bottom-5px`.](#css-modifier-names)
 - [What would be a class name for an element inside another element? `.block__el1__el2`?](#css-nested-elements)
-- [I\`ve heard that BEM does not recommend global CSS resets? Why?](#global-css-resets)
+- [I've heard that BEM does not recommend global CSS resets? Why?](#global-css-resets)
 - [Did not find the answer?](#ask-you-question)
 
 <a id="why-bem"></a>
