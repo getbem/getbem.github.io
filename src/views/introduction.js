@@ -11,7 +11,7 @@ export default () => (
 
 		<h2>Methodologies</h2>
 
-		<p>There are plenty of <a href="https://github.com/ikkou/awesome-css#architecture">methodologies</a> out there which aimed on reducing CSS codebase and organizing programmers cooperation and maintaining of CSS code. This is obvious in large projects like Twitter, Facebook and <a href="http://markdotto.com/2014/07/23/githubs-css/#two-bundles">Github</a>, but other projects often grows into same “Huge CSS file” state pretty quickly.</p>
+		<p>There are plenty of <a href="https://github.com/ikkou/awesome-css#architecture">methodologies</a> out there which aimed on reducing CSS codebase, organizing programmers cooperation and maintaining of CSS code. This is obvious in large projects like Twitter, Facebook and <a href="http://markdotto.com/2014/07/23/githubs-css/#two-bundles">Github</a>, but other projects often grow into some “Huge CSS file” state pretty quickly.</p>
 
 		<div className="row">
 			<div className="column">
