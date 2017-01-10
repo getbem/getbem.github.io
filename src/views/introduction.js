@@ -4,14 +4,14 @@ export default () => (
 
 		<p>On smaller brochure sites, how you organize your styles isn’t usually a big concern. You get in there, write some CSS, or maybe even some SASS. You compile it all into a single stylesheet with SASS’s production settings, and then you aggregate it to get all the stylesheets from modules into a nice tidy package.</p>
 
-		<p>However, when it comes to larger, more complex projects, how you organize your code is a key to efficiency. Not only in how much time it takes, but also in how much code you write, and how much a browser has to load. This is especially important when you’re working with a team of themers, and when performance is important.</p>
+		<p>However, when it comes to larger, more complex projects, how you organize your code is the key to efficiency in at least these three ways: it affects how long it takes you to write code, how much of that code you’ll have to write and how much loading your browser will have to do. This becomes especially important when you’re working with teams of themers, and when high performance is essential.</p>
 
-		<p>This also true for long-term projects with legacy code (read <a href="http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/">"How to Scale and Maintain Legacy CSS with Sass and SMACSS"</a> — some nice SMACSS and BEM mixing in there).</p>
+		<p>This is also true for long-term projects with legacy code (read <a href="http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/">"How to Scale and Maintain Legacy CSS with Sass and SMACSS"</a> — some nice SMACSS and BEM mixing in there).</p>
 
 
 		<h2>Methodologies</h2>
 
-		<p>There are plenty of <a href="https://github.com/ikkou/awesome-css#architecture">methodologies</a> out there which aimed on reducing CSS codebase, organizing programmers cooperation and maintaining of CSS code. This is obvious in large projects like Twitter, Facebook and <a href="http://markdotto.com/2014/07/23/githubs-css/#two-bundles">Github</a>, but other projects often grow into some “Huge CSS file” state pretty quickly.</p>
+		<p>There are plenty of <a href="https://github.com/ikkou/awesome-css#architecture">methodologies</a> out there aiming to reduce the CSS footprint, organize cooperation among programmers and maintain large CSS codebases. This is obvious in large projects like Twitter, Facebook and <a href="http://markdotto.com/2014/07/23/githubs-css/#two-bundles">Github</a>, but other projects often grow into some “Huge CSS file” state pretty quickly.</p>
 
 		<div className="row">
 			<div className="column">
@@ -44,7 +44,7 @@ export default () => (
 
 		<h2>Why BEM over the others?</h2>
 
-		<p>No matter what methodology you choose to use in your projects, you will get advantages of structured CSS and UI. Some of them are less strict and more flexible, others are easier to understand and adapt in a team.</p>
+		<p>No matter what methodology you choose to use in your projects, you will benefit from the advantages of more structured CSS and UI. Some styles are less strict and more flexible, while others are easier to understand and adapt in a team.</p>
 
 		<blockquote>
 			<p>The reason I choose BEM over other methodologies comes down to this: it is less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognizable terminology.</p>
@@ -53,7 +53,7 @@ export default () => (
 
 		<h2>Blocks, Elements and Modifiers</h2>
 
-		<p>You will not be surprised, that BEM is abbreviation of the key elements of the methodology — Block, Element and Modifier. Strict rules of naming can be found in <a href="/naming/">Naming</a> article.</p>
+		<p>You will not be surprised to hear that BEM is an abbreviation of the key elements of the methodology — Block, Element and Modifier. BEM’s strict naming rules can be found <a href="/naming/">here</a>.</p>
 
 		<div className="row">
 			<div className="column">
@@ -68,7 +68,7 @@ export default () => (
 			<div className="column">
 				<div className="introduction__cell introduction__cell--element">
 					<h3>Element</h3>
-					<p>Parts of a block and have no standalone meaning. They are semantically tied to its block.</p>
+					<p>A part of a block that has no standalone meaning and is semantically tied to its block.</p>
 
 					<h5>Examples</h5>
 					<code>menu item</code>, <code>list item</code>, <code>checkbox caption</code>, <code>header title</code>
@@ -77,7 +77,7 @@ export default () => (
 			<div className="column">
 				<div className="introduction__cell introduction__cell--modifier">
 					<h3>Modifier</h3>
-					<p>Flags on blocks or elements. Use them to change appearance or behavior.</p>
+					<p>A flag on a block or element. Use them to change appearance or behavior.</p>
 
 					<h5>Examples</h5>
 					<code>disabled</code>, <code>highlighted</code>, <code>checked</code>, <code>fixed</code>, <code>size big</code>, <code>color yellow</code>
@@ -91,13 +91,13 @@ export default () => (
 
 		<h2>Under the hood</h2>
 
-		<p>Lets look how one particular element on page can be implemented in BEM. We will take <code>button</code> from <a href="http://primercss.io/buttons/">GitHub</a>:</p>
+		<p>Let’s look how one particular element on a page can be implemented in BEM. We will take <code>button</code> from <a href="http://primercss.io/buttons/">GitHub</a>:</p>
 
 		<div style={{textAlign: 'center', paddingTop: '10px', paddingBottom: '40px'}}>
 			<img src="/assets/github_buttons.jpg" style={{width: '100%', maxWidth: '361px'}}/>
 		</div>
 
-		<p>We can have normal button for usual cases, and two more states for different ones. Because of BEM style blocks by class selectors, we can implement blocks with any tags we want (<code>button</code>, <code>a</code> or even <code>div</code>). Naming invites us to use <code>block--modifier-value</code> syntax.</p>
+		<p>We can have a normal button for usual cases, and two more states for different ones. Because we style blocks by class selectors with BEM, we can implement them using any tags we want (<code>button</code>, <code>a</code> or even <code>div</code>). The naming rules tell us to use <code>block--modifier-value</code> syntax.</p>
 
 		<div className="row">
 			<div className="column">
@@ -143,21 +143,21 @@ export default () => (
 			<div className="column">
 				<div className="introduction__cell">
 					<h4>Modularity</h4>
-					<p>Blocks styles should not have dependencies on other elements on a page, therefore you will never get <a href="http://www.phase2technology.com/blog/used-and-abused-css-inheritance-and-our-misuse-of-the-cascade/">problems from cascading</a>.</p>
-					<p>This also gives you ability to transfer blocks from ready project to new one.</p>
+					<p>Block styles are never dependent on other elements on a page, so you will never experience <a href="http://www.phase2technology.com/blog/used-and-abused-css-inheritance-and-our-misuse-of-the-cascade/">problems from cascading</a>.</p>
+					<p>You also get the ability to transfer blocks from your finished projects to new ones.</p>
 				</div>
 			</div>
 			<div className="column">
 				<div className="introduction__cell">
 					<h4>Reusability</h4>
-					<p>Composing independent blocks in a different way and reusing them reduces amount of CSS code, that you will maintain.</p>
-					<p>If you have design guidelines, then it is super effective to have ready blocks library.</p>
+					<p>Composing independent blocks in different ways, and reusing them intelligently, reduces the amount of CSS code that you will have to maintain.</p>
+					<p>With a set of style guidelines in place, you can build a library of blocks, making your CSS super effective.</p>
 				</div>
 			</div>
 			<div className="column">
 				<div className="introduction__cell">
 					<h4>Structure</h4>
-					<p>BEM methodology gives you simple and understandable structure in your CSS code.</p>
+					<p>BEM methodology gives your CSS code a solid structure that remains simple and easy to understand.</p>
 				</div>
 			</div>
 		</div>
@@ -178,6 +178,6 @@ export default () => (
 
 		<h2>Case study</h2>
 
-		<p>We are looking forward to writing "How to migrate existing project to BEM". In meanwhile you can watch nice presentation by Nicole Sullivan — "<a href="http://www.youtube.com/watch?v=0NDyopLKE1w">CSS preprocessor performance</a>". It gives a very good explanation of problems, that she meets in major of sites and ways to track and handle them.</p>
+		<p>We hope to write "How to migrate an existing project to BEM" soon. In the meantime you can watch this nice presentation by Nicole Sullivan — "<a href="http://www.youtube.com/watch?v=0NDyopLKE1w">CSS preprocessor performance</a>". She gives a very good overview of the problems she encounters in the majority of websites and offers ways to track them down and handle them.</p>
 	</div>
 );
