@@ -51,11 +51,11 @@ Another point is CSS specificity. The combined selectors are more specific (mean
 </div>
 ```
 
-If you are already having `.button.active` selector in code, the specificity of your redefining `.header .button` would be exactly the same as the specificity of modifier combined selector which makes you dependent on the order of the CSS rules declared. Whereas in case of using a prefixed modifier you can always be sure that the cascade selector `.header .button` will overwrite the `.button--active` modifier.
+If you already have `.button.active` selector in your code, the specificity of your redefining `.header .button` would be exactly the same as the specificity of modifier combined selector which makes you dependent on the order of the CSS rules declared. Whereas if you use a prefixed modifier, you can always be sure that the cascade selector `.header .button` will overwrite the `.button--active` modifier.
 
 This makes life easier especially for maintainable projects.
 
-The third point is that looking at the `<div class="block block--mod">` markup you can clearly see the block structure. It is easy to recognize that we are having a block and its modifier and there is no different interpretations here. Unfortunately a grasp onto `<div class="block mod">` code does not give such information. Depending on what are the exact CSS classes sometimes it is impossible to recognize if we are having a block and a modifier or a mix of 2 blocks here. This might be even more confusing if the names of the entities are complex or contracted/abbreviated (which sometimes happens in big projects).<br/> Clear understanding of a block structure especially helps in looking for corresponding code on a file system.
+The third point is that looking at the `<div class="block block--mod">` markup you can clearly see the block structure. It is easy to recognize that we have a block and its modifier and there is no different interpretations here. Unfortunately a grasp onto `<div class="block mod">` code does not give such information. Depending on what are the exact CSS classes sometimes it is impossible to recognize if we have a block and a modifier or a mix of 2 blocks here. This might be even more confusing if the names of the entities are complex or contracted/abbreviated (which sometimes happens in big projects).<br/> Clear understanding of a block structure is especially helpful when looking for corresponding code on a file system.
 
 You will also appreciate `.block--mod` practice when refactoring and use global search over all your project files. Imagine the same looking for not-prefixed `.mod` and all the HTML pieces it might be in.
 
@@ -83,9 +83,9 @@ And the last clench against such an approach is that in many cases you are not a
 
 This approach is possible thanks to preprocessors. However it brings some drawbacks which you should be aware of.
 
-In case of combining 2 or more modifiers at the same block `<div class="block--theme--christmas block--size--big">` you would get the core block's styles twice. However this depends on the preprocessor algorithms.
+In the case of combining 2 or more modifiers at the same block `<div class="block--theme--christmas block--size--big">`, you would get the core block's styles twice. However this depends on the preprocessor algorithms.
 
-When operating modifiers dynamically with JavaScript, additional modifier is more handy. Switching it off would mean only removing one CSS class from the DOM node with no need to add the core block CSS class back as it sits there forever.
+When adding/removing modifiers dynamically with JavaScript, the additional modifier is more handy. Switching it off would mean only removing one CSS class from the DOM node with no need to add the core block CSS class back as it sits there forever.
 
 <a id="block-modifier-affects-elements"></a>
 ## Can a block modifier affect elements?
@@ -96,16 +96,16 @@ When operating modifiers dynamically with JavaScript, additional modifier is mor
 > Does a `--xmas` suffix for every element seem necessary? Or would this be the one use-case for nesting (e.g. `block--xmas
 block__elem { ... }`?)
 
-However in general BEM recommends to avoid nested selectors, this is the case when they are reasonable.
+While in general BEM recommends avoiding nested selectors, in this case they are reasonable.
 
-When creating the nested selector, you declare that one entity depends on another. As BEM introduces independent
+When creating the nested selector, you declare that one entity depends on another. Because BEM introduces independent
 components, such an approach is not suggested when we are speaking about 2 different blocks.
 
-But when it comes to a block and its element, they are not of equivalent meaning. By it definition, an element does not
+But when it comes to a block and its element, they are not of equivalent meaning. By definition, an element does not
 make any sense outside its parent block. So, an element is a block-dependent entity. Assuming this, it is quite normal
 and logical that an element is affected by the block's current state.
 
-So, this is quite a pattern in BEM to code
+So, this is a common pattern in BEM to code
 
 ```
 .my-block--xmas .my-block__button {
