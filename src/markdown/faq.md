@@ -126,7 +126,7 @@ Indeed you can have 2 main CSS classes at the same DOM node. In BEM we call it `
 <div class="block1 block2"></div>
 ```
 
-But the important thing about it is that both `block1` and `block2` should be standalone blocks. This is slightly different from what people usually mean by "global modifiers," as modifiers do not have any sense on their own and are just a set of properties to change.
+But the important thing about it is that both `block1` and `block2` should be standalone blocks. This is slightly different from what people usually mean by "global modifiers", as modifiers do not have any sense on their own and are just a set of properties to change.
 
 ```html
 <div class="block globalmod"></div>
