@@ -8,7 +8,7 @@
 - [Is this good to name modifiers corresponding to what they have in CSS? Like `.block__element--border-bottom-5px`.](#css-modifier-names)
 - [What would be a class name for an element inside another element? `.block__el1__el2`?](#css-nested-elements)
 - [I've heard that BEM does not recommend global CSS resets? Why?](#global-css-resets)
-- [Did not find the answer?](#ask-you-question)
+- [Did not find the answer?](#ask-your-question)
 
 <a id="why-bem"></a>
 ## Why should I choose BEM as a modular solution for CSS?
@@ -278,7 +278,7 @@ However using this mixin-way you should realize that the only reason for it is n
 
 Having resets for every block (besides being nice and BEMish) will also prevent problems with injecting a third-party piece of HTML/CSS markup which relies on browser defaults and so can be affected by global resets. For example, this is a known problem for webmails.
 
-<a id="ask-you-question"></a>
+<a id="ask-your-question"></a>
 ## Did not find the answer? Please ask your questions!
 
 If you didn't find the proper answer, please [ask your question](https://github.com/getbem/getbem.com/issues/new?title=Type+your+question&body=Explain+in+detail+your+question&labels=question)!
