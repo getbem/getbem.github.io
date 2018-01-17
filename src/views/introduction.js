@@ -34,7 +34,7 @@ export default () => (
 			</div>
 			<div className="column">
 				<div className="introduction__cell">
-					<h4><a href="//github.com/nemophrost/atomic-css">Atomic</a></h4>
+					<h4><a href="//acss.io/">Atomic</a></h4>
 					Breaking down styles into atomic, or indivisible, pieces
 				</div>
 			</div>
