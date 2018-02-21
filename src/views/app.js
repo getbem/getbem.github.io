@@ -8,9 +8,15 @@ import naming from './naming';
 import faq from './faq';
 
 export default (state) => {
-	const {url} = state;
+	let {url} = state;
 	let page;
 
+	// check to see if an ID is in the URL
+	// if true, concatenate the url to the page address
+	if (url.indexOf('#') > -1) {
+		url = url.split('#')[0];
+	}
+	
 	if (url === '/') {
 		page = home(state);
 	} else if (url === '/introduction/') {
