@@ -8,7 +8,6 @@ export default () => (
 
 		<p>This is also true for long-term projects with legacy code (read <a href="http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/">"How to Scale and Maintain Legacy CSS with Sass and SMACSS"</a> — some nice SMACSS and BEM mixing in there).</p>
 
-
 		<h2>Methodologies</h2>
 
 		<p>There are plenty of <a href="https://github.com/ikkou/awesome-css#architecture">methodologies</a> out there aiming to reduce the CSS footprint, organize cooperation among programmers and maintain large CSS codebases. This is obvious in large projects like Twitter, Facebook and <a href="http://markdotto.com/2014/07/23/githubs-css/#two-bundles">Github</a>, but other projects often grow into some “Huge CSS file” state pretty quickly.</p>
@@ -39,8 +38,6 @@ export default () => (
 				</div>
 			</div>
 		</div>
-
-		<p></p>
 
 		<h2>Why BEM over the others?</h2>
 
