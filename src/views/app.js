@@ -11,15 +11,20 @@ export default (state) => {
 	const {url} = state;
 	let page;
 
-	if (url === '/') {
+	switch(url) {
+	case '/':
 		page = home(state);
-	} else if (url === '/introduction/') {
+		break;
+	case '/introduction/':
 		page = introduction();
-	} else if (url === '/naming/') {
+		break;
+	case '/naming/':
 		page = naming();
-	} else if (url === '/faq/') {
+		break;
+	case '/faq/':
 		page = faq();
-	}
+		break
+	}	
 
 	if (typeof window !== 'undefined' && typeof window.ga !== 'undefined') {
 		window.ga('send', 'pageview', url);
