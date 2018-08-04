@@ -172,8 +172,8 @@ export default () => (
 			<li><a href="http://www.phase2technology.com/blog/used-and-abused-css-inheritance-and-our-misuse-of-the-cascade/">Used and Abused</a> — CSS Inheritance and Our Misuse of the Cascade.</li>
 			<li><a href="https://medium.com/objects-in-space/objects-in-space-f6f404727">Objects in Space</a> — A style-guide for modular SASS development using SMACSS and BEM</li>
 			<li><a href="http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/">How to Scale and Maintain Legacy CSS with Sass and SMACSS</a></li>
-			<li><a href="http://www.bluegg.co.uk/building-my-health-skills-part-3/">Building a modular My Health Skills with BEM and Sass</a></li>
-			<li><a href="http://www.bluegg.co.uk/building-my-health-skills-part-3/">Building My Health Skills — Part 3</a></li>
+			<li><a href="https://bluegg.co.uk/writing/building-my-health-skills-part-3">Building a modular My Health Skills with BEM and Sass</a></li>
+			<li><a href="https://bluegg.co.uk/writing/building-my-health-skills-part-3">Building My Health Skills — Part 3</a></li>
 		</ul>
 
 		<h2>Case study</h2>
