@@ -91,7 +91,7 @@ export default () => (
 
 		<h2>Under the hood</h2>
 
-		<p>Let’s look how one particular element on a page can be implemented in BEM. We will take <code>button</code> from <a href="http://primercss.io/buttons/">GitHub</a>:</p>
+		<p>Let’s look how one particular element on a page can be implemented in BEM. We will take <code>button</code> from <a href="https://styleguide.github.com/primer/components/buttons/">GitHub</a>:</p>
 
 		<div style={{textAlign: 'center', paddingTop: '10px', paddingBottom: '40px'}}>
 			<img src="/assets/github_buttons.jpg" style={{width: '100%', maxWidth: '361px'}}/>
