@@ -48,7 +48,7 @@ export default () => (
 
 		<blockquote>
 			<p>The reason I choose BEM over other methodologies comes down to this: it is less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognizable terminology.</p>
-			<footer>Mark McDonnell, <a href="http://www.integralist.co.uk/posts/bem.html#4">Maintainable CSS with BEM</a></footer>
+			<footer>Mark McDonnell, <a href="https://www.zcfy.cc/original/maintainable-css-with-bem">Maintainable CSS with BEM</a></footer>
 		</blockquote>
 
 		<h2>Blocks, Elements and Modifiers</h2>
