@@ -9,7 +9,7 @@ export default () => (
 		<p>This is also true for long-term projects with legacy code (read <a href="http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/">"How to Scale and Maintain Legacy CSS with Sass and SMACSS"</a> — some nice SMACSS and BEM mixing in there).</p>
 
 
-		<h2>Methodologies</h2>
+		<h2 name="methodologies">Methodologies</h2>
 
 		<p>There are plenty of <a href="https://github.com/ikkou/awesome-css#architecture">methodologies</a> out there aiming to reduce the CSS footprint, organize cooperation among programmers and maintain large CSS codebases. This is obvious in large projects like Twitter, Facebook and <a href="http://markdotto.com/2014/07/23/githubs-css/#two-bundles">Github</a>, but other projects often grow into some “Huge CSS file” state pretty quickly.</p>
 
@@ -42,7 +42,7 @@ export default () => (
 
 		<p></p>
 
-		<h2>Why BEM over the others?</h2>
+		<h2 name="why-bem">Why BEM over the others?</h2>
 
 		<p>No matter what methodology you choose to use in your projects, you will benefit from the advantages of more structured CSS and UI. Some styles are less strict and more flexible, while others are easier to understand and adapt in a team.</p>
 
@@ -51,7 +51,7 @@ export default () => (
 			<footer>Mark McDonnell, <a href="http://www.integralist.co.uk/posts/bem.html#4">Maintainable CSS with BEM</a></footer>
 		</blockquote>
 
-		<h2>Blocks, Elements and Modifiers</h2>
+		<h2 name="bem">Blocks, Elements and Modifiers</h2>
 
 		<p>You will not be surprised to hear that BEM is an abbreviation of the key elements of the methodology — Block, Element and Modifier. BEM’s strict naming rules can be found <a href="/naming/">here</a>.</p>
 
@@ -89,7 +89,7 @@ export default () => (
 			<img src="/assets/github_captions.jpg" style={{width: '100%', maxWidth: '930px'}}/>
 		</div>
 
-		<h2>Under the hood</h2>
+		<h2 name="under-the-hood">Under the hood</h2>
 
 		<p>Let’s look how one particular element on a page can be implemented in BEM. We will take <code>button</code> from <a href="http://primercss.io/buttons/">GitHub</a>:</p>
 
@@ -137,7 +137,7 @@ export default () => (
 			</div>
 		</div>
 
-		<h2>Benefits</h2>
+		<h2 name="benefits">Benefits</h2>
 
 		<div className="row">
 			<div className="column">
@@ -162,7 +162,7 @@ export default () => (
 			</div>
 		</div>
 
-		<h2>Further Reading</h2>
+		<h2 name="further-reading">Further Reading</h2>
 		<ul>
 			<li><a href="http://blog.decaf.de/2015/06/24/why-bem-in-a-nutshell/">‘Why BEM?’ in a nutshell</a></li>
 			<li><a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">MindBEMding</a> — getting your head ’round BEM syntax</li>
@@ -176,7 +176,7 @@ export default () => (
 			<li><a href="http://www.bluegg.co.uk/building-my-health-skills-part-3/">Building My Health Skills — Part 3</a></li>
 		</ul>
 
-		<h2>Case study</h2>
+		<h2 name="case-study">Case study</h2>
 
 		<p>We hope to write "How to migrate an existing project to BEM" soon. In the meantime you can watch this nice presentation by Nicole Sullivan — "<a href="http://www.youtube.com/watch?v=0NDyopLKE1w">CSS preprocessor performance</a>". She gives a very good overview of the problems she encounters in the majority of websites and offers ways to track them down and handle them.</p>
 	</div>
