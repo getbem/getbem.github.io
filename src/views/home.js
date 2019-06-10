@@ -6,6 +6,11 @@ export default () => (
 		<div className="container" style={{marginBottom: '50px'}}>
 			<div className="row">
 				<div className="column">
+					<h2 className="bemefits">BEMefits</h2>
+				</div>
+			</div>
+			<div className="row">
+				<div className="column">
 					{advantage({title: 'Easy', color: 'block', text: 'To use BEM, you only need to employ BEM’s naming convention.'})}
 				</div>
 				<div className="column">
@@ -26,7 +31,7 @@ export default () => (
 function advantage({title, color, text}) {
 	return (
 		<div className={`advantage advantage--${color}`}>
-			<h2>{title}</h2>
+			<h3>{title}</h3>
 			<div>{text}</div>
 		</div>
 	);
