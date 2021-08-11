@@ -92,7 +92,7 @@ function companiesPanel() {
 				<h2>Companies using BEM</h2>
 				<ul>
 					<li><a href="https://yandex.com" title="Yandex"><img src="/assets/companies/yandex.png"/></a></li>
-					<li><a href="http://www.jetbrains.com" title="JetBrains"><img src="/assets/companies/jetbrains.png"/></a></li>
+					<li><a href="http://www.jetbrains.com" title="JetBrains"><img src="https://www.jetbrains.com/company/brand/img/jetbrains_logo.png"/></a></li>
 					<li><a href="http://factory.mn" title="Manufactura"><img src="/assets/companies/manufactura.png"/></a></li>
 					<li><a href="http://eu.ideus.biz" title="iDeus"><img src="/assets/companies/ideus.png"/></a></li>
 					<li><a href="http://alfabank.com" title="Alfa-Bank"><img src="/assets/companies/alfabank.png"/></a></li>
