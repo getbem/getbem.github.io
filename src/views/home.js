@@ -91,12 +91,9 @@ function companiesPanel() {
 			<div className="panel__container">
 				<h2>Companies using BEM</h2>
 				<ul>
-					<li><a href="https://yandex.com" title="Yandex"><img src="/assets/companies/yandex.png"/></a></li>
 					<li><a href="http://www.jetbrains.com" title="JetBrains"><img src="/assets/companies/jetbrains.png"/></a></li>
-					<li><a href="http://factory.mn" title="Manufactura"><img src="/assets/companies/manufactura.png"/></a></li>
 					<li><a href="http://eu.ideus.biz" title="iDeus"><img src="/assets/companies/ideus.png"/></a></li>
 					<li><a href="http://alfabank.com" title="Alfa-Bank"><img src="/assets/companies/alfabank.png"/></a></li>
-					<li><a href="http://edster.ru" title="Edster"><img src="/assets/companies/edster.png"/></a></li>
 					<li><a href="http://www.wimdu.com" title="Wimdu"><img src="/assets/companies/wimdu.png"/></a></li>
 					<li><a href="http://megafon.com" title="Megafon"><img src="/assets/companies/megafon.svg"/></a></li>
 					<li><a href="http://decaf.de" title="Decaf"><img src="/assets/companies/decaf.png"/></a></li>
