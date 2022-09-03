@@ -13,7 +13,7 @@ open http://localhost:3000
 
 ### Deploying
 
-Merge commits into master or run `npm run yolo`.
+Merge commits into `master` and GitHub actions will do the rest.
 
 ### License
 
