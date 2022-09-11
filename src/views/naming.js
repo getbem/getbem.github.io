@@ -10,7 +10,7 @@ export default () => (
 
 			<div className="naming__group naming__group--block">
 				<div className="naming__cell naming__cell--block">
-					<h3>Block</h3>
+					<h3 name="block">Block</h3>
 
 					<p>Encapsulates a standalone entity that is meaningful on its own. While blocks can be nested and interact with each other, semantically they remain equal; there is no precedence or hierarchy. Holistic entities without DOM representation (such as controllers or models) can be blocks as well.</p>
 				</div>
@@ -45,7 +45,7 @@ export default () => (
 
 			<div className="naming__group naming__group--element">
 				<div className="naming__cell naming__cell--element">
-					<h3>Element</h3>
+					<h3 name="element">Element</h3>
 					<p>Parts of a block and have no standalone meaning. Any element is semantically tied to its block.</p>
 				</div>
 
@@ -86,7 +86,7 @@ export default () => (
 
 			<div className="naming__group naming__group--modifier">
 				<div className="naming__cell naming__cell--modifier">
-					<h3>Modifier</h3>
+					<h3 name="modifier">Modifier</h3>
 					<p>Flags on blocks or elements. Use them to change appearance, behavior or state.</p>
 				</div>
 
@@ -123,7 +123,7 @@ export default () => (
 				</div>
 			</div>
 
-			<h3>Example</h3>
+			<h3 name="example">Example</h3>
 
 			<p>Suppose you have block form with modifiers <code>theme: "xmas"</code> and <code>simple: true</code> and with elements <code>input</code> and <code>submit</code>, and element <code>submit</code> with its own modifier <code>disabled: true</code> for not submitting form while it is not filled:</p>
 
