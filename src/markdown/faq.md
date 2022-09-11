@@ -252,7 +252,7 @@ Common CSS reset is a set of CSS to be applied to document nodes and ensure that
 
 Another point is that in BEM a block encapsulates everything which is needed for it to be displayed and function. And this is why we call the BEM blocks independent. If the block does not look properly without a third-party CSS being added onto the page, it cannot be called "independent" that much.
 
-Assuming this all, BEM recommends every block to reset itself. If you have `menu` block and `list` block both as `<ul>` in your HTML, each of them should provide the reset CSS usually given to `<ul>`. You may worry that having several blocks with the same reset rules will case repeats in the resultant code. *But this is what CSS optimizers should do for you.* As a developer you develop every block independently, as if there are no other blocks on the same page.
+Assuming this all, BEM recommends every block to reset itself. If you have `menu` block and `list` block both as `<ul>` in your HTML, each of them should provide the reset CSS usually given to `<ul>`. You may worry that having several blocks with the same reset rules will cause repeats in the resultant code. *But this is what CSS optimizers should do for you.* As a developer you develop every block independently, as if there are no other blocks on the same page.
 
 In the case you don't have a CSS optimizer to combine selectors with the same set of rules, you may use preprocessors to prevent copy-paste. With every new block you can make it reset itself mixing the proper code. For example, with SASS this would look like:
 
