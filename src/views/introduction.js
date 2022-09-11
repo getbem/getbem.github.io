@@ -48,7 +48,7 @@ export default () => (
 
 		<blockquote>
 			<p>The reason I choose BEM over other methodologies comes down to this: it is less confusing than the other methods (i.e. SMACSS) but still provides us the good architecture we want (i.e. OOCSS) and with a recognizable terminology.</p>
-			<footer>Mark McDonnell, <a href="http://www.integralist.co.uk/posts/bem.html#4">Maintainable CSS with BEM</a></footer>
+			<footer>Mark McDonnell, <a href="https://www.zcfy.cc/original/maintainable-css-with-bem">Maintainable CSS with BEM</a></footer>
 		</blockquote>
 
 		<h2>Blocks, Elements and Modifiers</h2>
@@ -91,7 +91,7 @@ export default () => (
 
 		<h2>Under the hood</h2>
 
-		<p>Let’s look how one particular element on a page can be implemented in BEM. We will take <code>button</code> from <a href="http://primercss.io/buttons/">GitHub</a>:</p>
+		<p>Let’s look how one particular element on a page can be implemented in BEM. We will take <code>button</code> from <a href="https://styleguide.github.com/primer/components/buttons/">GitHub</a>:</p>
 
 		<div style={{textAlign: 'center', paddingTop: '10px', paddingBottom: '40px'}}>
 			<img src="/assets/github_buttons.jpg" style={{width: '100%', maxWidth: '361px'}}/>
@@ -172,8 +172,8 @@ export default () => (
 			<li><a href="http://www.phase2technology.com/blog/used-and-abused-css-inheritance-and-our-misuse-of-the-cascade/">Used and Abused</a> — CSS Inheritance and Our Misuse of the Cascade.</li>
 			<li><a href="https://medium.com/objects-in-space/objects-in-space-f6f404727">Objects in Space</a> — A style-guide for modular SASS development using SMACSS and BEM</li>
 			<li><a href="http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/">How to Scale and Maintain Legacy CSS with Sass and SMACSS</a></li>
-			<li><a href="http://www.bluegg.co.uk/building-my-health-skills-part-3/">Building a modular My Health Skills with BEM and Sass</a></li>
-			<li><a href="http://www.bluegg.co.uk/building-my-health-skills-part-3/">Building My Health Skills — Part 3</a></li>
+			<li><a href="https://bluegg.co.uk/writing/building-my-health-skills-part-3">Building a modular My Health Skills with BEM and Sass</a></li>
+			<li><a href="https://bluegg.co.uk/writing/building-my-health-skills-part-3">Building My Health Skills — Part 3</a></li>
 		</ul>
 
 		<h2>Case study</h2>
