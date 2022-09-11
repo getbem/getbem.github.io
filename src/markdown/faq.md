@@ -15,9 +15,9 @@
 
 > There are some other modular solutions for CSS (such as OOCSS, AMCSS, SMACSS, SUITCSS). What are the reasons to choose BEM?
 
-BEM provides solutions for all the frontend technologies: CSS, JavaScript, templating; and also for building process of your web application. The methodology is applicable anywhere. However, to apply this in JavaScript and templating you would need special frameworks whereas in CSS you may just follow the methodological recommendations. The CSS part of BEM is the easiest to take into your development process. This is why many use only it. On the other hand, if lately you would found your project fully BEMed (in CSS) and yourself happy for its grown maintenance, you probably would take next step in modularizing your web application. BEM CSS will be easier to coordinate with modular JavaScript and blocks-based project file structure.
+BEM provides solutions for all the frontend technologies: CSS, JavaScript, templating; and also for building process of your web application. The methodology is applicable anywhere. However, to apply this in JavaScript and templating you would need special frameworks whereas in CSS you may just follow the methodological recommendations. The CSS part of BEM is the easiest to take into your development process. This is why many only use that part. On the other hand, if later you would find your project fully BEMed (in CSS) and yourself happy for its grown maintenance, you probably would take the next step in modularizing your web application. BEM CSS will be easier to coordinate with modular JavaScript and blocks-based project file structure.
 
-If speaking about CSS modular solutions only, the key feature of BEM is block's independence. Following the CSS recommendations enables to put a block into any place on a page and be sure that is won't be affected by its surroundings. Also, if you would lately need to nest another block into the current one, their full compatibility is guaranteed. In other words, when maintaining your web application you would be able to move blocks across the page, add others and combine them.
+If speaking about CSS modular solutions only, the key feature of BEM is the block independence. Following the CSS recommendations enables to put a block into any place on a page and be sure that it won't be affected by its surroundings. Also, if you would later need to nest another block into the current one, their full compatibility is guaranteed. In other words, when maintaining your web application you would be able to move blocks across the page, add others and combine them.
 
 BEM CSS unambiguously defines which CSS belongs to a piece of interface and so using it gives answers to questions "Can I remove this piece of code?" and "What happens and which interface parts will be affected if I change this piece of code?".
 
@@ -180,11 +180,11 @@ Indeed using global modifiers makes the resultant code less. However if you meas
 ## Can I combine a tag and a class in selector like `button.button`?
 
 > I want to use selectors like `button.button` to encapsulate my blocks functionality within a particular tag.
-> If lately someone else would use in their code `<h2 class="button">`, such an encapsulation would prevent a conflict.
+> If later someone else would use in their code `<h2 class="button">`, such an encapsulation would prevent a conflict.
 
-The CSS specificity of such a selector grows. `.button--mod` selector will not overwrite CSS properties of the block, only `button.button--mod` would work. You will need its modifiers to be combined with the tag as well and so do the developers who lately would redefine your block.
+The CSS specificity of such a selector grows. `.button--mod` selector will not overwrite the CSS properties of the block, only `button.button--mod` would work. You will need its modifiers to be combined with the tag as well and so do the developers who would later redefine your block.
 
-Lately, when a project goes larger, it's very likely that you may have `input.button`, `span.button` and `a.button` as well. And all the prefixed selectors for modifiers and nested elements will need 4 declarations.
+Later, when a project goes larger, it's very likely that you may have `input.button`, `span.button` and `a.button` as well. And all the prefixed selectors for modifiers and nested elements will need 4 declarations.
 
 So, it is better not to tie your own hands with such prefixing. However if you still can softly-softly ensure that your blocks are used with proper tags if your provide your users with templates for every block. This is the most flexible and automatic solution.
 
@@ -197,9 +197,9 @@ block to function.
 > Thanks to mixes, we can create a lot of modifiers which represent CSS properties and assign them to blocks.
 > But I've heard that "it is bad". For example, this selector `.block__element--border-bottom-5px` was stamped as "awful". I am wondering why and how should the modifiers be named then?
 
-Naming the modifiers corresponding to their CSS representation is not recommended. Indeed it looks not very nice but there are also practical reasons against it. Lately then the view of your components is changed, you will need to fix not only CSS but also the selectors. So, when you border is 6px, it would require changes in all the templates and sometimes in JavaScript.
+Naming the modifiers corresponding to their CSS representation is not recommended. Indeed it does not look very nice but there are also practical reasons against it. Later when the view of your components is changed, you will need to fix not only CSS but also the selectors. So, when you border is 6px, it would require changes in all the templates and sometimes in JavaScript.
 
-Also, it never happens that a modifier has only one CSS property to define and will have it forever. Even if now it is only border that differentiates one state from another, this is very likely that lately you would need other CSS properties for the same state of your block. This would be messy if you define a background or padding in a modifier called "border". So, it is recommended to choose semantic names for modifiers even if they only have one property by now.
+Also, it never happens that a modifier has only one CSS property to define and will have it forever. Even if now it is only border that differentiates one state from another, this is very likely that later you would need other CSS properties for the same state of your block. This would be messy if you define a background or padding in a modifier called "border". So, it is recommended to choose semantic names for modifiers even if they only have one property by now.
 
 <a id="css-nested-elements"></a>
 ## What would be a class name for an element inside another element? `.block__el1__el2`?
