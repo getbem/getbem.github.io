@@ -1,21 +1,28 @@
 ---
+import { Icon } from 'astro-icon'
+
 export interface Props {
 }
 
 const { href, title, body } = Astro.props;
 ---
-<nav class="sticky top-0 z-10 bg-gray backdrop-filter backdrop-blur-xl bg-opacity-5 border-b border-gray-200">
+<nav class="sticky top-0 z-10 bg-sky-900/30 backdrop-filter backdrop-blur-xl bg-opacity-5 border-b border-gray-200">
     <div class="max-w-5xl mx-auto px-4">
         <div class="flex items-center justify-between h-16">
             <span class="text-2xl text-gray-900 font-semibold">
                 <a href="/">
-                    <img src={"/b_.svg"} alt="GetBEM" width="32" height="32" class="fill-black"/>
+                    <img src={"/b_.svg"} alt="GetBEM" width="32" height="32" class="fill-white"/>
                 </a>
             </span>
-            <div class="flex space-x-4 text-gray-900">
-                <a href="/introduction"> Introduction </a>
-                <a href="/naming"> Naming </a>
-                <a href="/faq"> FAQ </a>
+            <div class="flex space-x-4 text-white">
+                <a href="/introduction" class="hover:underline"> Introduction </a>
+                <a href="/naming" class="hover:underline"> Naming </a>
+                <a href="/faq" class="hover:underline"> FAQ </a>
+            </div>
+            <div class="flex space-x-4 text-white">
+                <a href="https://github.com/getbem"><Icon pack="octicon" name="mark-github-16" width="32" height="32"/></a>
+                <a href="https://github.com/getbem/getbem.github.io/discussions"><Icon pack="octicon" name="comment-discussion-24" width="32" height="32"/></a>
+                <a href="https://twitter.com/getbem"><Icon pack="mdi" name="twitter" width="32" height="32"/></a>
             </div>
         </div>
     </div>

@@ -11,6 +11,9 @@ export default defineConfig({
   vite: {
     plugins: [lightningcss({
       browserslist: "last 2 versions"
-    })]
+    })],
+    ssr: {
+      external: ["svgo"],
+    },
   }
 });
