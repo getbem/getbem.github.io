@@ -1,7 +1,0 @@
-{
-  "presets": ["es2015"],
-  "plugins": [
-    ["transform-react-jsx", {"pragma": "h"}],
-    "h-children-fix"
-  ]
-}

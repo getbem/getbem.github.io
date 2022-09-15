@@ -1,0 +1,22 @@
+---
+export interface Props {
+}
+
+const { href, title, body } = Astro.props;
+---
+<nav class="sticky top-0 z-10 bg-gray backdrop-filter backdrop-blur-xl bg-opacity-5 border-b border-gray-200">
+    <div class="max-w-5xl mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+            <span class="text-2xl text-gray-900 font-semibold">
+                <a href="/">
+                    <img src={"/b_.svg"} alt="GetBEM" width="32" height="32" class="fill-black"/>
+                </a>
+            </span>
+            <div class="flex space-x-4 text-gray-900">
+                <a href="/introduction"> Introduction </a>
+                <a href="/naming"> Naming </a>
+                <a href="/faq"> FAQ </a>
+            </div>
+        </div>
+    </div>
+</nav>
