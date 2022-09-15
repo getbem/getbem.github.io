@@ -2,6 +2,7 @@
 title: 'BEM — Introduction'
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from '@astrojs/image/components';
 
 <Layout title={frontmatter.title}>
 <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-24">
@@ -55,13 +56,13 @@ A flag on a block or element. Use them to change appearance or behavior.
 
 `disabled`, `highlighted`, `checked`, `fixed`, `size big`, `color yellow`
 
-<img src="/assets/github_captions.jpg" />
+<Image src={import('../assets/github_captions.jpg')} alt="GitHub with captions"/>
 
 ## Under the hood
 
 Let’s look how one particular element on a page can be implemented in BEM. We will take `button` from <a href="https://styleguide.github.com/primer/components/buttons/">GitHub</a>:
 
-<img src="/assets/github_buttons.jpg" />
+<Image src={import('../assets/github_buttons.jpg')} alt="GitHub buttons"/>
 
 We can have a normal button for usual cases, and two more states for different ones. Because we style blocks by class selectors with BEM, we can implement them using any tags we want (`button`, `a` or even `div`). The naming rules tell us to use `block--modifier-value` syntax.
 
