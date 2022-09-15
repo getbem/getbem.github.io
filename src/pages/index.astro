@@ -1,11 +1,12 @@
 ---
 import { Image } from '@astrojs/image/components';
+import { Code } from 'astro/components';
 import Layout from '../layouts/Layout.astro';
 import NavBar from '../components/NavBar.astro';
 ---
 
 <Layout title="BEM — Block Element Modifier">
-	<header class="fixed w-full">
+	<header class="fixed w-full z-30">
 		<NavBar></NavBar>		
 	</header>
 
@@ -15,6 +16,35 @@ import NavBar from '../components/NavBar.astro';
 				<h1 class="text-3xl md:text-5xl font-bold mb-4">
 					<span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">BEM</span> — is a methodology that helps you to create reusable components and code sharing in front&#8209;end development
 				</h1>
+			</div>
+		</section>
+		
+		<section>
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 pb-12 grid grid-cols-2 gap-4">
+				<div>
+				<p class="text-gray-600">Classic CSS:</p>
+				<Code lang="scss" theme="dark-plus" code={`.button {
+	border-radius: 3px;
+	padding: 7px;
+
+	&--state-success {
+		color: #FFF;
+		background: #569E3D;
+		border-color: #4A993E;
+	}
+}`}/>
+</div>
+				<div><p class="text-gray-600">BEM:</p>
+				<Code lang="scss" theme="dark-plus" code={`.button {
+	border-radius: 3px;
+	padding: 7px;
+
+	&--state-success {
+		color: #FFF;
+		background: #569E3D;
+		border-color: #4A993E;
+	}
+}`}/></div>
 			</div>
 		</section>
 
@@ -55,6 +85,9 @@ import NavBar from '../components/NavBar.astro';
 					<div class="flex items-center justify-center py-2 col-span-2 md:col-auto">
 						<a href="https://epam.com" class="bg-gray-900 p-2 pt-3" title="EPAM"><Image alt="EPAM" src={"https://www.epam.com/content/dam/epam/global/logo_white-blue.svg"} width="80" height="28"/></a>
 					</div>
+					<div class="flex items-center justify-center py-2 col-span-2 md:col-auto">
+						<a href="https://github.com/getbem/getbem.github.io/discussions/282" title="EPAM">Are you using BEM?</a>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -62,7 +95,7 @@ import NavBar from '../components/NavBar.astro';
 	
 	<footer>
 		<div class="max-w-6xl mx-auto px-4 sm:px-6">
-			<div class="text-sm text-gray-600 mr-4">
+			<div class="md:flex gap-5 md:items-center md:justify-between py-4 md:py-8 border-t border-gray-200 text-gray-600 text-sm">
 				<div>Brought to you by <a href="https://github.com/floatdrop">@floatdrop</a> and <a href="https://twitter.com/iamstarkov">@iamstarkov</a>.</div>
 				<div>Maintained by the <a href="https://github.com/orgs/getbem/people">core team</a> with the help of our <a href="https://github.com/getbem/getbem.com/graphs/contributors">contributors</a>.</div>
 				<div>Code licensed under <a href="https://github.com/getbem/getbem.com/blob/master/LICENSE.md">MIT</a>, documentation under <a href="https://github.com/getbem/getbem.com/blob/master/src/markdown/LICENSE.md">CC BY 3.0</a>.</div>
@@ -70,3 +103,25 @@ import NavBar from '../components/NavBar.astro';
 		</div>
 	</footer>
 </Layout>
+
+<style is:global>
+.astro-code {
+	padding: 10px;
+	border-radius: 10px;
+}
+
+code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 1rem;
+  margin-right: 1.5rem;
+  display: inline-block;
+  text-align: right;
+  color: rgba(115,138,148,.4)
+}
+</style>
