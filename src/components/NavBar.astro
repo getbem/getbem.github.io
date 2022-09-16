@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon'
+
+export interface Props {
+}
+
+const { href, title, body } = Astro.props;
+---
+<nav class="sticky top-0 z-10 bg-gray-300/60 backdrop-filter backdrop-blur-xl bg-opacity-5 border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+            <span class="text-2xl font-semibold">
+                <a href="/" aria-label="Index page">
+                    <Icon name="b_" width="32" height="32" class="opacity-80"/>
+                </a>
+            </span>
+            <div class="flex space-x-4">
+                <a href="/introduction" class="font-bold hover:underline opacity-80"> Introduction </a>
+                <a href="/naming" class="font-bold hover:underline" opacity-80> Naming </a>
+                <a href="/faq" class="font-bold hover:underline" opacity-80> FAQ </a>
+            </div>
+            <div class="flex space-x-2 sm:space-x-4">
+                <a href="https://github.com/getbem" aria-label="GitHub"><Icon pack="octicon" name="mark-github-16" class="opacity-80" width="24" height="24"/></a>
+                <a href="https://github.com/getbem/getbem.github.io/discussions" aria-label="GitHub Discussions"><Icon pack="octicon" name="comment-discussion-24" class="opacity-80" width="24" height="24"/></a>
+                <a href="https://twitter.com/getbem" aria-label="Twitter"><Icon pack="mdi" name="twitter" class="opacity-80" width="24" height="24"/></a>
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,54 +1,30 @@
 {
-  "name": "getbem.com",
-  "version": "1.0.0",
-  "author": "Vsevolod Strukchinsky <floatdrop@gmail.com>",
-  "dependencies": {
-    "babel": "^6.1.18",
-    "babel-loader": "^6.2.0",
-    "babel-plugin-h-children-fix": "^1.1.0",
-    "babel-plugin-transform-react-jsx": "^6.2.0",
-    "babel-preset-es2015": "^6.1.18",
-    "babel-register": "^6.2.0",
-    "css-loader": "^0.23.0",
-    "eslint-config-standard-react": "^1.2.1",
-    "file-loader": "^0.8.5",
-    "hjs-webpack": "^5.1.0",
-    "json-loader": "^0.5.4",
-    "local-links": "^1.4.0",
-    "marked": "^0.3.5",
-    "milligram": "^1.1.0",
-    "postcss-loader": "^0.8.0",
-    "raw-loader": "^0.5.1",
-    "script-loader": "^0.6.1",
-    "style-loader": "^0.13.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^2.0.0",
-    "surge": "^0.17.3",
-    "url-loader": "^0.5.7",
-    "vdom-parser": "^1.2.1",
-    "vdom-to-html": "^2.2.0",
-    "virtual-dom": "^2.1.1",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0",
-    "copy-webpack-plugin": "^1.1.1",
-    "xo": "^0.12.1"
-  },
-  "license": "MIT",
-  "main": "index.js",
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "build": "webpack",
-    "deploy": "surge -p public -d getbem.com",
-    "lint": "xo",
-    "start": "webpack-dev-server",
-    "yolo": "npm run build && npm run deploy",
-    "test": "npm run lint"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "xo": {
-    "env": [
-      "browser"
-    ],
-    "ignores": [
-      "public/**"
-    ]
+  "dependencies": {
+    "@astrojs/image": "^0.7.0",
+    "@astrojs/mdx": "^0.11.1",
+    "@astrojs/partytown": "^1.0.0",
+    "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/solid-js": "^1.1.0",
+    "@astrojs/tailwind": "^2.0.0",
+    "astro": "^1.2.4",
+    "solid-js": "^1.5.4",
+    "tailwindcss": "^3.1.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.7",
+    "astro-icon": "^0.7.3",
+    "sass": "^1.54.9",
+    "vite-plugin-lightningcss": "^0.0.2"
   }
 }

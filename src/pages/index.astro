@@ -1,0 +1,128 @@
+---
+import { Image } from '@astrojs/image/components';
+import { Code } from 'astro/components';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="BEM — Block Element Modifier">
+	<section>
+		<div class="text-center max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-12 md:pt-40 md:pb-20">
+			<h1 class="text-3xl md:text-5xl font-bold mb-8">
+				<span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">BEM</span> — is a methodology that helps you to create reusable components and code sharing in front&#8209;end development
+			</h1>
+
+			<a href="/introduction" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded-full">
+				Learn why it's better
+			</a>
+		</div>
+	</section>
+	
+	<section>
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 pb-12 grid sm:grid-cols-2 gap-24">
+			<div>
+				<p class="text-gray-600">Classic CSS</p>
+				<Code lang="scss" theme="dracula-soft" code={`#opinions_box h1 {
+	margin: 0 0 8px 0;
+	text-align: center;
+}
+
+#opinions_box {
+	p.more_pp {
+		a {
+			text-decoration: underline;
+		}
+	}
+	input[type="text"] {
+		border: 1px solid #ccc!important;
+	}
+}
+`}/>
+			</div>
+			<div>
+				<p class="text-gray-600">BEM</p>
+				<Code lang="scss" theme="dracula-soft" code={`.opinions_box{
+	margin: 0 0 8px 0;
+	text-align: center;
+
+	&__view-more {
+		text-decoration: underline;
+	}
+
+	&__text-input {
+		border: 1px solid #ccc;
+	}
+
+	&--is-inactive {
+		color: gray;
+	}
+}`}/>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="grid gap-6 grid-cols-1 sm:grid-cols-3 max-w-6xl mx-auto px-4 py-12 items-start">
+			<div class="text-center relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
+				<h2 class="text-xl font-bold leading-snug tracking-tight mb-1 bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-green-400">Easy</h2>
+				<p class="text-gray-600">To use BEM, you only need to employ BEM’s naming convention.</p>
+			</div>
+
+			<div class="text-center relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
+				<h2 class="text-xl font-bold leading-snug tracking-tight mb-1 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Modular</h2>
+				<p class="text-gray-600">Independent blocks and CSS selectors make your code reusable and modular.</p>
+			</div>
+
+			<div class="text-center relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
+				<h2 class="text-xl font-bold leading-snug tracking-tight mb-1 bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-400">Flexible</h2>
+				<p class="text-gray-600">Using BEM, methodologies and tools can be recomposed and configured the way you like.</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="py-12 md:py-20 max-w-6xl mx-auto px-4 sm:px-6">
+			<div class="max-w-3xl mx-auto text-center pb-4 md:pb-8">
+				<h2 class="text-4xl font-normal">Companies using BEM</h2>
+			</div>
+			<div class="max-w-sm md:max-w-4xl mx-auto grid gap-2 grid-cols-4 md:grid-cols-5">
+				<div class="flex items-center justify-center py-2 col-span-2 md:col-auto">
+					<a href="https://yandex.com" title="Yandex"><Image alt="Yandex" src={"https://avatars.mds.yandex.net/get-bunker/998550/3a470d8886d04ed03826730c9b18ce4dec55cdb3/orig"} width="120" height="61"/></a>
+				</div>
+				<div class="flex items-center justify-center py-2 col-span-2 md:col-auto">
+					<a href="https://www.jetbrains.com" title="JetBrains"><Image alt="JetBrains" src={"https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg"} width="120" height="120"/></a>
+				</div>
+				<div class="flex items-center justify-center py-2 col-span-2 md:col-auto">
+					<a href="https://factory.mn" title="Manufactura"><Image alt="Manufactura" src={"http://factory.mn/i/documents/m_logo_eng.png"} width="744" height="164"/></a>
+				</div>
+				<div class="flex items-center justify-center py-2 col-span-2 md:col-auto">
+					<a href="https://epam.com" class="bg-gray-900 p-2 pt-3" title="EPAM"><Image alt="EPAM" src={"https://www.epam.com/content/dam/epam/global/logo_white-blue.svg"} width="80" height="28"/></a>
+				</div>
+				<div class="flex items-center justify-center py-2 col-span-2 md:col-auto">
+					<a href="https://github.com/getbem/getbem.github.io/discussions/282" title="EPAM" class="underline">Are you using BEM?</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style is:global>
+.astro-code {
+	padding: 10px;
+	border-radius: 10px;
+}
+
+code {
+  counter-reset: step;
+  counter-increment: step 0;
+}
+
+code .line::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 1rem;
+  margin-right: 1.5rem;
+  display: inline-block;
+  text-align: right;
+  color: rgba(115,138,148,.4)
+}
+</style>
