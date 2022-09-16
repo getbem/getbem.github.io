@@ -7,38 +7,56 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="BEM — Block Element Modifier">
 	<section>
 		<div class="text-center max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-12 md:pt-40 md:pb-20">
-			<h1 class="text-3xl md:text-5xl font-bold mb-4">
+			<h1 class="text-3xl md:text-5xl font-bold mb-8">
 				<span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">BEM</span> — is a methodology that helps you to create reusable components and code sharing in front&#8209;end development
 			</h1>
+
+			<a href="/introduction" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded-full">
+				Learn why it's better
+			</a>
 		</div>
 	</section>
 	
 	<section>
-		<div class="max-w-6xl mx-auto px-4 sm:px-6 pb-12 grid sm:grid-cols-2 gap-4">
+		<div class="max-w-6xl mx-auto px-4 sm:px-6 pb-12 grid sm:grid-cols-2 gap-24">
 			<div>
-			<p class="text-gray-600">Classic CSS:</p>
-			<Code lang="scss" theme="dracula-soft" code={`.button {
-	border-radius: 3px;
-	padding: 7px;
+				<p class="text-gray-600">Classic CSS</p>
+				<Code lang="scss" theme="dracula-soft" code={`#opinions_box h1
+	margin: 0 0 8px 0;
+	text-align: center;
+}
 
-	&--state-success {
-		color: #FFF;
-		background: #569E3D;
-		border-color: #4A993E;
+#opinions_box {
+	p.more_pp {
+		a {
+			text-decoration: underline;
+		}
+	}
+	input[type="text"] {
+		border: 1px solid #ccc!important;
+	}
+}
+`}/>
+			</div>
+			<div>
+				<p class="text-gray-600">BEM</p>
+				<Code lang="scss" theme="dracula-soft" code={`.opinions_box{
+	margin: 0 0 8px 0;
+	text-align: center;
+
+	&__view-more {
+		text-decoration: underline;
+	}
+
+	&__text-input {
+		border: 1px solid #ccc;
+	}
+
+	&--is-inactive {
+		color: gray;
 	}
 }`}/>
-</div>
-			<div><p class="text-gray-600">BEM:</p>
-			<Code lang="scss" theme="dracula-soft" code={`.button {
-	border-radius: 3px;
-	padding: 7px;
-
-	&--state-success {
-		color: #FFF;
-		background: #569E3D;
-		border-color: #4A993E;
-	}
-}`}/></div>
+			</div>
 		</div>
 	</section>
 
@@ -80,7 +98,7 @@ import Layout from '../layouts/Layout.astro';
 					<a href="https://epam.com" class="bg-gray-900 p-2 pt-3" title="EPAM"><Image alt="EPAM" src={"https://www.epam.com/content/dam/epam/global/logo_white-blue.svg"} width="80" height="28"/></a>
 				</div>
 				<div class="flex items-center justify-center py-2 col-span-2 md:col-auto">
-					<a href="https://github.com/getbem/getbem.github.io/discussions/282" title="EPAM">Are you using BEM?</a>
+					<a href="https://github.com/getbem/getbem.github.io/discussions/282" title="EPAM" class="underline">Are you using BEM?</a>
 				</div>
 			</div>
 		</div>
