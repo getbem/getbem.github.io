@@ -2,6 +2,7 @@
 import { Code } from 'astro/components';
 import Layout from '../layouts/Layout.astro';
 import Company from '../components/Company.astro';
+import CompaniesSection from '../components/CompaniesSection.astro';
 ---
 
 <Layout title="BEM — Block Element Modifier">
@@ -80,28 +81,19 @@ import Company from '../components/Company.astro';
 	</section>
 
 	<section>
-		<div class="py-12 md:py-20 max-w-6xl mx-auto px-4 sm:px-6">
-			<div class="max-w-3xl mx-auto text-center pb-4 md:pb-8">
-				<h2 class="text-4xl font-normal">Companies using BEM</h2>
-			</div>
-			<div class="max-w-6xl mx-auto grid gap-16 grid-cols-3 md:grid-cols-6">
-				<Company href="https://yandex.com" name="Yandex" src={import("../assets/companies/yandex.png")}/>
-				<Company href="http://www.jetbrains.com" name="JetBrains" src={import("../assets/companies/jetbrains.png")}/>
-				<Company href="http://factory.mn" name="Manufactura" src={import("../assets/companies/manufactura.png")}/>
-				<Company href="http://eu.ideus.biz" name="iDeus" src={import("../assets/companies/ideus.png")}/>
-				<Company href="http://alfabank.com" name="Alfa-Bank" src={import("../assets/companies/alfabank.png")}/>
-				<Company href="http://edster.ru" name="Edster" src={import("../assets/companies/edster.png")}/>
-				<Company href="http://www.wimdu.com" name="Wimdu" src={import("../assets/companies/wimdu.png")}/>
-				<Company href="http://megafon.com" name="Megafon" src={import("../assets/companies/megafon.png")}/>
-				<Company href="http://decaf.de" name="Decaf" src={import("../assets/companies/decaf.png")}/>
-				<Company href="http://epam.com" name="EPAM" src={import("../assets/companies/epam.png")}/>
-				<Company href="https://renuo.ch" name="Renuo" src={import("../assets/companies/renuo.png")}/>
-				
-				<div class="flex items-center justify-center text-center">
-					<a href="https://github.com/getbem/getbem.github.io/discussions/282" title="EPAM" class="underline">Are you using BEM?</a>
-				</div>
-			</div>
-		</div>
+		<CompaniesSection>
+			<Company href="https://yandex.com" name="Yandex" src={import("../assets/companies/yandex.png")}/>
+			<Company href="http://www.jetbrains.com" name="JetBrains" src={import("../assets/companies/jetbrains.png")}/>
+			<Company href="http://factory.mn" name="Manufactura" src={import("../assets/companies/manufactura.png")}/>
+			<Company href="http://eu.ideus.biz" name="iDeus" src={import("../assets/companies/ideus.png")}/>
+			<Company href="http://alfabank.com" name="Alfa-Bank" src={import("../assets/companies/alfabank.png")}/>
+			<Company href="http://edster.ru" name="Edster" src={import("../assets/companies/edster.png")}/>
+			<Company href="http://www.wimdu.com" name="Wimdu" src={import("../assets/companies/wimdu.png")}/>
+			<Company href="http://megafon.com" name="Megafon" src={import("../assets/companies/megafon.png")}/>
+			<Company href="http://decaf.de" name="Decaf" src={import("../assets/companies/decaf.png")}/>
+			<Company href="http://epam.com" name="EPAM" src={import("../assets/companies/epam.png")}/>
+			<Company href="https://renuo.ch" name="Renuo" src={import("../assets/companies/renuo.png")}/>
+		</CompaniesSection>
 	</section>
 </Layout>
 

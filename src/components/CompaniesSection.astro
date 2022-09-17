@@ -1,0 +1,26 @@
+<div class="companies-section">
+    <div class="companies-section__heading">
+        <h2 class="text-4xl font-normal">Companies using BEM</h2>
+    </div>
+    <div class="companies-section__grid">
+        <slot/>
+        
+        <div class="flex items-center justify-center text-center">
+            <a href="https://github.com/getbem/getbem.github.io/discussions/282" title="EPAM" class="underline">Are you using BEM?</a>
+        </div>
+    </div>
+</div>
+
+<style>
+.companies-section {
+    @apply py-12 md:py-20 max-w-6xl mx-auto px-4 sm:px-6;
+}
+
+.companies-section__heading {
+    @apply max-w-3xl mx-auto text-center pb-4 md:pb-8;
+}
+
+.companies-section__grid {
+    @apply max-w-6xl mx-auto grid gap-16 grid-cols-3 md:grid-cols-6;
+}
+</style>
