@@ -2,10 +2,10 @@
 import { Code } from 'astro/components';
 ---
 
-<div class="max-w-6xl mx-auto px-4 sm:px-6 pb-12 grid sm:grid-cols-2 gap-24">
-    <div>
-        <p class="text-gray-600">Classic CSS</p>
-        <Code lang="scss" code={`#opinions_box h1 {
+<div class="max-w-5xl mx-auto px-4 sm:px-6 pb-12 grid md:grid-cols-2 gap-8">
+    <div class="relative">
+        <div class="bg-white/50 text-black absolute right-2 top-2 font-bold py-0 px-2 rounded-md "><span class="bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-800">Classic CSS</span></div>
+        <Code lang="scss" theme="dracula-soft" code={`#opinions_box h1 {
     margin: 0 0 8px 0;
     text-align: center;
 }
@@ -22,9 +22,9 @@ import { Code } from 'astro/components';
     }
 }`}/>
     </div>
-    <div>
-        <p class="text-gray-600">BEM</p>
-        <Code lang="scss" code={`.opinions_box {
+    <div class="relative">
+        <div class="bg-white text-black absolute right-2 top-2 font-bold py-0 px-2 rounded-md "><span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">BEM</span></div>
+        <Code lang="scss" theme="dracula-soft" code={`.opinions_box {
     margin: 0 0 8px 0;
     text-align: center;
 
@@ -52,6 +52,7 @@ import { Code } from 'astro/components';
     code {
       counter-reset: step;
       counter-increment: step 0;
+      @apply text-xs md:text-sm;
     }
     
     code .line::before {
