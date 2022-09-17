@@ -1,11 +1,11 @@
 ---
-import { Code } from 'astro/components';
 import Layout from '../layouts/Layout.astro';
 import Company from '../components/Company.astro';
 import CompaniesSection from '../components/CompaniesSection.astro';
 import BenefitsSection from '../components/BenefitsSection.astro';
 import BenefitCard from '../components/BenefitCard.astro';
 import Hero from '../components/Hero.astro';
+import CodeSection from '../components/CodeSection.astro';
 ---
 
 <Layout title="BEM — Block Element Modifier">
@@ -14,46 +14,7 @@ import Hero from '../components/Hero.astro';
 	</section>
 	
 	<section>
-		<div class="max-w-6xl mx-auto px-4 sm:px-6 pb-12 grid sm:grid-cols-2 gap-24">
-			<div>
-				<p class="text-gray-600">Classic CSS</p>
-				<Code lang="scss" code={`#opinions_box h1 {
-	margin: 0 0 8px 0;
-	text-align: center;
-}
-
-#opinions_box {
-	p.more_pp {
-		a {
-			text-decoration: underline;
-		}
-	}
-
-	input[type="text"] {
-		border: 1px solid #ccc!important;
-	}
-}`}/>
-			</div>
-			<div>
-				<p class="text-gray-600">BEM</p>
-				<Code lang="scss" code={`.opinions_box {
-	margin: 0 0 8px 0;
-	text-align: center;
-
-	&__view-more {
-		text-decoration: underline;
-	}
-
-	&__text-input {
-		border: 1px solid #ccc;
-	}
-
-	&--is-inactive {
-		color: gray;
-	}
-}`}/>
-			</div>
-		</div>
+		<CodeSection></CodeSection>
 	</section>
 
 	<section>
@@ -80,25 +41,3 @@ import Hero from '../components/Hero.astro';
 		</CompaniesSection>
 	</section>
 </Layout>
-
-<style is:global>
-.astro-code {
-	padding: 10px;
-	border-radius: 10px;
-}
-
-code {
-  counter-reset: step;
-  counter-increment: step 0;
-}
-
-code .line::before {
-  content: counter(step);
-  counter-increment: step;
-  width: 1rem;
-  margin-right: 1.5rem;
-  display: inline-block;
-  text-align: right;
-  color: rgba(115,138,148,.4)
-}
-</style>
