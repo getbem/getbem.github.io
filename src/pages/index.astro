@@ -3,26 +3,21 @@ import { Code } from 'astro/components';
 import Layout from '../layouts/Layout.astro';
 import Company from '../components/Company.astro';
 import CompaniesSection from '../components/CompaniesSection.astro';
+import BenefitsSection from '../components/BenefitsSection.astro';
+import BenefitCard from '../components/BenefitCard.astro';
+import Hero from '../components/Hero.astro';
 ---
 
 <Layout title="BEM — Block Element Modifier">
 	<section>
-		<div class="text-center max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-12 md:pt-40 md:pb-20">
-			<h1 class="text-3xl md:text-5xl font-bold mb-8">
-				<span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">BEM</span> — is a methodology that helps you to create reusable components and code sharing in front&#8209;end development
-			</h1>
-
-			<a href="/introduction" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded-full">
-				Learn why it's better
-			</a>
-		</div>
+		<Hero/>
 	</section>
 	
 	<section>
 		<div class="max-w-6xl mx-auto px-4 sm:px-6 pb-12 grid sm:grid-cols-2 gap-24">
 			<div>
 				<p class="text-gray-600">Classic CSS</p>
-				<Code lang="scss" theme="dracula-soft" code={`#opinions_box h1 {
+				<Code lang="scss" code={`#opinions_box h1 {
 	margin: 0 0 8px 0;
 	text-align: center;
 }
@@ -33,15 +28,15 @@ import CompaniesSection from '../components/CompaniesSection.astro';
 			text-decoration: underline;
 		}
 	}
+
 	input[type="text"] {
 		border: 1px solid #ccc!important;
 	}
-}
-`}/>
+}`}/>
 			</div>
 			<div>
 				<p class="text-gray-600">BEM</p>
-				<Code lang="scss" theme="dracula-soft" code={`.opinions_box{
+				<Code lang="scss" code={`.opinions_box {
 	margin: 0 0 8px 0;
 	text-align: center;
 
@@ -62,22 +57,11 @@ import CompaniesSection from '../components/CompaniesSection.astro';
 	</section>
 
 	<section>
-		<div class="grid gap-6 grid-cols-1 sm:grid-cols-3 max-w-6xl mx-auto px-4 py-12 items-start">
-			<div class="text-center relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
-				<h2 class="text-xl font-bold leading-snug tracking-tight mb-1 bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-green-400">Easy</h2>
-				<p class="text-gray-600">To use BEM, you only need to employ BEM’s naming convention.</p>
-			</div>
-
-			<div class="text-center relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
-				<h2 class="text-xl font-bold leading-snug tracking-tight mb-1 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Modular</h2>
-				<p class="text-gray-600">Independent blocks and CSS selectors make your code reusable and modular.</p>
-			</div>
-
-			<div class="text-center relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
-				<h2 class="text-xl font-bold leading-snug tracking-tight mb-1 bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-400">Flexible</h2>
-				<p class="text-gray-600">Using BEM, methodologies and tools can be recomposed and configured the way you like.</p>
-			</div>
-		</div>
+		<BenefitsSection>
+			<BenefitCard heading="Easy" description="To use BEM, you only need to employ BEM’s naming convention."/>
+			<BenefitCard heading="Modular" description="Independent blocks and CSS selectors make your code reusable and modular."/>
+			<BenefitCard heading="Flexible" description="Using BEM, methodologies and tools can be recomposed and configured the way you like."/>
+		</BenefitsSection>
 	</section>
 
 	<section>

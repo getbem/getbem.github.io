@@ -1,0 +1,23 @@
+<div class="hero">
+    <h1 class="hero__text">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">BEM</span> — is a methodology that helps you to create reusable components and code sharing in front&#8209;end development
+    </h1>
+
+    <a href="/introduction" class="hero__button">
+        Learn why it's better
+    </a>
+</div>
+
+<style lang="scss">
+.hero {
+    @apply text-center max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-12 md:pt-40 md:pb-20;
+
+    &__text {
+        @apply text-3xl md:text-5xl font-bold mb-8;
+    }
+
+    &__button {
+        @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded-full;
+    }
+}
+</style>

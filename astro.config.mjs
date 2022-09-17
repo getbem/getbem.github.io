@@ -24,5 +24,10 @@ export default defineConfig({
     ssr: {
       external: ["svgo"]
     }
-  }
+  },
+  markdown: {
+    shikiConfig: {
+      theme: 'dracula-soft',
+    },
+  },
 });
