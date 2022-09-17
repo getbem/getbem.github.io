@@ -1,7 +1,7 @@
 ---
-import { Image } from '@astrojs/image/components';
 import { Code } from 'astro/components';
 import Layout from '../layouts/Layout.astro';
+import Company from '../components/Company.astro';
 ---
 
 <Layout title="BEM — Block Element Modifier">
@@ -84,20 +84,20 @@ import Layout from '../layouts/Layout.astro';
 			<div class="max-w-3xl mx-auto text-center pb-4 md:pb-8">
 				<h2 class="text-4xl font-normal">Companies using BEM</h2>
 			</div>
-			<div class="max-w-sm md:max-w-4xl mx-auto grid gap-2 grid-cols-4 md:grid-cols-5">
-				<div class="flex items-center justify-center py-2 col-span-2 md:col-auto">
-					<a href="https://yandex.com" title="Yandex"><img alt="Yandex" src={"https://avatars.mds.yandex.net/get-bunker/998550/3a470d8886d04ed03826730c9b18ce4dec55cdb3/orig"} width="120" height="61"/></a>
-				</div>
-				<div class="flex items-center justify-center py-2 col-span-2 md:col-auto">
-					<a href="https://www.jetbrains.com" title="JetBrains"><img alt="JetBrains" src={"https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg"} width="120" height="120"/></a>
-				</div>
-				<div class="flex items-center justify-center py-2 col-span-2 md:col-auto">
-					<a href="https://factory.mn" title="Manufactura"><img alt="Manufactura" src={"http://factory.mn/i/documents/m_logo_eng.png"} width="744" height="164"/></a>
-				</div>
-				<div class="flex items-center justify-center py-2 col-span-2 md:col-auto">
-					<a href="https://epam.com" class="bg-gray-900 p-2 pt-3" title="EPAM"><img alt="EPAM" src={"https://www.epam.com/content/dam/epam/global/logo_white-blue.svg"} width="80" height="28"/></a>
-				</div>
-				<div class="flex items-center justify-center py-2 col-span-2 md:col-auto">
+			<div class="max-w-6xl mx-auto grid gap-16 grid-cols-3 md:grid-cols-6">
+				<Company href="https://yandex.com" name="Yandex" src={import("../assets/companies/yandex.png")}/>
+				<Company href="http://www.jetbrains.com" name="JetBrains" src={import("../assets/companies/jetbrains.png")}/>
+				<Company href="http://factory.mn" name="Manufactura" src={import("../assets/companies/manufactura.png")}/>
+				<Company href="http://eu.ideus.biz" name="iDeus" src={import("../assets/companies/ideus.png")}/>
+				<Company href="http://alfabank.com" name="Alfa-Bank" src={import("../assets/companies/alfabank.png")}/>
+				<Company href="http://edster.ru" name="Edster" src={import("../assets/companies/edster.png")}/>
+				<Company href="http://www.wimdu.com" name="Wimdu" src={import("../assets/companies/wimdu.png")}/>
+				<Company href="http://megafon.com" name="Megafon" src={import("../assets/companies/megafon.png")}/>
+				<Company href="http://decaf.de" name="Decaf" src={import("../assets/companies/decaf.png")}/>
+				<Company href="http://epam.com" name="EPAM" src={import("../assets/companies/epam.png")}/>
+				<Company href="https://renuo.ch" name="Renuo" src={import("../assets/companies/renuo.png")}/>
+				
+				<div class="flex items-center justify-center text-center">
 					<a href="https://github.com/getbem/getbem.github.io/discussions/282" title="EPAM" class="underline">Are you using BEM?</a>
 				</div>
 			</div>

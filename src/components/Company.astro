@@ -1,0 +1,23 @@
+---
+import { Image } from '@astrojs/image/components';
+
+export interface Props {
+    name: string,
+    href: string,
+    src: string | Promise<typeof import("*.png")>
+}
+
+const { name, href, src } = Astro.props;
+---
+
+<div class="company">
+    <a href={href} title={name}>
+        <Image alt={name} src={src} width="120" fit="inside"/>
+    </a>
+</div>
+
+<style>
+.company {
+    @apply flex items-center justify-center;
+}
+</style>
