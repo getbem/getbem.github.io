@@ -6,39 +6,39 @@ import { Code } from 'astro/components';
     <div>
         <p class="text-gray-600">Classic CSS</p>
         <Code lang="scss" code={`#opinions_box h1 {
-margin: 0 0 8px 0;
-text-align: center;
+    margin: 0 0 8px 0;
+    text-align: center;
 }
 
 #opinions_box {
-p.more_pp {
-a {
-    text-decoration: underline;
-}
-}
+    p.more_pp {
+        a {
+            text-decoration: underline;
+        }
+    }
 
-input[type="text"] {
-border: 1px solid #ccc!important;
-}
+    input[type="text"] {
+        border: 1px solid #ccc!important;
+    }
 }`}/>
     </div>
     <div>
         <p class="text-gray-600">BEM</p>
         <Code lang="scss" code={`.opinions_box {
-margin: 0 0 8px 0;
-text-align: center;
+    margin: 0 0 8px 0;
+    text-align: center;
 
-&__view-more {
-text-decoration: underline;
-}
+    &__view-more {
+        text-decoration: underline;
+    }
 
-&__text-input {
-border: 1px solid #ccc;
-}
+    &__text-input {
+        border: 1px solid #ccc;
+    }
 
-&--is-inactive {
-color: gray;
-}
+    &--is-inactive {
+        color: gray;
+    }
 }`}/>
     </div>
 </div>
