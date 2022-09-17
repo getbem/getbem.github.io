@@ -2,12 +2,13 @@
 export interface Props {
     heading: string,
     description: string,
+    color: string,
 }
 
-const { heading, description } = Astro.props;
+const { heading, description, color } = Astro.props;
 ---
-<div class="benefit-card">
-    <h2 class="benefit-card__heading">{heading}</h2>
+<div class={`benefit-card benefit-card--${color}`}>
+    <h2 class={`benefit-card__heading`}>{heading}</h2>
     <p class="benefit-card__text">{description}</p>
 </div>
 
@@ -15,23 +16,24 @@ const { heading, description } = Astro.props;
 .benefit-card {
     @apply text-center relative flex flex-col items-center p-6 bg-white rounded shadow-xl;
 
+    &--green {
+        @apply border-t-2 hover:border-green-400;
+    }
+
+    &--red {
+        @apply border-t-2 hover:border-red-400;
+    }
+
+    &--blue {
+        @apply border-t-2 hover:border-blue-400;
+    }
+
     &__heading {
         @apply text-xl font-normal leading-snug mb-1 tracking-wide;
     }
 
     &__text {
         @apply text-gray-600 font-light;
-        &--green {
-            @apply bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-green-400;
-        }
-
-        &--red {
-            @apply bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-400;
-        }
-
-        &--blue {
-            @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400;
-        }
     }
 }
 
