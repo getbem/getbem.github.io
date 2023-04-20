@@ -24,8 +24,6 @@
     "@tailwindcss/typography": "^0.5.7",
     "astro-icon": "^0.7.3",
     "sass": "^1.54.9",
-    "vite-plugin-lightningcss": "^0.0.2",
-    "rehype-autolink-headings": "^6.1.1",
-    "hastscript": "^7.1.0"
+    "vite-plugin-lightningcss": "^0.0.2"
   }
 }
