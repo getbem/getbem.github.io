@@ -20,7 +20,7 @@ Encapsulates a standalone entity that is meaningful on its own. While blocks can
 
 | Naming | HTML | CSS |
 | ------ | ---- | --- |
-| Block names may consist of lowecase Latin letters, digits, and dashes. To form a CSS class, add a short prefix for namespacing: `.block`. Spaces in long block names are replaced by dash. | Any DOM node can be a block if it accepts a class name. `<div class="block">...</div>` | Use class name selector only. [No tag name or ids](/faq/#why-not-use-ids-or-tagnames). No dependency on other blocks/elements on a page. `.block { color: #042; }` |
+| Block names may consist of lowercase Latin letters, digits, and dashes. To form a CSS class, add a short prefix for namespacing: `.block`. Spaces in long block names are replaced by dash. | Any DOM node can be a block if it accepts a class name. `<div class="block">...</div>` | Use class name selector only. [No tag name or ids](/faq/#why-not-use-ids-or-tagnames). No dependency on other blocks/elements on a page. `.block { color: #042; }` |
 
 ## Element
 
@@ -28,7 +28,7 @@ Parts of a block and have no standalone meaning. Any element is semantically tie
 
 | Naming | HTML | CSS |
 | ------ | ---- | --- |
-| Element names may consist of lowecase Latin letters, digits, dashes and underscores. CSS class is formed as block name plus two underscores plus element name: `.block__elem`. Spaces in long element names are replaced by dash. | Any DOM node within a block can be an element. Within a given block, all elements are semantically equal. | `<div class="block"><span class="block__elem"></span></div>` | Use class name selector only. [No tag name or ids](/faq/#why-not-use-ids-or-tagnames). No dependency on other blocks/elements on a page. |
+| Element names may consist of lowercase Latin letters, digits, dashes and underscores. CSS class is formed as block name plus two underscores plus element name: `.block__elem`. Spaces in long element names are replaced by dash. | Any DOM node within a block can be an element. Within a given block, all elements are semantically equal. | `<div class="block"><span class="block__elem"></span></div>` | Use class name selector only. [No tag name or ids](/faq/#why-not-use-ids-or-tagnames). No dependency on other blocks/elements on a page. |
 
 ### Good
 
@@ -49,7 +49,7 @@ Flags on blocks or elements. Use them to change appearance, behavior or state.
 
 | Naming | HTML | CSS |
 | ------ | ---- | --- |
-| Modifier names may consist of lowecase Latin letters, digits, dashes and underscores. CSS class is formed as block’s or element’s name plus two dashes: `.block--mod` or `.block__elem--mod` and `.block--color-black` with `.block--color-red`. Spaces in complicated modifiers are replaced by dash. | Modifier is an extra class name which you add to a block/element DOM node. Add modifier classes only to blocks/elements they modify, and keep the original class. | Use modifier class name as selector: `.block--hidden { }` To alter elements based on a block-level modifier: `.block--mod .block__elem { }` Element modifier: `.block__elem--mod { }` |
+| Modifier names may consist of lowercase Latin letters, digits, dashes and underscores. CSS class is formed as block’s or element’s name plus two dashes: `.block--mod` or `.block__elem--mod` and `.block--color-black` with `.block--color-red`. Spaces in complicated modifiers are replaced by dash. | Modifier is an extra class name which you add to a block/element DOM node. Add modifier classes only to blocks/elements they modify, and keep the original class. | Use modifier class name as selector: `.block--hidden { }` To alter elements based on a block-level modifier: `.block--mod .block__elem { }` Element modifier: `.block__elem--mod { }` |
 
 ### Good
 
